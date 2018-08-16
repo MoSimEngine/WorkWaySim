@@ -1,0 +1,1138 @@
+!SESSION 2018-08-15 13:20:05.889 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_171
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=de_DE
+Framework arguments:  -application edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim
+Command-line arguments:  -application edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim -data C:\Users\Freddy\git\WorkwaySimAbstractSimEngineHLA\edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim -dev file:C:/Users/Freddy/workspace/.metadata/.plugins/org.eclipse.pde.core/Workway Behaviour Simulation Example/dev.properties -os win32 -ws win32 -arch x86_64 -consoleLog
+
+!ENTRY org.eclipse.osgi 4 0 2018-08-15 13:20:09.111
+!MESSAGE Application error
+!STACK 1
+org.eclipse.core.runtime.CoreException: Plug-in "edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim" was unable to instantiate class "edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.component.WorkwaySimulationExample".
+	at org.eclipse.core.internal.registry.osgi.RegistryStrategyOSGI.throwException(RegistryStrategyOSGI.java:194)
+	at org.eclipse.core.internal.registry.osgi.RegistryStrategyOSGI.createExecutableExtension(RegistryStrategyOSGI.java:188)
+	at org.eclipse.core.internal.registry.ExtensionRegistry.createExecutableExtension(ExtensionRegistry.java:905)
+	at org.eclipse.core.internal.registry.ConfigurationElement.createExecutableExtension(ConfigurationElement.java:243)
+	at org.eclipse.core.internal.registry.ConfigurationElementHandle.createExecutableExtension(ConfigurationElementHandle.java:55)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:191)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:134)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:388)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:243)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:673)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:610)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1519)
+	at org.eclipse.equinox.launcher.Main.main(Main.java:1492)
+Caused by: java.lang.NoClassDefFoundError: hla/rti1516e/exceptions/RTIexception
+	at edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.component.WorkwaySimulationExample.<init>(WorkwaySimulationExample.java:22)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
+	at java.lang.reflect.Constructor.newInstance(Unknown Source)
+	at java.lang.Class.newInstance(Unknown Source)
+	at org.eclipse.core.internal.registry.osgi.RegistryStrategyOSGI.createExecutableExtension(RegistryStrategyOSGI.java:184)
+	... 16 more
+Caused by: java.lang.ClassNotFoundException: hla.rti1516e.exceptions.RTIexception cannot be found by edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim_1.0.0.qualifier
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClassInternal(BundleLoader.java:461)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:372)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:364)
+	at org.eclipse.osgi.internal.loader.ModuleClassLoader.loadClass(ModuleClassLoader.java:161)
+	at java.lang.ClassLoader.loadClass(Unknown Source)
+	... 23 more
+!SESSION 2018-08-15 13:23:08.397 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_171
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=de_DE
+Framework arguments:  -application edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim
+Command-line arguments:  -application edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim -data C:\Users\Freddy\git\WorkwaySimAbstractSimEngineHLA\edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim -dev file:C:/Users/Freddy/workspace/.metadata/.plugins/org.eclipse.pde.core/Workway Behaviour Simulation Example/dev.properties -os win32 -ws win32 -arch x86_64 -consoleLog
+
+!ENTRY org.eclipse.osgi 4 0 2018-08-15 13:23:11.598
+!MESSAGE Application error
+!STACK 1
+org.eclipse.core.runtime.CoreException: Plug-in "edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim" was unable to instantiate class "edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.component.WorkwaySimulationExample".
+	at org.eclipse.core.internal.registry.osgi.RegistryStrategyOSGI.throwException(RegistryStrategyOSGI.java:194)
+	at org.eclipse.core.internal.registry.osgi.RegistryStrategyOSGI.createExecutableExtension(RegistryStrategyOSGI.java:188)
+	at org.eclipse.core.internal.registry.ExtensionRegistry.createExecutableExtension(ExtensionRegistry.java:905)
+	at org.eclipse.core.internal.registry.ConfigurationElement.createExecutableExtension(ConfigurationElement.java:243)
+	at org.eclipse.core.internal.registry.ConfigurationElementHandle.createExecutableExtension(ConfigurationElementHandle.java:55)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:191)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:134)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:388)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:243)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:673)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:610)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1519)
+	at org.eclipse.equinox.launcher.Main.main(Main.java:1492)
+Caused by: java.lang.NoClassDefFoundError: hla/rti1516e/exceptions/RTIexception
+	at edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.component.WorkwaySimulationExample.<init>(WorkwaySimulationExample.java:22)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
+	at java.lang.reflect.Constructor.newInstance(Unknown Source)
+	at java.lang.Class.newInstance(Unknown Source)
+	at org.eclipse.core.internal.registry.osgi.RegistryStrategyOSGI.createExecutableExtension(RegistryStrategyOSGI.java:184)
+	... 16 more
+Caused by: java.lang.ClassNotFoundException: hla.rti1516e.exceptions.RTIexception cannot be found by edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim_1.0.0.qualifier
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClassInternal(BundleLoader.java:461)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:372)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:364)
+	at org.eclipse.osgi.internal.loader.ModuleClassLoader.loadClass(ModuleClassLoader.java:161)
+	at java.lang.ClassLoader.loadClass(Unknown Source)
+	... 23 more
+!SESSION 2018-08-15 13:24:01.897 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_171
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=de_DE
+Framework arguments:  -application edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim
+Command-line arguments:  -application edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim -data C:\Users\Freddy\git\WorkwaySimAbstractSimEngineHLA\edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim -dev file:C:/Users/Freddy/workspace/.metadata/.plugins/org.eclipse.pde.core/Workway Behaviour Simulation Example/dev.properties -os win32 -ws win32 -arch x86_64 -consoleLog
+
+!ENTRY org.eclipse.osgi 4 0 2018-08-15 13:24:08.269
+!MESSAGE Application error
+!STACK 1
+java.lang.IndexOutOfBoundsException: Index: 0, Size: 0
+	at java.util.LinkedList.checkElementIndex(Unknown Source)
+	at java.util.LinkedList.get(Unknown Source)
+	at edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.component.WorkwayModel.init(WorkwayModel.java:67)
+	at de.uka.ipd.sdq.simulation.abstractsimengine.desmoj.DesmoJModel.doInitialSchedules(DesmoJModel.java:39)
+	at desmoj.core.simulator.Experiment.start(Unknown Source)
+	at desmoj.core.simulator.Experiment.start(Unknown Source)
+	at de.uka.ipd.sdq.simulation.abstractsimengine.desmoj.DesmoJExperiment.startSimulator(DesmoJExperiment.java:48)
+	at de.uka.ipd.sdq.simulation.abstractsimengine.AbstractExperiment.start(AbstractExperiment.java:59)
+	at edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.component.WorkwaySimulationExample.start(WorkwaySimulationExample.java:33)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:134)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:388)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:243)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:673)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:610)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1519)
+	at org.eclipse.equinox.launcher.Main.main(Main.java:1492)
+!SESSION 2018-08-15 14:08:22.960 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_171
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=de_DE
+Framework arguments:  -application edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim
+Command-line arguments:  -application edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim -data C:\Users\Freddy\git\WorkwaySimAbstractSimEngineHLA\edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim -dev file:C:/Users/Freddy/workspace/.metadata/.plugins/org.eclipse.pde.core/Workway Behaviour Simulation Example/dev.properties -os win32 -ws win32 -arch x86_64 -consoleLog
+
+!ENTRY org.apache.log4j 4 0 2018-08-15 14:08:30.106
+!MESSAGE portico.lrc.jgroups  - FAILURE createFederation: already exists, name=HumanSim
+
+!SESSION 2018-08-15 14:10:23.202 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_171
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=de_DE
+Framework arguments:  -application edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim
+Command-line arguments:  -application edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim -data C:\Users\Freddy\git\WorkwaySimAbstractSimEngineHLA\edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim -dev file:C:/Users/Freddy/workspace/.metadata/.plugins/org.eclipse.pde.core/Workway Behaviour Simulation Example/dev.properties -os win32 -ws win32 -arch x86_64 -consoleLog
+
+!ENTRY org.apache.log4j 4 0 2018-08-15 14:10:30.560
+!MESSAGE portico.lrc.jgroups  - FAILURE createFederation: already exists, name=HumanSim
+
+!SESSION 2018-08-15 14:12:15.282 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_171
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=de_DE
+Framework arguments:  -application edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim
+Command-line arguments:  -application edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim -data C:\Users\Freddy\git\WorkwaySimAbstractSimEngineHLA\edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim -dev file:C:/Users/Freddy/workspace/.metadata/.plugins/org.eclipse.pde.core/Workway Behaviour Simulation Example/dev.properties -os win32 -ws win32 -arch x86_64 -consoleLog
+
+!ENTRY org.apache.log4j 4 0 2018-08-15 14:12:22.777
+!MESSAGE portico.lrc.jgroups  - FAILURE createFederation: already exists, name=HumanSim
+
+!SESSION 2018-08-15 14:20:12.120 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_171
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=de_DE
+Framework arguments:  -application edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim
+Command-line arguments:  -application edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim -data C:\Users\Freddy\git\WorkwaySimAbstractSimEngineHLA\edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim -dev file:C:/Users/Freddy/workspace/.metadata/.plugins/org.eclipse.pde.core/Workway Behaviour Simulation Example/dev.properties -os win32 -ws win32 -arch x86_64 -consoleLog
+
+!ENTRY org.apache.log4j 4 0 2018-08-15 14:20:19.719
+!MESSAGE portico.lrc.jgroups  - FAILURE createFederation: already exists, name=HumanSim
+
+!SESSION 2018-08-15 14:24:10.713 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_171
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=de_DE
+Framework arguments:  -application edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim
+Command-line arguments:  -application edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim -data C:\Users\Freddy\git\WorkwaySimAbstractSimEngineHLA\edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim -dev file:C:/Users/Freddy/workspace/.metadata/.plugins/org.eclipse.pde.core/Workway Behaviour Simulation Example/dev.properties -os win32 -ws win32 -arch x86_64 -consoleLog
+
+!ENTRY org.apache.log4j 4 0 2018-08-15 14:24:18.173
+!MESSAGE portico.lrc.jgroups  - FAILURE createFederation: already exists, name=HumanSim
+
+!SESSION 2018-08-15 14:27:02.677 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_171
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=de_DE
+Framework arguments:  -application edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim
+Command-line arguments:  -application edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim -data C:\Users\Freddy\git\WorkwaySimAbstractSimEngineHLA\edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim -dev file:C:/Users/Freddy/workspace/.metadata/.plugins/org.eclipse.pde.core/Workway Behaviour Simulation Example/dev.properties -os win32 -ws win32 -arch x86_64 -consoleLog
+
+!ENTRY org.apache.log4j 4 0 2018-08-15 14:27:10.996
+!MESSAGE portico.lrc.jgroups  - FAILURE createFederation: already exists, name=HumanSim
+
+!SESSION 2018-08-15 14:43:03.820 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_171
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=de_DE
+Framework arguments:  -application edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim
+Command-line arguments:  -application edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim -data C:\Users\Freddy\git\WorkwaySimAbstractSimEngineHLA\edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim -dev file:C:/Users/Freddy/workspace/.metadata/.plugins/org.eclipse.pde.core/Workway Behaviour Simulation Example/dev.properties -os win32 -ws win32 -arch x86_64 -consoleLog
+
+!ENTRY org.apache.log4j 4 0 2018-08-15 14:43:11.940
+!MESSAGE portico.lrc.jgroups  - FAILURE createFederation: already exists, name=HumanSim
+
+
+!ENTRY org.apache.log4j 4 0 2018-08-15 14:43:16.831
+!MESSAGE portico.lrc  - FAILURE Exception encountered while processing incoming message: null
+
+!STACK 0
+java.lang.NullPointerException
+	at edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.component.WorkwayFederate.addBusStopHandle(WorkwayFederate.java:622)
+	at edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.component.WorkwayFederateAmbassador.discoverObjectInstance(WorkwayFederateAmbassador.java:122)
+	at org.portico.impl.hla1516e.handlers.DiscoverObjectCallbackHandler.process(DiscoverObjectCallbackHandler.java:74)
+	at org.portico.utils.messaging.MessageChain.process(MessageChain.java:78)
+	at org.portico.utils.messaging.MessageSink.process(MessageSink.java:187)
+	at org.portico.lrc.LRC.tickProcess(LRC.java:688)
+	at org.portico.lrc.LRC.tick(LRC.java:555)
+	at org.portico.impl.hla1516e.Impl1516eHelper.evokeMultiple(Impl1516eHelper.java:188)
+	at org.portico.impl.hla1516e.Rti1516eAmbassador.evokeMultipleCallbacks(Rti1516eAmbassador.java:5407)
+	at edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.component.WorkwayFederate.advanceTime(WorkwayFederate.java:383)
+	at edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.component.WorkwayFederate.runFederate(WorkwayFederate.java:184)
+	at edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.component.WorkwayModel.init(WorkwayModel.java:61)
+	at de.uka.ipd.sdq.simulation.abstractsimengine.desmoj.DesmoJModel.doInitialSchedules(DesmoJModel.java:39)
+	at desmoj.core.simulator.Experiment.start(Unknown Source)
+	at desmoj.core.simulator.Experiment.start(Unknown Source)
+	at de.uka.ipd.sdq.simulation.abstractsimengine.desmoj.DesmoJExperiment.startSimulator(DesmoJExperiment.java:48)
+	at de.uka.ipd.sdq.simulation.abstractsimengine.AbstractExperiment.start(AbstractExperiment.java:59)
+	at edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.component.WorkwaySimulationExample.start(WorkwaySimulationExample.java:36)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:134)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:388)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:243)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:673)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:610)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1519)
+	at org.eclipse.equinox.launcher.Main.main(Main.java:1492)
+
+!ENTRY org.apache.log4j 4 0 2018-08-15 14:43:16.856
+!MESSAGE portico.lrc  - FAILURE Exception encountered while processing incoming message: null
+
+!STACK 0
+java.lang.NullPointerException
+	at edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.component.WorkwayFederate.addBusStopHandle(WorkwayFederate.java:622)
+	at edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.component.WorkwayFederateAmbassador.discoverObjectInstance(WorkwayFederateAmbassador.java:122)
+	at org.portico.impl.hla1516e.handlers.DiscoverObjectCallbackHandler.process(DiscoverObjectCallbackHandler.java:74)
+	at org.portico.utils.messaging.MessageChain.process(MessageChain.java:78)
+	at org.portico.utils.messaging.MessageSink.process(MessageSink.java:187)
+	at org.portico.lrc.LRC.tickProcess(LRC.java:688)
+	at org.portico.lrc.LRC.tick(LRC.java:555)
+	at org.portico.impl.hla1516e.Impl1516eHelper.evokeMultiple(Impl1516eHelper.java:188)
+	at org.portico.impl.hla1516e.Rti1516eAmbassador.evokeMultipleCallbacks(Rti1516eAmbassador.java:5407)
+	at edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.component.WorkwayFederate.advanceTime(WorkwayFederate.java:383)
+	at edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.component.WorkwayFederate.runFederate(WorkwayFederate.java:184)
+	at edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.component.WorkwayModel.init(WorkwayModel.java:61)
+	at de.uka.ipd.sdq.simulation.abstractsimengine.desmoj.DesmoJModel.doInitialSchedules(DesmoJModel.java:39)
+	at desmoj.core.simulator.Experiment.start(Unknown Source)
+	at desmoj.core.simulator.Experiment.start(Unknown Source)
+	at de.uka.ipd.sdq.simulation.abstractsimengine.desmoj.DesmoJExperiment.startSimulator(DesmoJExperiment.java:48)
+	at de.uka.ipd.sdq.simulation.abstractsimengine.AbstractExperiment.start(AbstractExperiment.java:59)
+	at edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.component.WorkwaySimulationExample.start(WorkwaySimulationExample.java:36)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:134)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:388)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:243)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:673)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:610)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1519)
+	at org.eclipse.equinox.launcher.Main.main(Main.java:1492)
+
+!ENTRY org.apache.log4j 4 0 2018-08-15 14:43:16.861
+!MESSAGE portico.lrc  - FAILURE Exception encountered while processing incoming message: null
+
+!STACK 0
+java.lang.NullPointerException
+	at edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.component.WorkwayFederate.addBusStopHandle(WorkwayFederate.java:622)
+	at edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.component.WorkwayFederateAmbassador.discoverObjectInstance(WorkwayFederateAmbassador.java:122)
+	at org.portico.impl.hla1516e.handlers.DiscoverObjectCallbackHandler.process(DiscoverObjectCallbackHandler.java:74)
+	at org.portico.utils.messaging.MessageChain.process(MessageChain.java:78)
+	at org.portico.utils.messaging.MessageSink.process(MessageSink.java:187)
+	at org.portico.lrc.LRC.tickProcess(LRC.java:688)
+	at org.portico.lrc.LRC.tick(LRC.java:555)
+	at org.portico.impl.hla1516e.Impl1516eHelper.evokeMultiple(Impl1516eHelper.java:188)
+	at org.portico.impl.hla1516e.Rti1516eAmbassador.evokeMultipleCallbacks(Rti1516eAmbassador.java:5407)
+	at edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.component.WorkwayFederate.advanceTime(WorkwayFederate.java:383)
+	at edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.component.WorkwayFederate.runFederate(WorkwayFederate.java:184)
+	at edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.component.WorkwayModel.init(WorkwayModel.java:61)
+	at de.uka.ipd.sdq.simulation.abstractsimengine.desmoj.DesmoJModel.doInitialSchedules(DesmoJModel.java:39)
+	at desmoj.core.simulator.Experiment.start(Unknown Source)
+	at desmoj.core.simulator.Experiment.start(Unknown Source)
+	at de.uka.ipd.sdq.simulation.abstractsimengine.desmoj.DesmoJExperiment.startSimulator(DesmoJExperiment.java:48)
+	at de.uka.ipd.sdq.simulation.abstractsimengine.AbstractExperiment.start(AbstractExperiment.java:59)
+	at edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.component.WorkwaySimulationExample.start(WorkwaySimulationExample.java:36)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:134)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:388)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:243)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:673)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:610)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1519)
+	at org.eclipse.equinox.launcher.Main.main(Main.java:1492)
+!SESSION 2018-08-15 14:44:09.341 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_171
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=de_DE
+Framework arguments:  -application edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim
+Command-line arguments:  -application edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim -data C:\Users\Freddy\git\WorkwaySimAbstractSimEngineHLA\edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim -dev file:C:/Users/Freddy/workspace/.metadata/.plugins/org.eclipse.pde.core/Workway Behaviour Simulation Example/dev.properties -os win32 -ws win32 -arch x86_64 -consoleLog
+
+!ENTRY org.apache.log4j 4 0 2018-08-15 14:44:17.305
+!MESSAGE portico.lrc.jgroups  - FAILURE createFederation: already exists, name=HumanSim
+
+!SESSION 2018-08-15 14:49:08.912 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_171
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=de_DE
+Framework arguments:  -application edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim
+Command-line arguments:  -application edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim -data C:\Users\Freddy\git\WorkwaySimAbstractSimEngineHLA\edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim -dev file:C:/Users/Freddy/workspace/.metadata/.plugins/org.eclipse.pde.core/Workway Behaviour Simulation Example/dev.properties -os win32 -ws win32 -arch x86_64 -consoleLog
+
+!ENTRY org.apache.log4j 4 0 2018-08-15 14:49:16.464
+!MESSAGE portico.lrc.jgroups  - FAILURE createFederation: already exists, name=HumanSim
+
+!SESSION 2018-08-15 14:51:47.067 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_171
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=de_DE
+Framework arguments:  -application edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim
+Command-line arguments:  -application edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim -data C:\Users\Freddy\git\WorkwaySimAbstractSimEngineHLA\edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim -dev file:C:/Users/Freddy/workspace/.metadata/.plugins/org.eclipse.pde.core/Workway Behaviour Simulation Example/dev.properties -os win32 -ws win32 -arch x86_64 -consoleLog
+
+!ENTRY org.apache.log4j 4 0 2018-08-15 14:51:54.768
+!MESSAGE portico.lrc.jgroups  - FAILURE createFederation: already exists, name=HumanSim
+
+!SESSION 2018-08-15 14:54:09.791 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_171
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=de_DE
+Framework arguments:  -application edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim
+Command-line arguments:  -application edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim -data C:\Users\Freddy\git\WorkwaySimAbstractSimEngineHLA\edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim -dev file:C:/Users/Freddy/workspace/.metadata/.plugins/org.eclipse.pde.core/Workway Behaviour Simulation Example/dev.properties -os win32 -ws win32 -arch x86_64 -consoleLog
+
+!ENTRY org.apache.log4j 4 0 2018-08-15 14:54:17.495
+!MESSAGE portico.lrc.jgroups  - FAILURE createFederation: already exists, name=HumanSim
+
+!SESSION 2018-08-15 14:57:03.743 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_171
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=de_DE
+Framework arguments:  -application edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim
+Command-line arguments:  -application edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim -data C:\Users\Freddy\git\WorkwaySimAbstractSimEngineHLA\edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim -dev file:C:/Users/Freddy/workspace/.metadata/.plugins/org.eclipse.pde.core/Workway Behaviour Simulation Example/dev.properties -os win32 -ws win32 -arch x86_64 -consoleLog
+
+!ENTRY org.apache.log4j 4 0 2018-08-15 14:57:11.037
+!MESSAGE portico.lrc.jgroups  - FAILURE createFederation: already exists, name=HumanSim
+
+!SESSION 2018-08-15 15:00:46.780 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_171
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=de_DE
+Framework arguments:  -application edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim
+Command-line arguments:  -application edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim -data C:\Users\Freddy\git\WorkwaySimAbstractSimEngineHLA\edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim -dev file:C:/Users/Freddy/workspace/.metadata/.plugins/org.eclipse.pde.core/Workway Behaviour Simulation Example/dev.properties -os win32 -ws win32 -arch x86_64 -consoleLog
+
+!ENTRY org.apache.log4j 4 0 2018-08-15 15:00:54.333
+!MESSAGE portico.lrc.jgroups  - FAILURE createFederation: already exists, name=HumanSim
+
+!SESSION 2018-08-15 15:06:07.419 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_171
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=de_DE
+Framework arguments:  -application edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim
+Command-line arguments:  -application edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim -data C:\Users\Freddy\git\WorkwaySimAbstractSimEngineHLA\edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim -dev file:C:/Users/Freddy/workspace/.metadata/.plugins/org.eclipse.pde.core/Workway Behaviour Simulation Example/dev.properties -os win32 -ws win32 -arch x86_64 -consoleLog
+
+!ENTRY org.apache.log4j 4 0 2018-08-15 15:06:14.871
+!MESSAGE portico.lrc.jgroups  - FAILURE createFederation: already exists, name=HumanSim
+
+!SESSION 2018-08-15 15:08:01.165 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_171
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=de_DE
+Framework arguments:  -application edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim
+Command-line arguments:  -application edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim -data C:\Users\Freddy\git\WorkwaySimAbstractSimEngineHLA\edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim -dev file:C:/Users/Freddy/workspace/.metadata/.plugins/org.eclipse.pde.core/Workway Behaviour Simulation Example/dev.properties -os win32 -ws win32 -arch x86_64 -consoleLog
+
+!ENTRY org.apache.log4j 4 0 2018-08-15 15:08:09.155
+!MESSAGE portico.lrc.jgroups  - FAILURE createFederation: already exists, name=HumanSim
+
+!SESSION 2018-08-15 15:11:14.287 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_171
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=de_DE
+Framework arguments:  -application edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim
+Command-line arguments:  -application edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim -data C:\Users\Freddy\git\WorkwaySimAbstractSimEngineHLA\edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim -dev file:C:/Users/Freddy/workspace/.metadata/.plugins/org.eclipse.pde.core/Workway Behaviour Simulation Example/dev.properties -os win32 -ws win32 -arch x86_64 -consoleLog
+
+!ENTRY org.apache.log4j 4 0 2018-08-15 15:11:22.559
+!MESSAGE portico.lrc.jgroups  - FAILURE createFederation: already exists, name=HumanSim
+
+!SESSION 2018-08-15 15:14:51.733 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_171
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=de_DE
+Framework arguments:  -application edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim
+Command-line arguments:  -application edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim -data C:\Users\Freddy\git\WorkwaySimAbstractSimEngineHLA\edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim -dev file:C:/Users/Freddy/workspace/.metadata/.plugins/org.eclipse.pde.core/Workway Behaviour Simulation Example/dev.properties -os win32 -ws win32 -arch x86_64 -consoleLog
+
+!ENTRY org.apache.log4j 4 0 2018-08-15 15:14:59.374
+!MESSAGE portico.lrc.jgroups  - FAILURE createFederation: already exists, name=HumanSim
+
+!SESSION 2018-08-15 15:19:07.376 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_171
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=de_DE
+Framework arguments:  -application edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim
+Command-line arguments:  -application edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim -data C:\Users\Freddy\git\WorkwaySimAbstractSimEngineHLA\edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim -dev file:C:/Users/Freddy/workspace/.metadata/.plugins/org.eclipse.pde.core/Workway Behaviour Simulation Example/dev.properties -os win32 -ws win32 -arch x86_64 -consoleLog
+
+!ENTRY org.apache.log4j 4 0 2018-08-15 15:19:15.012
+!MESSAGE portico.lrc.jgroups  - FAILURE createFederation: already exists, name=HumanSim
+
+!SESSION 2018-08-15 15:25:50.376 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_171
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=de_DE
+Framework arguments:  -application edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim
+Command-line arguments:  -application edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim -data C:\Users\Freddy\git\WorkwaySimAbstractSimEngineHLA\edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim -dev file:C:/Users/Freddy/workspace/.metadata/.plugins/org.eclipse.pde.core/Workway Behaviour Simulation Example/dev.properties -os win32 -ws win32 -arch x86_64 -consoleLog
+
+!ENTRY org.apache.log4j 4 0 2018-08-15 15:25:57.945
+!MESSAGE portico.lrc.jgroups  - FAILURE createFederation: already exists, name=HumanSim
+
+!SESSION 2018-08-15 15:29:18.354 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_171
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=de_DE
+Framework arguments:  -application edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim
+Command-line arguments:  -application edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim -data C:\Users\Freddy\git\WorkwaySimAbstractSimEngineHLA\edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim -dev file:C:/Users/Freddy/workspace/.metadata/.plugins/org.eclipse.pde.core/Workway Behaviour Simulation Example/dev.properties -os win32 -ws win32 -arch x86_64 -consoleLog
+
+!ENTRY org.apache.log4j 4 0 2018-08-15 15:29:26.270
+!MESSAGE portico.lrc.jgroups  - FAILURE createFederation: already exists, name=HumanSim
+
+!SESSION 2018-08-15 15:31:17.587 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_171
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=de_DE
+Framework arguments:  -application edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim
+Command-line arguments:  -application edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim -data C:\Users\Freddy\git\WorkwaySimAbstractSimEngineHLA\edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim -dev file:C:/Users/Freddy/workspace/.metadata/.plugins/org.eclipse.pde.core/Workway Behaviour Simulation Example/dev.properties -os win32 -ws win32 -arch x86_64 -consoleLog
+
+!ENTRY org.apache.log4j 4 0 2018-08-15 15:31:24.988
+!MESSAGE portico.lrc.jgroups  - FAILURE createFederation: already exists, name=HumanSim
+
+!SESSION 2018-08-15 15:37:42.509 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_171
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=de_DE
+Framework arguments:  -application edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim
+Command-line arguments:  -application edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim -data C:\Users\Freddy\git\WorkwaySimAbstractSimEngineHLA\edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim -dev file:C:/Users/Freddy/workspace/.metadata/.plugins/org.eclipse.pde.core/Workway Behaviour Simulation Example/dev.properties -os win32 -ws win32 -arch x86_64 -consoleLog
+
+!ENTRY org.apache.log4j 4 0 2018-08-15 15:37:50.373
+!MESSAGE portico.lrc.jgroups  - FAILURE createFederation: already exists, name=HumanSim
+
+
+!ENTRY org.eclipse.osgi 4 0 2018-08-15 15:37:59.336
+!MESSAGE Application error
+!STACK 1
+java.lang.IllegalStateException: time point arrived at bus stop was not zero
+	at edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.entities.Human.arriveAtBusStopWalkingTimePointLog(Human.java:367)
+	at edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.events.RegisterAtBusStopHomeEvent.eventRoutine(RegisterAtBusStopHomeEvent.java:32)
+	at edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.events.RegisterAtBusStopHomeEvent.eventRoutine(RegisterAtBusStopHomeEvent.java:1)
+	at de.uka.ipd.sdq.simulation.abstractsimengine.desmoj.DesmoJSimEvent.eventRoutine(DesmoJSimEvent.java:34)
+	at de.uka.ipd.sdq.simulation.abstractsimengine.desmoj.DesmoJSimEvent.eventRoutine(DesmoJSimEvent.java:1)
+	at desmoj.core.simulator.Scheduler.processNextEventNote(Unknown Source)
+	at desmoj.core.simulator.Experiment.proceed(Unknown Source)
+	at desmoj.core.simulator.Experiment.start(Unknown Source)
+	at desmoj.core.simulator.Experiment.start(Unknown Source)
+	at de.uka.ipd.sdq.simulation.abstractsimengine.desmoj.DesmoJExperiment.startSimulator(DesmoJExperiment.java:48)
+	at de.uka.ipd.sdq.simulation.abstractsimengine.AbstractExperiment.start(AbstractExperiment.java:59)
+	at edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.component.WorkwaySimulationExample.start(WorkwaySimulationExample.java:36)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:134)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:388)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:243)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:673)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:610)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1519)
+	at org.eclipse.equinox.launcher.Main.main(Main.java:1492)
+!SESSION 2018-08-15 15:39:52.767 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_171
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=de_DE
+Framework arguments:  -application edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim
+Command-line arguments:  -application edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim -data C:\Users\Freddy\git\WorkwaySimAbstractSimEngineHLA\edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim -dev file:C:/Users/Freddy/workspace/.metadata/.plugins/org.eclipse.pde.core/Workway Behaviour Simulation Example/dev.properties -os win32 -ws win32 -arch x86_64 -consoleLog
+
+!ENTRY org.apache.log4j 4 0 2018-08-15 15:40:00.524
+!MESSAGE portico.lrc.jgroups  - FAILURE createFederation: already exists, name=HumanSim
+
+!SESSION 2018-08-15 16:17:25.740 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_171
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=de_DE
+Framework arguments:  -application edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim
+Command-line arguments:  -application edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim -data C:\Users\Freddy\git\WorkwaySimAbstractSimEngineHLA\edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim -dev file:C:/Users/Freddy/workspace/.metadata/.plugins/org.eclipse.pde.core/Workway Behaviour Simulation Example/dev.properties -os win32 -ws win32 -arch x86_64 -consoleLog
+
+!ENTRY org.apache.log4j 4 0 2018-08-15 16:17:33.343
+!MESSAGE portico.lrc.jgroups  - FAILURE createFederation: already exists, name=HumanSim
+
+!SESSION 2018-08-15 16:20:57.955 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_171
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=de_DE
+Framework arguments:  -application edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim
+Command-line arguments:  -application edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim -data C:\Users\Freddy\git\WorkwaySimAbstractSimEngineHLA\edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim -dev file:C:/Users/Freddy/workspace/.metadata/.plugins/org.eclipse.pde.core/Workway Behaviour Simulation Example/dev.properties -os win32 -ws win32 -arch x86_64 -consoleLog
+
+!ENTRY org.apache.log4j 4 0 2018-08-15 16:21:05.726
+!MESSAGE portico.lrc.jgroups  - FAILURE createFederation: already exists, name=HumanSim
+
+!SESSION 2018-08-15 16:22:48.367 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_171
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=de_DE
+Framework arguments:  -application edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim
+Command-line arguments:  -application edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim -data C:\Users\Freddy\git\WorkwaySimAbstractSimEngineHLA\edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim -dev file:C:/Users/Freddy/workspace/.metadata/.plugins/org.eclipse.pde.core/Workway Behaviour Simulation Example/dev.properties -os win32 -ws win32 -arch x86_64 -consoleLog
+
+!ENTRY org.apache.log4j 4 0 2018-08-15 16:22:55.788
+!MESSAGE portico.lrc.jgroups  - FAILURE createFederation: already exists, name=HumanSim
+
+
+!ENTRY org.apache.log4j 2 0 2018-08-15 16:23:52.578
+!MESSAGE portico.lrc.jgroups  - Detected that federate [BusFed] may have crashed, investigating...
+
+
+!ENTRY org.apache.log4j 2 0 2018-08-15 16:23:52.712
+!MESSAGE portico.lrc.jgroups  - Federate [BusFed] has crashed. Sending fake resignation because it was too rude to.
+
+!SESSION 2018-08-15 16:37:38.504 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_171
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=de_DE
+Framework arguments:  -application edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim
+Command-line arguments:  -application edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim -data C:\Users\Freddy\git\WorkwaySimAbstractSimEngineHLA\edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim -dev file:C:/Users/Freddy/workspace/.metadata/.plugins/org.eclipse.pde.core/Workway Behaviour Simulation Example/dev.properties -os win32 -ws win32 -arch x86_64 -consoleLog
+
+!ENTRY org.apache.log4j 4 0 2018-08-15 16:37:46.154
+!MESSAGE portico.lrc.jgroups  - FAILURE createFederation: already exists, name=HumanSim
+
+!SESSION 2018-08-15 16:41:51.815 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_171
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=de_DE
+Framework arguments:  -application edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim
+Command-line arguments:  -application edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim -data C:\Users\Freddy\git\WorkwaySimAbstractSimEngineHLA\edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim -dev file:C:/Users/Freddy/workspace/.metadata/.plugins/org.eclipse.pde.core/Workway Behaviour Simulation Example/dev.properties -os win32 -ws win32 -arch x86_64 -consoleLog
+
+!ENTRY org.apache.log4j 4 0 2018-08-15 16:41:59.503
+!MESSAGE portico.lrc.jgroups  - FAILURE createFederation: already exists, name=HumanSim
+
+!SESSION 2018-08-15 17:31:38.844 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_171
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=de_DE
+Framework arguments:  -application edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim
+Command-line arguments:  -application edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim -data C:\Users\Freddy\git\WorkwaySimAbstractSimEngineHLA\edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim -dev file:C:/Users/Freddy/workspace/.metadata/.plugins/org.eclipse.pde.core/Workway Behaviour Simulation Example/dev.properties -os win32 -ws win32 -arch x86_64 -consoleLog
+
+!ENTRY org.apache.log4j 4 0 2018-08-15 17:31:47.590
+!MESSAGE portico.lrc.jgroups  - FAILURE createFederation: already exists, name=HumanSim
+
+!SESSION 2018-08-15 17:35:58.225 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_171
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=de_DE
+Framework arguments:  -application edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim
+Command-line arguments:  -application edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim -data C:\Users\Freddy\git\WorkwaySimAbstractSimEngineHLA\edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim -dev file:C:/Users/Freddy/workspace/.metadata/.plugins/org.eclipse.pde.core/Workway Behaviour Simulation Example/dev.properties -os win32 -ws win32 -arch x86_64 -consoleLog
+
+!ENTRY org.apache.log4j 4 0 2018-08-15 17:36:05.960
+!MESSAGE portico.lrc.jgroups  - FAILURE createFederation: already exists, name=HumanSim
+
+!SESSION 2018-08-15 17:39:29.799 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_171
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=de_DE
+Framework arguments:  -application edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim
+Command-line arguments:  -application edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim -data C:\Users\Freddy\git\WorkwaySimAbstractSimEngineHLA\edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim -dev file:C:/Users/Freddy/workspace/.metadata/.plugins/org.eclipse.pde.core/Workway Behaviour Simulation Example/dev.properties -os win32 -ws win32 -arch x86_64 -consoleLog
+
+!ENTRY org.apache.log4j 4 0 2018-08-15 17:39:37.457
+!MESSAGE portico.lrc.jgroups  - FAILURE createFederation: already exists, name=HumanSim
+
+!SESSION 2018-08-15 17:43:31.008 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_171
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=de_DE
+Framework arguments:  -application edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim
+Command-line arguments:  -application edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim -data C:\Users\Freddy\git\WorkwaySimAbstractSimEngineHLA\edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim -dev file:C:/Users/Freddy/workspace/.metadata/.plugins/org.eclipse.pde.core/Workway Behaviour Simulation Example/dev.properties -os win32 -ws win32 -arch x86_64 -consoleLog
+
+!ENTRY org.apache.log4j 4 0 2018-08-15 17:43:39.018
+!MESSAGE portico.lrc.jgroups  - FAILURE createFederation: already exists, name=HumanSim
+
+!SESSION 2018-08-15 17:47:05.615 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_171
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=de_DE
+Framework arguments:  -application edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim
+Command-line arguments:  -application edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim -data C:\Users\Freddy\git\WorkwaySimAbstractSimEngineHLA\edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim -dev file:C:/Users/Freddy/workspace/.metadata/.plugins/org.eclipse.pde.core/Workway Behaviour Simulation Example/dev.properties -os win32 -ws win32 -arch x86_64 -consoleLog
+
+!ENTRY org.apache.log4j 4 0 2018-08-15 17:47:13.374
+!MESSAGE portico.lrc.jgroups  - FAILURE createFederation: already exists, name=HumanSim
+
+!SESSION 2018-08-15 17:50:58.349 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_171
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=de_DE
+Framework arguments:  -application edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim
+Command-line arguments:  -application edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim -data C:\Users\Freddy\git\WorkwaySimAbstractSimEngineHLA\edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim -dev file:C:/Users/Freddy/workspace/.metadata/.plugins/org.eclipse.pde.core/Workway Behaviour Simulation Example/dev.properties -os win32 -ws win32 -arch x86_64 -consoleLog
+
+!ENTRY org.apache.log4j 4 0 2018-08-15 17:51:06.388
+!MESSAGE portico.lrc.jgroups  - FAILURE createFederation: already exists, name=HumanSim
+
+!SESSION 2018-08-15 17:53:17.773 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_171
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=de_DE
+Framework arguments:  -application edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim
+Command-line arguments:  -application edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim -data C:\Users\Freddy\git\WorkwaySimAbstractSimEngineHLA\edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim -dev file:C:/Users/Freddy/workspace/.metadata/.plugins/org.eclipse.pde.core/Workway Behaviour Simulation Example/dev.properties -os win32 -ws win32 -arch x86_64 -consoleLog
+
+!ENTRY org.apache.log4j 4 0 2018-08-15 17:53:25.516
+!MESSAGE portico.lrc.jgroups  - FAILURE createFederation: already exists, name=HumanSim
+
+!SESSION 2018-08-15 17:59:46.281 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_171
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=de_DE
+Framework arguments:  -application edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim
+Command-line arguments:  -application edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim -data C:\Users\Freddy\git\WorkwaySimAbstractSimEngineHLA\edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim -dev file:C:/Users/Freddy/workspace/.metadata/.plugins/org.eclipse.pde.core/Workway Behaviour Simulation Example/dev.properties -os win32 -ws win32 -arch x86_64 -consoleLog
+
+!ENTRY org.apache.log4j 4 0 2018-08-15 17:59:54.053
+!MESSAGE portico.lrc.jgroups  - FAILURE createFederation: already exists, name=HumanSim
+
+!SESSION 2018-08-15 18:16:35.369 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_171
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=de_DE
+Framework arguments:  -application edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim
+Command-line arguments:  -application edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim -data C:\Users\Freddy\git\WorkwaySimAbstractSimEngineHLA\edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim -dev file:C:/Users/Freddy/workspace/.metadata/.plugins/org.eclipse.pde.core/Workway Behaviour Simulation Example/dev.properties -os win32 -ws win32 -arch x86_64 -consoleLog
+
+!ENTRY org.apache.log4j 4 0 2018-08-15 18:16:43.105
+!MESSAGE portico.lrc.jgroups  - FAILURE createFederation: already exists, name=HumanSim
+
+!SESSION 2018-08-15 18:20:08.011 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_171
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=de_DE
+Framework arguments:  -application edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim
+Command-line arguments:  -application edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim -data C:\Users\Freddy\git\WorkwaySimAbstractSimEngineHLA\edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim -dev file:C:/Users/Freddy/workspace/.metadata/.plugins/org.eclipse.pde.core/Workway Behaviour Simulation Example/dev.properties -os win32 -ws win32 -arch x86_64 -consoleLog
+
+!ENTRY org.apache.log4j 4 0 2018-08-15 18:20:15.679
+!MESSAGE portico.lrc.jgroups  - FAILURE createFederation: already exists, name=HumanSim
+
+!SESSION 2018-08-15 18:26:38.863 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_171
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=de_DE
+Framework arguments:  -application edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim
+Command-line arguments:  -application edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim -data C:\Users\Freddy\git\WorkwaySimAbstractSimEngineHLA\edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim -dev file:C:/Users/Freddy/workspace/.metadata/.plugins/org.eclipse.pde.core/Workway Behaviour Simulation Example/dev.properties -os win32 -ws win32 -arch x86_64 -consoleLog
+
+!ENTRY org.apache.log4j 4 0 2018-08-15 18:26:46.548
+!MESSAGE portico.lrc.jgroups  - FAILURE createFederation: already exists, name=HumanSim
+
+!SESSION 2018-08-15 18:32:30.920 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_171
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=de_DE
+Framework arguments:  -application edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim
+Command-line arguments:  -application edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim -data C:\Users\Freddy\git\WorkwaySimAbstractSimEngineHLA\edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim -dev file:C:/Users/Freddy/workspace/.metadata/.plugins/org.eclipse.pde.core/Workway Behaviour Simulation Example/dev.properties -os win32 -ws win32 -arch x86_64 -consoleLog
+
+!ENTRY org.apache.log4j 4 0 2018-08-15 18:32:39.197
+!MESSAGE portico.lrc.jgroups  - FAILURE createFederation: already exists, name=HumanSim
+
+
+!ENTRY org.eclipse.osgi 4 0 2018-08-15 18:33:17.807
+!MESSAGE Application error
+!STACK 1
+java.lang.IndexOutOfBoundsException: Index: 0, Size: 0
+	at java.util.ArrayList.rangeCheck(Unknown Source)
+	at java.util.ArrayList.get(Unknown Source)
+	at edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.component.WorkwayModel.finalise(WorkwayModel.java:108)
+	at de.uka.ipd.sdq.simulation.abstractsimengine.desmoj.DesmoJModel.finalise(DesmoJModel.java:47)
+	at de.uka.ipd.sdq.simulation.abstractsimengine.AbstractExperiment.stop(AbstractExperiment.java:85)
+	at edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.component.WorkwayFederate.advanceTime(WorkwayFederate.java:377)
+	at edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.component.WorkwayFederate.synchronisedAdvancedTime(WorkwayFederate.java:413)
+	at edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.events.WaitForBusAtWorkEvent.eventRoutine(WaitForBusAtWorkEvent.java:28)
+	at edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.events.WaitForBusAtWorkEvent.eventRoutine(WaitForBusAtWorkEvent.java:1)
+	at de.uka.ipd.sdq.simulation.abstractsimengine.desmoj.DesmoJSimEvent.eventRoutine(DesmoJSimEvent.java:34)
+	at de.uka.ipd.sdq.simulation.abstractsimengine.desmoj.DesmoJSimEvent.eventRoutine(DesmoJSimEvent.java:1)
+	at desmoj.core.simulator.Scheduler.processNextEventNote(Unknown Source)
+	at desmoj.core.simulator.Experiment.proceed(Unknown Source)
+	at desmoj.core.simulator.Experiment.start(Unknown Source)
+	at desmoj.core.simulator.Experiment.start(Unknown Source)
+	at de.uka.ipd.sdq.simulation.abstractsimengine.desmoj.DesmoJExperiment.startSimulator(DesmoJExperiment.java:48)
+	at de.uka.ipd.sdq.simulation.abstractsimengine.AbstractExperiment.start(AbstractExperiment.java:59)
+	at edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.component.WorkwaySimulationExample.start(WorkwaySimulationExample.java:36)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:134)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:388)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:243)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:673)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:610)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1519)
+	at org.eclipse.equinox.launcher.Main.main(Main.java:1492)
+!SESSION 2018-08-15 18:37:38.013 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_171
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=de_DE
+Framework arguments:  -application edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim
+Command-line arguments:  -application edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim -data C:\Users\Freddy\git\WorkwaySimAbstractSimEngineHLA\edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim -dev file:C:/Users/Freddy/workspace/.metadata/.plugins/org.eclipse.pde.core/Workway Behaviour Simulation Example/dev.properties -os win32 -ws win32 -arch x86_64 -consoleLog
+
+!ENTRY org.apache.log4j 4 0 2018-08-15 18:37:45.932
+!MESSAGE portico.lrc.jgroups  - FAILURE createFederation: already exists, name=HumanSim
+
+!SESSION 2018-08-15 18:39:58.829 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_171
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=de_DE
+Framework arguments:  -application edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim
+Command-line arguments:  -application edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim -data C:\Users\Freddy\git\WorkwaySimAbstractSimEngineHLA\edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim -dev file:C:/Users/Freddy/workspace/.metadata/.plugins/org.eclipse.pde.core/Workway Behaviour Simulation Example/dev.properties -os win32 -ws win32 -arch x86_64 -consoleLog
+
+!ENTRY org.apache.log4j 4 0 2018-08-15 18:40:06.779
+!MESSAGE portico.lrc.jgroups  - FAILURE createFederation: already exists, name=HumanSim
+
+
+!ENTRY org.apache.log4j 4 0 2018-08-15 18:40:50.131
+!MESSAGE portico.lrc.jgroups  - FAILURE destoryFederation [HumanSim]: doesn't exist
+
+
+!ENTRY org.eclipse.osgi 4 0 2018-08-15 18:40:51.275
+!MESSAGE Application error
+!STACK 1
+java.lang.IndexOutOfBoundsException: Index: 0, Size: 0
+	at java.util.ArrayList.rangeCheck(Unknown Source)
+	at java.util.ArrayList.get(Unknown Source)
+	at edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.component.WorkwayModel.finalise(WorkwayModel.java:108)
+	at de.uka.ipd.sdq.simulation.abstractsimengine.desmoj.DesmoJModel.finalise(DesmoJModel.java:47)
+	at de.uka.ipd.sdq.simulation.abstractsimengine.AbstractExperiment.stop(AbstractExperiment.java:85)
+	at de.uka.ipd.sdq.simulation.abstractsimengine.desmoj.DesmoJExperiment.startSimulator(DesmoJExperiment.java:50)
+	at de.uka.ipd.sdq.simulation.abstractsimengine.AbstractExperiment.start(AbstractExperiment.java:59)
+	at edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.component.WorkwaySimulationExample.start(WorkwaySimulationExample.java:36)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:134)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:388)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:243)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:673)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:610)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1519)
+	at org.eclipse.equinox.launcher.Main.main(Main.java:1492)
+!SESSION 2018-08-15 18:42:56.842 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_171
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=de_DE
+Framework arguments:  -application edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim
+Command-line arguments:  -application edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim -data C:\Users\Freddy\git\WorkwaySimAbstractSimEngineHLA\edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim -dev file:C:/Users/Freddy/workspace/.metadata/.plugins/org.eclipse.pde.core/Workway Behaviour Simulation Example/dev.properties -os win32 -ws win32 -arch x86_64 -consoleLog
+
+!ENTRY org.apache.log4j 4 0 2018-08-15 18:43:04.848
+!MESSAGE portico.lrc.jgroups  - FAILURE createFederation: already exists, name=HumanSim
+
+!SESSION 2018-08-15 18:46:43.015 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_171
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=de_DE
+Framework arguments:  -application edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim
+Command-line arguments:  -application edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim -data C:\Users\Freddy\git\WorkwaySimAbstractSimEngineHLA\edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim -dev file:C:/Users/Freddy/workspace/.metadata/.plugins/org.eclipse.pde.core/Workway Behaviour Simulation Example/dev.properties -os win32 -ws win32 -arch x86_64 -consoleLog
+
+!ENTRY org.apache.log4j 4 0 2018-08-15 18:46:50.726
+!MESSAGE portico.lrc.jgroups  - FAILURE createFederation: already exists, name=HumanSim
+
+!SESSION 2018-08-15 18:50:40.211 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_171
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=de_DE
+Framework arguments:  -application edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim
+Command-line arguments:  -application edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim -data C:\Users\Freddy\git\WorkwaySimAbstractSimEngineHLA\edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim -dev file:C:/Users/Freddy/workspace/.metadata/.plugins/org.eclipse.pde.core/Workway Behaviour Simulation Example/dev.properties -os win32 -ws win32 -arch x86_64 -consoleLog
+
+!ENTRY org.apache.log4j 4 0 2018-08-15 18:50:48.008
+!MESSAGE portico.lrc.jgroups  - FAILURE createFederation: already exists, name=HumanSim
+
+
+!ENTRY org.eclipse.osgi 4 0 2018-08-15 18:51:38.659
+!MESSAGE Application error
+!STACK 1
+java.lang.IndexOutOfBoundsException: Index: 0, Size: 0
+	at java.util.ArrayList.rangeCheck(Unknown Source)
+	at java.util.ArrayList.get(Unknown Source)
+	at edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.component.WorkwayModel.finalise(WorkwayModel.java:108)
+	at de.uka.ipd.sdq.simulation.abstractsimengine.desmoj.DesmoJModel.finalise(DesmoJModel.java:47)
+	at de.uka.ipd.sdq.simulation.abstractsimengine.AbstractExperiment.stop(AbstractExperiment.java:85)
+	at de.uka.ipd.sdq.simulation.abstractsimengine.desmoj.DesmoJExperiment.startSimulator(DesmoJExperiment.java:50)
+	at de.uka.ipd.sdq.simulation.abstractsimengine.AbstractExperiment.start(AbstractExperiment.java:59)
+	at edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.component.WorkwaySimulationExample.start(WorkwaySimulationExample.java:36)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:134)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:388)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:243)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:673)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:610)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1519)
+	at org.eclipse.equinox.launcher.Main.main(Main.java:1492)
+!SESSION 2018-08-15 18:56:06.147 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_171
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=de_DE
+Framework arguments:  -application edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim
+Command-line arguments:  -application edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim -data C:\Users\Freddy\git\WorkwaySimAbstractSimEngineHLA\edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim -dev file:C:/Users/Freddy/workspace/.metadata/.plugins/org.eclipse.pde.core/Workway Behaviour Simulation Example/dev.properties -os win32 -ws win32 -arch x86_64 -consoleLog
+
+!ENTRY org.apache.log4j 4 0 2018-08-15 18:56:14.566
+!MESSAGE portico.lrc.jgroups  - FAILURE createFederation: already exists, name=HumanSim
+
+
+!ENTRY org.eclipse.osgi 4 0 2018-08-15 18:57:25.325
+!MESSAGE Application error
+!STACK 1
+java.lang.IndexOutOfBoundsException: Index: 0, Size: 0
+	at java.util.ArrayList.rangeCheck(Unknown Source)
+	at java.util.ArrayList.get(Unknown Source)
+	at edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.component.WorkwayModel.finalise(WorkwayModel.java:108)
+	at de.uka.ipd.sdq.simulation.abstractsimengine.desmoj.DesmoJModel.finalise(DesmoJModel.java:47)
+	at de.uka.ipd.sdq.simulation.abstractsimengine.AbstractExperiment.stop(AbstractExperiment.java:85)
+	at edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.component.WorkwayFederate.advanceTime(WorkwayFederate.java:377)
+	at edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.component.WorkwayFederate.synchronisedAdvancedTime(WorkwayFederate.java:413)
+	at edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.events.WaitForBusAtWorkEvent.eventRoutine(WaitForBusAtWorkEvent.java:28)
+	at edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.events.WaitForBusAtWorkEvent.eventRoutine(WaitForBusAtWorkEvent.java:1)
+	at de.uka.ipd.sdq.simulation.abstractsimengine.desmoj.DesmoJSimEvent.eventRoutine(DesmoJSimEvent.java:34)
+	at de.uka.ipd.sdq.simulation.abstractsimengine.desmoj.DesmoJSimEvent.eventRoutine(DesmoJSimEvent.java:1)
+	at desmoj.core.simulator.Scheduler.processNextEventNote(Unknown Source)
+	at desmoj.core.simulator.Experiment.proceed(Unknown Source)
+	at desmoj.core.simulator.Experiment.start(Unknown Source)
+	at desmoj.core.simulator.Experiment.start(Unknown Source)
+	at de.uka.ipd.sdq.simulation.abstractsimengine.desmoj.DesmoJExperiment.startSimulator(DesmoJExperiment.java:48)
+	at de.uka.ipd.sdq.simulation.abstractsimengine.AbstractExperiment.start(AbstractExperiment.java:59)
+	at edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.component.WorkwaySimulationExample.start(WorkwaySimulationExample.java:36)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:134)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:388)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:243)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:673)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:610)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1519)
+	at org.eclipse.equinox.launcher.Main.main(Main.java:1492)
+!SESSION 2018-08-15 18:58:58.381 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_171
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=de_DE
+Framework arguments:  -application edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim
+Command-line arguments:  -application edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim -data C:\Users\Freddy\git\WorkwaySimAbstractSimEngineHLA\edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim -dev file:C:/Users/Freddy/workspace/.metadata/.plugins/org.eclipse.pde.core/Workway Behaviour Simulation Example/dev.properties -os win32 -ws win32 -arch x86_64 -consoleLog
+
+!ENTRY org.apache.log4j 4 0 2018-08-15 18:59:06.404
+!MESSAGE portico.lrc.jgroups  - FAILURE createFederation: already exists, name=HumanSim
+
+
+!ENTRY org.eclipse.osgi 4 0 2018-08-15 18:59:51.064
+!MESSAGE Application error
+!STACK 1
+java.lang.IndexOutOfBoundsException: Index: 0, Size: 0
+	at java.util.ArrayList.rangeCheck(Unknown Source)
+	at java.util.ArrayList.get(Unknown Source)
+	at edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.component.WorkwayModel.finalise(WorkwayModel.java:108)
+	at de.uka.ipd.sdq.simulation.abstractsimengine.desmoj.DesmoJModel.finalise(DesmoJModel.java:47)
+	at de.uka.ipd.sdq.simulation.abstractsimengine.AbstractExperiment.stop(AbstractExperiment.java:85)
+	at de.uka.ipd.sdq.simulation.abstractsimengine.desmoj.DesmoJExperiment.startSimulator(DesmoJExperiment.java:50)
+	at de.uka.ipd.sdq.simulation.abstractsimengine.AbstractExperiment.start(AbstractExperiment.java:59)
+	at edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.component.WorkwaySimulationExample.start(WorkwaySimulationExample.java:36)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:134)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:388)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:243)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:673)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:610)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1519)
+	at org.eclipse.equinox.launcher.Main.main(Main.java:1492)
+!SESSION 2018-08-15 19:08:00.700 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_171
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=de_DE
+Framework arguments:  -application edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim
+Command-line arguments:  -application edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim -data C:\Users\Freddy\git\WorkwaySimAbstractSimEngineHLA\edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim -dev file:C:/Users/Freddy/workspace/.metadata/.plugins/org.eclipse.pde.core/Workway Behaviour Simulation Example/dev.properties -os win32 -ws win32 -arch x86_64 -consoleLog
+
+!ENTRY org.apache.log4j 4 0 2018-08-15 19:08:08.539
+!MESSAGE portico.lrc.jgroups  - FAILURE createFederation: already exists, name=HumanSim
+
+
+!ENTRY org.eclipse.osgi 4 0 2018-08-15 19:08:57.381
+!MESSAGE Application error
+!STACK 1
+java.lang.IndexOutOfBoundsException: Index: 0, Size: 0
+	at java.util.ArrayList.rangeCheck(Unknown Source)
+	at java.util.ArrayList.get(Unknown Source)
+	at edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.component.WorkwayModel.finalise(WorkwayModel.java:108)
+	at de.uka.ipd.sdq.simulation.abstractsimengine.desmoj.DesmoJModel.finalise(DesmoJModel.java:47)
+	at de.uka.ipd.sdq.simulation.abstractsimengine.AbstractExperiment.stop(AbstractExperiment.java:85)
+	at de.uka.ipd.sdq.simulation.abstractsimengine.desmoj.DesmoJExperiment.startSimulator(DesmoJExperiment.java:50)
+	at de.uka.ipd.sdq.simulation.abstractsimengine.AbstractExperiment.start(AbstractExperiment.java:59)
+	at edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.component.WorkwaySimulationExample.start(WorkwaySimulationExample.java:36)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:134)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:388)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:243)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:673)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:610)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1519)
+	at org.eclipse.equinox.launcher.Main.main(Main.java:1492)
+!SESSION 2018-08-15 19:17:22.478 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_171
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=de_DE
+Framework arguments:  -application edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim
+Command-line arguments:  -application edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim -data C:\Users\Freddy\git\WorkwaySimAbstractSimEngineHLA\edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim -dev file:C:/Users/Freddy/workspace/.metadata/.plugins/org.eclipse.pde.core/Workway Behaviour Simulation Example/dev.properties -os win32 -ws win32 -arch x86_64 -consoleLog
+
+!ENTRY org.apache.log4j 4 0 2018-08-15 19:17:30.282
+!MESSAGE portico.lrc.jgroups  - FAILURE createFederation: already exists, name=HumanSim
+
+
+!ENTRY org.eclipse.osgi 4 0 2018-08-15 19:18:10.756
+!MESSAGE Application error
+!STACK 1
+java.lang.IndexOutOfBoundsException: Index: 1, Size: 1
+	at java.util.ArrayList.rangeCheck(Unknown Source)
+	at java.util.ArrayList.get(Unknown Source)
+	at edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.component.WorkwayModel.finalise(WorkwayModel.java:108)
+	at de.uka.ipd.sdq.simulation.abstractsimengine.desmoj.DesmoJModel.finalise(DesmoJModel.java:47)
+	at de.uka.ipd.sdq.simulation.abstractsimengine.AbstractExperiment.stop(AbstractExperiment.java:85)
+	at de.uka.ipd.sdq.simulation.abstractsimengine.desmoj.DesmoJExperiment.startSimulator(DesmoJExperiment.java:50)
+	at de.uka.ipd.sdq.simulation.abstractsimengine.AbstractExperiment.start(AbstractExperiment.java:59)
+	at edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.component.WorkwaySimulationExample.start(WorkwaySimulationExample.java:36)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:134)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:388)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:243)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:673)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:610)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1519)
+	at org.eclipse.equinox.launcher.Main.main(Main.java:1492)
+!SESSION 2018-08-15 19:20:53.142 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_171
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=de_DE
+Framework arguments:  -application edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim
+Command-line arguments:  -application edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim -data C:\Users\Freddy\git\WorkwaySimAbstractSimEngineHLA\edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim -dev file:C:/Users/Freddy/workspace/.metadata/.plugins/org.eclipse.pde.core/Workway Behaviour Simulation Example/dev.properties -os win32 -ws win32 -arch x86_64 -consoleLog
+
+!ENTRY org.apache.log4j 4 0 2018-08-15 19:21:01.715
+!MESSAGE portico.lrc.jgroups  - FAILURE createFederation: already exists, name=HumanSim
+
+
+!ENTRY org.eclipse.osgi 4 0 2018-08-15 19:21:40.790
+!MESSAGE Application error
+!STACK 1
+java.lang.IndexOutOfBoundsException: Index: 0, Size: 0
+	at java.util.ArrayList.rangeCheck(Unknown Source)
+	at java.util.ArrayList.get(Unknown Source)
+	at edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.component.WorkwayModel.finalise(WorkwayModel.java:108)
+	at de.uka.ipd.sdq.simulation.abstractsimengine.desmoj.DesmoJModel.finalise(DesmoJModel.java:47)
+	at de.uka.ipd.sdq.simulation.abstractsimengine.AbstractExperiment.stop(AbstractExperiment.java:85)
+	at de.uka.ipd.sdq.simulation.abstractsimengine.desmoj.DesmoJExperiment.startSimulator(DesmoJExperiment.java:50)
+	at de.uka.ipd.sdq.simulation.abstractsimengine.AbstractExperiment.start(AbstractExperiment.java:59)
+	at edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.component.WorkwaySimulationExample.start(WorkwaySimulationExample.java:36)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:134)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:388)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:243)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:673)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:610)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1519)
+	at org.eclipse.equinox.launcher.Main.main(Main.java:1492)
+!SESSION 2018-08-15 19:23:31.147 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_171
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=de_DE
+Framework arguments:  -application edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim
+Command-line arguments:  -application edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim -data C:\Users\Freddy\git\WorkwaySimAbstractSimEngineHLA\edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim -dev file:C:/Users/Freddy/workspace/.metadata/.plugins/org.eclipse.pde.core/Workway Behaviour Simulation Example/dev.properties -os win32 -ws win32 -arch x86_64 -consoleLog
+
+!ENTRY org.apache.log4j 4 0 2018-08-15 19:23:38.880
+!MESSAGE portico.lrc.jgroups  - FAILURE createFederation: already exists, name=HumanSim
+
+!SESSION 2018-08-15 19:25:42.077 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_171
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=de_DE
+Framework arguments:  -application edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim
+Command-line arguments:  -application edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim -data C:\Users\Freddy\git\WorkwaySimAbstractSimEngineHLA\edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim -dev file:C:/Users/Freddy/workspace/.metadata/.plugins/org.eclipse.pde.core/Workway Behaviour Simulation Example/dev.properties -os win32 -ws win32 -arch x86_64 -consoleLog
+
+!ENTRY org.apache.log4j 4 0 2018-08-15 19:25:49.981
+!MESSAGE portico.lrc.jgroups  - FAILURE createFederation: already exists, name=HumanSim
+
+!SESSION 2018-08-15 19:28:11.688 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_171
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=de_DE
+Framework arguments:  -application edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim
+Command-line arguments:  -application edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim -data C:\Users\Freddy\git\WorkwaySimAbstractSimEngineHLA\edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim -dev file:C:/Users/Freddy/workspace/.metadata/.plugins/org.eclipse.pde.core/Workway Behaviour Simulation Example/dev.properties -os win32 -ws win32 -arch x86_64 -consoleLog
+
+!ENTRY org.apache.log4j 4 0 2018-08-15 19:28:19.382
+!MESSAGE portico.lrc.jgroups  - FAILURE createFederation: already exists, name=HumanSim
+
+!SESSION 2018-08-16 07:12:16.478 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_171
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=de_DE
+Framework arguments:  -application edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim
+Command-line arguments:  -application edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim -data C:\Users\Freddy\git\WorkwaySimAbstractSimEngineHLA\edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim -dev file:C:/Users/Freddy/workspace/.metadata/.plugins/org.eclipse.pde.core/Workway Behaviour Simulation Example/dev.properties -os win32 -ws win32 -arch x86_64 -consoleLog
+
+!ENTRY org.apache.log4j 4 0 2018-08-16 07:12:24.262
+!MESSAGE portico.lrc.jgroups  - FAILURE createFederation: already exists, name=HumanSim
+
+!SESSION 2018-08-16 07:15:12.667 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_171
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=de_DE
+Framework arguments:  -application edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim
+Command-line arguments:  -application edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim -data C:\Users\Freddy\git\WorkwaySimAbstractSimEngineHLA\edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim -dev file:C:/Users/Freddy/workspace/.metadata/.plugins/org.eclipse.pde.core/Workway Behaviour Simulation Example/dev.properties -os win32 -ws win32 -arch x86_64 -consoleLog
+
+!ENTRY org.apache.log4j 4 0 2018-08-16 07:15:20.424
+!MESSAGE portico.lrc.jgroups  - FAILURE createFederation: already exists, name=HumanSim
+
+!SESSION 2018-08-16 07:23:43.842 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_171
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=de_DE
+Framework arguments:  -application edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim
+Command-line arguments:  -application edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim -data C:\Users\Freddy\git\WorkwaySimAbstractSimEngineHLA\edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim -dev file:C:/Users/Freddy/workspace/.metadata/.plugins/org.eclipse.pde.core/Workway Behaviour Simulation Example/dev.properties -os win32 -ws win32 -arch x86_64 -consoleLog
+
+!ENTRY org.apache.log4j 4 0 2018-08-16 07:23:51.380
+!MESSAGE portico.lrc.jgroups  - FAILURE createFederation: already exists, name=HumanSim
+
+!SESSION 2018-08-16 07:25:03.193 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_171
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=de_DE
+Framework arguments:  -application edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim
+Command-line arguments:  -application edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim -data C:\Users\Freddy\git\WorkwaySimAbstractSimEngineHLA\edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim -dev file:C:/Users/Freddy/workspace/.metadata/.plugins/org.eclipse.pde.core/Workway Behaviour Simulation Example/dev.properties -os win32 -ws win32 -arch x86_64 -consoleLog
+
+!ENTRY org.apache.log4j 4 0 2018-08-16 07:25:12.376
+!MESSAGE portico.lrc.jgroups  - FAILURE createFederation: already exists, name=HumanSim
+
+
+!ENTRY org.apache.log4j 4 0 2018-08-16 07:28:06.881
+!MESSAGE portico.lrc.jgroups  - Member [ddcebdb6-b72c-4e29-ab8a-f4c8d7f5ca1c] apparently destroyed federation [HumanSim], but we didn't know it existed, ignoring...
+

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         id="edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim"
+         name="Workway Behaviour Simulation Example"
+         point="org.eclipse.core.runtime.applications">
+      <application
+            cardinality="singleton-global"
+            thread="main"
+            visible="true">
+         <run
+               class="edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.component.WorkwaySimulationExample">
+         </run>
+      </application>
+   </extension>
+
+</plugin>
