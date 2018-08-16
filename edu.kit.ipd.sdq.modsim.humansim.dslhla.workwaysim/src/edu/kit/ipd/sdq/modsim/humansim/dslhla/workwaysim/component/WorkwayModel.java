@@ -25,7 +25,7 @@ import edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.util.Utils;
 import hla.rti1516e.exceptions.RTIexception;
 
 
-public class WorkwayModel extends AbstractSimulationModel{
+public class WorkwayModel extends AbstractSimulationModel implements Runnable{
 
 	 private boolean PROCESS_ORIENTED = false;
 	 
@@ -41,6 +41,12 @@ public class WorkwayModel extends AbstractSimulationModel{
 	 private WorkwayFederate component;
 	 
 	 private boolean scanning;
+	 
+	 private LinkedList<WorkwayModel> models;
+	 private Human human;
+	 private int id;
+	 
+	 private boolean finished = false;
 
 	public WorkwayModel(ISimulationConfig config, ISimEngineFactory factory) {
 		super(config, factory);
@@ -55,14 +61,16 @@ public class WorkwayModel extends AbstractSimulationModel{
         
             // schedule a process for each bus
             
-        	
-        	// schedule a process for each human
 		try {
-			component.runFederate("WorkwayFed");
+			component.runFederate("WorkwayFed" + id);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		
+		
+        	// schedule a process for each human
+		
 	}
 	
 	public void finalise() {
@@ -72,6 +80,22 @@ public class WorkwayModel extends AbstractSimulationModel{
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		
+		finished = true;
+		
+		int countFinished = 0;
+		
+		while(countFinished != HumanSimValues.NUM_HUMANS){
+			countFinished = 0;
+			for (WorkwayModel model : models) {
+				if(model.finished){
+					countFinished++;
+				}
+			}
+		}
+		
+		if(this.getId() == 0){
+		
 		
 		System.out.println("Writing Data");
 	 	Double finalTime = (System.nanoTime() - startTime) / Math.pow(10, 9);
@@ -84,8 +108,8 @@ public class WorkwayModel extends AbstractSimulationModel{
 		
 		int getMaxNumValues = 0;
 	 	
-	 	for (Human human : humans) {
-	 		
+	 	for (WorkwayModel model : models) {
+	 		Human human = model.getHuman();
 	 		file_header += human.getName() + CSVHandler.CSV_DELIMITER;
 	 		behaviourMarker += human.getBehaviour().toString() + CSVHandler.CSV_DELIMITER;
 	 		System.out.println("Human " + human.getName() + " is in State " + human.getState() + " and is "+ human.getBehaviour().toString());
@@ -99,17 +123,24 @@ public class WorkwayModel extends AbstractSimulationModel{
 	 	
 	 	for(int i = 0; i < getMaxNumValues; i++){
 	 		
-	 		for(int j = 0; j < humans.size(); j++){
-	 			ArrayList<Duration> away = humans.get(j).getAwayFromHomeTimes();
-			 	ArrayList<Duration> driven = humans.get(j).getDrivingTimes();
-			 	ArrayList<Duration> waited = humans.get(j).getBusWaitingTimes();
-			 	ArrayList<Duration> free = humans.get(j).getFreeTimes();
+	 		for(int j = 0; j < models.size(); j++){
+	 			
+	 			Human human = models.get(j).getHuman();
+	 			ArrayList<Duration> away = human.getAwayFromHomeTimes();
+			 	ArrayList<Duration> driven = human.getDrivingTimes();
+			 	ArrayList<Duration> waited = human.getBusWaitingTimes();
+			 	ArrayList<Duration> free = human.getFreeTimes();
 			 	
+//			 	System.out.println(away.size());
+//			 	System.out.println(driven.size());
+//			 	System.out.println(waited.size());
+//			 	System.out.println(free.size());
+//			 	
 			 	if(away.size() > i){
 			 		csvAway += Math.round(away.get(i).toHours().value()*100.00)/100.00;
 			 		csvDrivingTimes += Math.round(driven.get(i).toMinutes().value()*100.00)/100.00;
 			 		csvWaitingAtStation += Math.round(waited.get(i).toMinutes().value()*100.00)/100.00;
-			 		csvFreeTimes += Math.round(free.get(i).toMinutes().value()*100.00)/100.00;
+			 		csvFreeTimes += Math.round(free.get(i).toHours().value()*100.00)/100.00;
 			 	} else {
 			 		csvAway += "-1";
 			 		csvDrivingTimes += "-1";
@@ -117,7 +148,7 @@ public class WorkwayModel extends AbstractSimulationModel{
 			 		csvFreeTimes += "-1";
 			 	}
 			 	
-			 	if(j < humans.size()-1){
+			 	if(j < models.size()-1){
 			 		csvAway += CSVHandler.CSV_DELIMITER;
 			 		csvDrivingTimes += CSVHandler.CSV_DELIMITER;
 			 		csvWaitingAtStation += CSVHandler.CSV_DELIMITER;
@@ -193,7 +224,8 @@ public class WorkwayModel extends AbstractSimulationModel{
 	       	
 	       	CSVHandler.readCSVAndAppend("ExecutionTimes", s + CSVHandler.CSV_DELIMITER);
 	       	
-	       	
+		}
+		System.out.println("Finalized in " + getId());
 	}
 
     /**
@@ -218,20 +250,18 @@ public class WorkwayModel extends AbstractSimulationModel{
     
     public void startSimulation(){
     	
-    	for (Human human : humans) {
-			
-		
+    	
     	  if (PROCESS_ORIENTED) {
               // schedule a process for each bus
               
     	  } else {
     		  if(human.willWalk()){
-      			new HumanWalksDirectlyToWorkEvent(this, human.getName() + "walks directly").schedule(human,0);
+      			new HumanWalksDirectlyToWorkEvent(this, human.getName() + "walks directly").schedule(human, component.getCurrentFedTime());
       		} else {
-      			new WalkToBusStopAtHomeEvent(this, human.getName() + "walks to bus station").schedule(human ,0);
+      			new WalkToBusStopAtHomeEvent(this, human.getName() + "walks to bus station").schedule(human , component.getCurrentFedTime());
       		}
     	  }
-    	}
+    	
     }
 
 	public WorkwayFederate getComponent() {
@@ -330,7 +360,7 @@ public class WorkwayModel extends AbstractSimulationModel{
 	}
 	
 	public void initialiseHumans(){
-		for(int i = 0; i < HumanSimValues.NUM_HUMANS; i++){
+		
     		//new HumanProcess(new Human(stop1, stop3, this, "Bob" + i), bus).scheduleAt(0);
     		int homeBS = 0;
     		int workBS = 0;
@@ -341,11 +371,44 @@ public class WorkwayModel extends AbstractSimulationModel{
     		}
     		
     		
-    		Human hu = new Human(stops.get(homeBS), stops.get(workBS), this, "Bob" + i);
-    		humans.add(hu);
+    		this.human = new Human(stops.get(homeBS), stops.get(workBS), this, "Bob" + id);
+    		
     		//System.out.println("Added: " + hu.getName());
         //new PassengerArrivalEvent(Duration.seconds(2.0), this, "BS").schedule(stop1, 0);
-		}
+		
+	}
+
+	@Override
+	public void run() {
+		getSimulationControl().start();
+		System.out.println("Started control");
+		
+		
+		
+	}
+
+	public LinkedList<WorkwayModel> getModels() {
+		return models;
+	}
+
+	public void setModels(LinkedList<WorkwayModel> models) {
+		this.models = models;
+	}
+
+	public Human getHuman() {
+		return human;
+	}
+
+	public void setHuman(Human human) {
+		this.human = human;
+	}
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
 	}
 	
 

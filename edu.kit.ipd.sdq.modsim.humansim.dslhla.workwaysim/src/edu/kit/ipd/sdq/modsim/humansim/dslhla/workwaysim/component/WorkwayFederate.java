@@ -126,7 +126,6 @@ public class WorkwayFederate{
 		
 		log(fedInfoStr + "Creating Federation");
 		try {
-			System.out.println((new File("FOMS/HumanSimFOM.xml")).toURI().toURL() );
 			URL[] modules = new URL[] { (new File("FOMS/HumanSimFOM.xml")).toURI().toURL() };
 
 			rtiamb.createFederationExecution("HumanSim", modules);
@@ -440,8 +439,8 @@ public class WorkwayFederate{
 	
 		simulation.initialiseHumans();
 		
-		for (Human human : simulation.getHumans()) {
-			
+		Human human = simulation.getHuman();
+
 //		System.out.println("Initialising: " + human.getName());
 		ObjectInstanceHandle oih = registerHumanObject();
 		
@@ -456,7 +455,7 @@ public class WorkwayFederate{
 		HLAfloat64Time time = timeFactory.makeTime(fedamb.federateTime + fedamb.federateLookahead);
 //		System.out.print("Updating Values");
 		rtiamb.updateAttributeValues(human.getOih(), attributes, generateTag(), time);
-		}
+		
 		
 	}
 	
@@ -573,7 +572,7 @@ public class WorkwayFederate{
 			}
 		}
 		
-		//log(human, "Setting Collected to " + collected);
+		Utils.log(human, "Setting Collected to " + collected);
 		switch (collected) {
 		case "True":
 			human.setCollected(true);
@@ -596,13 +595,11 @@ public class WorkwayFederate{
 
 		
 		//log("Got Update Handle:" + oih.toString());
-		
-		for (Human human : simulation.getHumans()) {
-			if(human.getOih().equals(oih)){
-				handleHumanAttributesUpdate(human, attributes);
+		if(simulation.getHuman() != null && simulation.getHuman().getOih().equals(oih)) {
+				handleHumanAttributesUpdate(simulation.getHuman(), attributes);
 				return;
 			}
-		}
+
 		
 		for (BusStop busStop : simulation.getStops()) {
 			if(busStop.getOih().equals(oih)){
