@@ -114,35 +114,35 @@ public class WorkwayFederate{
 	public void runFederate(String fedName) throws Exception{
 
 		this.federateName = fedName;
-		log(fedInfoStr + "Creating RTIambassador");
+//		log(fedInfoStr + "Creating RTIambassador");
 		rtiamb = RtiFactoryFactory.getRtiFactory().getRtiAmbassador();
 		encoderFactory = RtiFactoryFactory.getRtiFactory().getEncoderFactory();
 
 	
 		
-		log(fedInfoStr + "Connecting");
+//		log(fedInfoStr + "Connecting");
 		fedamb = new WorkwayFederateAmbassador(this);
 		rtiamb.connect(fedamb, CallbackModel.HLA_EVOKED);
 		
-		log(fedInfoStr + "Creating Federation");
-		try {
-			URL[] modules = new URL[] { (new File("FOMS/HumanSimFOM.xml")).toURI().toURL() };
-
-			rtiamb.createFederationExecution("HumanSim", modules);
-			log(fedInfoStr + "Created Federation");
-		} catch (FederationExecutionAlreadyExists exists) {
-			log(fedInfoStr + "Didn't create federation, it already existed");
-		} catch (MalformedURLException urle) {
-			log(fedInfoStr + "Exception loading one of the FOM modules from disk: " + urle.getMessage());
-			urle.printStackTrace();
-			return;
-		}
-		
+//		log(fedInfoStr + "Creating Federation");
+//		try {
+//			URL[] modules = new URL[] { (new File("FOMS/HumanSimFOM.xml")).toURI().toURL() };
+//
+//			rtiamb.createFederationExecution("HumanSim", modules);
+////			log(fedInfoStr + "Created Federation");
+//		} catch (FederationExecutionAlreadyExists exists) {
+////			log(fedInfoStr + "Didn't create federation, it already existed");
+//		} catch (MalformedURLException urle) {
+//			log(fedInfoStr + "Exception loading one of the FOM modules from disk: " + urle.getMessage());
+//			urle.printStackTrace();
+//			return;
+//		}
+//		
 		URL[] joinModules = new URL[] { (new File("FOMS/HumanSimFOM.xml")).toURI().toURL() };
 		rtiamb.joinFederationExecution(federateName, "HumanSim", "HumanSim", joinModules);
 		
 		
-		log(fedInfoStr + "Joined fedration as " + federateName);
+//		log(fedInfoStr + "Joined fedration as " + federateName);
 		
 
 		this.timeFactory = (HLAfloat64TimeFactory) rtiamb.getTimeFactory();
@@ -156,7 +156,7 @@ public class WorkwayFederate{
 		
 		rtiamb.synchronizationPointAchieved(HumanSimValues.READY_TO_RUN);
 
-		log(fedInfoStr + "Before Time Policy Enable");
+//		log(fedInfoStr + "Before Time Policy Enable");
 
 				
 		
@@ -370,6 +370,8 @@ public class WorkwayFederate{
 		while(!success){
 		try{
 		rtiamb.nextMessageRequest( time );
+		
+		success = true;
 		} catch (Exception e){
 			log(e.getMessage());
 			if((getCurrentFedTime() + advancingTo > HumanSimValues.MAX_SIM_TIME.toSeconds().value())){
@@ -377,8 +379,9 @@ public class WorkwayFederate{
 			}
 //			simulation.getSimulationControl().stop();
 		}
+		advancingTo += 0.000001;
+		time = timeFactory.makeTime( advancingTo);
 		
-		success = true;
 		}
 		// wait for the time advance to be granted. ticking will tell the
 		// LRC to start delivering callbacks to the federate
@@ -572,7 +575,7 @@ public class WorkwayFederate{
 			}
 		}
 		
-		Utils.log(human, "Setting Collected to " + collected);
+		//Utils.log(human, "Setting Collected to " + collected);
 		switch (collected) {
 		case "True":
 			human.setCollected(true);

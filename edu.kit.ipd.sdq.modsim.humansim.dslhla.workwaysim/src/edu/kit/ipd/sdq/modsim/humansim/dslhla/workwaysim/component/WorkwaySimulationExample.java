@@ -9,6 +9,7 @@ import org.eclipse.equinox.app.IApplication;
 import org.eclipse.equinox.app.IApplicationContext;
 
 import de.uka.ipd.sdq.simulation.abstractsimengine.ISimulationControl;
+import edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.component.Duration.TimeUnit;
 
 
 public class WorkwaySimulationExample implements IApplication {
@@ -39,15 +40,24 @@ public class WorkwaySimulationExample implements IApplication {
 		}
 		
 	}
-	public Object start(IApplicationContext context) throws Exception {
+	public synchronized Object start(IApplicationContext context) throws Exception {
 		
 		BasicConfigurator.configure();
         Logger.getRootLogger().setLevel(Level.INFO);
-        
+       
+        int spincounter = 0;
         for (int i = 0; i < threads.length; i++) {
 			threads[i] = new Thread(models.get(i));
 			models.get(i).setModels(models);
 			threads[i].start();
+			
+			if(i != 0 && (i % 4) == 0 ){
+				System.out.println("Sleeping");
+				System.out.println("Started " + i + " Human Models");
+				java.util.concurrent.TimeUnit.SECONDS.sleep(20);
+			}
+			
+		
 		}
 
         
