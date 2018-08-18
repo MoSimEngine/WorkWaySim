@@ -10,6 +10,8 @@ import java.util.Random;
 
 import de.uka.ipd.sdq.simulation.abstractsimengine.AbstractSimEntityDelegator;
 import de.uka.ipd.sdq.simulation.abstractsimengine.AbstractSimEventDelegator;
+import de.uka.ipd.sdq.simulation.abstractsimengine.SimulationElement;
+
 import edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.entities.BusStop;
 import edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.entities.Human;
 import edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.util.Utils;
@@ -171,11 +173,11 @@ public class WorkwayFederate{
 		while (fedamb.isReadyToRun == false) {
 			rtiamb.evokeMultipleCallbacks(0.1, 0.2);
 		}
-		log(fedInfoStr + "Time Policy Enabled");
+		//log(fedInfoStr + "Time Policy Enabled");
 		
 		publishAndSubscribe();
 		
-		log(fedInfoStr + "Published and Subscribed");
+		//log(fedInfoStr + "Published and Subscribed");
 		
 	
 		
@@ -352,37 +354,35 @@ public class WorkwayFederate{
 	 * timestep. It will then wait until a notification of the time advance grant
 	 * has been received.
 	 */
-	public void advanceTime( double timestep ) throws RTIexception
+	public synchronized boolean advanceTime( double timestep ) throws RTIexception
 	{
 		
 		double advancingTo = 0;
-		
+		double miniStep = 0.000000001;
 		if(fedamb.federateTime + timestep <= HumanSimValues.MAX_SIM_TIME.toSeconds().value()){
 			advancingTo = fedamb.federateTime + timestep;
 		} else {
-			advancingTo =  HumanSimValues.MAX_SIM_TIME.toSeconds().value() + 0.1;
+			Utils.log(simulation.getHuman(), "Sim overtime - wants to advance to: " + fedamb.federateTime + timestep + " current time: " + fedamb.federateTime);
+			advancingTo =  HumanSimValues.MAX_SIM_TIME.toSeconds().value() + miniStep;
+			return false;
 		}
 		// request the advance
 		fedamb.isAdvancing = true;
 		HLAfloat64Time time = timeFactory.makeTime( advancingTo );
 		boolean success = false;
-		
-		while(!success){
-		try{
+		try {
 		rtiamb.nextMessageRequest( time );
 		
-		success = true;
+		
 		} catch (Exception e){
-			log(e.getMessage());
+			System.out.println(e.getMessage());
+			System.out.println("Desired Time: " + advancingTo + " Currrent Time" + fedamb.federateTime + " RTI time " + rtiamb.queryLogicalTime().toString() );
 			if((getCurrentFedTime() + advancingTo > HumanSimValues.MAX_SIM_TIME.toSeconds().value())){
-				simulation.getSimulationControl().stop();
+				return false;
 			}
 //			simulation.getSimulationControl().stop();
 		}
-		advancingTo += 0.000001;
-		time = timeFactory.makeTime( advancingTo);
-		
-		}
+	
 		// wait for the time advance to be granted. ticking will tell the
 		// LRC to start delivering callbacks to the federate
 		while( fedamb.isAdvancing )
@@ -390,10 +390,11 @@ public class WorkwayFederate{
 			rtiamb.evokeMultipleCallbacks( 0.1, 0.2 );
 		}
 //		System.out.println("New Fed Time: " + fedamb.federateTime);
+		return true;
 	}
 	
 	
-	public void synchronisedAdvancedTime(double timestep, AbstractSimEventDelegator simevent, AbstractSimEntityDelegator simentity ){
+	public synchronized void  synchronisedAdvancedTime(double timestep, AbstractSimEventDelegator simevent, AbstractSimEntityDelegator simentity ){
 //		System.out.println("AbstractSimEngine Time:" + simulation.getSimulationControl().getCurrentSimulationTime());
 //		System.out.println("Federate Time:" + fedamb.federateTime);
 //		System.out.println("TimeStep:" + timestep);
@@ -408,18 +409,39 @@ public class WorkwayFederate{
 //			// TODO Auto-generated catch block
 //			e.printStackTrace();
 //		}
+//		if(timestep != 0.0){
+//			while(simEngineNextTime > getCurrentFedTime()){
+//				realTimeStep = simEngineNextTime - getCurrentFedTime();
+//				try {
+//					if(!advanceTime(realTimeStep)){
+//						
+//						System.out.println("Not Advancing Time");
+//						//simulation.getSimulationControl().stop();
+//						return;
+//					}
+//				} catch (RTIexception e) {
+//					// TODO Auto-generated catch block
+//					e.printStackTrace();
+//				}
+//			}
+//			
+//		}
 		if(timestep != 0.0){
-			while(simEngineNextTime > getCurrentFedTime()){
-				realTimeStep = simEngineNextTime - getCurrentFedTime();
-				try {
-					advanceTime(realTimeStep);
-				} catch (RTIexception e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
-			}
 			
-		}
+			try {
+				if(!advanceTime(timestep)){
+					
+					System.out.println("Not Advancing Time");
+					//simulation.getSimulationControl().stop();
+					return;
+				}
+			} catch (RTIexception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+
+	
+}
 		
 		simevent.schedule(simentity, timestep);
 	}
@@ -431,7 +453,7 @@ public class WorkwayFederate{
 		HLAASCIIstring busStopName = encoderFactory.createHLAASCIIstring(busStop.getName());
 		parameters.put(humanNameRegisterHandle, humanName.toByteArray());
 		parameters.put(busStopNameRegisterHandle, busStopName.toByteArray());
-		HLAfloat64Time time = timeFactory.makeTime(fedamb.federateTime + fedamb.federateLookahead);
+		HLAfloat64Time time = timeFactory.makeTime(fedamb.federateTime + 1.0);
 
 		//log(human, "Sending RegisterAction for Human:" + human.getName() + " to BusStop: " + busStop.getName());
 		rtiamb.sendInteraction( registerAtBusStopHandle, parameters, generateTag(), time);
@@ -455,7 +477,7 @@ public class WorkwayFederate{
 		attributes.put(humanNameAttributeHandle, humanName.toByteArray());
 		HLAASCIIstring destinationString = encoderFactory.createHLAASCIIstring(human.getDestination().getName());
 		attributes.put(destinationHandle, destinationString.toByteArray());
-		HLAfloat64Time time = timeFactory.makeTime(fedamb.federateTime + fedamb.federateLookahead);
+		HLAfloat64Time time = timeFactory.makeTime(fedamb.federateTime + 1.0);
 //		System.out.print("Updating Values");
 		rtiamb.updateAttributeValues(human.getOih(), attributes, generateTag(), time);
 		
@@ -469,7 +491,7 @@ public class WorkwayFederate{
 		
 		HLAASCIIstring destinationString = encoderFactory.createHLAASCIIstring(destination.getName());
 		attributes.put(destinationHandle, destinationString.toByteArray());
-		HLAfloat64Time time = timeFactory.makeTime( fedamb.federateTime + fedamb.federateLookahead);
+		HLAfloat64Time time = timeFactory.makeTime( fedamb.federateTime + 1.0);
 	
 		rtiamb.updateAttributeValues(human.getOih(), attributes, generateTag(), time);
 		
@@ -624,7 +646,7 @@ public class WorkwayFederate{
 		
 		String busStopName = "";
 		
-		log("Received BusStop attribute updates");
+		//log("Received BusStop attribute updates");
 		
 		
 		for(AttributeHandle handle : attributes.keySet()){

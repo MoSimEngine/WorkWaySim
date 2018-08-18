@@ -6,6 +6,7 @@ import java.util.Random;
 import de.uka.ipd.sdq.simulation.abstractsimengine.AbstractSimEntityDelegator;
 import de.uka.ipd.sdq.simulation.abstractsimengine.ISimulationModel;
 import edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.component.Duration;
+import edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.component.HumanSimValues;
 import edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.component.WorkwayModel;
 import edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.util.Utils;
 import hla.rti1516e.ObjectClassHandle;
@@ -93,9 +94,12 @@ public class Human extends AbstractSimEntityDelegator {
 		// start at home
 		position = home;
 		state = HumanState.AT_HOME;
+		if(HumanSimValues.WALKING_ENABLED){
+		behaviour = HumanBehaviour.values()[new Random().nextInt(2)];
+		} else {
+			behaviour = HumanBehaviour.DRIVING_BY_BUS;
+		}
 		
-		//behaviour = HumanBehaviour.values()[new Random().nextInt(2)];
-		behaviour = HumanBehaviour.DRIVING_BY_BUS;
 		
 		destination = workBusStop;
 		

@@ -52,17 +52,17 @@ public class WorkwaySimulationExample implements IApplication {
 			threads[i].start();
 			
 			if(i != 0 && (i % 4) == 0 ){
-				System.out.println("Sleeping");
 				System.out.println("Started " + i + " Human Models");
 				java.util.concurrent.TimeUnit.SECONDS.sleep(20);
 			}
 			
 		
 		}
-
+        System.out.println("Spawned all models - let the simulating commence!");
         
         int closed = 0;
         while(closed != HumanSimValues.NUM_HUMANS){
+        	java.util.concurrent.TimeUnit.MINUTES.sleep(2);
         	closed = 0;
         	for (int i = 0; i < HumanSimValues.NUM_HUMANS; i++) {
     			if(!threads[i].isAlive()){
@@ -71,7 +71,7 @@ public class WorkwaySimulationExample implements IApplication {
     		}
         }
        
-        System.out.println("All closed");
+        System.out.println("All Workway Simulations Closed");
         // run the simulation
        
 

@@ -85,17 +85,24 @@ public class WorkwayModel extends AbstractSimulationModel implements Runnable{
 		
 		int countFinished = 0;
 		
+	
+		if(this.getId() == 0){
+			
 		while(countFinished != HumanSimValues.NUM_HUMANS){
 			countFinished = 0;
+			try {
+				java.util.concurrent.TimeUnit.SECONDS.sleep(20);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 			for (WorkwayModel model : models) {
 				if(model.finished){
-					countFinished++;
+						countFinished++;
 				}
 			}
 		}
-		
-		if(this.getId() == 0){
-		
+			
 		
 		System.out.println("Writing Data");
 	 	Double finalTime = (System.nanoTime() - startTime) / Math.pow(10, 9);
@@ -210,12 +217,14 @@ public class WorkwayModel extends AbstractSimulationModel implements Runnable{
 					throw new IllegalStateException("More than expected files");
 				}	
 	       		
-	       		csvs[i] = csvs[i].replace('.', ',');
+	       		//csvs[i] = csvs[i].replace('.', ',');
 	       		
 	       		
-	       		CSVHandler.writeCSVFile(s, file_header + behaviourMarker + csvs[i]);
+	       		CSVHandler.writeCSVFile(s, csvs[i]);
 	       		
 	        }      	
+	       	
+	       	CSVHandler.writeCSVFile("HumanBehaviour", behaviourMarker);
 	       	
 	       	Double d =  Math.round(finalTime*100.00)/100.00;
 	       	String s = d.toString();
@@ -380,11 +389,7 @@ public class WorkwayModel extends AbstractSimulationModel implements Runnable{
 
 	@Override
 	public void run() {
-		getSimulationControl().start();
-		System.out.println("Started control");
-		
-		
-		
+		getSimulationControl().start();	
 	}
 
 	public LinkedList<WorkwayModel> getModels() {
