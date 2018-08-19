@@ -141,7 +141,7 @@ public class WorkwayFederate{
 //		}
 //		
 		URL[] joinModules = new URL[] { (new File("FOMS/HumanSimFOM.xml")).toURI().toURL() };
-		rtiamb.joinFederationExecution(federateName, "HumanSim", "HumanSim", joinModules);
+		rtiamb.joinFederationExecution(federateName, "HumanSim1", "HumanSim1", joinModules);
 		
 		
 //		log(fedInfoStr + "Joined fedration as " + federateName);
@@ -208,7 +208,7 @@ public class WorkwayFederate{
 		log("Resigned from Federatin");
 		
 		try{
-			rtiamb.destroyFederationExecution("HumanSim");
+			rtiamb.destroyFederationExecution("HumanSim1");
 			log("Destroyed HumanSim federation");
 		} catch (FederationExecutionDoesNotExist fedne){
 			log(" Federation does not exist");
@@ -667,6 +667,10 @@ public class WorkwayFederate{
 	
 	public void addBusStopHandle(ObjectInstanceHandle oih){
 		busStopHandles.add(oih);
+	}
+	
+	public RTIambassador getRTIAmb(){
+		return rtiamb;
 	}
 }
  

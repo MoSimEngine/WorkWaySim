@@ -22,7 +22,17 @@ import edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.events.HumanWalksDirect
 import edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.events.WalkToBusStopAtHomeEvent;
 import edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.util.CSVHandler;
 import edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.util.Utils;
+import hla.rti1516e.ResignAction;
+import hla.rti1516e.exceptions.CallNotAllowedFromWithinCallback;
+import hla.rti1516e.exceptions.FederateNotExecutionMember;
+import hla.rti1516e.exceptions.FederateOwnsAttributes;
+import hla.rti1516e.exceptions.FederatesCurrentlyJoined;
+import hla.rti1516e.exceptions.FederationExecutionDoesNotExist;
+import hla.rti1516e.exceptions.InvalidResignAction;
+import hla.rti1516e.exceptions.NotConnected;
+import hla.rti1516e.exceptions.OwnershipAcquisitionPending;
 import hla.rti1516e.exceptions.RTIexception;
+import hla.rti1516e.exceptions.RTIinternalError;
 
 
 public class WorkwayModel extends AbstractSimulationModel implements Runnable{
@@ -75,8 +85,9 @@ public class WorkwayModel extends AbstractSimulationModel implements Runnable{
 	
 	public void finalise() {
 		try {
-			component.endExecution();
-		} catch (Exception e) {
+			component.getRTIAmb().resignFederationExecution(ResignAction.DELETE_OBJECTS);
+		} catch (InvalidResignAction | OwnershipAcquisitionPending | FederateOwnsAttributes | FederateNotExecutionMember
+				| NotConnected | CallNotAllowedFromWithinCallback | RTIinternalError e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
@@ -233,7 +244,21 @@ public class WorkwayModel extends AbstractSimulationModel implements Runnable{
 	       	
 	       	CSVHandler.readCSVAndAppend("ExecutionTimes", s + CSVHandler.CSV_DELIMITER);
 	       	
+	       	try{
+				try {
+					component.getRTIAmb().destroyFederationExecution("HumanSim1");
+				} catch (NotConnected | RTIinternalError e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				System.out.println("Destroyed HumanSim federation");
+			} catch (FederationExecutionDoesNotExist fedne){
+				System.out.println(" Federation does not exist");
+			} catch (FederatesCurrentlyJoined fcj) {
+				System.out.println("Federates still joined at HumanSim");
+			}
 		}
+		
 		System.out.println("Finalized in " + getId());
 	}
 
