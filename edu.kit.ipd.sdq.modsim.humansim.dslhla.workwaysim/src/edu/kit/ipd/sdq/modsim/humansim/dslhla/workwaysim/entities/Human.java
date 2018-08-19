@@ -62,10 +62,7 @@ public class Human extends AbstractSimEntityDelegator {
 
 	public final Duration WORK_TO_STATION = Duration.minutes(new Random().nextInt(60) + 1);
 	
-	public final Duration WALK_DIRECTLY = Duration.minutes(WORK_TO_STATION.toMinutes().value() + HOME_TO_STATION.toMinutes().value() + Duration.minutes(new Random().nextInt(200) + 1).value());
-	
-	public final Duration DRIVE_BY_TAXI_TO_WORK = Duration.minutes(0.5*WORK_TO_STATION.toMinutes().value() + (new Random().nextInt(50) + 1));
-	public final Duration DRIVE_BY_TAXI_HOME = Duration.minutes(0.5*HOME_TO_STATION.toMinutes().value() + (new Random().nextInt(50) + 1));
+	public final Duration WALK_DIRECTLY = Duration.minutes(Duration.minutes(new Random().nextInt(200) + 1).value());
 	
 	
 	public  final Duration WORKTIME = Duration.hours(8);
