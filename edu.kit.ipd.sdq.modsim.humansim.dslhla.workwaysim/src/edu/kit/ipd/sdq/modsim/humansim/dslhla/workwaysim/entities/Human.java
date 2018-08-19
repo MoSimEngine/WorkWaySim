@@ -58,11 +58,11 @@ public class Human extends AbstractSimEntityDelegator {
 	
 	private volatile boolean collected;
 
-	public final Duration HOME_TO_STATION = Duration.minutes(new Random().nextInt(60) + 1);
+	public Duration HOME_TO_STATION; 
 
-	public final Duration WORK_TO_STATION = Duration.minutes(new Random().nextInt(60) + 1);
+	public Duration WORK_TO_STATION;
 	
-	public final Duration WALK_DIRECTLY = Duration.minutes(Duration.minutes(new Random().nextInt(200) + 1).value());
+	public Duration WALK_DIRECTLY;
 	
 	
 	public  final Duration WORKTIME = Duration.hours(8);
@@ -95,6 +95,16 @@ public class Human extends AbstractSimEntityDelegator {
 		behaviour = HumanBehaviour.values()[new Random().nextInt(2)];
 		} else {
 			behaviour = HumanBehaviour.DRIVING_BY_BUS;
+		}
+		
+		if(HumanSimValues.RANDOMIZED_HUMAN_VALUES){
+			HOME_TO_STATION = Duration.minutes(new Random().nextInt(60) + 1);
+			WORK_TO_STATION = Duration.minutes(new Random().nextInt(60) + 1);
+			WALK_DIRECTLY = Duration.minutes(Duration.minutes(new Random().nextInt(200) + 1).value());
+		} else {
+			HOME_TO_STATION = Duration.minutes(30);
+			WORK_TO_STATION = Duration.minutes(30);
+			WALK_DIRECTLY = Duration.minutes(90);
 		}
 		
 		

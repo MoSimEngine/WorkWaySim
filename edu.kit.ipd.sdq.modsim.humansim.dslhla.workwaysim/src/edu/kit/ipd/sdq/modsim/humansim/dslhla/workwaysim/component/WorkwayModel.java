@@ -155,10 +155,10 @@ public class WorkwayModel extends AbstractSimulationModel implements Runnable{
 //			 	System.out.println(free.size());
 //			 	
 			 	if(away.size() > i){
-			 		csvAway += Math.round(away.get(i).toHours().value()*100.00)/100.00;
-			 		csvDrivingTimes += Math.round(driven.get(i).toMinutes().value()*100.00)/100.00;
-			 		csvWaitingAtStation += Math.round(waited.get(i).toMinutes().value()*100.00)/100.00;
-			 		csvFreeTimes += Math.round(free.get(i).toHours().value()*100.00)/100.00;
+			 		csvAway += away.get(i).toSeconds();
+			 		csvDrivingTimes += driven.get(i).toSeconds();
+			 		csvWaitingAtStation += waited.get(i).toSeconds();
+			 		csvFreeTimes += free.get(i).toSeconds();
 			 	} else {
 			 		csvAway += "-1";
 			 		csvDrivingTimes += "-1";
@@ -228,10 +228,10 @@ public class WorkwayModel extends AbstractSimulationModel implements Runnable{
 					throw new IllegalStateException("More than expected files");
 				}	
 	       		
-	       		//csvs[i] = csvs[i].replace('.', ',');
+	       		csvs[i] = csvs[i].replace('.', ',');
 	       		
 	       		
-	       		CSVHandler.writeCSVFile(s, csvs[i]);
+	       		CSVHandler.writeCSVFile(s, file_header + csvs[i]);
 	       		
 	        }      	
 	       	
@@ -399,9 +399,14 @@ public class WorkwayModel extends AbstractSimulationModel implements Runnable{
     		int homeBS = 0;
     		int workBS = 0;
     		
+    		if(HumanSimValues.RANDOMIZED_HUMAN_STATIONS){
     		while(homeBS == workBS){
     			homeBS = new Random().nextInt(HumanSimValues.NUM_BUSSTOPS);
     			workBS = new Random().nextInt(HumanSimValues.NUM_BUSSTOPS);
+    		}
+    		} else {
+    			homeBS = this.id % 3;
+    			workBS = (this.id % 3) + 1;
     		}
     		
     		

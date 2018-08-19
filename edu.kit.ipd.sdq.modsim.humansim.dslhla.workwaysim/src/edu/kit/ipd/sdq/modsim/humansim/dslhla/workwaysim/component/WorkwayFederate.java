@@ -432,7 +432,7 @@ public class WorkwayFederate{
 				if(!advanceTime(timestep)){
 					
 					System.out.println("Not Advancing Time");
-					//simulation.getSimulationControl().stop();
+				simulation.getSimulationControl().stop();
 					return;
 				}
 			} catch (RTIexception e) {
