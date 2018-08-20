@@ -40,7 +40,7 @@ public class WorkwayModel extends AbstractSimulationModel implements Runnable{
 	 private boolean PROCESS_ORIENTED = false;
 	 
 	 private LinkedList<BusStop> stops;
-	 
+
 	 private double startTime; 
 	 
 	 public int modelRun;
@@ -155,10 +155,10 @@ public class WorkwayModel extends AbstractSimulationModel implements Runnable{
 //			 	System.out.println(free.size());
 //			 	
 			 	if(away.size() > i){
-			 		csvAway += away.get(i).toSeconds();
-			 		csvDrivingTimes += driven.get(i).toSeconds();
-			 		csvWaitingAtStation += waited.get(i).toSeconds();
-			 		csvFreeTimes += free.get(i).toSeconds();
+			 		csvAway += away.get(i).toSeconds().value();
+			 		csvDrivingTimes += driven.get(i).toSeconds().value();
+			 		csvWaitingAtStation += waited.get(i).toSeconds().value();
+			 		csvFreeTimes += free.get(i).toSeconds().value();
 			 	} else {
 			 		csvAway += "-1";
 			 		csvDrivingTimes += "-1";
@@ -292,6 +292,7 @@ public class WorkwayModel extends AbstractSimulationModel implements Runnable{
     		  if(human.willWalk()){
       			new HumanWalksDirectlyToWorkEvent(this, human.getName() + "walks directly").schedule(human, component.getCurrentFedTime());
       		} else {
+      			System.out.println("Starting at " + component.getCurrentFedTime());
       			new WalkToBusStopAtHomeEvent(this, human.getName() + "walks to bus station").schedule(human , component.getCurrentFedTime());
       		}
     	  }
@@ -394,10 +395,38 @@ public class WorkwayModel extends AbstractSimulationModel implements Runnable{
 	}
 	
 	public void initialiseHumans(){
-		
+			BusStop[] tmpStops = new BusStop[3];
+			
+			for ( BusStop stop : stops) {
+			
+				switch (stop.getName()) {
+				case "Stop1":
+					tmpStops[0] = stop;
+					break;
+				case "Stop2":
+					tmpStops[1] = stop;
+					break;
+				case "Stop3":
+					tmpStops[2] = stop;
+					break;
+				default:
+					break;
+				}
+				
+			}
+			
+			stops.clear();
+			stops.add(tmpStops[0]);
+			stops.add(tmpStops[1]);
+			stops.add(tmpStops[2]);
+			
+			
     		//new HumanProcess(new Human(stop1, stop3, this, "Bob" + i), bus).scheduleAt(0);
     		int homeBS = 0;
     		int workBS = 0;
+    		
+    	
+    		
     		
     		if(HumanSimValues.RANDOMIZED_HUMAN_STATIONS){
     		while(homeBS == workBS){
@@ -405,8 +434,8 @@ public class WorkwayModel extends AbstractSimulationModel implements Runnable{
     			workBS = new Random().nextInt(HumanSimValues.NUM_BUSSTOPS);
     		}
     		} else {
-    			homeBS = this.id % 3;
-    			workBS = (this.id % 3) + 1;
+    			homeBS = this.id % 2;
+    			workBS = (this.id % 2) + 1;
     		}
     		
     		

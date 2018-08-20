@@ -33,7 +33,7 @@ public class RegisterAtBusStopWorkEvent extends AbstractSimEventDelegator<Human>
 		if(HumanSimValues.USE_SPIN_WAIT){
 		WaitForBusAtWorkEvent e = new WaitForBusAtWorkEvent(getModel(), "WaitForBusStopWork");
 //		e.schedule(human, 0);
-		m.getComponent().synchronisedAdvancedTime(0, e, human);
+		m.getComponent().synchronisedAdvancedTime(1.0, e, human);
 		return;
 		} else {
 			m.startScanningForHLAEvents();

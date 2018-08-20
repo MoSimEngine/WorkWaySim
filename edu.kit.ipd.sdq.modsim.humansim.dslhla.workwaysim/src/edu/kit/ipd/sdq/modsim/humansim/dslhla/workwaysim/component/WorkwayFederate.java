@@ -11,7 +11,6 @@ import java.util.Random;
 import de.uka.ipd.sdq.simulation.abstractsimengine.AbstractSimEntityDelegator;
 import de.uka.ipd.sdq.simulation.abstractsimengine.AbstractSimEventDelegator;
 import de.uka.ipd.sdq.simulation.abstractsimengine.SimulationElement;
-
 import edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.entities.BusStop;
 import edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.entities.Human;
 import edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.util.Utils;
@@ -369,19 +368,22 @@ public class WorkwayFederate{
 		// request the advance
 		fedamb.isAdvancing = true;
 		HLAfloat64Time time = timeFactory.makeTime( advancingTo );
-		boolean success = false;
-		try {
-		rtiamb.nextMessageRequest( time );
-		
-		
-		} catch (Exception e){
-			System.out.println(e.getMessage());
-			System.out.println("Desired Time: " + advancingTo + " Currrent Time" + fedamb.federateTime + " RTI time " + rtiamb.queryLogicalTime().toString() );
-			if((getCurrentFedTime() + advancingTo > HumanSimValues.MAX_SIM_TIME.toSeconds().value())){
+		if(HumanSimValues.MESSAGE){
+			try{
+			rtiamb.nextMessageRequest( time );
+			} catch (Exception e){
+				log(e.getMessage());
 				return false;
 			}
-//			simulation.getSimulationControl().stop();
-		}
+			} else {
+				try{
+					rtiamb.timeAdvanceRequest( time );
+					} catch (Exception e){
+						log(e.getMessage());
+						return false;
+					}
+			}
+			
 	
 		// wait for the time advance to be granted. ticking will tell the
 		// LRC to start delivering callbacks to the federate
@@ -596,7 +598,7 @@ public class WorkwayFederate{
 				log("Got more attributes than expected");
 			}
 		}
-		
+		//System.out.println("Received Collected at " + "Current time:" + fedamb.federateTime + "SimTime: " + simulation.getSimulationControl().getCurrentSimulationTime());
 		//Utils.log(human, "Setting Collected to " + collected);
 		switch (collected) {
 		case "True":

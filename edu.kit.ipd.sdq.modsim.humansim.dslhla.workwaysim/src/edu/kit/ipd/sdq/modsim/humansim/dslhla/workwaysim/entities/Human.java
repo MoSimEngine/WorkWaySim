@@ -375,13 +375,13 @@ public class Human extends AbstractSimEntityDelegator {
 		if (timePointAtBusStop != 0.0)
 			throw new IllegalStateException("time point arrived at bus stop was not zero");
 		
-//		timePointAtBusStop = getModel().getSimulationControl().getCurrentSimulationTime();
-		timePointAtBusStop = ((WorkwayModel) getModel()).getComponent().getCurrentFedTime();
+		timePointAtBusStop = getModel().getSimulationControl().getCurrentSimulationTime();
+//		timePointAtBusStop = ((WorkwayModel) getModel()).getComponent().getCurrentFedTime();
 	}
 	
 	public void calculateWaitedTime(){
-		//timeWaitedAtBusStop = Duration.seconds(timeWaitedAtBusStop.toSeconds().value() + Duration.seconds(getModel().getSimulationControl().getCurrentSimulationTime() - timePointAtBusStop).value());
-		timeWaitedAtBusStop = Duration.seconds(timeWaitedAtBusStop.toSeconds().value() + Duration.seconds(((WorkwayModel) getModel()).getComponent().getCurrentFedTime() - timePointAtBusStop).value());
+		timeWaitedAtBusStop = Duration.seconds(timeWaitedAtBusStop.toSeconds().value() + Duration.seconds(getModel().getSimulationControl().getCurrentSimulationTime() - timePointAtBusStop).value());
+//		timeWaitedAtBusStop = Duration.seconds(timeWaitedAtBusStop.toSeconds().value() + Duration.seconds(((WorkwayModel) getModel()).getComponent().getCurrentFedTime() - timePointAtBusStop).value());
 		timePointAtBusStop = 0.0;
 		//Utils.log(this, "Caluclated New Waitingtime: " + timeWaitedAtBusStop.toSeconds().value() );
 	}
@@ -390,14 +390,14 @@ public class Human extends AbstractSimEntityDelegator {
 		if (timePointCollected != 0.0)
 			throw new IllegalStateException("time point arrived at bus stop was not zero, was:" + timePointCollected);
 		
-		//timePointCollected = this.getModel().getSimulationControl().getCurrentSimulationTime();
-		timePointCollected = ((WorkwayModel) getModel()).getComponent().getCurrentFedTime();
+		timePointCollected = this.getModel().getSimulationControl().getCurrentSimulationTime();
+//		timePointCollected = ((WorkwayModel) getModel()).getComponent().getCurrentFedTime();
 		//System.out.println("Human" + this.getName() + "collected at" + timePointCollected);
 	}
 	
 	public void calculateDrivingTime(){
-		//timeDriven = Duration.seconds(timeDriven.toSeconds().value() + Duration.seconds(getModel().getSimulationControl().getCurrentSimulationTime() - timePointCollected).value());
-		timeDriven = Duration.seconds(timeDriven.toSeconds().value() + Duration.seconds(((WorkwayModel) getModel()).getComponent().getCurrentFedTime() - timePointCollected).value());
+		timeDriven = Duration.seconds(timeDriven.toSeconds().value() + Duration.seconds(getModel().getSimulationControl().getCurrentSimulationTime() - timePointCollected).value());
+//		timeDriven = Duration.seconds(timeDriven.toSeconds().value() + Duration.seconds(((WorkwayModel) getModel()).getComponent().getCurrentFedTime() - timePointCollected).value());
 		timePointCollected = 0.0;
 		//System.out.println("Human" + getName() + "New Time Driven" + timeDrivenEvent.toSeconds().value() + " at time " + getModel().getSimulationControl().getCurrentSimulationTime());
 		//Utils.log(this, "Caluclated New Drivingtime: " + timeDrivenEvent.toSeconds().value() );

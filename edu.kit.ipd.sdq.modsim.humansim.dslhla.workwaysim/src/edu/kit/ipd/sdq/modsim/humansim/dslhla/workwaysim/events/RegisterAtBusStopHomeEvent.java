@@ -36,7 +36,7 @@ public class RegisterAtBusStopHomeEvent extends AbstractSimEventDelegator<Human>
 		if(HumanSimValues.USE_SPIN_WAIT){
 		WaitForBusAtHomeEvent e = new WaitForBusAtHomeEvent(this.getModel(), "Waiting for bus at home event");
 //		e.schedule(human, 0);
-		m.getComponent().synchronisedAdvancedTime(0, e, human);
+		m.getComponent().synchronisedAdvancedTime(1.0, e, human);
 		return;
 		}  else {
 			m.startScanningForHLAEvents();
