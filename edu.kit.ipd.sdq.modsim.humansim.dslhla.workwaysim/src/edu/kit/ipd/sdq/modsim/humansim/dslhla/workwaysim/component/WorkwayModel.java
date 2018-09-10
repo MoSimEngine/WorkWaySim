@@ -475,6 +475,15 @@ public class WorkwayModel extends AbstractSimulationModel implements Runnable{
 		this.id = id;
 	}
 	
+	public void registerHumanAtBusStop(Human human, BusStop busStop){
+		try {
+			this.component.sendRegisterInteraction(human.getName(), busStop.getName() );
+		} catch (RTIexception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
 
 	
 }

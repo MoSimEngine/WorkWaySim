@@ -160,40 +160,6 @@ public class WorkwayFederateAmbassador extends NullFederateAmbassador{
 	public void receiveInteraction(InteractionClassHandle interactionClass, ParameterHandleValueMap theParameters,
 			byte[] tag, OrderType sentOrdering, TransportationTypeHandle theTransport, LogicalTime time,
 			OrderType receivedOrdering, SupplementalReceiveInfo receiveInfo) throws FederateInternalError {
-
-		//federate.log("Received Interaction");
-		if(interactionClass.equals(federate.humanEntersBusHandle)){
-			federate.log("Found enter interaction");
-			String humanName = decodeStringValues(theParameters.get(federate.humanNameEnterBusHandle));
-			String busStopName =  decodeStringValues(theParameters.get(federate.busStopNameEnterHandle));
-			
-			try {
-				federate.handleHumanEntersBusInteraction(humanName, busStopName);
-			} catch (RTIexception e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			} catch (Exception e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-		} else if (interactionClass.equals(federate.humanExitsBusHandle)){
-			federate.log("Found exit interaction");
-			String humanName = decodeStringValues(theParameters.get(federate.humanNameExitBusHandle));
-			String busStopName =  decodeStringValues(theParameters.get(federate.busStopNameExitHandle));
-			
-			try {
-				federate.handleHumanExitsBusInteraction(humanName, busStopName);
-			} catch (RTIexception e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			} catch (Exception e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-		} 
-		else {
-			federate.log("Gotten more interactions than expected");
-		}
 		
 	}
 

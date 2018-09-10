@@ -21,7 +21,7 @@ public class RegisterAtBusStopHomeEvent extends AbstractSimEventDelegator<Human>
 		WorkwayModel m = (WorkwayModel)this.getModel();
 		
 		try {
-			m.getComponent().sendRegisterInteraction(human, human.getHomeBusStop());
+			m.registerHumanAtBusStop(human, human.getHomeBusStop());
 			m.getComponent().changeDestinationAttribute(human, human.getWorkBusStop());
 		} catch (RTIexception e1) {
 			// TODO Auto-generated catch block

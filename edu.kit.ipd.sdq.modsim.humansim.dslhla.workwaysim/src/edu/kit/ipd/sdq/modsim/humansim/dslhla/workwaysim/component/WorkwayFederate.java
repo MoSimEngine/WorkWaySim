@@ -11,6 +11,13 @@ import java.util.Random;
 import de.uka.ipd.sdq.simulation.abstractsimengine.AbstractSimEntityDelegator;
 import de.uka.ipd.sdq.simulation.abstractsimengine.AbstractSimEventDelegator;
 import de.uka.ipd.sdq.simulation.abstractsimengine.SimulationElement;
+import edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.adaption.ByteArrayToInteger32BEConversion;
+import edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.adaption.ByteArrayToStringConversion;
+import edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.adaption.DataMarker;
+import edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.adaption.DataMarkerMapping;
+import edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.adaption.HLAAdapter;
+import edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.adaption.HLAByteArrayAdaption;
+import edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.adaption.HLAByteArrayDerivedElement;
 import edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.entities.BusStop;
 import edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.entities.Human;
 import edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.util.Utils;
@@ -87,7 +94,7 @@ public class WorkwayFederate{
 	public boolean finishedCounted = false;
 	private boolean isFedInit = false;
 	private WorkwayModel simulation;
-	
+	public HLAAdapter adapterService;
 	
 	double startTime;
 
@@ -154,6 +161,29 @@ public class WorkwayFederate{
 		while (fedamb.isAnnounced == false) {
 			rtiamb.evokeMultipleCallbacks(0.1, 0.2);
 		}
+		
+		adapterService = new HLAAdapter();
+		
+
+		DataMarker byteArray = new DataMarker("byteArray");
+		DataMarker stringMarker = new DataMarker("string");
+		DataMarker intMarker = new DataMarker("int");
+		
+		
+		DataMarkerMapping mappingByteArray = new DataMarkerMapping(byteArray, byte[].class.getTypeName());
+		DataMarkerMapping mappingHLAString = new DataMarkerMapping(stringMarker, String.class.getTypeName());
+		DataMarkerMapping mappingHLAInt32 = new DataMarkerMapping(intMarker, Integer.class.getTypeName());
+		
+		
+		HLAByteArrayAdaption byteArrayDesription = new HLAByteArrayAdaption(mappingByteArray);
+		
+	
+		HLAByteArrayDerivedElement HLAStringElement = new HLAByteArrayDerivedElement(mappingHLAString, new ByteArrayToStringConversion(encoderFactory));
+		HLAByteArrayDerivedElement HLAInt32Element = new HLAByteArrayDerivedElement(mappingHLAInt32, new ByteArrayToInteger32BEConversion(encoderFactory));
+		byteArrayDesription.addDerivedElement(HLAStringElement);
+		byteArrayDesription.addDerivedElement(HLAInt32Element);
+		
+		adapterService.addDescription(byteArrayDesription);
 		
 		rtiamb.synchronizationPointAchieved(HumanSimValues.READY_TO_RUN);
 
@@ -448,13 +478,13 @@ public class WorkwayFederate{
 		simevent.schedule(simentity, timestep);
 	}
 	
-	public void sendRegisterInteraction(Human human, BusStop busStop) throws RTIexception{
+	public void sendRegisterInteraction(String human, String busStop) throws RTIexception{
 		
 		ParameterHandleValueMap parameters = rtiamb.getParameterHandleValueMapFactory().create(2);
-		HLAASCIIstring humanName = encoderFactory.createHLAASCIIstring(human.getName());
-		HLAASCIIstring busStopName = encoderFactory.createHLAASCIIstring(busStop.getName());
-		parameters.put(humanNameRegisterHandle, humanName.toByteArray());
-		parameters.put(busStopNameRegisterHandle, busStopName.toByteArray());
+		HLAASCIIstring humanName = encoderFactory.createHLAASCIIstring(human);
+		HLAASCIIstring busStopName = encoderFactory.createHLAASCIIstring(busStop);
+		parameters.put(humanNameRegisterHandle, adapterService.filter(human));
+		parameters.put(busStopNameRegisterHandle, adapterService.filter(busStop));
 		HLAfloat64Time time = timeFactory.makeTime(fedamb.federateTime + 1.0);
 
 		//log(human, "Sending RegisterAction for Human:" + human.getName() + " to BusStop: " + busStop.getName());
@@ -475,10 +505,8 @@ public class WorkwayFederate{
 		human.setOch(humanObjectClassHandle);
 //		System.out.println("Set Handles for: " + human.getName());
 		AttributeHandleValueMap attributes = rtiamb.getAttributeHandleValueMapFactory().create(2);
-		HLAASCIIstring humanName = encoderFactory.createHLAASCIIstring(human.getName());
-		attributes.put(humanNameAttributeHandle, humanName.toByteArray());
-		HLAASCIIstring destinationString = encoderFactory.createHLAASCIIstring(human.getDestination().getName());
-		attributes.put(destinationHandle, destinationString.toByteArray());
+		attributes.put(humanNameAttributeHandle, adapterService.filter(human.getName()));
+		attributes.put(destinationHandle, adapterService.filter(human.getDestination().getName()));
 		HLAfloat64Time time = timeFactory.makeTime(fedamb.federateTime + 1.0);
 //		System.out.print("Updating Values");
 		rtiamb.updateAttributeValues(human.getOih(), attributes, generateTag(), time);
@@ -491,8 +519,7 @@ public class WorkwayFederate{
 		//log(human, "Changing destination to: " + destination.getName());
 		AttributeHandleValueMap attributes = rtiamb.getAttributeHandleValueMapFactory().create(1);
 		
-		HLAASCIIstring destinationString = encoderFactory.createHLAASCIIstring(destination.getName());
-		attributes.put(destinationHandle, destinationString.toByteArray());
+		attributes.put(destinationHandle, adapterService.filter(destination.getName()));
 		HLAfloat64Time time = timeFactory.makeTime( fedamb.federateTime + 1.0);
 	
 		rtiamb.updateAttributeValues(human.getOih(), attributes, generateTag(), time);
@@ -523,28 +550,6 @@ public class WorkwayFederate{
     	 System.out.println(s);
 	}
 	
-
-	
-	public void handleHumanEntersBusInteraction(String humanName, String busStopName) throws Exception{
-		log("HandlingEnterInteraction");
-		if(humanName.equals("") || busStopName.equals("")){
-			log(fedInfoStr + " ERROR: Human or Bus empty");
-		}
-		
-		simulation.scheduleHumanEntersEvent(humanName, busStopName);
-	
-	}
-	
-	
-	public void handleHumanExitsBusInteraction(String humanName, String busStopName) throws Exception{
-		log("HandlingExitInteraction");
-		if(humanName.equals("") || busStopName.equals("")){
-			log(fedInfoStr + " ERROR: Human or Bus empty");
-		}
-		
-		simulation.scheduleHumanExitsEvent(humanName, busStopName);
-	}
-	
 	public void handleBusStopAttributeUpdates(BusStop busStop, AttributeHandleValueMap attributes, ObjectInstanceHandle oih){
 
 		String busStopName = "";
@@ -554,7 +559,7 @@ public class WorkwayFederate{
 		
 		for(AttributeHandle handle : attributes.keySet()){
 			if(handle.equals(busStopNameAttributeHandle)){
-				busStopName = fedamb.decodeStringValues(attributes.get(busStopNameAttributeHandle));
+				busStopName = (String)adapterService.filter(String.class.getTypeName(), attributes.get(busStopNameAttributeHandle));
 			} else {
 				log("Got more than expected");
 			}
