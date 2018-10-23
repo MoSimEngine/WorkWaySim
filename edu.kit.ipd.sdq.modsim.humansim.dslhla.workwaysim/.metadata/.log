@@ -1136,3 +1136,2405 @@ Command-line arguments:  -application edu.kit.ipd.sdq.modsim.humansim.dslhla.wor
 !ENTRY org.apache.log4j 4 0 2018-08-16 07:28:06.881
 !MESSAGE portico.lrc.jgroups  - Member [ddcebdb6-b72c-4e29-ab8a-f4c8d7f5ca1c] apparently destroyed federation [HumanSim], but we didn't know it existed, ignoring...
 
+!SESSION 2018-10-19 16:18:15.547 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_171
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=de_DE
+Framework arguments:  -application edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim
+Command-line arguments:  -application edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim -data C:\Users\Freddy\git\WorkwaySimAbstractSimEngineHLA\edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim -dev file:C:/Users/Freddy/workspace/.metadata/.plugins/org.eclipse.pde.core/Workway Behaviour Simulation Example/dev.properties -os win32 -ws win32 -arch x86_64 -consoleLog
+
+!ENTRY org.apache.log4j 2 0 2018-10-19 16:23:27.624
+!MESSAGE portico.lrc.jgroups  - Detected that federate [unkonwn] may have crashed, investigating...
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-19 16:23:27.736
+!MESSAGE portico.lrc.jgroups  - Unknown channel member crashed. Don't think it was a federate. Ignoring. uuid=d662e52a-6ebf-411d-8485-036f74f91ca5
+
+!SESSION 2018-10-22 15:51:51.504 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_171
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=de_DE
+Framework arguments:  -application edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim
+Command-line arguments:  -application edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim -data C:\Users\Freddy\git\WorkwaySimAbstractSimEngineHLA\edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim -dev file:C:/Users/Freddy/workspace/.metadata/.plugins/org.eclipse.pde.core/Workway Behaviour Simulation Example/dev.properties -os win32 -ws win32 -arch x86_64 -consoleLog
+
+!ENTRY org.apache.log4j 4 0 2018-10-22 15:53:03.408
+!MESSAGE portico.lrc  - FAILURE Exception encountered while processing incoming message: null
+
+!STACK 0
+java.lang.NullPointerException
+	at edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.adaption.HLAAdapter.filter(HLAAdapter.java:32)
+	at edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.component.WorkwayFederateAmbassador.receiveInteraction(WorkwayFederateAmbassador.java:168)
+	at edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.component.WorkwayFederateAmbassador.receiveInteraction(WorkwayFederateAmbassador.java:153)
+	at org.portico.impl.hla1516e.handlers.ReceiveInteractionCallbackHandler.process(ReceiveInteractionCallbackHandler.java:102)
+	at org.portico.utils.messaging.MessageChain.process(MessageChain.java:78)
+	at org.portico.utils.messaging.MessageSink.process(MessageSink.java:187)
+	at org.portico.lrc.LRC.tickProcess(LRC.java:688)
+	at org.portico.lrc.LRC.access$100(LRC.java:106)
+	at org.portico.lrc.LRC$ImmediateCallbackDispatcher.run(LRC.java:834)
+!SESSION 2018-10-22 15:56:21.049 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_171
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=de_DE
+Framework arguments:  -application edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim
+Command-line arguments:  -application edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim -data C:\Users\Freddy\git\WorkwaySimAbstractSimEngineHLA\edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim -dev file:C:/Users/Freddy/workspace/.metadata/.plugins/org.eclipse.pde.core/Workway Behaviour Simulation Example/dev.properties -os win32 -ws win32 -arch x86_64 -consoleLog
+
+!ENTRY org.apache.log4j 2 0 2018-10-22 15:56:49.803
+!MESSAGE portico.lrc.jgroups  - Detected that federate [unkonwn] may have crashed, investigating...
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-22 15:56:49.911
+!MESSAGE portico.lrc.jgroups  - Unknown channel member crashed. Don't think it was a federate. Ignoring. uuid=e3e56e65-ed72-4175-a801-21df292040aa
+
+!SESSION 2018-10-22 16:00:14.772 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_171
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=de_DE
+Framework arguments:  -application edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim
+Command-line arguments:  -application edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim -data C:\Users\Freddy\git\WorkwaySimAbstractSimEngineHLA\edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim -dev file:C:/Users/Freddy/workspace/.metadata/.plugins/org.eclipse.pde.core/Workway Behaviour Simulation Example/dev.properties -os win32 -ws win32 -arch x86_64 -consoleLog
+
+!ENTRY org.apache.log4j 2 0 2018-10-22 16:01:25.850
+!MESSAGE portico.lrc.jgroups  - Detected that federate [unkonwn] may have crashed, investigating...
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-22 16:01:25.959
+!MESSAGE portico.lrc.jgroups  - Unknown channel member crashed. Don't think it was a federate. Ignoring. uuid=2e576ce6-4ad0-4281-874f-97099c20901f
+
+!SESSION 2018-10-22 16:02:03.863 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_171
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=de_DE
+Framework arguments:  -application edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim
+Command-line arguments:  -application edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim -data C:\Users\Freddy\git\WorkwaySimAbstractSimEngineHLA\edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim -dev file:C:/Users/Freddy/workspace/.metadata/.plugins/org.eclipse.pde.core/Workway Behaviour Simulation Example/dev.properties -os win32 -ws win32 -arch x86_64 -consoleLog
+
+!ENTRY org.apache.log4j 2 0 2018-10-22 16:02:35.677
+!MESSAGE portico.lrc.jgroups  - Detected that federate [unkonwn] may have crashed, investigating...
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-22 16:02:35.786
+!MESSAGE portico.lrc.jgroups  - Unknown channel member crashed. Don't think it was a federate. Ignoring. uuid=5d1010af-3992-43fe-8f04-8c301dbe6a96
+
+!SESSION 2018-10-22 16:05:16.847 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_171
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=de_DE
+Framework arguments:  -application edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim
+Command-line arguments:  -application edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim -data C:\Users\Freddy\git\WorkwaySimAbstractSimEngineHLA\edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim -dev file:C:/Users/Freddy/workspace/.metadata/.plugins/org.eclipse.pde.core/Workway Behaviour Simulation Example/dev.properties -os win32 -ws win32 -arch x86_64 -consoleLog
+
+!ENTRY org.apache.log4j 2 0 2018-10-22 16:05:43.047
+!MESSAGE portico.lrc.jgroups  - Detected that federate [unkonwn] may have crashed, investigating...
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-22 16:05:43.155
+!MESSAGE portico.lrc.jgroups  - Unknown channel member crashed. Don't think it was a federate. Ignoring. uuid=fdfd1cf1-92c4-4e5e-bd91-adbb8627c324
+
+!SESSION 2018-10-22 16:06:22.124 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_171
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=de_DE
+Framework arguments:  -application edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim
+Command-line arguments:  -application edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim -data C:\Users\Freddy\git\WorkwaySimAbstractSimEngineHLA\edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim -dev file:C:/Users/Freddy/workspace/.metadata/.plugins/org.eclipse.pde.core/Workway Behaviour Simulation Example/dev.properties -os win32 -ws win32 -arch x86_64 -consoleLog
+
+!ENTRY org.apache.log4j 2 0 2018-10-22 16:06:50.258
+!MESSAGE portico.lrc.jgroups  - Detected that federate [unkonwn] may have crashed, investigating...
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-22 16:06:50.366
+!MESSAGE portico.lrc.jgroups  - Unknown channel member crashed. Don't think it was a federate. Ignoring. uuid=79810d29-f25c-42b3-8181-ec875d1d2c13
+
+
+!ENTRY org.apache.log4j 4 0 2018-10-22 16:07:18.037
+!MESSAGE portico.lrc.jgroups  - FAILURE destoryFederation [HumanSim1]: doesn't exist
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-22 16:07:18.039
+!MESSAGE de.uka.ipd.sdq.simulation.abstractsimengine.AbstractExperiment  - Tried to stop the simulation, which has already been stopped.
+
+!SESSION 2018-10-22 16:20:56.634 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_171
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=de_DE
+Framework arguments:  -application edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim
+Command-line arguments:  -application edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim -data C:\Users\Freddy\git\WorkwaySimAbstractSimEngineHLA\edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim -dev file:C:/Users/Freddy/workspace/.metadata/.plugins/org.eclipse.pde.core/Workway Behaviour Simulation Example/dev.properties -os win32 -ws win32 -arch x86_64 -consoleLog
+
+!ENTRY org.apache.log4j 2 0 2018-10-22 16:21:26.311
+!MESSAGE portico.lrc.jgroups  - Detected that federate [BusFed] may have crashed, investigating...
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-22 16:21:26.419
+!MESSAGE portico.lrc.jgroups  - Federate [BusFed] has crashed. Sending fake resignation because it was too rude to.
+
+!SESSION 2018-10-23 08:23:27.780 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_171
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=de_DE
+Framework arguments:  -application edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim
+Command-line arguments:  -application edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim -data C:\Users\Freddy\git\WorkwaySimAbstractSimEngineHLA\edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim -dev file:C:/Users/Freddy/workspace/.metadata/.plugins/org.eclipse.pde.core/Workway Behaviour Simulation Example/dev.properties -os win32 -ws win32 -arch x86_64 -consoleLog
+
+!ENTRY org.apache.log4j 2 0 2018-10-23 08:24:48.443
+!MESSAGE portico.lrc.jgroups  - Detected that federate [unkonwn] may have crashed, investigating...
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-23 08:24:48.568
+!MESSAGE portico.lrc.jgroups  - Unknown channel member crashed. Don't think it was a federate. Ignoring. uuid=9e04bfbb-cfee-4176-8a27-9cd681de417e
+
+!SESSION 2018-10-23 09:01:13.551 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_171
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=de_DE
+Framework arguments:  -application edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim
+Command-line arguments:  -application edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim -data C:\Users\Freddy\git\WorkwaySimAbstractSimEngineHLA\edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim -dev file:C:/Users/Freddy/workspace/.metadata/.plugins/org.eclipse.pde.core/Workway Behaviour Simulation Example/dev.properties -os win32 -ws win32 -arch x86_64 -consoleLog
+
+!ENTRY org.apache.log4j 2 0 2018-10-23 09:02:48.239
+!MESSAGE portico.lrc.jgroups  - Detected that federate [BusFed] may have crashed, investigating...
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-23 09:02:48.352
+!MESSAGE portico.lrc.jgroups  - Federate [BusFed] has crashed. Sending fake resignation because it was too rude to.
+
+!SESSION 2018-10-23 09:14:30.381 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_171
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=de_DE
+Framework arguments:  -application edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim
+Command-line arguments:  -application edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim -data C:\Users\Freddy\git\WorkwaySimAbstractSimEngineHLA\edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim -dev file:C:/Users/Freddy/workspace/.metadata/.plugins/org.eclipse.pde.core/Workway Behaviour Simulation Example/dev.properties -os win32 -ws win32 -arch x86_64 -consoleLog
+
+!ENTRY org.apache.log4j 2 0 2018-10-23 09:18:15.547
+!MESSAGE portico.lrc.jgroups  - Detected that federate [unkonwn] may have crashed, investigating...
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-23 09:18:15.703
+!MESSAGE portico.lrc.jgroups  - Unknown channel member crashed. Don't think it was a federate. Ignoring. uuid=f9e84e6e-585f-40fe-a27a-205c36b18480
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-23 09:18:25.759
+!MESSAGE portico.lrc.jgroups  - Unknown channel member crashed. Don't think it was a federate. Ignoring. uuid=f9e84e6e-585f-40fe-a27a-205c36b18480
+
+!SESSION 2018-10-23 09:45:10.642 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_171
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=de_DE
+Framework arguments:  -application edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim
+Command-line arguments:  -application edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim -data C:\Users\Freddy\git\WorkwaySimAbstractSimEngineHLA\edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim -dev file:C:/Users/Freddy/workspace/.metadata/.plugins/org.eclipse.pde.core/Workway Behaviour Simulation Example/dev.properties -os win32 -ws win32 -arch x86_64 -consoleLog
+
+!ENTRY org.apache.log4j 2 0 2018-10-23 09:49:14.218
+!MESSAGE portico.lrc.jgroups  - Detected that federate [unkonwn] may have crashed, investigating...
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-23 09:49:14.374
+!MESSAGE portico.lrc.jgroups  - Unknown channel member crashed. Don't think it was a federate. Ignoring. uuid=d46b57d4-8d2e-4a56-92bf-14384c698e7e
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-23 09:49:22.570
+!MESSAGE portico.lrc.jgroups  - Unknown channel member crashed. Don't think it was a federate. Ignoring. uuid=d46b57d4-8d2e-4a56-92bf-14384c698e7e
+
+!SESSION 2018-10-23 10:19:44.425 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_171
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=de_DE
+Framework arguments:  -application edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim
+Command-line arguments:  -application edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim -data C:\Users\Freddy\git\WorkwaySimAbstractSimEngineHLA\edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim -dev file:C:/Users/Freddy/workspace/.metadata/.plugins/org.eclipse.pde.core/Workway Behaviour Simulation Example/dev.properties -os win32 -ws win32 -arch x86_64 -consoleLog
+
+!ENTRY org.apache.log4j 4 0 2018-10-23 10:20:12.947
+!MESSAGE portico.lrc  - FAILURE Exception encountered while processing incoming message: null
+
+!STACK 0
+java.util.ConcurrentModificationException
+	at java.util.HashMap$HashIterator.nextNode(Unknown Source)
+	at java.util.HashMap$KeyIterator.next(Unknown Source)
+	at java.util.Collections$UnmodifiableCollection$1.next(Unknown Source)
+	at org.portico.lrc.services.sync.data.SyncPoint.isSynchronized(SyncPoint.java:210)
+	at org.portico.lrc.services.sync.handlers.incoming.SyncAchievedHandler.process(SyncAchievedHandler.java:70)
+	at org.portico.utils.messaging.MessageChain.process(MessageChain.java:78)
+	at org.portico.utils.messaging.MessageSink.process(MessageSink.java:187)
+	at org.portico.lrc.LRC.tickProcess(LRC.java:688)
+	at org.portico.lrc.LRC.access$100(LRC.java:106)
+	at org.portico.lrc.LRC$ImmediateCallbackDispatcher.run(LRC.java:834)
+!SESSION 2018-10-23 10:20:47.951 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_171
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=de_DE
+Framework arguments:  -application edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim
+Command-line arguments:  -application edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim -data C:\Users\Freddy\git\WorkwaySimAbstractSimEngineHLA\edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim -dev file:C:/Users/Freddy/workspace/.metadata/.plugins/org.eclipse.pde.core/Workway Behaviour Simulation Example/dev.properties -os win32 -ws win32 -arch x86_64 -consoleLog
+
+!ENTRY org.apache.log4j 4 0 2018-10-23 10:24:15.783
+!MESSAGE portico.lrc  - FAILURE Exception encountered while processing incoming message: null
+
+!STACK 0
+java.util.ConcurrentModificationException
+	at java.util.HashMap$HashIterator.nextNode(Unknown Source)
+	at java.util.HashMap$KeyIterator.next(Unknown Source)
+	at org.portico.lrc.services.time.handlers.incoming.TimeAdvanceRequestIncomingHandler.issueAllPossibleAdvances(TimeAdvanceRequestIncomingHandler.java:152)
+	at org.portico.lrc.services.time.handlers.incoming.TimeAdvanceRequestIncomingHandler.process(TimeAdvanceRequestIncomingHandler.java:64)
+	at org.portico.utils.messaging.MessageSink.process(MessageSink.java:187)
+	at org.portico.lrc.LRC.tickProcess(LRC.java:688)
+	at org.portico.lrc.LRC.access$100(LRC.java:106)
+	at org.portico.lrc.LRC$ImmediateCallbackDispatcher.run(LRC.java:834)
+
+!ENTRY org.apache.log4j 2 0 2018-10-23 10:24:27.087
+!MESSAGE portico.lrc.jgroups  - Detected that federate [unkonwn] may have crashed, investigating...
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-23 10:24:27.246
+!MESSAGE portico.lrc.jgroups  - Unknown channel member crashed. Don't think it was a federate. Ignoring. uuid=1010f85e-3f13-4f27-be1f-308a490cd537
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-23 10:24:35.880
+!MESSAGE portico.lrc.jgroups  - Unknown channel member crashed. Don't think it was a federate. Ignoring. uuid=1010f85e-3f13-4f27-be1f-308a490cd537
+
+!SESSION 2018-10-23 11:36:27.797 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_171
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=de_DE
+Framework arguments:  -application edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim
+Command-line arguments:  -application edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim -data C:\Users\Freddy\git\WorkwaySimAbstractSimEngineHLA\edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim -dev file:C:/Users/Freddy/workspace/.metadata/.plugins/org.eclipse.pde.core/Workway Behaviour Simulation Example/dev.properties -os win32 -ws win32 -arch x86_64 -consoleLog
+
+!ENTRY org.apache.log4j 2 0 2018-10-23 11:36:35.847
+!MESSAGE portico.lrc.merger  - Merging FOM Module (file:/C:/Users/Freddy/git/WorkwaySimAbstractSimEngineHLA/edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim/FOMS/HumanSimFOM.xml): Ignoring Interaction Class [HLAinteractionRoot.HumanRegistersAtBusStop], declarations not equivalent. Parameter counts differ (base=3, extension=2)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-23 11:36:35.862
+!MESSAGE portico.lrc.merger  - Merging FOM Module (file:/C:/Users/Freddy/git/WorkwaySimAbstractSimEngineHLA/edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim/FOMS/HumanSimFOM.xml): Ignoring Interaction Class [HLAinteractionRoot.HumanRegistersAtBusStop], declarations not equivalent. Parameter counts differ (base=3, extension=2)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-23 11:36:36.441
+!MESSAGE portico.lrc.merger  - Merging FOM Module (file:/C:/Users/Freddy/git/WorkwaySimAbstractSimEngineHLA/edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim/FOMS/HumanSimFOM.xml): Ignoring Interaction Class [HLAinteractionRoot.HumanRegistersAtBusStop], declarations not equivalent. Parameter counts differ (base=3, extension=2)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-23 11:36:36.456
+!MESSAGE portico.lrc.merger  - Merging FOM Module (file:/C:/Users/Freddy/git/WorkwaySimAbstractSimEngineHLA/edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim/FOMS/HumanSimFOM.xml): Ignoring Interaction Class [HLAinteractionRoot.HumanRegistersAtBusStop], declarations not equivalent. Parameter counts differ (base=3, extension=2)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-23 11:36:36.502
+!MESSAGE portico.lrc.merger  - Merging FOM Module (file:/C:/Users/Freddy/git/WorkwaySimAbstractSimEngineHLA/edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim/FOMS/HumanSimFOM.xml): Ignoring Interaction Class [HLAinteractionRoot.HumanRegistersAtBusStop], declarations not equivalent. Parameter counts differ (base=3, extension=2)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-23 11:36:37.052
+!MESSAGE portico.lrc.merger  - Merging FOM Module (file:/C:/Users/Freddy/git/WorkwaySimAbstractSimEngineHLA/edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim/FOMS/HumanSimFOM.xml): Ignoring Interaction Class [HLAinteractionRoot.HumanRegistersAtBusStop], declarations not equivalent. Parameter counts differ (base=3, extension=2)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-23 11:36:37.055
+!MESSAGE portico.lrc.merger  - Merging FOM Module (file:/C:/Users/Freddy/git/WorkwaySimAbstractSimEngineHLA/edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim/FOMS/HumanSimFOM.xml): Ignoring Interaction Class [HLAinteractionRoot.HumanRegistersAtBusStop], declarations not equivalent. Parameter counts differ (base=3, extension=2)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-23 11:36:37.093
+!MESSAGE portico.lrc.merger  - Merging FOM Module (file:/C:/Users/Freddy/git/WorkwaySimAbstractSimEngineHLA/edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim/FOMS/HumanSimFOM.xml): Ignoring Interaction Class [HLAinteractionRoot.HumanRegistersAtBusStop], declarations not equivalent. Parameter counts differ (base=3, extension=2)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-23 11:36:37.099
+!MESSAGE portico.lrc.merger  - Merging FOM Module (file:/C:/Users/Freddy/git/WorkwaySimAbstractSimEngineHLA/edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim/FOMS/HumanSimFOM.xml): Ignoring Interaction Class [HLAinteractionRoot.HumanRegistersAtBusStop], declarations not equivalent. Parameter counts differ (base=3, extension=2)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-23 11:36:37.644
+!MESSAGE portico.lrc.merger  - Merging FOM Module (file:/C:/Users/Freddy/git/WorkwaySimAbstractSimEngineHLA/edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim/FOMS/HumanSimFOM.xml): Ignoring Interaction Class [HLAinteractionRoot.HumanRegistersAtBusStop], declarations not equivalent. Parameter counts differ (base=3, extension=2)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-23 11:36:37.644
+!MESSAGE portico.lrc.merger  - Merging FOM Module (file:/C:/Users/Freddy/git/WorkwaySimAbstractSimEngineHLA/edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim/FOMS/HumanSimFOM.xml): Ignoring Interaction Class [HLAinteractionRoot.HumanRegistersAtBusStop], declarations not equivalent. Parameter counts differ (base=3, extension=2)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-23 11:36:37.698
+!MESSAGE portico.lrc.merger  - Merging FOM Module (file:/C:/Users/Freddy/git/WorkwaySimAbstractSimEngineHLA/edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim/FOMS/HumanSimFOM.xml): Ignoring Interaction Class [HLAinteractionRoot.HumanRegistersAtBusStop], declarations not equivalent. Parameter counts differ (base=3, extension=2)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-23 11:36:37.704
+!MESSAGE portico.lrc.merger  - Merging FOM Module (file:/C:/Users/Freddy/git/WorkwaySimAbstractSimEngineHLA/edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim/FOMS/HumanSimFOM.xml): Ignoring Interaction Class [HLAinteractionRoot.HumanRegistersAtBusStop], declarations not equivalent. Parameter counts differ (base=3, extension=2)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-23 11:36:37.719
+!MESSAGE portico.lrc.merger  - Merging FOM Module (file:/C:/Users/Freddy/git/WorkwaySimAbstractSimEngineHLA/edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim/FOMS/HumanSimFOM.xml): Ignoring Interaction Class [HLAinteractionRoot.HumanRegistersAtBusStop], declarations not equivalent. Parameter counts differ (base=3, extension=2)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-23 11:36:38.317
+!MESSAGE portico.lrc.merger  - Merging FOM Module (file:/C:/Users/Freddy/git/WorkwaySimAbstractSimEngineHLA/edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim/FOMS/HumanSimFOM.xml): Ignoring Interaction Class [HLAinteractionRoot.HumanRegistersAtBusStop], declarations not equivalent. Parameter counts differ (base=3, extension=2)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-23 11:36:38.319
+!MESSAGE portico.lrc.merger  - Merging FOM Module (file:/C:/Users/Freddy/git/WorkwaySimAbstractSimEngineHLA/edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim/FOMS/HumanSimFOM.xml): Ignoring Interaction Class [HLAinteractionRoot.HumanRegistersAtBusStop], declarations not equivalent. Parameter counts differ (base=3, extension=2)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-23 11:36:38.356
+!MESSAGE portico.lrc.merger  - Merging FOM Module (file:/C:/Users/Freddy/git/WorkwaySimAbstractSimEngineHLA/edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim/FOMS/HumanSimFOM.xml): Ignoring Interaction Class [HLAinteractionRoot.HumanRegistersAtBusStop], declarations not equivalent. Parameter counts differ (base=3, extension=2)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-23 11:36:38.365
+!MESSAGE portico.lrc.merger  - Merging FOM Module (file:/C:/Users/Freddy/git/WorkwaySimAbstractSimEngineHLA/edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim/FOMS/HumanSimFOM.xml): Ignoring Interaction Class [HLAinteractionRoot.HumanRegistersAtBusStop], declarations not equivalent. Parameter counts differ (base=3, extension=2)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-23 11:36:38.367
+!MESSAGE portico.lrc.merger  - Merging FOM Module (file:/C:/Users/Freddy/git/WorkwaySimAbstractSimEngineHLA/edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim/FOMS/HumanSimFOM.xml): Ignoring Interaction Class [HLAinteractionRoot.HumanRegistersAtBusStop], declarations not equivalent. Parameter counts differ (base=3, extension=2)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-23 11:36:38.371
+!MESSAGE portico.lrc.merger  - Merging FOM Module (file:/C:/Users/Freddy/git/WorkwaySimAbstractSimEngineHLA/edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim/FOMS/HumanSimFOM.xml): Ignoring Interaction Class [HLAinteractionRoot.HumanRegistersAtBusStop], declarations not equivalent. Parameter counts differ (base=3, extension=2)
+
+!SESSION 2018-10-23 11:37:25.606 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_171
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=de_DE
+Framework arguments:  -application edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim
+Command-line arguments:  -application edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim -data C:\Users\Freddy\git\WorkwaySimAbstractSimEngineHLA\edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim -dev file:C:/Users/Freddy/workspace/.metadata/.plugins/org.eclipse.pde.core/Workway Behaviour Simulation Example/dev.properties -os win32 -ws win32 -arch x86_64 -consoleLog
+
+!ENTRY org.apache.log4j 2 0 2018-10-23 11:41:32.521
+!MESSAGE portico.lrc.jgroups  - Detected that federate [unkonwn] may have crashed, investigating...
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-23 11:41:32.678
+!MESSAGE portico.lrc.jgroups  - Unknown channel member crashed. Don't think it was a federate. Ignoring. uuid=e1b875d5-beda-4b13-8046-61dfdbc35124
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-23 11:41:42.725
+!MESSAGE portico.lrc.jgroups  - Unknown channel member crashed. Don't think it was a federate. Ignoring. uuid=e1b875d5-beda-4b13-8046-61dfdbc35124
+
+!SESSION 2018-10-23 11:58:53.478 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_171
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=de_DE
+Framework arguments:  -application edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim
+Command-line arguments:  -application edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim -data C:\Users\Freddy\git\WorkwaySimAbstractSimEngineHLA\edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim -dev file:C:/Users/Freddy/workspace/.metadata/.plugins/org.eclipse.pde.core/Workway Behaviour Simulation Example/dev.properties -os win32 -ws win32 -arch x86_64 -consoleLog
+
+!ENTRY org.apache.log4j 2 0 2018-10-23 12:04:33.371
+!MESSAGE portico.lrc.jgroups  - Detected that federate [unkonwn] may have crashed, investigating...
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-23 12:04:33.528
+!MESSAGE portico.lrc.jgroups  - Unknown channel member crashed. Don't think it was a federate. Ignoring. uuid=c00a0a1e-f16e-4e4a-b64b-9350de411068
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-23 12:04:42.114
+!MESSAGE portico.lrc.jgroups  - Unknown channel member crashed. Don't think it was a federate. Ignoring. uuid=c00a0a1e-f16e-4e4a-b64b-9350de411068
+
+!SESSION 2018-10-23 12:59:50.525 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_171
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=de_DE
+Framework arguments:  -application edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim
+Command-line arguments:  -application edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim -data C:\Users\Freddy\git\WorkwaySimAbstractSimEngineHLA\edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim -dev file:C:/Users/Freddy/workspace/.metadata/.plugins/org.eclipse.pde.core/Workway Behaviour Simulation Example/dev.properties -os win32 -ws win32 -arch x86_64 -consoleLog
+
+!ENTRY org.apache.log4j 2 0 2018-10-23 13:00:16.704
+!MESSAGE portico.lrc.jgroups  - Detected that federate [unkonwn] may have crashed, investigating...
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-23 13:00:16.860
+!MESSAGE portico.lrc.jgroups  - Unknown channel member crashed. Don't think it was a federate. Ignoring. uuid=26c18228-a73a-45aa-bb69-1144fc22b3c2
+
+!SESSION 2018-10-23 13:28:30.895 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_171
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=de_DE
+Framework arguments:  -application edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim
+Command-line arguments:  -application edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim -data C:\Users\Freddy\git\WorkwaySimAbstractSimEngineHLA\edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim -dev file:C:/Users/Freddy/workspace/.metadata/.plugins/org.eclipse.pde.core/Workway Behaviour Simulation Example/dev.properties -os win32 -ws win32 -arch x86_64 -consoleLog
+
+!ENTRY org.apache.log4j 2 0 2018-10-23 13:34:13.992
+!MESSAGE portico.lrc.jgroups  - Detected that federate [unkonwn] may have crashed, investigating...
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-23 13:34:14.148
+!MESSAGE portico.lrc.jgroups  - Unknown channel member crashed. Don't think it was a federate. Ignoring. uuid=49453b86-8213-449c-9c11-b996718a9e9f
+
+!SESSION 2018-10-23 13:38:41.498 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_171
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=de_DE
+Framework arguments:  -application edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim
+Command-line arguments:  -application edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim -data C:\Users\Freddy\git\WorkwaySimAbstractSimEngineHLA\edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim -dev file:C:/Users/Freddy/workspace/.metadata/.plugins/org.eclipse.pde.core/Workway Behaviour Simulation Example/dev.properties -os win32 -ws win32 -arch x86_64 -consoleLog
+
+!ENTRY org.apache.log4j 2 0 2018-10-23 13:44:57.885
+!MESSAGE portico.lrc.jgroups  - Detected that federate [unkonwn] may have crashed, investigating...
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-23 13:44:58.042
+!MESSAGE portico.lrc.jgroups  - Unknown channel member crashed. Don't think it was a federate. Ignoring. uuid=f4fbc148-3cab-40cd-9366-a56c8e0b9a7e
+
+!SESSION 2018-10-23 14:00:20.953 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_171
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=de_DE
+Framework arguments:  -application edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim
+Command-line arguments:  -application edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim -data C:\Users\Freddy\git\WorkwaySimAbstractSimEngineHLA\edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim -dev file:C:/Users/Freddy/workspace/.metadata/.plugins/org.eclipse.pde.core/Workway Behaviour Simulation Example/dev.properties -os win32 -ws win32 -arch x86_64 -consoleLog
+
+!ENTRY org.apache.log4j 2 0 2018-10-23 14:08:07.775
+!MESSAGE de.uka.ipd.sdq.simulation.abstractsimengine.AbstractExperiment  - Tried to stop the simulation, which has already been stopped.
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-23 14:08:21.175
+!MESSAGE portico.lrc.jgroups  - Detected that federate [unkonwn] may have crashed, investigating...
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-23 14:08:21.333
+!MESSAGE portico.lrc.jgroups  - Unknown channel member crashed. Don't think it was a federate. Ignoring. uuid=e315cb1a-21fc-4b92-8c59-0098e07c5533
+
+!SESSION 2018-10-23 14:38:53.914 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_171
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=de_DE
+Framework arguments:  -application edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim
+Command-line arguments:  -application edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim -data C:\Users\Freddy\git\WorkwaySimAbstractSimEngineHLA\edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim -dev file:C:/Users/Freddy/workspace/.metadata/.plugins/org.eclipse.pde.core/Workway Behaviour Simulation Example/dev.properties -os win32 -ws win32 -arch x86_64 -consoleLog
+
+!ENTRY org.apache.log4j 2 0 2018-10-23 14:44:29.916
+!MESSAGE portico.lrc.jgroups  - Detected that federate [unkonwn] may have crashed, investigating...
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-23 14:44:30.063
+!MESSAGE portico.lrc.jgroups  - Unknown channel member crashed. Don't think it was a federate. Ignoring. uuid=f95f3049-1dff-43d4-ba27-3e4ca471f382
+
+!SESSION 2018-10-23 14:58:37.816 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_171
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=de_DE
+Framework arguments:  -application edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim
+Command-line arguments:  -application edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim -data C:\Users\Freddy\git\WorkwaySimAbstractSimEngineHLA\edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim -dev file:C:/Users/Freddy/workspace/.metadata/.plugins/org.eclipse.pde.core/Workway Behaviour Simulation Example/dev.properties -os win32 -ws win32 -arch x86_64 -consoleLog
+
+!ENTRY org.eclipse.equinox.ds 2 0 2018-10-23 14:59:10.361
+!MESSAGE [SCR - WorkThread] Timeout occurred! Thread was blocked on processing [QueuedJob] WorkPerformer: org.eclipse.equinox.internal.ds.SCRManager@5a16e1f8; actionType 1
+
+!ENTRY org.eclipse.equinox.ds 2 0 2018-10-23 14:59:10.588
+!MESSAGE [SCR] Enabling components of bundle com.genuitec.eclipse.patches did not complete in 30000 ms 
+
+!ENTRY org.eclipse.osgi 2 0 2018-10-23 14:59:15.822
+!MESSAGE While loading class "com.genuitec.eclipse.theming.ui.internal.ThemingActivator", thread "Thread[Component Resolve Thread (Bundle 692),10,main]" timed out waiting (5015ms) for thread "Thread[Component Resolve Thread,5,main]" to finish starting bundle "org.eclipse.core.runtime_3.12.0.v20160606-1342 [275]". To avoid deadlock, thread "Thread[Component Resolve Thread (Bundle 692),10,main]" is proceeding but "com.genuitec.eclipse.theming.ui.internal.ThemingActivator" may not be fully initialized.
+!STACK 0
+org.osgi.framework.BundleException: Unable to acquire the state change lock for the module: osgi.identity; type="osgi.bundle"; version:Version="3.12.0.v20160606-1342"; osgi.identity="org.eclipse.core.runtime"; singleton:="true" [id=275] STARTED [STARTED]
+	at org.eclipse.osgi.container.Module.lockStateChange(Module.java:337)
+	at org.eclipse.osgi.container.Module.start(Module.java:401)
+	at org.eclipse.osgi.framework.util.SecureAction.start(SecureAction.java:470)
+	at org.eclipse.osgi.internal.hooks.EclipseLazyStarter.postFindLocalClass(EclipseLazyStarter.java:107)
+	at org.eclipse.osgi.internal.loader.classpath.ClasspathManager.findLocalClass(ClasspathManager.java:529)
+	at org.eclipse.osgi.internal.loader.ModuleClassLoader.findLocalClass(ModuleClassLoader.java:325)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findLocalClass(BundleLoader.java:345)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClassInternal(BundleLoader.java:423)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:372)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:364)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.loadBundleActivator(BundleContextImpl.java:757)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.start(BundleContextImpl.java:711)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle.startWorker0(EquinoxBundle.java:932)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle$EquinoxModule.startWorker(EquinoxBundle.java:309)
+	at org.eclipse.osgi.container.Module.doStart(Module.java:581)
+	at org.eclipse.osgi.container.Module.start(Module.java:449)
+	at org.eclipse.osgi.framework.util.SecureAction.start(SecureAction.java:470)
+	at org.eclipse.osgi.internal.hooks.EclipseLazyStarter.postFindLocalClass(EclipseLazyStarter.java:107)
+	at org.eclipse.osgi.internal.loader.classpath.ClasspathManager.findLocalClass(ClasspathManager.java:529)
+	at org.eclipse.osgi.internal.loader.ModuleClassLoader.findLocalClass(ModuleClassLoader.java:325)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findLocalClass(BundleLoader.java:345)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClassInternal(BundleLoader.java:423)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:372)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:364)
+	at org.eclipse.osgi.internal.loader.ModuleClassLoader.loadClass(ModuleClassLoader.java:161)
+	at java.lang.ClassLoader.loadClass(Unknown Source)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle.loadClass(EquinoxBundle.java:564)
+	at org.eclipse.equinox.internal.ds.model.ServiceComponent.createInstance(ServiceComponent.java:493)
+	at org.eclipse.equinox.internal.ds.model.ServiceComponentProp.createInstance(ServiceComponentProp.java:270)
+	at org.eclipse.equinox.internal.ds.model.ServiceComponentProp.build(ServiceComponentProp.java:331)
+	at org.eclipse.equinox.internal.ds.InstanceProcess.buildComponent(InstanceProcess.java:620)
+	at org.eclipse.equinox.internal.ds.ServiceReg.getService(ServiceReg.java:53)
+	at org.eclipse.osgi.internal.serviceregistry.ServiceFactoryUse$1.run(ServiceFactoryUse.java:212)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at org.eclipse.osgi.internal.serviceregistry.ServiceFactoryUse.factoryGetService(ServiceFactoryUse.java:210)
+	at org.eclipse.osgi.internal.serviceregistry.ServiceFactoryUse.getService(ServiceFactoryUse.java:111)
+	at org.eclipse.osgi.internal.serviceregistry.ServiceConsumer$2.getService(ServiceConsumer.java:45)
+	at org.eclipse.osgi.internal.serviceregistry.ServiceRegistrationImpl.getService(ServiceRegistrationImpl.java:496)
+	at org.eclipse.osgi.internal.serviceregistry.ServiceRegistry.getService(ServiceRegistry.java:461)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.getService(BundleContextImpl.java:619)
+	at org.osgi.util.tracker.ServiceTracker.addingService(ServiceTracker.java:414)
+	at org.osgi.util.tracker.ServiceTracker$Tracked.customizerAdding(ServiceTracker.java:941)
+	at org.osgi.util.tracker.ServiceTracker$Tracked.customizerAdding(ServiceTracker.java:1)
+	at org.osgi.util.tracker.AbstractTracked.trackAdding(AbstractTracked.java:256)
+	at org.osgi.util.tracker.AbstractTracked.track(AbstractTracked.java:229)
+	at org.osgi.util.tracker.ServiceTracker$Tracked.serviceChanged(ServiceTracker.java:901)
+	at org.eclipse.osgi.internal.serviceregistry.FilteredServiceListener.serviceChanged(FilteredServiceListener.java:109)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.dispatchEvent(BundleContextImpl.java:915)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.ListenerQueue.dispatchEventSynchronous(ListenerQueue.java:148)
+	at org.eclipse.osgi.internal.serviceregistry.ServiceRegistry.publishServiceEventPrivileged(ServiceRegistry.java:862)
+	at org.eclipse.osgi.internal.serviceregistry.ServiceRegistry.publishServiceEvent(ServiceRegistry.java:801)
+	at org.eclipse.osgi.internal.serviceregistry.ServiceRegistrationImpl.register(ServiceRegistrationImpl.java:127)
+	at org.eclipse.osgi.internal.serviceregistry.ServiceRegistry.registerService(ServiceRegistry.java:225)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.registerService(BundleContextImpl.java:464)
+	at org.eclipse.equinox.internal.ds.InstanceProcess.registerService(InstanceProcess.java:536)
+	at org.eclipse.equinox.internal.ds.InstanceProcess.buildComponents(InstanceProcess.java:260)
+	at org.eclipse.equinox.internal.ds.Resolver.buildNewlySatisfied(Resolver.java:473)
+	at org.eclipse.equinox.internal.ds.Resolver.enableComponents(Resolver.java:217)
+	at org.eclipse.equinox.internal.ds.SCRManager.performWork(SCRManager.java:816)
+	at org.eclipse.equinox.internal.ds.SCRManager$QueuedJob.dispatch(SCRManager.java:783)
+	at org.eclipse.equinox.internal.ds.WorkThread.run(WorkThread.java:89)
+	at org.eclipse.equinox.internal.util.impl.tpt.threadpool.Executor.run(Executor.java:70)
+Caused by: java.util.concurrent.TimeoutException: Timeout after waiting 5 seconds to acquire the lock.
+	at org.eclipse.osgi.container.Module.lockStateChange(Module.java:334)
+	... 62 more
+Root exception:
+java.util.concurrent.TimeoutException: Timeout after waiting 5 seconds to acquire the lock.
+	at org.eclipse.osgi.container.Module.lockStateChange(Module.java:334)
+	at org.eclipse.osgi.container.Module.start(Module.java:401)
+	at org.eclipse.osgi.framework.util.SecureAction.start(SecureAction.java:470)
+	at org.eclipse.osgi.internal.hooks.EclipseLazyStarter.postFindLocalClass(EclipseLazyStarter.java:107)
+	at org.eclipse.osgi.internal.loader.classpath.ClasspathManager.findLocalClass(ClasspathManager.java:529)
+	at org.eclipse.osgi.internal.loader.ModuleClassLoader.findLocalClass(ModuleClassLoader.java:325)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findLocalClass(BundleLoader.java:345)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClassInternal(BundleLoader.java:423)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:372)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:364)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.loadBundleActivator(BundleContextImpl.java:757)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.start(BundleContextImpl.java:711)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle.startWorker0(EquinoxBundle.java:932)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle$EquinoxModule.startWorker(EquinoxBundle.java:309)
+	at org.eclipse.osgi.container.Module.doStart(Module.java:581)
+	at org.eclipse.osgi.container.Module.start(Module.java:449)
+	at org.eclipse.osgi.framework.util.SecureAction.start(SecureAction.java:470)
+	at org.eclipse.osgi.internal.hooks.EclipseLazyStarter.postFindLocalClass(EclipseLazyStarter.java:107)
+	at org.eclipse.osgi.internal.loader.classpath.ClasspathManager.findLocalClass(ClasspathManager.java:529)
+	at org.eclipse.osgi.internal.loader.ModuleClassLoader.findLocalClass(ModuleClassLoader.java:325)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findLocalClass(BundleLoader.java:345)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClassInternal(BundleLoader.java:423)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:372)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:364)
+	at org.eclipse.osgi.internal.loader.ModuleClassLoader.loadClass(ModuleClassLoader.java:161)
+	at java.lang.ClassLoader.loadClass(Unknown Source)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle.loadClass(EquinoxBundle.java:564)
+	at org.eclipse.equinox.internal.ds.model.ServiceComponent.createInstance(ServiceComponent.java:493)
+	at org.eclipse.equinox.internal.ds.model.ServiceComponentProp.createInstance(ServiceComponentProp.java:270)
+	at org.eclipse.equinox.internal.ds.model.ServiceComponentProp.build(ServiceComponentProp.java:331)
+	at org.eclipse.equinox.internal.ds.InstanceProcess.buildComponent(InstanceProcess.java:620)
+	at org.eclipse.equinox.internal.ds.ServiceReg.getService(ServiceReg.java:53)
+	at org.eclipse.osgi.internal.serviceregistry.ServiceFactoryUse$1.run(ServiceFactoryUse.java:212)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at org.eclipse.osgi.internal.serviceregistry.ServiceFactoryUse.factoryGetService(ServiceFactoryUse.java:210)
+	at org.eclipse.osgi.internal.serviceregistry.ServiceFactoryUse.getService(ServiceFactoryUse.java:111)
+	at org.eclipse.osgi.internal.serviceregistry.ServiceConsumer$2.getService(ServiceConsumer.java:45)
+	at org.eclipse.osgi.internal.serviceregistry.ServiceRegistrationImpl.getService(ServiceRegistrationImpl.java:496)
+	at org.eclipse.osgi.internal.serviceregistry.ServiceRegistry.getService(ServiceRegistry.java:461)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.getService(BundleContextImpl.java:619)
+	at org.osgi.util.tracker.ServiceTracker.addingService(ServiceTracker.java:414)
+	at org.osgi.util.tracker.ServiceTracker$Tracked.customizerAdding(ServiceTracker.java:941)
+	at org.osgi.util.tracker.ServiceTracker$Tracked.customizerAdding(ServiceTracker.java:1)
+	at org.osgi.util.tracker.AbstractTracked.trackAdding(AbstractTracked.java:256)
+	at org.osgi.util.tracker.AbstractTracked.track(AbstractTracked.java:229)
+	at org.osgi.util.tracker.ServiceTracker$Tracked.serviceChanged(ServiceTracker.java:901)
+	at org.eclipse.osgi.internal.serviceregistry.FilteredServiceListener.serviceChanged(FilteredServiceListener.java:109)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.dispatchEvent(BundleContextImpl.java:915)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.ListenerQueue.dispatchEventSynchronous(ListenerQueue.java:148)
+	at org.eclipse.osgi.internal.serviceregistry.ServiceRegistry.publishServiceEventPrivileged(ServiceRegistry.java:862)
+	at org.eclipse.osgi.internal.serviceregistry.ServiceRegistry.publishServiceEvent(ServiceRegistry.java:801)
+	at org.eclipse.osgi.internal.serviceregistry.ServiceRegistrationImpl.register(ServiceRegistrationImpl.java:127)
+	at org.eclipse.osgi.internal.serviceregistry.ServiceRegistry.registerService(ServiceRegistry.java:225)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.registerService(BundleContextImpl.java:464)
+	at org.eclipse.equinox.internal.ds.InstanceProcess.registerService(InstanceProcess.java:536)
+	at org.eclipse.equinox.internal.ds.InstanceProcess.buildComponents(InstanceProcess.java:260)
+	at org.eclipse.equinox.internal.ds.Resolver.buildNewlySatisfied(Resolver.java:473)
+	at org.eclipse.equinox.internal.ds.Resolver.enableComponents(Resolver.java:217)
+	at org.eclipse.equinox.internal.ds.SCRManager.performWork(SCRManager.java:816)
+	at org.eclipse.equinox.internal.ds.SCRManager$QueuedJob.dispatch(SCRManager.java:783)
+	at org.eclipse.equinox.internal.ds.WorkThread.run(WorkThread.java:89)
+	at org.eclipse.equinox.internal.util.impl.tpt.threadpool.Executor.run(Executor.java:70)
+
+!ENTRY org.eclipse.osgi 2 0 2018-10-23 14:59:20.854
+!MESSAGE While loading class "com.genuitec.eclipse.theming.ui.internal.ThemingActivator", thread "Thread[Component Resolve Thread (Bundle 692),10,main]" timed out waiting (5004ms) for thread "Thread[Component Resolve Thread,5,main]" to finish starting bundle "org.eclipse.equinox.registry_3.6.100.v20160223-2218 [734]". To avoid deadlock, thread "Thread[Component Resolve Thread (Bundle 692),10,main]" is proceeding but "com.genuitec.eclipse.theming.ui.internal.ThemingActivator" may not be fully initialized.
+!STACK 0
+org.osgi.framework.BundleException: Unable to acquire the state change lock for the module: osgi.identity; type="osgi.bundle"; version:Version="3.6.100.v20160223-2218"; osgi.identity="org.eclipse.equinox.registry"; singleton:="true" [id=734] STARTED [STARTED]
+	at org.eclipse.osgi.container.Module.lockStateChange(Module.java:337)
+	at org.eclipse.osgi.container.Module.start(Module.java:401)
+	at org.eclipse.osgi.framework.util.SecureAction.start(SecureAction.java:470)
+	at org.eclipse.osgi.internal.hooks.EclipseLazyStarter.postFindLocalClass(EclipseLazyStarter.java:107)
+	at org.eclipse.osgi.internal.loader.classpath.ClasspathManager.findLocalClass(ClasspathManager.java:529)
+	at org.eclipse.osgi.internal.loader.ModuleClassLoader.findLocalClass(ModuleClassLoader.java:325)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findLocalClass(BundleLoader.java:345)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClassInternal(BundleLoader.java:423)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:372)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:364)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.loadBundleActivator(BundleContextImpl.java:757)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.start(BundleContextImpl.java:711)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle.startWorker0(EquinoxBundle.java:932)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle$EquinoxModule.startWorker(EquinoxBundle.java:309)
+	at org.eclipse.osgi.container.Module.doStart(Module.java:581)
+	at org.eclipse.osgi.container.Module.start(Module.java:449)
+	at org.eclipse.osgi.framework.util.SecureAction.start(SecureAction.java:470)
+	at org.eclipse.osgi.internal.hooks.EclipseLazyStarter.postFindLocalClass(EclipseLazyStarter.java:107)
+	at org.eclipse.osgi.internal.loader.classpath.ClasspathManager.findLocalClass(ClasspathManager.java:529)
+	at org.eclipse.osgi.internal.loader.ModuleClassLoader.findLocalClass(ModuleClassLoader.java:325)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findLocalClass(BundleLoader.java:345)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClassInternal(BundleLoader.java:423)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:372)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:364)
+	at org.eclipse.osgi.internal.loader.ModuleClassLoader.loadClass(ModuleClassLoader.java:161)
+	at java.lang.ClassLoader.loadClass(Unknown Source)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle.loadClass(EquinoxBundle.java:564)
+	at org.eclipse.equinox.internal.ds.model.ServiceComponent.createInstance(ServiceComponent.java:493)
+	at org.eclipse.equinox.internal.ds.model.ServiceComponentProp.createInstance(ServiceComponentProp.java:270)
+	at org.eclipse.equinox.internal.ds.model.ServiceComponentProp.build(ServiceComponentProp.java:331)
+	at org.eclipse.equinox.internal.ds.InstanceProcess.buildComponent(InstanceProcess.java:620)
+	at org.eclipse.equinox.internal.ds.ServiceReg.getService(ServiceReg.java:53)
+	at org.eclipse.osgi.internal.serviceregistry.ServiceFactoryUse$1.run(ServiceFactoryUse.java:212)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at org.eclipse.osgi.internal.serviceregistry.ServiceFactoryUse.factoryGetService(ServiceFactoryUse.java:210)
+	at org.eclipse.osgi.internal.serviceregistry.ServiceFactoryUse.getService(ServiceFactoryUse.java:111)
+	at org.eclipse.osgi.internal.serviceregistry.ServiceConsumer$2.getService(ServiceConsumer.java:45)
+	at org.eclipse.osgi.internal.serviceregistry.ServiceRegistrationImpl.getService(ServiceRegistrationImpl.java:496)
+	at org.eclipse.osgi.internal.serviceregistry.ServiceRegistry.getService(ServiceRegistry.java:461)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.getService(BundleContextImpl.java:619)
+	at org.osgi.util.tracker.ServiceTracker.addingService(ServiceTracker.java:414)
+	at org.osgi.util.tracker.ServiceTracker$Tracked.customizerAdding(ServiceTracker.java:941)
+	at org.osgi.util.tracker.ServiceTracker$Tracked.customizerAdding(ServiceTracker.java:1)
+	at org.osgi.util.tracker.AbstractTracked.trackAdding(AbstractTracked.java:256)
+	at org.osgi.util.tracker.AbstractTracked.track(AbstractTracked.java:229)
+	at org.osgi.util.tracker.ServiceTracker$Tracked.serviceChanged(ServiceTracker.java:901)
+	at org.eclipse.osgi.internal.serviceregistry.FilteredServiceListener.serviceChanged(FilteredServiceListener.java:109)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.dispatchEvent(BundleContextImpl.java:915)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.ListenerQueue.dispatchEventSynchronous(ListenerQueue.java:148)
+	at org.eclipse.osgi.internal.serviceregistry.ServiceRegistry.publishServiceEventPrivileged(ServiceRegistry.java:862)
+	at org.eclipse.osgi.internal.serviceregistry.ServiceRegistry.publishServiceEvent(ServiceRegistry.java:801)
+	at org.eclipse.osgi.internal.serviceregistry.ServiceRegistrationImpl.register(ServiceRegistrationImpl.java:127)
+	at org.eclipse.osgi.internal.serviceregistry.ServiceRegistry.registerService(ServiceRegistry.java:225)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.registerService(BundleContextImpl.java:464)
+	at org.eclipse.equinox.internal.ds.InstanceProcess.registerService(InstanceProcess.java:536)
+	at org.eclipse.equinox.internal.ds.InstanceProcess.buildComponents(InstanceProcess.java:260)
+	at org.eclipse.equinox.internal.ds.Resolver.buildNewlySatisfied(Resolver.java:473)
+	at org.eclipse.equinox.internal.ds.Resolver.enableComponents(Resolver.java:217)
+	at org.eclipse.equinox.internal.ds.SCRManager.performWork(SCRManager.java:816)
+	at org.eclipse.equinox.internal.ds.SCRManager$QueuedJob.dispatch(SCRManager.java:783)
+	at org.eclipse.equinox.internal.ds.WorkThread.run(WorkThread.java:89)
+	at org.eclipse.equinox.internal.util.impl.tpt.threadpool.Executor.run(Executor.java:70)
+Caused by: java.util.concurrent.TimeoutException: Timeout after waiting 5 seconds to acquire the lock.
+	at org.eclipse.osgi.container.Module.lockStateChange(Module.java:334)
+	... 62 more
+Root exception:
+java.util.concurrent.TimeoutException: Timeout after waiting 5 seconds to acquire the lock.
+	at org.eclipse.osgi.container.Module.lockStateChange(Module.java:334)
+	at org.eclipse.osgi.container.Module.start(Module.java:401)
+	at org.eclipse.osgi.framework.util.SecureAction.start(SecureAction.java:470)
+	at org.eclipse.osgi.internal.hooks.EclipseLazyStarter.postFindLocalClass(EclipseLazyStarter.java:107)
+	at org.eclipse.osgi.internal.loader.classpath.ClasspathManager.findLocalClass(ClasspathManager.java:529)
+	at org.eclipse.osgi.internal.loader.ModuleClassLoader.findLocalClass(ModuleClassLoader.java:325)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findLocalClass(BundleLoader.java:345)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClassInternal(BundleLoader.java:423)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:372)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:364)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.loadBundleActivator(BundleContextImpl.java:757)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.start(BundleContextImpl.java:711)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle.startWorker0(EquinoxBundle.java:932)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle$EquinoxModule.startWorker(EquinoxBundle.java:309)
+	at org.eclipse.osgi.container.Module.doStart(Module.java:581)
+	at org.eclipse.osgi.container.Module.start(Module.java:449)
+	at org.eclipse.osgi.framework.util.SecureAction.start(SecureAction.java:470)
+	at org.eclipse.osgi.internal.hooks.EclipseLazyStarter.postFindLocalClass(EclipseLazyStarter.java:107)
+	at org.eclipse.osgi.internal.loader.classpath.ClasspathManager.findLocalClass(ClasspathManager.java:529)
+	at org.eclipse.osgi.internal.loader.ModuleClassLoader.findLocalClass(ModuleClassLoader.java:325)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findLocalClass(BundleLoader.java:345)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClassInternal(BundleLoader.java:423)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:372)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:364)
+	at org.eclipse.osgi.internal.loader.ModuleClassLoader.loadClass(ModuleClassLoader.java:161)
+	at java.lang.ClassLoader.loadClass(Unknown Source)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle.loadClass(EquinoxBundle.java:564)
+	at org.eclipse.equinox.internal.ds.model.ServiceComponent.createInstance(ServiceComponent.java:493)
+	at org.eclipse.equinox.internal.ds.model.ServiceComponentProp.createInstance(ServiceComponentProp.java:270)
+	at org.eclipse.equinox.internal.ds.model.ServiceComponentProp.build(ServiceComponentProp.java:331)
+	at org.eclipse.equinox.internal.ds.InstanceProcess.buildComponent(InstanceProcess.java:620)
+	at org.eclipse.equinox.internal.ds.ServiceReg.getService(ServiceReg.java:53)
+	at org.eclipse.osgi.internal.serviceregistry.ServiceFactoryUse$1.run(ServiceFactoryUse.java:212)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at org.eclipse.osgi.internal.serviceregistry.ServiceFactoryUse.factoryGetService(ServiceFactoryUse.java:210)
+	at org.eclipse.osgi.internal.serviceregistry.ServiceFactoryUse.getService(ServiceFactoryUse.java:111)
+	at org.eclipse.osgi.internal.serviceregistry.ServiceConsumer$2.getService(ServiceConsumer.java:45)
+	at org.eclipse.osgi.internal.serviceregistry.ServiceRegistrationImpl.getService(ServiceRegistrationImpl.java:496)
+	at org.eclipse.osgi.internal.serviceregistry.ServiceRegistry.getService(ServiceRegistry.java:461)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.getService(BundleContextImpl.java:619)
+	at org.osgi.util.tracker.ServiceTracker.addingService(ServiceTracker.java:414)
+	at org.osgi.util.tracker.ServiceTracker$Tracked.customizerAdding(ServiceTracker.java:941)
+	at org.osgi.util.tracker.ServiceTracker$Tracked.customizerAdding(ServiceTracker.java:1)
+	at org.osgi.util.tracker.AbstractTracked.trackAdding(AbstractTracked.java:256)
+	at org.osgi.util.tracker.AbstractTracked.track(AbstractTracked.java:229)
+	at org.osgi.util.tracker.ServiceTracker$Tracked.serviceChanged(ServiceTracker.java:901)
+	at org.eclipse.osgi.internal.serviceregistry.FilteredServiceListener.serviceChanged(FilteredServiceListener.java:109)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.dispatchEvent(BundleContextImpl.java:915)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.ListenerQueue.dispatchEventSynchronous(ListenerQueue.java:148)
+	at org.eclipse.osgi.internal.serviceregistry.ServiceRegistry.publishServiceEventPrivileged(ServiceRegistry.java:862)
+	at org.eclipse.osgi.internal.serviceregistry.ServiceRegistry.publishServiceEvent(ServiceRegistry.java:801)
+	at org.eclipse.osgi.internal.serviceregistry.ServiceRegistrationImpl.register(ServiceRegistrationImpl.java:127)
+	at org.eclipse.osgi.internal.serviceregistry.ServiceRegistry.registerService(ServiceRegistry.java:225)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.registerService(BundleContextImpl.java:464)
+	at org.eclipse.equinox.internal.ds.InstanceProcess.registerService(InstanceProcess.java:536)
+	at org.eclipse.equinox.internal.ds.InstanceProcess.buildComponents(InstanceProcess.java:260)
+	at org.eclipse.equinox.internal.ds.Resolver.buildNewlySatisfied(Resolver.java:473)
+	at org.eclipse.equinox.internal.ds.Resolver.enableComponents(Resolver.java:217)
+	at org.eclipse.equinox.internal.ds.SCRManager.performWork(SCRManager.java:816)
+	at org.eclipse.equinox.internal.ds.SCRManager$QueuedJob.dispatch(SCRManager.java:783)
+	at org.eclipse.equinox.internal.ds.WorkThread.run(WorkThread.java:89)
+	at org.eclipse.equinox.internal.util.impl.tpt.threadpool.Executor.run(Executor.java:70)
+
+!ENTRY org.eclipse.osgi 2 0 2018-10-23 14:59:25.987
+!MESSAGE While loading class "org.eclipse.core.runtime.Platform", thread "Thread[Component Resolve Thread (Bundle 692),10,main]" timed out waiting (5017ms) for thread "Thread[Component Resolve Thread,5,main]" to finish starting bundle "org.eclipse.core.runtime_3.12.0.v20160606-1342 [275]". To avoid deadlock, thread "Thread[Component Resolve Thread (Bundle 692),10,main]" is proceeding but "org.eclipse.core.runtime.Platform" may not be fully initialized.
+!STACK 0
+org.osgi.framework.BundleException: Unable to acquire the state change lock for the module: osgi.identity; type="osgi.bundle"; version:Version="3.12.0.v20160606-1342"; osgi.identity="org.eclipse.core.runtime"; singleton:="true" [id=275] STARTED [STARTED]
+	at org.eclipse.osgi.container.Module.lockStateChange(Module.java:337)
+	at org.eclipse.osgi.container.Module.start(Module.java:401)
+	at org.eclipse.osgi.framework.util.SecureAction.start(SecureAction.java:470)
+	at org.eclipse.osgi.internal.hooks.EclipseLazyStarter.postFindLocalClass(EclipseLazyStarter.java:107)
+	at org.eclipse.osgi.internal.loader.classpath.ClasspathManager.findLocalClass(ClasspathManager.java:529)
+	at org.eclipse.osgi.internal.loader.ModuleClassLoader.findLocalClass(ModuleClassLoader.java:325)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findLocalClass(BundleLoader.java:345)
+	at org.eclipse.osgi.internal.loader.sources.SingleSourcePackage.loadClass(SingleSourcePackage.java:36)
+	at org.eclipse.osgi.internal.loader.sources.MultiSourcePackage.loadClass(MultiSourcePackage.java:32)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClassInternal(BundleLoader.java:419)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:372)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:364)
+	at org.eclipse.osgi.internal.loader.ModuleClassLoader.loadClass(ModuleClassLoader.java:161)
+	at java.lang.ClassLoader.loadClass(Unknown Source)
+	at org.eclipse.ui.internal.JFaceUtil.initializeJFace(JFaceUtil.java:78)
+	at org.eclipse.ui.internal.WorkbenchPlugin.start(WorkbenchPlugin.java:791)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl$3.run(BundleContextImpl.java:774)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl$3.run(BundleContextImpl.java:1)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.startActivator(BundleContextImpl.java:767)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.start(BundleContextImpl.java:724)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle.startWorker0(EquinoxBundle.java:932)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle$EquinoxModule.startWorker(EquinoxBundle.java:309)
+	at org.eclipse.osgi.container.Module.doStart(Module.java:581)
+	at org.eclipse.osgi.container.Module.start(Module.java:449)
+	at org.eclipse.osgi.framework.util.SecureAction.start(SecureAction.java:470)
+	at org.eclipse.osgi.internal.hooks.EclipseLazyStarter.postFindLocalClass(EclipseLazyStarter.java:107)
+	at org.eclipse.osgi.internal.loader.classpath.ClasspathManager.findLocalClass(ClasspathManager.java:529)
+	at org.eclipse.osgi.internal.loader.ModuleClassLoader.findLocalClass(ModuleClassLoader.java:325)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findLocalClass(BundleLoader.java:345)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClassInternal(BundleLoader.java:423)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:372)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:364)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.loadBundleActivator(BundleContextImpl.java:757)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.start(BundleContextImpl.java:711)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle.startWorker0(EquinoxBundle.java:932)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle$EquinoxModule.startWorker(EquinoxBundle.java:309)
+	at org.eclipse.osgi.container.Module.doStart(Module.java:581)
+	at org.eclipse.osgi.container.Module.start(Module.java:449)
+	at org.eclipse.osgi.framework.util.SecureAction.start(SecureAction.java:470)
+	at org.eclipse.osgi.internal.hooks.EclipseLazyStarter.postFindLocalClass(EclipseLazyStarter.java:107)
+	at org.eclipse.osgi.internal.loader.classpath.ClasspathManager.findLocalClass(ClasspathManager.java:529)
+	at org.eclipse.osgi.internal.loader.ModuleClassLoader.findLocalClass(ModuleClassLoader.java:325)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findLocalClass(BundleLoader.java:345)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClassInternal(BundleLoader.java:423)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:372)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:364)
+	at org.eclipse.osgi.internal.loader.ModuleClassLoader.loadClass(ModuleClassLoader.java:161)
+	at java.lang.ClassLoader.loadClass(Unknown Source)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle.loadClass(EquinoxBundle.java:564)
+	at org.eclipse.equinox.internal.ds.model.ServiceComponent.createInstance(ServiceComponent.java:493)
+	at org.eclipse.equinox.internal.ds.model.ServiceComponentProp.createInstance(ServiceComponentProp.java:270)
+	at org.eclipse.equinox.internal.ds.model.ServiceComponentProp.build(ServiceComponentProp.java:331)
+	at org.eclipse.equinox.internal.ds.InstanceProcess.buildComponent(InstanceProcess.java:620)
+	at org.eclipse.equinox.internal.ds.ServiceReg.getService(ServiceReg.java:53)
+	at org.eclipse.osgi.internal.serviceregistry.ServiceFactoryUse$1.run(ServiceFactoryUse.java:212)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at org.eclipse.osgi.internal.serviceregistry.ServiceFactoryUse.factoryGetService(ServiceFactoryUse.java:210)
+	at org.eclipse.osgi.internal.serviceregistry.ServiceFactoryUse.getService(ServiceFactoryUse.java:111)
+	at org.eclipse.osgi.internal.serviceregistry.ServiceConsumer$2.getService(ServiceConsumer.java:45)
+	at org.eclipse.osgi.internal.serviceregistry.ServiceRegistrationImpl.getService(ServiceRegistrationImpl.java:496)
+	at org.eclipse.osgi.internal.serviceregistry.ServiceRegistry.getService(ServiceRegistry.java:461)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.getService(BundleContextImpl.java:619)
+	at org.osgi.util.tracker.ServiceTracker.addingService(ServiceTracker.java:414)
+	at org.osgi.util.tracker.ServiceTracker$Tracked.customizerAdding(ServiceTracker.java:941)
+	at org.osgi.util.tracker.ServiceTracker$Tracked.customizerAdding(ServiceTracker.java:1)
+	at org.osgi.util.tracker.AbstractTracked.trackAdding(AbstractTracked.java:256)
+	at org.osgi.util.tracker.AbstractTracked.track(AbstractTracked.java:229)
+	at org.osgi.util.tracker.ServiceTracker$Tracked.serviceChanged(ServiceTracker.java:901)
+	at org.eclipse.osgi.internal.serviceregistry.FilteredServiceListener.serviceChanged(FilteredServiceListener.java:109)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.dispatchEvent(BundleContextImpl.java:915)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.ListenerQueue.dispatchEventSynchronous(ListenerQueue.java:148)
+	at org.eclipse.osgi.internal.serviceregistry.ServiceRegistry.publishServiceEventPrivileged(ServiceRegistry.java:862)
+	at org.eclipse.osgi.internal.serviceregistry.ServiceRegistry.publishServiceEvent(ServiceRegistry.java:801)
+	at org.eclipse.osgi.internal.serviceregistry.ServiceRegistrationImpl.register(ServiceRegistrationImpl.java:127)
+	at org.eclipse.osgi.internal.serviceregistry.ServiceRegistry.registerService(ServiceRegistry.java:225)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.registerService(BundleContextImpl.java:464)
+	at org.eclipse.equinox.internal.ds.InstanceProcess.registerService(InstanceProcess.java:536)
+	at org.eclipse.equinox.internal.ds.InstanceProcess.buildComponents(InstanceProcess.java:260)
+	at org.eclipse.equinox.internal.ds.Resolver.buildNewlySatisfied(Resolver.java:473)
+	at org.eclipse.equinox.internal.ds.Resolver.enableComponents(Resolver.java:217)
+	at org.eclipse.equinox.internal.ds.SCRManager.performWork(SCRManager.java:816)
+	at org.eclipse.equinox.internal.ds.SCRManager$QueuedJob.dispatch(SCRManager.java:783)
+	at org.eclipse.equinox.internal.ds.WorkThread.run(WorkThread.java:89)
+	at org.eclipse.equinox.internal.util.impl.tpt.threadpool.Executor.run(Executor.java:70)
+Caused by: java.util.concurrent.TimeoutException: Timeout after waiting 5 seconds to acquire the lock.
+	at org.eclipse.osgi.container.Module.lockStateChange(Module.java:334)
+	... 85 more
+Root exception:
+java.util.concurrent.TimeoutException: Timeout after waiting 5 seconds to acquire the lock.
+	at org.eclipse.osgi.container.Module.lockStateChange(Module.java:334)
+	at org.eclipse.osgi.container.Module.start(Module.java:401)
+	at org.eclipse.osgi.framework.util.SecureAction.start(SecureAction.java:470)
+	at org.eclipse.osgi.internal.hooks.EclipseLazyStarter.postFindLocalClass(EclipseLazyStarter.java:107)
+	at org.eclipse.osgi.internal.loader.classpath.ClasspathManager.findLocalClass(ClasspathManager.java:529)
+	at org.eclipse.osgi.internal.loader.ModuleClassLoader.findLocalClass(ModuleClassLoader.java:325)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findLocalClass(BundleLoader.java:345)
+	at org.eclipse.osgi.internal.loader.sources.SingleSourcePackage.loadClass(SingleSourcePackage.java:36)
+	at org.eclipse.osgi.internal.loader.sources.MultiSourcePackage.loadClass(MultiSourcePackage.java:32)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClassInternal(BundleLoader.java:419)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:372)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:364)
+	at org.eclipse.osgi.internal.loader.ModuleClassLoader.loadClass(ModuleClassLoader.java:161)
+	at java.lang.ClassLoader.loadClass(Unknown Source)
+	at org.eclipse.ui.internal.JFaceUtil.initializeJFace(JFaceUtil.java:78)
+	at org.eclipse.ui.internal.WorkbenchPlugin.start(WorkbenchPlugin.java:791)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl$3.run(BundleContextImpl.java:774)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl$3.run(BundleContextImpl.java:1)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.startActivator(BundleContextImpl.java:767)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.start(BundleContextImpl.java:724)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle.startWorker0(EquinoxBundle.java:932)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle$EquinoxModule.startWorker(EquinoxBundle.java:309)
+	at org.eclipse.osgi.container.Module.doStart(Module.java:581)
+	at org.eclipse.osgi.container.Module.start(Module.java:449)
+	at org.eclipse.osgi.framework.util.SecureAction.start(SecureAction.java:470)
+	at org.eclipse.osgi.internal.hooks.EclipseLazyStarter.postFindLocalClass(EclipseLazyStarter.java:107)
+	at org.eclipse.osgi.internal.loader.classpath.ClasspathManager.findLocalClass(ClasspathManager.java:529)
+	at org.eclipse.osgi.internal.loader.ModuleClassLoader.findLocalClass(ModuleClassLoader.java:325)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findLocalClass(BundleLoader.java:345)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClassInternal(BundleLoader.java:423)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:372)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:364)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.loadBundleActivator(BundleContextImpl.java:757)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.start(BundleContextImpl.java:711)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle.startWorker0(EquinoxBundle.java:932)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle$EquinoxModule.startWorker(EquinoxBundle.java:309)
+	at org.eclipse.osgi.container.Module.doStart(Module.java:581)
+	at org.eclipse.osgi.container.Module.start(Module.java:449)
+	at org.eclipse.osgi.framework.util.SecureAction.start(SecureAction.java:470)
+	at org.eclipse.osgi.internal.hooks.EclipseLazyStarter.postFindLocalClass(EclipseLazyStarter.java:107)
+	at org.eclipse.osgi.internal.loader.classpath.ClasspathManager.findLocalClass(ClasspathManager.java:529)
+	at org.eclipse.osgi.internal.loader.ModuleClassLoader.findLocalClass(ModuleClassLoader.java:325)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findLocalClass(BundleLoader.java:345)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClassInternal(BundleLoader.java:423)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:372)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:364)
+	at org.eclipse.osgi.internal.loader.ModuleClassLoader.loadClass(ModuleClassLoader.java:161)
+	at java.lang.ClassLoader.loadClass(Unknown Source)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle.loadClass(EquinoxBundle.java:564)
+	at org.eclipse.equinox.internal.ds.model.ServiceComponent.createInstance(ServiceComponent.java:493)
+	at org.eclipse.equinox.internal.ds.model.ServiceComponentProp.createInstance(ServiceComponentProp.java:270)
+	at org.eclipse.equinox.internal.ds.model.ServiceComponentProp.build(ServiceComponentProp.java:331)
+	at org.eclipse.equinox.internal.ds.InstanceProcess.buildComponent(InstanceProcess.java:620)
+	at org.eclipse.equinox.internal.ds.ServiceReg.getService(ServiceReg.java:53)
+	at org.eclipse.osgi.internal.serviceregistry.ServiceFactoryUse$1.run(ServiceFactoryUse.java:212)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at org.eclipse.osgi.internal.serviceregistry.ServiceFactoryUse.factoryGetService(ServiceFactoryUse.java:210)
+	at org.eclipse.osgi.internal.serviceregistry.ServiceFactoryUse.getService(ServiceFactoryUse.java:111)
+	at org.eclipse.osgi.internal.serviceregistry.ServiceConsumer$2.getService(ServiceConsumer.java:45)
+	at org.eclipse.osgi.internal.serviceregistry.ServiceRegistrationImpl.getService(ServiceRegistrationImpl.java:496)
+	at org.eclipse.osgi.internal.serviceregistry.ServiceRegistry.getService(ServiceRegistry.java:461)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.getService(BundleContextImpl.java:619)
+	at org.osgi.util.tracker.ServiceTracker.addingService(ServiceTracker.java:414)
+	at org.osgi.util.tracker.ServiceTracker$Tracked.customizerAdding(ServiceTracker.java:941)
+	at org.osgi.util.tracker.ServiceTracker$Tracked.customizerAdding(ServiceTracker.java:1)
+	at org.osgi.util.tracker.AbstractTracked.trackAdding(AbstractTracked.java:256)
+	at org.osgi.util.tracker.AbstractTracked.track(AbstractTracked.java:229)
+	at org.osgi.util.tracker.ServiceTracker$Tracked.serviceChanged(ServiceTracker.java:901)
+	at org.eclipse.osgi.internal.serviceregistry.FilteredServiceListener.serviceChanged(FilteredServiceListener.java:109)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.dispatchEvent(BundleContextImpl.java:915)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.ListenerQueue.dispatchEventSynchronous(ListenerQueue.java:148)
+	at org.eclipse.osgi.internal.serviceregistry.ServiceRegistry.publishServiceEventPrivileged(ServiceRegistry.java:862)
+	at org.eclipse.osgi.internal.serviceregistry.ServiceRegistry.publishServiceEvent(ServiceRegistry.java:801)
+	at org.eclipse.osgi.internal.serviceregistry.ServiceRegistrationImpl.register(ServiceRegistrationImpl.java:127)
+	at org.eclipse.osgi.internal.serviceregistry.ServiceRegistry.registerService(ServiceRegistry.java:225)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.registerService(BundleContextImpl.java:464)
+	at org.eclipse.equinox.internal.ds.InstanceProcess.registerService(InstanceProcess.java:536)
+	at org.eclipse.equinox.internal.ds.InstanceProcess.buildComponents(InstanceProcess.java:260)
+	at org.eclipse.equinox.internal.ds.Resolver.buildNewlySatisfied(Resolver.java:473)
+	at org.eclipse.equinox.internal.ds.Resolver.enableComponents(Resolver.java:217)
+	at org.eclipse.equinox.internal.ds.SCRManager.performWork(SCRManager.java:816)
+	at org.eclipse.equinox.internal.ds.SCRManager$QueuedJob.dispatch(SCRManager.java:783)
+	at org.eclipse.equinox.internal.ds.WorkThread.run(WorkThread.java:89)
+	at org.eclipse.equinox.internal.util.impl.tpt.threadpool.Executor.run(Executor.java:70)
+
+!ENTRY org.eclipse.osgi 2 0 2018-10-23 14:59:31.006
+!MESSAGE While loading class "org.eclipse.core.internal.runtime.Messages", thread "Thread[Component Resolve Thread (Bundle 692),10,main]" timed out waiting (5016ms) for thread "Thread[Component Resolve Thread,5,main]" to finish starting bundle "org.eclipse.core.runtime_3.12.0.v20160606-1342 [275]". To avoid deadlock, thread "Thread[Component Resolve Thread (Bundle 692),10,main]" is proceeding but "org.eclipse.core.internal.runtime.Messages" may not be fully initialized.
+!STACK 0
+org.osgi.framework.BundleException: Unable to acquire the state change lock for the module: osgi.identity; type="osgi.bundle"; version:Version="3.12.0.v20160606-1342"; osgi.identity="org.eclipse.core.runtime"; singleton:="true" [id=275] STARTED [STARTED]
+	at org.eclipse.osgi.container.Module.lockStateChange(Module.java:337)
+	at org.eclipse.osgi.container.Module.start(Module.java:401)
+	at org.eclipse.osgi.framework.util.SecureAction.start(SecureAction.java:470)
+	at org.eclipse.osgi.internal.hooks.EclipseLazyStarter.postFindLocalClass(EclipseLazyStarter.java:107)
+	at org.eclipse.osgi.internal.loader.classpath.ClasspathManager.findLocalClass(ClasspathManager.java:529)
+	at org.eclipse.osgi.internal.loader.ModuleClassLoader.findLocalClass(ModuleClassLoader.java:325)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findLocalClass(BundleLoader.java:345)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClassInternal(BundleLoader.java:423)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:372)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:364)
+	at org.eclipse.osgi.internal.loader.ModuleClassLoader.loadClass(ModuleClassLoader.java:161)
+	at java.lang.ClassLoader.loadClass(Unknown Source)
+	at org.eclipse.core.runtime.Platform.<clinit>(Platform.java:434)
+	at org.eclipse.ui.internal.JFaceUtil.initializeJFace(JFaceUtil.java:78)
+	at org.eclipse.ui.internal.WorkbenchPlugin.start(WorkbenchPlugin.java:791)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl$3.run(BundleContextImpl.java:774)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl$3.run(BundleContextImpl.java:1)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.startActivator(BundleContextImpl.java:767)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.start(BundleContextImpl.java:724)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle.startWorker0(EquinoxBundle.java:932)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle$EquinoxModule.startWorker(EquinoxBundle.java:309)
+	at org.eclipse.osgi.container.Module.doStart(Module.java:581)
+	at org.eclipse.osgi.container.Module.start(Module.java:449)
+	at org.eclipse.osgi.framework.util.SecureAction.start(SecureAction.java:470)
+	at org.eclipse.osgi.internal.hooks.EclipseLazyStarter.postFindLocalClass(EclipseLazyStarter.java:107)
+	at org.eclipse.osgi.internal.loader.classpath.ClasspathManager.findLocalClass(ClasspathManager.java:529)
+	at org.eclipse.osgi.internal.loader.ModuleClassLoader.findLocalClass(ModuleClassLoader.java:325)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findLocalClass(BundleLoader.java:345)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClassInternal(BundleLoader.java:423)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:372)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:364)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.loadBundleActivator(BundleContextImpl.java:757)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.start(BundleContextImpl.java:711)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle.startWorker0(EquinoxBundle.java:932)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle$EquinoxModule.startWorker(EquinoxBundle.java:309)
+	at org.eclipse.osgi.container.Module.doStart(Module.java:581)
+	at org.eclipse.osgi.container.Module.start(Module.java:449)
+	at org.eclipse.osgi.framework.util.SecureAction.start(SecureAction.java:470)
+	at org.eclipse.osgi.internal.hooks.EclipseLazyStarter.postFindLocalClass(EclipseLazyStarter.java:107)
+	at org.eclipse.osgi.internal.loader.classpath.ClasspathManager.findLocalClass(ClasspathManager.java:529)
+	at org.eclipse.osgi.internal.loader.ModuleClassLoader.findLocalClass(ModuleClassLoader.java:325)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findLocalClass(BundleLoader.java:345)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClassInternal(BundleLoader.java:423)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:372)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:364)
+	at org.eclipse.osgi.internal.loader.ModuleClassLoader.loadClass(ModuleClassLoader.java:161)
+	at java.lang.ClassLoader.loadClass(Unknown Source)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle.loadClass(EquinoxBundle.java:564)
+	at org.eclipse.equinox.internal.ds.model.ServiceComponent.createInstance(ServiceComponent.java:493)
+	at org.eclipse.equinox.internal.ds.model.ServiceComponentProp.createInstance(ServiceComponentProp.java:270)
+	at org.eclipse.equinox.internal.ds.model.ServiceComponentProp.build(ServiceComponentProp.java:331)
+	at org.eclipse.equinox.internal.ds.InstanceProcess.buildComponent(InstanceProcess.java:620)
+	at org.eclipse.equinox.internal.ds.ServiceReg.getService(ServiceReg.java:53)
+	at org.eclipse.osgi.internal.serviceregistry.ServiceFactoryUse$1.run(ServiceFactoryUse.java:212)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at org.eclipse.osgi.internal.serviceregistry.ServiceFactoryUse.factoryGetService(ServiceFactoryUse.java:210)
+	at org.eclipse.osgi.internal.serviceregistry.ServiceFactoryUse.getService(ServiceFactoryUse.java:111)
+	at org.eclipse.osgi.internal.serviceregistry.ServiceConsumer$2.getService(ServiceConsumer.java:45)
+	at org.eclipse.osgi.internal.serviceregistry.ServiceRegistrationImpl.getService(ServiceRegistrationImpl.java:496)
+	at org.eclipse.osgi.internal.serviceregistry.ServiceRegistry.getService(ServiceRegistry.java:461)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.getService(BundleContextImpl.java:619)
+	at org.osgi.util.tracker.ServiceTracker.addingService(ServiceTracker.java:414)
+	at org.osgi.util.tracker.ServiceTracker$Tracked.customizerAdding(ServiceTracker.java:941)
+	at org.osgi.util.tracker.ServiceTracker$Tracked.customizerAdding(ServiceTracker.java:1)
+	at org.osgi.util.tracker.AbstractTracked.trackAdding(AbstractTracked.java:256)
+	at org.osgi.util.tracker.AbstractTracked.track(AbstractTracked.java:229)
+	at org.osgi.util.tracker.ServiceTracker$Tracked.serviceChanged(ServiceTracker.java:901)
+	at org.eclipse.osgi.internal.serviceregistry.FilteredServiceListener.serviceChanged(FilteredServiceListener.java:109)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.dispatchEvent(BundleContextImpl.java:915)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.ListenerQueue.dispatchEventSynchronous(ListenerQueue.java:148)
+	at org.eclipse.osgi.internal.serviceregistry.ServiceRegistry.publishServiceEventPrivileged(ServiceRegistry.java:862)
+	at org.eclipse.osgi.internal.serviceregistry.ServiceRegistry.publishServiceEvent(ServiceRegistry.java:801)
+	at org.eclipse.osgi.internal.serviceregistry.ServiceRegistrationImpl.register(ServiceRegistrationImpl.java:127)
+	at org.eclipse.osgi.internal.serviceregistry.ServiceRegistry.registerService(ServiceRegistry.java:225)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.registerService(BundleContextImpl.java:464)
+	at org.eclipse.equinox.internal.ds.InstanceProcess.registerService(InstanceProcess.java:536)
+	at org.eclipse.equinox.internal.ds.InstanceProcess.buildComponents(InstanceProcess.java:260)
+	at org.eclipse.equinox.internal.ds.Resolver.buildNewlySatisfied(Resolver.java:473)
+	at org.eclipse.equinox.internal.ds.Resolver.enableComponents(Resolver.java:217)
+	at org.eclipse.equinox.internal.ds.SCRManager.performWork(SCRManager.java:816)
+	at org.eclipse.equinox.internal.ds.SCRManager$QueuedJob.dispatch(SCRManager.java:783)
+	at org.eclipse.equinox.internal.ds.WorkThread.run(WorkThread.java:89)
+	at org.eclipse.equinox.internal.util.impl.tpt.threadpool.Executor.run(Executor.java:70)
+Caused by: java.util.concurrent.TimeoutException: Timeout after waiting 5 seconds to acquire the lock.
+	at org.eclipse.osgi.container.Module.lockStateChange(Module.java:334)
+	... 84 more
+Root exception:
+java.util.concurrent.TimeoutException: Timeout after waiting 5 seconds to acquire the lock.
+	at org.eclipse.osgi.container.Module.lockStateChange(Module.java:334)
+	at org.eclipse.osgi.container.Module.start(Module.java:401)
+	at org.eclipse.osgi.framework.util.SecureAction.start(SecureAction.java:470)
+	at org.eclipse.osgi.internal.hooks.EclipseLazyStarter.postFindLocalClass(EclipseLazyStarter.java:107)
+	at org.eclipse.osgi.internal.loader.classpath.ClasspathManager.findLocalClass(ClasspathManager.java:529)
+	at org.eclipse.osgi.internal.loader.ModuleClassLoader.findLocalClass(ModuleClassLoader.java:325)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findLocalClass(BundleLoader.java:345)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClassInternal(BundleLoader.java:423)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:372)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:364)
+	at org.eclipse.osgi.internal.loader.ModuleClassLoader.loadClass(ModuleClassLoader.java:161)
+	at java.lang.ClassLoader.loadClass(Unknown Source)
+	at org.eclipse.core.runtime.Platform.<clinit>(Platform.java:434)
+	at org.eclipse.ui.internal.JFaceUtil.initializeJFace(JFaceUtil.java:78)
+	at org.eclipse.ui.internal.WorkbenchPlugin.start(WorkbenchPlugin.java:791)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl$3.run(BundleContextImpl.java:774)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl$3.run(BundleContextImpl.java:1)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.startActivator(BundleContextImpl.java:767)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.start(BundleContextImpl.java:724)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle.startWorker0(EquinoxBundle.java:932)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle$EquinoxModule.startWorker(EquinoxBundle.java:309)
+	at org.eclipse.osgi.container.Module.doStart(Module.java:581)
+	at org.eclipse.osgi.container.Module.start(Module.java:449)
+	at org.eclipse.osgi.framework.util.SecureAction.start(SecureAction.java:470)
+	at org.eclipse.osgi.internal.hooks.EclipseLazyStarter.postFindLocalClass(EclipseLazyStarter.java:107)
+	at org.eclipse.osgi.internal.loader.classpath.ClasspathManager.findLocalClass(ClasspathManager.java:529)
+	at org.eclipse.osgi.internal.loader.ModuleClassLoader.findLocalClass(ModuleClassLoader.java:325)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findLocalClass(BundleLoader.java:345)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClassInternal(BundleLoader.java:423)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:372)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:364)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.loadBundleActivator(BundleContextImpl.java:757)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.start(BundleContextImpl.java:711)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle.startWorker0(EquinoxBundle.java:932)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle$EquinoxModule.startWorker(EquinoxBundle.java:309)
+	at org.eclipse.osgi.container.Module.doStart(Module.java:581)
+	at org.eclipse.osgi.container.Module.start(Module.java:449)
+	at org.eclipse.osgi.framework.util.SecureAction.start(SecureAction.java:470)
+	at org.eclipse.osgi.internal.hooks.EclipseLazyStarter.postFindLocalClass(EclipseLazyStarter.java:107)
+	at org.eclipse.osgi.internal.loader.classpath.ClasspathManager.findLocalClass(ClasspathManager.java:529)
+	at org.eclipse.osgi.internal.loader.ModuleClassLoader.findLocalClass(ModuleClassLoader.java:325)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findLocalClass(BundleLoader.java:345)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClassInternal(BundleLoader.java:423)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:372)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:364)
+	at org.eclipse.osgi.internal.loader.ModuleClassLoader.loadClass(ModuleClassLoader.java:161)
+	at java.lang.ClassLoader.loadClass(Unknown Source)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle.loadClass(EquinoxBundle.java:564)
+	at org.eclipse.equinox.internal.ds.model.ServiceComponent.createInstance(ServiceComponent.java:493)
+	at org.eclipse.equinox.internal.ds.model.ServiceComponentProp.createInstance(ServiceComponentProp.java:270)
+	at org.eclipse.equinox.internal.ds.model.ServiceComponentProp.build(ServiceComponentProp.java:331)
+	at org.eclipse.equinox.internal.ds.InstanceProcess.buildComponent(InstanceProcess.java:620)
+	at org.eclipse.equinox.internal.ds.ServiceReg.getService(ServiceReg.java:53)
+	at org.eclipse.osgi.internal.serviceregistry.ServiceFactoryUse$1.run(ServiceFactoryUse.java:212)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at org.eclipse.osgi.internal.serviceregistry.ServiceFactoryUse.factoryGetService(ServiceFactoryUse.java:210)
+	at org.eclipse.osgi.internal.serviceregistry.ServiceFactoryUse.getService(ServiceFactoryUse.java:111)
+	at org.eclipse.osgi.internal.serviceregistry.ServiceConsumer$2.getService(ServiceConsumer.java:45)
+	at org.eclipse.osgi.internal.serviceregistry.ServiceRegistrationImpl.getService(ServiceRegistrationImpl.java:496)
+	at org.eclipse.osgi.internal.serviceregistry.ServiceRegistry.getService(ServiceRegistry.java:461)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.getService(BundleContextImpl.java:619)
+	at org.osgi.util.tracker.ServiceTracker.addingService(ServiceTracker.java:414)
+	at org.osgi.util.tracker.ServiceTracker$Tracked.customizerAdding(ServiceTracker.java:941)
+	at org.osgi.util.tracker.ServiceTracker$Tracked.customizerAdding(ServiceTracker.java:1)
+	at org.osgi.util.tracker.AbstractTracked.trackAdding(AbstractTracked.java:256)
+	at org.osgi.util.tracker.AbstractTracked.track(AbstractTracked.java:229)
+	at org.osgi.util.tracker.ServiceTracker$Tracked.serviceChanged(ServiceTracker.java:901)
+	at org.eclipse.osgi.internal.serviceregistry.FilteredServiceListener.serviceChanged(FilteredServiceListener.java:109)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.dispatchEvent(BundleContextImpl.java:915)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.ListenerQueue.dispatchEventSynchronous(ListenerQueue.java:148)
+	at org.eclipse.osgi.internal.serviceregistry.ServiceRegistry.publishServiceEventPrivileged(ServiceRegistry.java:862)
+	at org.eclipse.osgi.internal.serviceregistry.ServiceRegistry.publishServiceEvent(ServiceRegistry.java:801)
+	at org.eclipse.osgi.internal.serviceregistry.ServiceRegistrationImpl.register(ServiceRegistrationImpl.java:127)
+	at org.eclipse.osgi.internal.serviceregistry.ServiceRegistry.registerService(ServiceRegistry.java:225)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.registerService(BundleContextImpl.java:464)
+	at org.eclipse.equinox.internal.ds.InstanceProcess.registerService(InstanceProcess.java:536)
+	at org.eclipse.equinox.internal.ds.InstanceProcess.buildComponents(InstanceProcess.java:260)
+	at org.eclipse.equinox.internal.ds.Resolver.buildNewlySatisfied(Resolver.java:473)
+	at org.eclipse.equinox.internal.ds.Resolver.enableComponents(Resolver.java:217)
+	at org.eclipse.equinox.internal.ds.SCRManager.performWork(SCRManager.java:816)
+	at org.eclipse.equinox.internal.ds.SCRManager$QueuedJob.dispatch(SCRManager.java:783)
+	at org.eclipse.equinox.internal.ds.WorkThread.run(WorkThread.java:89)
+	at org.eclipse.equinox.internal.util.impl.tpt.threadpool.Executor.run(Executor.java:70)
+
+!ENTRY org.eclipse.osgi 2 0 2018-10-23 14:59:36.025
+!MESSAGE While loading class "org.eclipse.core.runtime.IExtensionRegistry", thread "Thread[Component Resolve Thread (Bundle 692),10,main]" timed out waiting (5015ms) for thread "Thread[Component Resolve Thread,5,main]" to finish starting bundle "org.eclipse.equinox.registry_3.6.100.v20160223-2218 [734]". To avoid deadlock, thread "Thread[Component Resolve Thread (Bundle 692),10,main]" is proceeding but "org.eclipse.core.runtime.IExtensionRegistry" may not be fully initialized.
+!STACK 0
+org.osgi.framework.BundleException: Unable to acquire the state change lock for the module: osgi.identity; type="osgi.bundle"; version:Version="3.6.100.v20160223-2218"; osgi.identity="org.eclipse.equinox.registry"; singleton:="true" [id=734] STARTED [STARTED]
+	at org.eclipse.osgi.container.Module.lockStateChange(Module.java:337)
+	at org.eclipse.osgi.container.Module.start(Module.java:401)
+	at org.eclipse.osgi.framework.util.SecureAction.start(SecureAction.java:470)
+	at org.eclipse.osgi.internal.hooks.EclipseLazyStarter.postFindLocalClass(EclipseLazyStarter.java:107)
+	at org.eclipse.osgi.internal.loader.classpath.ClasspathManager.findLocalClass(ClasspathManager.java:529)
+	at org.eclipse.osgi.internal.loader.ModuleClassLoader.findLocalClass(ModuleClassLoader.java:325)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findLocalClass(BundleLoader.java:345)
+	at org.eclipse.osgi.internal.loader.sources.SingleSourcePackage.loadClass(SingleSourcePackage.java:36)
+	at org.eclipse.osgi.internal.loader.sources.MultiSourcePackage.loadClass(MultiSourcePackage.java:32)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClassInternal(BundleLoader.java:419)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:372)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:364)
+	at org.eclipse.osgi.internal.loader.ModuleClassLoader.loadClass(ModuleClassLoader.java:161)
+	at java.lang.ClassLoader.loadClass(Unknown Source)
+	at java.lang.Class.forName0(Native Method)
+	at java.lang.Class.forName(Unknown Source)
+	at org.eclipse.equinox.internal.app.Activator.start(Activator.java:55)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl$3.run(BundleContextImpl.java:774)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl$3.run(BundleContextImpl.java:1)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.startActivator(BundleContextImpl.java:767)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.start(BundleContextImpl.java:724)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle.startWorker0(EquinoxBundle.java:932)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle$EquinoxModule.startWorker(EquinoxBundle.java:309)
+	at org.eclipse.osgi.container.Module.doStart(Module.java:581)
+	at org.eclipse.osgi.container.Module.start(Module.java:449)
+	at org.eclipse.osgi.framework.util.SecureAction.start(SecureAction.java:470)
+	at org.eclipse.osgi.internal.hooks.EclipseLazyStarter.postFindLocalClass(EclipseLazyStarter.java:107)
+	at org.eclipse.osgi.internal.loader.classpath.ClasspathManager.findLocalClass(ClasspathManager.java:529)
+	at org.eclipse.osgi.internal.loader.ModuleClassLoader.findLocalClass(ModuleClassLoader.java:325)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findLocalClass(BundleLoader.java:345)
+	at org.eclipse.osgi.internal.loader.sources.SingleSourcePackage.loadClass(SingleSourcePackage.java:36)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClassInternal(BundleLoader.java:419)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:372)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:364)
+	at org.eclipse.osgi.internal.loader.ModuleClassLoader.loadClass(ModuleClassLoader.java:161)
+	at java.lang.ClassLoader.loadClass(Unknown Source)
+	at org.eclipse.core.internal.runtime.InternalPlatform.getCommandLineArgs(InternalPlatform.java:267)
+	at org.eclipse.core.runtime.Platform.getCommandLineArgs(Platform.java:645)
+	at org.eclipse.ui.internal.WorkbenchPlugin.parseBidiArguments(WorkbenchPlugin.java:844)
+	at org.eclipse.ui.internal.WorkbenchPlugin.start(WorkbenchPlugin.java:793)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl$3.run(BundleContextImpl.java:774)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl$3.run(BundleContextImpl.java:1)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.startActivator(BundleContextImpl.java:767)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.start(BundleContextImpl.java:724)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle.startWorker0(EquinoxBundle.java:932)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle$EquinoxModule.startWorker(EquinoxBundle.java:309)
+	at org.eclipse.osgi.container.Module.doStart(Module.java:581)
+	at org.eclipse.osgi.container.Module.start(Module.java:449)
+	at org.eclipse.osgi.framework.util.SecureAction.start(SecureAction.java:470)
+	at org.eclipse.osgi.internal.hooks.EclipseLazyStarter.postFindLocalClass(EclipseLazyStarter.java:107)
+	at org.eclipse.osgi.internal.loader.classpath.ClasspathManager.findLocalClass(ClasspathManager.java:529)
+	at org.eclipse.osgi.internal.loader.ModuleClassLoader.findLocalClass(ModuleClassLoader.java:325)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findLocalClass(BundleLoader.java:345)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClassInternal(BundleLoader.java:423)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:372)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:364)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.loadBundleActivator(BundleContextImpl.java:757)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.start(BundleContextImpl.java:711)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle.startWorker0(EquinoxBundle.java:932)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle$EquinoxModule.startWorker(EquinoxBundle.java:309)
+	at org.eclipse.osgi.container.Module.doStart(Module.java:581)
+	at org.eclipse.osgi.container.Module.start(Module.java:449)
+	at org.eclipse.osgi.framework.util.SecureAction.start(SecureAction.java:470)
+	at org.eclipse.osgi.internal.hooks.EclipseLazyStarter.postFindLocalClass(EclipseLazyStarter.java:107)
+	at org.eclipse.osgi.internal.loader.classpath.ClasspathManager.findLocalClass(ClasspathManager.java:529)
+	at org.eclipse.osgi.internal.loader.ModuleClassLoader.findLocalClass(ModuleClassLoader.java:325)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findLocalClass(BundleLoader.java:345)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClassInternal(BundleLoader.java:423)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:372)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:364)
+	at org.eclipse.osgi.internal.loader.ModuleClassLoader.loadClass(ModuleClassLoader.java:161)
+	at java.lang.ClassLoader.loadClass(Unknown Source)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle.loadClass(EquinoxBundle.java:564)
+	at org.eclipse.equinox.internal.ds.model.ServiceComponent.createInstance(ServiceComponent.java:493)
+	at org.eclipse.equinox.internal.ds.model.ServiceComponentProp.createInstance(ServiceComponentProp.java:270)
+	at org.eclipse.equinox.internal.ds.model.ServiceComponentProp.build(ServiceComponentProp.java:331)
+	at org.eclipse.equinox.internal.ds.InstanceProcess.buildComponent(InstanceProcess.java:620)
+	at org.eclipse.equinox.internal.ds.ServiceReg.getService(ServiceReg.java:53)
+	at org.eclipse.osgi.internal.serviceregistry.ServiceFactoryUse$1.run(ServiceFactoryUse.java:212)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at org.eclipse.osgi.internal.serviceregistry.ServiceFactoryUse.factoryGetService(ServiceFactoryUse.java:210)
+	at org.eclipse.osgi.internal.serviceregistry.ServiceFactoryUse.getService(ServiceFactoryUse.java:111)
+	at org.eclipse.osgi.internal.serviceregistry.ServiceConsumer$2.getService(ServiceConsumer.java:45)
+	at org.eclipse.osgi.internal.serviceregistry.ServiceRegistrationImpl.getService(ServiceRegistrationImpl.java:496)
+	at org.eclipse.osgi.internal.serviceregistry.ServiceRegistry.getService(ServiceRegistry.java:461)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.getService(BundleContextImpl.java:619)
+	at org.osgi.util.tracker.ServiceTracker.addingService(ServiceTracker.java:414)
+	at org.osgi.util.tracker.ServiceTracker$Tracked.customizerAdding(ServiceTracker.java:941)
+	at org.osgi.util.tracker.ServiceTracker$Tracked.customizerAdding(ServiceTracker.java:1)
+	at org.osgi.util.tracker.AbstractTracked.trackAdding(AbstractTracked.java:256)
+	at org.osgi.util.tracker.AbstractTracked.track(AbstractTracked.java:229)
+	at org.osgi.util.tracker.ServiceTracker$Tracked.serviceChanged(ServiceTracker.java:901)
+	at org.eclipse.osgi.internal.serviceregistry.FilteredServiceListener.serviceChanged(FilteredServiceListener.java:109)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.dispatchEvent(BundleContextImpl.java:915)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.ListenerQueue.dispatchEventSynchronous(ListenerQueue.java:148)
+	at org.eclipse.osgi.internal.serviceregistry.ServiceRegistry.publishServiceEventPrivileged(ServiceRegistry.java:862)
+	at org.eclipse.osgi.internal.serviceregistry.ServiceRegistry.publishServiceEvent(ServiceRegistry.java:801)
+	at org.eclipse.osgi.internal.serviceregistry.ServiceRegistrationImpl.register(ServiceRegistrationImpl.java:127)
+	at org.eclipse.osgi.internal.serviceregistry.ServiceRegistry.registerService(ServiceRegistry.java:225)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.registerService(BundleContextImpl.java:464)
+	at org.eclipse.equinox.internal.ds.InstanceProcess.registerService(InstanceProcess.java:536)
+	at org.eclipse.equinox.internal.ds.InstanceProcess.buildComponents(InstanceProcess.java:260)
+	at org.eclipse.equinox.internal.ds.Resolver.buildNewlySatisfied(Resolver.java:473)
+	at org.eclipse.equinox.internal.ds.Resolver.enableComponents(Resolver.java:217)
+	at org.eclipse.equinox.internal.ds.SCRManager.performWork(SCRManager.java:816)
+	at org.eclipse.equinox.internal.ds.SCRManager$QueuedJob.dispatch(SCRManager.java:783)
+	at org.eclipse.equinox.internal.ds.WorkThread.run(WorkThread.java:89)
+	at org.eclipse.equinox.internal.util.impl.tpt.threadpool.Executor.run(Executor.java:70)
+Caused by: java.util.concurrent.TimeoutException: Timeout after waiting 5 seconds to acquire the lock.
+	at org.eclipse.osgi.container.Module.lockStateChange(Module.java:334)
+	... 110 more
+Root exception:
+java.util.concurrent.TimeoutException: Timeout after waiting 5 seconds to acquire the lock.
+	at org.eclipse.osgi.container.Module.lockStateChange(Module.java:334)
+	at org.eclipse.osgi.container.Module.start(Module.java:401)
+	at org.eclipse.osgi.framework.util.SecureAction.start(SecureAction.java:470)
+	at org.eclipse.osgi.internal.hooks.EclipseLazyStarter.postFindLocalClass(EclipseLazyStarter.java:107)
+	at org.eclipse.osgi.internal.loader.classpath.ClasspathManager.findLocalClass(ClasspathManager.java:529)
+	at org.eclipse.osgi.internal.loader.ModuleClassLoader.findLocalClass(ModuleClassLoader.java:325)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findLocalClass(BundleLoader.java:345)
+	at org.eclipse.osgi.internal.loader.sources.SingleSourcePackage.loadClass(SingleSourcePackage.java:36)
+	at org.eclipse.osgi.internal.loader.sources.MultiSourcePackage.loadClass(MultiSourcePackage.java:32)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClassInternal(BundleLoader.java:419)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:372)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:364)
+	at org.eclipse.osgi.internal.loader.ModuleClassLoader.loadClass(ModuleClassLoader.java:161)
+	at java.lang.ClassLoader.loadClass(Unknown Source)
+	at java.lang.Class.forName0(Native Method)
+	at java.lang.Class.forName(Unknown Source)
+	at org.eclipse.equinox.internal.app.Activator.start(Activator.java:55)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl$3.run(BundleContextImpl.java:774)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl$3.run(BundleContextImpl.java:1)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.startActivator(BundleContextImpl.java:767)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.start(BundleContextImpl.java:724)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle.startWorker0(EquinoxBundle.java:932)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle$EquinoxModule.startWorker(EquinoxBundle.java:309)
+	at org.eclipse.osgi.container.Module.doStart(Module.java:581)
+	at org.eclipse.osgi.container.Module.start(Module.java:449)
+	at org.eclipse.osgi.framework.util.SecureAction.start(SecureAction.java:470)
+	at org.eclipse.osgi.internal.hooks.EclipseLazyStarter.postFindLocalClass(EclipseLazyStarter.java:107)
+	at org.eclipse.osgi.internal.loader.classpath.ClasspathManager.findLocalClass(ClasspathManager.java:529)
+	at org.eclipse.osgi.internal.loader.ModuleClassLoader.findLocalClass(ModuleClassLoader.java:325)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findLocalClass(BundleLoader.java:345)
+	at org.eclipse.osgi.internal.loader.sources.SingleSourcePackage.loadClass(SingleSourcePackage.java:36)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClassInternal(BundleLoader.java:419)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:372)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:364)
+	at org.eclipse.osgi.internal.loader.ModuleClassLoader.loadClass(ModuleClassLoader.java:161)
+	at java.lang.ClassLoader.loadClass(Unknown Source)
+	at org.eclipse.core.internal.runtime.InternalPlatform.getCommandLineArgs(InternalPlatform.java:267)
+	at org.eclipse.core.runtime.Platform.getCommandLineArgs(Platform.java:645)
+	at org.eclipse.ui.internal.WorkbenchPlugin.parseBidiArguments(WorkbenchPlugin.java:844)
+	at org.eclipse.ui.internal.WorkbenchPlugin.start(WorkbenchPlugin.java:793)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl$3.run(BundleContextImpl.java:774)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl$3.run(BundleContextImpl.java:1)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.startActivator(BundleContextImpl.java:767)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.start(BundleContextImpl.java:724)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle.startWorker0(EquinoxBundle.java:932)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle$EquinoxModule.startWorker(EquinoxBundle.java:309)
+	at org.eclipse.osgi.container.Module.doStart(Module.java:581)
+	at org.eclipse.osgi.container.Module.start(Module.java:449)
+	at org.eclipse.osgi.framework.util.SecureAction.start(SecureAction.java:470)
+	at org.eclipse.osgi.internal.hooks.EclipseLazyStarter.postFindLocalClass(EclipseLazyStarter.java:107)
+	at org.eclipse.osgi.internal.loader.classpath.ClasspathManager.findLocalClass(ClasspathManager.java:529)
+	at org.eclipse.osgi.internal.loader.ModuleClassLoader.findLocalClass(ModuleClassLoader.java:325)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findLocalClass(BundleLoader.java:345)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClassInternal(BundleLoader.java:423)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:372)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:364)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.loadBundleActivator(BundleContextImpl.java:757)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.start(BundleContextImpl.java:711)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle.startWorker0(EquinoxBundle.java:932)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle$EquinoxModule.startWorker(EquinoxBundle.java:309)
+	at org.eclipse.osgi.container.Module.doStart(Module.java:581)
+	at org.eclipse.osgi.container.Module.start(Module.java:449)
+	at org.eclipse.osgi.framework.util.SecureAction.start(SecureAction.java:470)
+	at org.eclipse.osgi.internal.hooks.EclipseLazyStarter.postFindLocalClass(EclipseLazyStarter.java:107)
+	at org.eclipse.osgi.internal.loader.classpath.ClasspathManager.findLocalClass(ClasspathManager.java:529)
+	at org.eclipse.osgi.internal.loader.ModuleClassLoader.findLocalClass(ModuleClassLoader.java:325)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findLocalClass(BundleLoader.java:345)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClassInternal(BundleLoader.java:423)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:372)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:364)
+	at org.eclipse.osgi.internal.loader.ModuleClassLoader.loadClass(ModuleClassLoader.java:161)
+	at java.lang.ClassLoader.loadClass(Unknown Source)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle.loadClass(EquinoxBundle.java:564)
+	at org.eclipse.equinox.internal.ds.model.ServiceComponent.createInstance(ServiceComponent.java:493)
+	at org.eclipse.equinox.internal.ds.model.ServiceComponentProp.createInstance(ServiceComponentProp.java:270)
+	at org.eclipse.equinox.internal.ds.model.ServiceComponentProp.build(ServiceComponentProp.java:331)
+	at org.eclipse.equinox.internal.ds.InstanceProcess.buildComponent(InstanceProcess.java:620)
+	at org.eclipse.equinox.internal.ds.ServiceReg.getService(ServiceReg.java:53)
+	at org.eclipse.osgi.internal.serviceregistry.ServiceFactoryUse$1.run(ServiceFactoryUse.java:212)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at org.eclipse.osgi.internal.serviceregistry.ServiceFactoryUse.factoryGetService(ServiceFactoryUse.java:210)
+	at org.eclipse.osgi.internal.serviceregistry.ServiceFactoryUse.getService(ServiceFactoryUse.java:111)
+	at org.eclipse.osgi.internal.serviceregistry.ServiceConsumer$2.getService(ServiceConsumer.java:45)
+	at org.eclipse.osgi.internal.serviceregistry.ServiceRegistrationImpl.getService(ServiceRegistrationImpl.java:496)
+	at org.eclipse.osgi.internal.serviceregistry.ServiceRegistry.getService(ServiceRegistry.java:461)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.getService(BundleContextImpl.java:619)
+	at org.osgi.util.tracker.ServiceTracker.addingService(ServiceTracker.java:414)
+	at org.osgi.util.tracker.ServiceTracker$Tracked.customizerAdding(ServiceTracker.java:941)
+	at org.osgi.util.tracker.ServiceTracker$Tracked.customizerAdding(ServiceTracker.java:1)
+	at org.osgi.util.tracker.AbstractTracked.trackAdding(AbstractTracked.java:256)
+	at org.osgi.util.tracker.AbstractTracked.track(AbstractTracked.java:229)
+	at org.osgi.util.tracker.ServiceTracker$Tracked.serviceChanged(ServiceTracker.java:901)
+	at org.eclipse.osgi.internal.serviceregistry.FilteredServiceListener.serviceChanged(FilteredServiceListener.java:109)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.dispatchEvent(BundleContextImpl.java:915)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.ListenerQueue.dispatchEventSynchronous(ListenerQueue.java:148)
+	at org.eclipse.osgi.internal.serviceregistry.ServiceRegistry.publishServiceEventPrivileged(ServiceRegistry.java:862)
+	at org.eclipse.osgi.internal.serviceregistry.ServiceRegistry.publishServiceEvent(ServiceRegistry.java:801)
+	at org.eclipse.osgi.internal.serviceregistry.ServiceRegistrationImpl.register(ServiceRegistrationImpl.java:127)
+	at org.eclipse.osgi.internal.serviceregistry.ServiceRegistry.registerService(ServiceRegistry.java:225)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.registerService(BundleContextImpl.java:464)
+	at org.eclipse.equinox.internal.ds.InstanceProcess.registerService(InstanceProcess.java:536)
+	at org.eclipse.equinox.internal.ds.InstanceProcess.buildComponents(InstanceProcess.java:260)
+	at org.eclipse.equinox.internal.ds.Resolver.buildNewlySatisfied(Resolver.java:473)
+	at org.eclipse.equinox.internal.ds.Resolver.enableComponents(Resolver.java:217)
+	at org.eclipse.equinox.internal.ds.SCRManager.performWork(SCRManager.java:816)
+	at org.eclipse.equinox.internal.ds.SCRManager$QueuedJob.dispatch(SCRManager.java:783)
+	at org.eclipse.equinox.internal.ds.WorkThread.run(WorkThread.java:89)
+	at org.eclipse.equinox.internal.util.impl.tpt.threadpool.Executor.run(Executor.java:70)
+
+!ENTRY org.eclipse.equinox.ds 2 0 2018-10-23 14:59:40.603
+!MESSAGE [SCR - WorkThread] Timeout occurred! Thread was blocked on processing [QueuedJob] WorkPerformer: org.eclipse.equinox.internal.ds.SCRManager@5a16e1f8; actionType 1
+
+!ENTRY org.eclipse.equinox.ds 2 0 2018-10-23 14:59:40.857
+!MESSAGE [SCR] Enabling components of bundle com.genuitec.eclipse.theming.ui did not complete in 30000 ms 
+
+!ENTRY org.eclipse.osgi 2 0 2018-10-23 14:59:41.138
+!MESSAGE While loading class "com.genuitec.eclipse.core.PlatformCommonCore", thread "Thread[Component Resolve Thread (Bundle 692),10,main]" timed out waiting (5017ms) for thread "Thread[Component Resolve Thread,5,main]" to finish starting bundle "org.eclipse.core.runtime_3.12.0.v20160606-1342 [275]". To avoid deadlock, thread "Thread[Component Resolve Thread (Bundle 692),10,main]" is proceeding but "com.genuitec.eclipse.core.PlatformCommonCore" may not be fully initialized.
+!STACK 0
+org.osgi.framework.BundleException: Unable to acquire the state change lock for the module: osgi.identity; type="osgi.bundle"; version:Version="3.12.0.v20160606-1342"; osgi.identity="org.eclipse.core.runtime"; singleton:="true" [id=275] STARTED [STARTED]
+	at org.eclipse.osgi.container.Module.lockStateChange(Module.java:337)
+	at org.eclipse.osgi.container.Module.start(Module.java:401)
+	at org.eclipse.osgi.framework.util.SecureAction.start(SecureAction.java:470)
+	at org.eclipse.osgi.internal.hooks.EclipseLazyStarter.postFindLocalClass(EclipseLazyStarter.java:107)
+	at org.eclipse.osgi.internal.loader.classpath.ClasspathManager.findLocalClass(ClasspathManager.java:529)
+	at org.eclipse.osgi.internal.loader.ModuleClassLoader.findLocalClass(ModuleClassLoader.java:325)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findLocalClass(BundleLoader.java:345)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClassInternal(BundleLoader.java:423)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:372)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:364)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.loadBundleActivator(BundleContextImpl.java:757)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.start(BundleContextImpl.java:711)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle.startWorker0(EquinoxBundle.java:932)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle$EquinoxModule.startWorker(EquinoxBundle.java:309)
+	at org.eclipse.osgi.container.Module.doStart(Module.java:581)
+	at org.eclipse.osgi.container.Module.start(Module.java:449)
+	at org.eclipse.osgi.framework.util.SecureAction.start(SecureAction.java:470)
+	at org.eclipse.osgi.internal.hooks.EclipseLazyStarter.postFindLocalClass(EclipseLazyStarter.java:107)
+	at org.eclipse.osgi.internal.loader.classpath.ClasspathManager.findLocalClass(ClasspathManager.java:529)
+	at org.eclipse.osgi.internal.loader.ModuleClassLoader.findLocalClass(ModuleClassLoader.java:325)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findLocalClass(BundleLoader.java:345)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClassInternal(BundleLoader.java:423)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:372)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:364)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.loadBundleActivator(BundleContextImpl.java:757)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.start(BundleContextImpl.java:711)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle.startWorker0(EquinoxBundle.java:932)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle$EquinoxModule.startWorker(EquinoxBundle.java:309)
+	at org.eclipse.osgi.container.Module.doStart(Module.java:581)
+	at org.eclipse.osgi.container.Module.start(Module.java:449)
+	at org.eclipse.osgi.framework.util.SecureAction.start(SecureAction.java:470)
+	at org.eclipse.osgi.internal.hooks.EclipseLazyStarter.postFindLocalClass(EclipseLazyStarter.java:107)
+	at org.eclipse.osgi.internal.loader.classpath.ClasspathManager.findLocalClass(ClasspathManager.java:529)
+	at org.eclipse.osgi.internal.loader.ModuleClassLoader.findLocalClass(ModuleClassLoader.java:325)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findLocalClass(BundleLoader.java:345)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClassInternal(BundleLoader.java:423)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:372)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:364)
+	at org.eclipse.osgi.internal.loader.ModuleClassLoader.loadClass(ModuleClassLoader.java:161)
+	at java.lang.ClassLoader.loadClass(Unknown Source)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle.loadClass(EquinoxBundle.java:564)
+	at org.eclipse.equinox.internal.ds.model.ServiceComponent.createInstance(ServiceComponent.java:493)
+	at org.eclipse.equinox.internal.ds.model.ServiceComponentProp.createInstance(ServiceComponentProp.java:270)
+	at org.eclipse.equinox.internal.ds.model.ServiceComponentProp.build(ServiceComponentProp.java:331)
+	at org.eclipse.equinox.internal.ds.InstanceProcess.buildComponent(InstanceProcess.java:620)
+	at org.eclipse.equinox.internal.ds.ServiceReg.getService(ServiceReg.java:53)
+	at org.eclipse.osgi.internal.serviceregistry.ServiceFactoryUse$1.run(ServiceFactoryUse.java:212)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at org.eclipse.osgi.internal.serviceregistry.ServiceFactoryUse.factoryGetService(ServiceFactoryUse.java:210)
+	at org.eclipse.osgi.internal.serviceregistry.ServiceFactoryUse.getService(ServiceFactoryUse.java:111)
+	at org.eclipse.osgi.internal.serviceregistry.ServiceConsumer$2.getService(ServiceConsumer.java:45)
+	at org.eclipse.osgi.internal.serviceregistry.ServiceRegistrationImpl.getService(ServiceRegistrationImpl.java:496)
+	at org.eclipse.osgi.internal.serviceregistry.ServiceRegistry.getService(ServiceRegistry.java:461)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.getService(BundleContextImpl.java:619)
+	at org.osgi.util.tracker.ServiceTracker.addingService(ServiceTracker.java:414)
+	at org.osgi.util.tracker.ServiceTracker$Tracked.customizerAdding(ServiceTracker.java:941)
+	at org.osgi.util.tracker.ServiceTracker$Tracked.customizerAdding(ServiceTracker.java:1)
+	at org.osgi.util.tracker.AbstractTracked.trackAdding(AbstractTracked.java:256)
+	at org.osgi.util.tracker.AbstractTracked.track(AbstractTracked.java:229)
+	at org.osgi.util.tracker.ServiceTracker$Tracked.serviceChanged(ServiceTracker.java:901)
+	at org.eclipse.osgi.internal.serviceregistry.FilteredServiceListener.serviceChanged(FilteredServiceListener.java:109)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.dispatchEvent(BundleContextImpl.java:915)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.ListenerQueue.dispatchEventSynchronous(ListenerQueue.java:148)
+	at org.eclipse.osgi.internal.serviceregistry.ServiceRegistry.publishServiceEventPrivileged(ServiceRegistry.java:862)
+	at org.eclipse.osgi.internal.serviceregistry.ServiceRegistry.publishServiceEvent(ServiceRegistry.java:801)
+	at org.eclipse.osgi.internal.serviceregistry.ServiceRegistrationImpl.register(ServiceRegistrationImpl.java:127)
+	at org.eclipse.osgi.internal.serviceregistry.ServiceRegistry.registerService(ServiceRegistry.java:225)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.registerService(BundleContextImpl.java:464)
+	at org.eclipse.equinox.internal.ds.InstanceProcess.registerService(InstanceProcess.java:536)
+	at org.eclipse.equinox.internal.ds.InstanceProcess.buildComponents(InstanceProcess.java:260)
+	at org.eclipse.equinox.internal.ds.Resolver.buildNewlySatisfied(Resolver.java:473)
+	at org.eclipse.equinox.internal.ds.Resolver.enableComponents(Resolver.java:217)
+	at org.eclipse.equinox.internal.ds.SCRManager.performWork(SCRManager.java:816)
+	at org.eclipse.equinox.internal.ds.SCRManager$QueuedJob.dispatch(SCRManager.java:783)
+	at org.eclipse.equinox.internal.ds.WorkThread.run(WorkThread.java:89)
+	at org.eclipse.equinox.internal.util.impl.tpt.threadpool.Executor.run(Executor.java:70)
+Caused by: java.util.concurrent.TimeoutException: Timeout after waiting 5 seconds to acquire the lock.
+	at org.eclipse.osgi.container.Module.lockStateChange(Module.java:334)
+	... 76 more
+Root exception:
+java.util.concurrent.TimeoutException: Timeout after waiting 5 seconds to acquire the lock.
+	at org.eclipse.osgi.container.Module.lockStateChange(Module.java:334)
+	at org.eclipse.osgi.container.Module.start(Module.java:401)
+	at org.eclipse.osgi.framework.util.SecureAction.start(SecureAction.java:470)
+	at org.eclipse.osgi.internal.hooks.EclipseLazyStarter.postFindLocalClass(EclipseLazyStarter.java:107)
+	at org.eclipse.osgi.internal.loader.classpath.ClasspathManager.findLocalClass(ClasspathManager.java:529)
+	at org.eclipse.osgi.internal.loader.ModuleClassLoader.findLocalClass(ModuleClassLoader.java:325)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findLocalClass(BundleLoader.java:345)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClassInternal(BundleLoader.java:423)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:372)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:364)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.loadBundleActivator(BundleContextImpl.java:757)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.start(BundleContextImpl.java:711)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle.startWorker0(EquinoxBundle.java:932)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle$EquinoxModule.startWorker(EquinoxBundle.java:309)
+	at org.eclipse.osgi.container.Module.doStart(Module.java:581)
+	at org.eclipse.osgi.container.Module.start(Module.java:449)
+	at org.eclipse.osgi.framework.util.SecureAction.start(SecureAction.java:470)
+	at org.eclipse.osgi.internal.hooks.EclipseLazyStarter.postFindLocalClass(EclipseLazyStarter.java:107)
+	at org.eclipse.osgi.internal.loader.classpath.ClasspathManager.findLocalClass(ClasspathManager.java:529)
+	at org.eclipse.osgi.internal.loader.ModuleClassLoader.findLocalClass(ModuleClassLoader.java:325)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findLocalClass(BundleLoader.java:345)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClassInternal(BundleLoader.java:423)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:372)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:364)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.loadBundleActivator(BundleContextImpl.java:757)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.start(BundleContextImpl.java:711)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle.startWorker0(EquinoxBundle.java:932)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle$EquinoxModule.startWorker(EquinoxBundle.java:309)
+	at org.eclipse.osgi.container.Module.doStart(Module.java:581)
+	at org.eclipse.osgi.container.Module.start(Module.java:449)
+	at org.eclipse.osgi.framework.util.SecureAction.start(SecureAction.java:470)
+	at org.eclipse.osgi.internal.hooks.EclipseLazyStarter.postFindLocalClass(EclipseLazyStarter.java:107)
+	at org.eclipse.osgi.internal.loader.classpath.ClasspathManager.findLocalClass(ClasspathManager.java:529)
+	at org.eclipse.osgi.internal.loader.ModuleClassLoader.findLocalClass(ModuleClassLoader.java:325)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findLocalClass(BundleLoader.java:345)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClassInternal(BundleLoader.java:423)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:372)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:364)
+	at org.eclipse.osgi.internal.loader.ModuleClassLoader.loadClass(ModuleClassLoader.java:161)
+	at java.lang.ClassLoader.loadClass(Unknown Source)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle.loadClass(EquinoxBundle.java:564)
+	at org.eclipse.equinox.internal.ds.model.ServiceComponent.createInstance(ServiceComponent.java:493)
+	at org.eclipse.equinox.internal.ds.model.ServiceComponentProp.createInstance(ServiceComponentProp.java:270)
+	at org.eclipse.equinox.internal.ds.model.ServiceComponentProp.build(ServiceComponentProp.java:331)
+	at org.eclipse.equinox.internal.ds.InstanceProcess.buildComponent(InstanceProcess.java:620)
+	at org.eclipse.equinox.internal.ds.ServiceReg.getService(ServiceReg.java:53)
+	at org.eclipse.osgi.internal.serviceregistry.ServiceFactoryUse$1.run(ServiceFactoryUse.java:212)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at org.eclipse.osgi.internal.serviceregistry.ServiceFactoryUse.factoryGetService(ServiceFactoryUse.java:210)
+	at org.eclipse.osgi.internal.serviceregistry.ServiceFactoryUse.getService(ServiceFactoryUse.java:111)
+	at org.eclipse.osgi.internal.serviceregistry.ServiceConsumer$2.getService(ServiceConsumer.java:45)
+	at org.eclipse.osgi.internal.serviceregistry.ServiceRegistrationImpl.getService(ServiceRegistrationImpl.java:496)
+	at org.eclipse.osgi.internal.serviceregistry.ServiceRegistry.getService(ServiceRegistry.java:461)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.getService(BundleContextImpl.java:619)
+	at org.osgi.util.tracker.ServiceTracker.addingService(ServiceTracker.java:414)
+	at org.osgi.util.tracker.ServiceTracker$Tracked.customizerAdding(ServiceTracker.java:941)
+	at org.osgi.util.tracker.ServiceTracker$Tracked.customizerAdding(ServiceTracker.java:1)
+	at org.osgi.util.tracker.AbstractTracked.trackAdding(AbstractTracked.java:256)
+	at org.osgi.util.tracker.AbstractTracked.track(AbstractTracked.java:229)
+	at org.osgi.util.tracker.ServiceTracker$Tracked.serviceChanged(ServiceTracker.java:901)
+	at org.eclipse.osgi.internal.serviceregistry.FilteredServiceListener.serviceChanged(FilteredServiceListener.java:109)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.dispatchEvent(BundleContextImpl.java:915)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.ListenerQueue.dispatchEventSynchronous(ListenerQueue.java:148)
+	at org.eclipse.osgi.internal.serviceregistry.ServiceRegistry.publishServiceEventPrivileged(ServiceRegistry.java:862)
+	at org.eclipse.osgi.internal.serviceregistry.ServiceRegistry.publishServiceEvent(ServiceRegistry.java:801)
+	at org.eclipse.osgi.internal.serviceregistry.ServiceRegistrationImpl.register(ServiceRegistrationImpl.java:127)
+	at org.eclipse.osgi.internal.serviceregistry.ServiceRegistry.registerService(ServiceRegistry.java:225)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.registerService(BundleContextImpl.java:464)
+	at org.eclipse.equinox.internal.ds.InstanceProcess.registerService(InstanceProcess.java:536)
+	at org.eclipse.equinox.internal.ds.InstanceProcess.buildComponents(InstanceProcess.java:260)
+	at org.eclipse.equinox.internal.ds.Resolver.buildNewlySatisfied(Resolver.java:473)
+	at org.eclipse.equinox.internal.ds.Resolver.enableComponents(Resolver.java:217)
+	at org.eclipse.equinox.internal.ds.SCRManager.performWork(SCRManager.java:816)
+	at org.eclipse.equinox.internal.ds.SCRManager$QueuedJob.dispatch(SCRManager.java:783)
+	at org.eclipse.equinox.internal.ds.WorkThread.run(WorkThread.java:89)
+	at org.eclipse.equinox.internal.util.impl.tpt.threadpool.Executor.run(Executor.java:70)
+
+!ENTRY org.eclipse.osgi 2 0 2018-10-23 14:59:45.644
+!MESSAGE While loading class "org.eclipse.core.runtime.IRegistryChangeListener", thread "Thread[Framework Event Dispatcher: org.eclipse.osgi.internal.framework.EquinoxEventPublisher@1c18ee69,5,main]" timed out waiting (5022ms) for thread "Thread[Component Resolve Thread,5,main]" to finish starting bundle "org.eclipse.equinox.registry_3.6.100.v20160223-2218 [734]". To avoid deadlock, thread "Thread[Framework Event Dispatcher: org.eclipse.osgi.internal.framework.EquinoxEventPublisher@1c18ee69,5,main]" is proceeding but "org.eclipse.core.runtime.IRegistryChangeListener" may not be fully initialized.
+!STACK 0
+org.osgi.framework.BundleException: Unable to acquire the state change lock for the module: osgi.identity; type="osgi.bundle"; version:Version="3.6.100.v20160223-2218"; osgi.identity="org.eclipse.equinox.registry"; singleton:="true" [id=734] STARTED [STARTED]
+	at org.eclipse.osgi.container.Module.lockStateChange(Module.java:337)
+	at org.eclipse.osgi.container.Module.start(Module.java:401)
+	at org.eclipse.osgi.framework.util.SecureAction.start(SecureAction.java:470)
+	at org.eclipse.osgi.internal.hooks.EclipseLazyStarter.postFindLocalClass(EclipseLazyStarter.java:107)
+	at org.eclipse.osgi.internal.loader.classpath.ClasspathManager.findLocalClass(ClasspathManager.java:529)
+	at org.eclipse.osgi.internal.loader.ModuleClassLoader.findLocalClass(ModuleClassLoader.java:325)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findLocalClass(BundleLoader.java:345)
+	at org.eclipse.osgi.internal.loader.sources.SingleSourcePackage.loadClass(SingleSourcePackage.java:36)
+	at org.eclipse.osgi.internal.loader.sources.MultiSourcePackage.loadClass(MultiSourcePackage.java:32)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClassInternal(BundleLoader.java:419)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:372)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:364)
+	at org.eclipse.osgi.internal.loader.ModuleClassLoader.loadClass(ModuleClassLoader.java:161)
+	at java.lang.ClassLoader.loadClass(Unknown Source)
+	at org.eclipse.ui.PlatformUI.isWorkbenchRunning(PlatformUI.java:114)
+	at org.eclipse.ui.plugin.AbstractUIPlugin.refreshPluginActions(AbstractUIPlugin.java:472)
+	at org.eclipse.ui.plugin.AbstractUIPlugin$2.bundleChanged(AbstractUIPlugin.java:594)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.dispatchEvent(BundleContextImpl.java:903)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+Caused by: java.util.concurrent.TimeoutException: Timeout after waiting 5 seconds to acquire the lock.
+	at org.eclipse.osgi.container.Module.lockStateChange(Module.java:334)
+	... 19 more
+Root exception:
+java.util.concurrent.TimeoutException: Timeout after waiting 5 seconds to acquire the lock.
+	at org.eclipse.osgi.container.Module.lockStateChange(Module.java:334)
+	at org.eclipse.osgi.container.Module.start(Module.java:401)
+	at org.eclipse.osgi.framework.util.SecureAction.start(SecureAction.java:470)
+	at org.eclipse.osgi.internal.hooks.EclipseLazyStarter.postFindLocalClass(EclipseLazyStarter.java:107)
+	at org.eclipse.osgi.internal.loader.classpath.ClasspathManager.findLocalClass(ClasspathManager.java:529)
+	at org.eclipse.osgi.internal.loader.ModuleClassLoader.findLocalClass(ModuleClassLoader.java:325)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findLocalClass(BundleLoader.java:345)
+	at org.eclipse.osgi.internal.loader.sources.SingleSourcePackage.loadClass(SingleSourcePackage.java:36)
+	at org.eclipse.osgi.internal.loader.sources.MultiSourcePackage.loadClass(MultiSourcePackage.java:32)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClassInternal(BundleLoader.java:419)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:372)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:364)
+	at org.eclipse.osgi.internal.loader.ModuleClassLoader.loadClass(ModuleClassLoader.java:161)
+	at java.lang.ClassLoader.loadClass(Unknown Source)
+	at org.eclipse.ui.PlatformUI.isWorkbenchRunning(PlatformUI.java:114)
+	at org.eclipse.ui.plugin.AbstractUIPlugin.refreshPluginActions(AbstractUIPlugin.java:472)
+	at org.eclipse.ui.plugin.AbstractUIPlugin$2.bundleChanged(AbstractUIPlugin.java:594)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.dispatchEvent(BundleContextImpl.java:903)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY org.eclipse.core.contenttype 4 0 2018-10-23 14:59:45.881
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Unable to acquire the state change lock for the module: osgi.identity; type="osgi.bundle"; version:Version="3.5.100.v20160418-1621"; osgi.identity="org.eclipse.core.contenttype"; singleton:="true" [id=260] STARTED [STARTED]
+	at org.eclipse.osgi.container.Module.lockStateChange(Module.java:337)
+	at org.eclipse.osgi.container.Module.start(Module.java:401)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1620)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1599)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1571)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1514)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+Caused by: java.util.concurrent.TimeoutException: Timeout after waiting 5 seconds to acquire the lock.
+	at org.eclipse.osgi.container.Module.lockStateChange(Module.java:334)
+	... 8 more
+Root exception:
+java.util.concurrent.TimeoutException: Timeout after waiting 5 seconds to acquire the lock.
+	at org.eclipse.osgi.container.Module.lockStateChange(Module.java:334)
+	at org.eclipse.osgi.container.Module.start(Module.java:401)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1620)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1599)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1571)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1514)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY org.eclipse.osgi 2 0 2018-10-23 14:59:46.148
+!MESSAGE While loading class "com.genuitec.eclipse.core.PlatformCommonCore", thread "Thread[Component Resolve Thread (Bundle 692),10,main]" timed out waiting (5010ms) for thread "Thread[Component Resolve Thread,5,main]" to finish starting bundle "org.eclipse.equinox.registry_3.6.100.v20160223-2218 [734]". To avoid deadlock, thread "Thread[Component Resolve Thread (Bundle 692),10,main]" is proceeding but "com.genuitec.eclipse.core.PlatformCommonCore" may not be fully initialized.
+!STACK 0
+org.osgi.framework.BundleException: Unable to acquire the state change lock for the module: osgi.identity; type="osgi.bundle"; version:Version="3.6.100.v20160223-2218"; osgi.identity="org.eclipse.equinox.registry"; singleton:="true" [id=734] STARTED [STARTED]
+	at org.eclipse.osgi.container.Module.lockStateChange(Module.java:337)
+	at org.eclipse.osgi.container.Module.start(Module.java:401)
+	at org.eclipse.osgi.framework.util.SecureAction.start(SecureAction.java:470)
+	at org.eclipse.osgi.internal.hooks.EclipseLazyStarter.postFindLocalClass(EclipseLazyStarter.java:107)
+	at org.eclipse.osgi.internal.loader.classpath.ClasspathManager.findLocalClass(ClasspathManager.java:529)
+	at org.eclipse.osgi.internal.loader.ModuleClassLoader.findLocalClass(ModuleClassLoader.java:325)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findLocalClass(BundleLoader.java:345)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClassInternal(BundleLoader.java:423)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:372)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:364)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.loadBundleActivator(BundleContextImpl.java:757)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.start(BundleContextImpl.java:711)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle.startWorker0(EquinoxBundle.java:932)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle$EquinoxModule.startWorker(EquinoxBundle.java:309)
+	at org.eclipse.osgi.container.Module.doStart(Module.java:581)
+	at org.eclipse.osgi.container.Module.start(Module.java:449)
+	at org.eclipse.osgi.framework.util.SecureAction.start(SecureAction.java:470)
+	at org.eclipse.osgi.internal.hooks.EclipseLazyStarter.postFindLocalClass(EclipseLazyStarter.java:107)
+	at org.eclipse.osgi.internal.loader.classpath.ClasspathManager.findLocalClass(ClasspathManager.java:529)
+	at org.eclipse.osgi.internal.loader.ModuleClassLoader.findLocalClass(ModuleClassLoader.java:325)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findLocalClass(BundleLoader.java:345)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClassInternal(BundleLoader.java:423)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:372)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:364)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.loadBundleActivator(BundleContextImpl.java:757)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.start(BundleContextImpl.java:711)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle.startWorker0(EquinoxBundle.java:932)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle$EquinoxModule.startWorker(EquinoxBundle.java:309)
+	at org.eclipse.osgi.container.Module.doStart(Module.java:581)
+	at org.eclipse.osgi.container.Module.start(Module.java:449)
+	at org.eclipse.osgi.framework.util.SecureAction.start(SecureAction.java:470)
+	at org.eclipse.osgi.internal.hooks.EclipseLazyStarter.postFindLocalClass(EclipseLazyStarter.java:107)
+	at org.eclipse.osgi.internal.loader.classpath.ClasspathManager.findLocalClass(ClasspathManager.java:529)
+	at org.eclipse.osgi.internal.loader.ModuleClassLoader.findLocalClass(ModuleClassLoader.java:325)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findLocalClass(BundleLoader.java:345)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClassInternal(BundleLoader.java:423)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:372)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:364)
+	at org.eclipse.osgi.internal.loader.ModuleClassLoader.loadClass(ModuleClassLoader.java:161)
+	at java.lang.ClassLoader.loadClass(Unknown Source)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle.loadClass(EquinoxBundle.java:564)
+	at org.eclipse.equinox.internal.ds.model.ServiceComponent.createInstance(ServiceComponent.java:493)
+	at org.eclipse.equinox.internal.ds.model.ServiceComponentProp.createInstance(ServiceComponentProp.java:270)
+	at org.eclipse.equinox.internal.ds.model.ServiceComponentProp.build(ServiceComponentProp.java:331)
+	at org.eclipse.equinox.internal.ds.InstanceProcess.buildComponent(InstanceProcess.java:620)
+	at org.eclipse.equinox.internal.ds.ServiceReg.getService(ServiceReg.java:53)
+	at org.eclipse.osgi.internal.serviceregistry.ServiceFactoryUse$1.run(ServiceFactoryUse.java:212)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at org.eclipse.osgi.internal.serviceregistry.ServiceFactoryUse.factoryGetService(ServiceFactoryUse.java:210)
+	at org.eclipse.osgi.internal.serviceregistry.ServiceFactoryUse.getService(ServiceFactoryUse.java:111)
+	at org.eclipse.osgi.internal.serviceregistry.ServiceConsumer$2.getService(ServiceConsumer.java:45)
+	at org.eclipse.osgi.internal.serviceregistry.ServiceRegistrationImpl.getService(ServiceRegistrationImpl.java:496)
+	at org.eclipse.osgi.internal.serviceregistry.ServiceRegistry.getService(ServiceRegistry.java:461)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.getService(BundleContextImpl.java:619)
+	at org.osgi.util.tracker.ServiceTracker.addingService(ServiceTracker.java:414)
+	at org.osgi.util.tracker.ServiceTracker$Tracked.customizerAdding(ServiceTracker.java:941)
+	at org.osgi.util.tracker.ServiceTracker$Tracked.customizerAdding(ServiceTracker.java:1)
+	at org.osgi.util.tracker.AbstractTracked.trackAdding(AbstractTracked.java:256)
+	at org.osgi.util.tracker.AbstractTracked.track(AbstractTracked.java:229)
+	at org.osgi.util.tracker.ServiceTracker$Tracked.serviceChanged(ServiceTracker.java:901)
+	at org.eclipse.osgi.internal.serviceregistry.FilteredServiceListener.serviceChanged(FilteredServiceListener.java:109)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.dispatchEvent(BundleContextImpl.java:915)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.ListenerQueue.dispatchEventSynchronous(ListenerQueue.java:148)
+	at org.eclipse.osgi.internal.serviceregistry.ServiceRegistry.publishServiceEventPrivileged(ServiceRegistry.java:862)
+	at org.eclipse.osgi.internal.serviceregistry.ServiceRegistry.publishServiceEvent(ServiceRegistry.java:801)
+	at org.eclipse.osgi.internal.serviceregistry.ServiceRegistrationImpl.register(ServiceRegistrationImpl.java:127)
+	at org.eclipse.osgi.internal.serviceregistry.ServiceRegistry.registerService(ServiceRegistry.java:225)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.registerService(BundleContextImpl.java:464)
+	at org.eclipse.equinox.internal.ds.InstanceProcess.registerService(InstanceProcess.java:536)
+	at org.eclipse.equinox.internal.ds.InstanceProcess.buildComponents(InstanceProcess.java:260)
+	at org.eclipse.equinox.internal.ds.Resolver.buildNewlySatisfied(Resolver.java:473)
+	at org.eclipse.equinox.internal.ds.Resolver.enableComponents(Resolver.java:217)
+	at org.eclipse.equinox.internal.ds.SCRManager.performWork(SCRManager.java:816)
+	at org.eclipse.equinox.internal.ds.SCRManager$QueuedJob.dispatch(SCRManager.java:783)
+	at org.eclipse.equinox.internal.ds.WorkThread.run(WorkThread.java:89)
+	at org.eclipse.equinox.internal.util.impl.tpt.threadpool.Executor.run(Executor.java:70)
+Caused by: java.util.concurrent.TimeoutException: Timeout after waiting 5 seconds to acquire the lock.
+	at org.eclipse.osgi.container.Module.lockStateChange(Module.java:334)
+	... 76 more
+Root exception:
+java.util.concurrent.TimeoutException: Timeout after waiting 5 seconds to acquire the lock.
+	at org.eclipse.osgi.container.Module.lockStateChange(Module.java:334)
+	at org.eclipse.osgi.container.Module.start(Module.java:401)
+	at org.eclipse.osgi.framework.util.SecureAction.start(SecureAction.java:470)
+	at org.eclipse.osgi.internal.hooks.EclipseLazyStarter.postFindLocalClass(EclipseLazyStarter.java:107)
+	at org.eclipse.osgi.internal.loader.classpath.ClasspathManager.findLocalClass(ClasspathManager.java:529)
+	at org.eclipse.osgi.internal.loader.ModuleClassLoader.findLocalClass(ModuleClassLoader.java:325)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findLocalClass(BundleLoader.java:345)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClassInternal(BundleLoader.java:423)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:372)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:364)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.loadBundleActivator(BundleContextImpl.java:757)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.start(BundleContextImpl.java:711)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle.startWorker0(EquinoxBundle.java:932)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle$EquinoxModule.startWorker(EquinoxBundle.java:309)
+	at org.eclipse.osgi.container.Module.doStart(Module.java:581)
+	at org.eclipse.osgi.container.Module.start(Module.java:449)
+	at org.eclipse.osgi.framework.util.SecureAction.start(SecureAction.java:470)
+	at org.eclipse.osgi.internal.hooks.EclipseLazyStarter.postFindLocalClass(EclipseLazyStarter.java:107)
+	at org.eclipse.osgi.internal.loader.classpath.ClasspathManager.findLocalClass(ClasspathManager.java:529)
+	at org.eclipse.osgi.internal.loader.ModuleClassLoader.findLocalClass(ModuleClassLoader.java:325)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findLocalClass(BundleLoader.java:345)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClassInternal(BundleLoader.java:423)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:372)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:364)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.loadBundleActivator(BundleContextImpl.java:757)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.start(BundleContextImpl.java:711)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle.startWorker0(EquinoxBundle.java:932)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle$EquinoxModule.startWorker(EquinoxBundle.java:309)
+	at org.eclipse.osgi.container.Module.doStart(Module.java:581)
+	at org.eclipse.osgi.container.Module.start(Module.java:449)
+	at org.eclipse.osgi.framework.util.SecureAction.start(SecureAction.java:470)
+	at org.eclipse.osgi.internal.hooks.EclipseLazyStarter.postFindLocalClass(EclipseLazyStarter.java:107)
+	at org.eclipse.osgi.internal.loader.classpath.ClasspathManager.findLocalClass(ClasspathManager.java:529)
+	at org.eclipse.osgi.internal.loader.ModuleClassLoader.findLocalClass(ModuleClassLoader.java:325)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findLocalClass(BundleLoader.java:345)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClassInternal(BundleLoader.java:423)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:372)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:364)
+	at org.eclipse.osgi.internal.loader.ModuleClassLoader.loadClass(ModuleClassLoader.java:161)
+	at java.lang.ClassLoader.loadClass(Unknown Source)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle.loadClass(EquinoxBundle.java:564)
+	at org.eclipse.equinox.internal.ds.model.ServiceComponent.createInstance(ServiceComponent.java:493)
+	at org.eclipse.equinox.internal.ds.model.ServiceComponentProp.createInstance(ServiceComponentProp.java:270)
+	at org.eclipse.equinox.internal.ds.model.ServiceComponentProp.build(ServiceComponentProp.java:331)
+	at org.eclipse.equinox.internal.ds.InstanceProcess.buildComponent(InstanceProcess.java:620)
+	at org.eclipse.equinox.internal.ds.ServiceReg.getService(ServiceReg.java:53)
+	at org.eclipse.osgi.internal.serviceregistry.ServiceFactoryUse$1.run(ServiceFactoryUse.java:212)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at org.eclipse.osgi.internal.serviceregistry.ServiceFactoryUse.factoryGetService(ServiceFactoryUse.java:210)
+	at org.eclipse.osgi.internal.serviceregistry.ServiceFactoryUse.getService(ServiceFactoryUse.java:111)
+	at org.eclipse.osgi.internal.serviceregistry.ServiceConsumer$2.getService(ServiceConsumer.java:45)
+	at org.eclipse.osgi.internal.serviceregistry.ServiceRegistrationImpl.getService(ServiceRegistrationImpl.java:496)
+	at org.eclipse.osgi.internal.serviceregistry.ServiceRegistry.getService(ServiceRegistry.java:461)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.getService(BundleContextImpl.java:619)
+	at org.osgi.util.tracker.ServiceTracker.addingService(ServiceTracker.java:414)
+	at org.osgi.util.tracker.ServiceTracker$Tracked.customizerAdding(ServiceTracker.java:941)
+	at org.osgi.util.tracker.ServiceTracker$Tracked.customizerAdding(ServiceTracker.java:1)
+	at org.osgi.util.tracker.AbstractTracked.trackAdding(AbstractTracked.java:256)
+	at org.osgi.util.tracker.AbstractTracked.track(AbstractTracked.java:229)
+	at org.osgi.util.tracker.ServiceTracker$Tracked.serviceChanged(ServiceTracker.java:901)
+	at org.eclipse.osgi.internal.serviceregistry.FilteredServiceListener.serviceChanged(FilteredServiceListener.java:109)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.dispatchEvent(BundleContextImpl.java:915)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.ListenerQueue.dispatchEventSynchronous(ListenerQueue.java:148)
+	at org.eclipse.osgi.internal.serviceregistry.ServiceRegistry.publishServiceEventPrivileged(ServiceRegistry.java:862)
+	at org.eclipse.osgi.internal.serviceregistry.ServiceRegistry.publishServiceEvent(ServiceRegistry.java:801)
+	at org.eclipse.osgi.internal.serviceregistry.ServiceRegistrationImpl.register(ServiceRegistrationImpl.java:127)
+	at org.eclipse.osgi.internal.serviceregistry.ServiceRegistry.registerService(ServiceRegistry.java:225)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.registerService(BundleContextImpl.java:464)
+	at org.eclipse.equinox.internal.ds.InstanceProcess.registerService(InstanceProcess.java:536)
+	at org.eclipse.equinox.internal.ds.InstanceProcess.buildComponents(InstanceProcess.java:260)
+	at org.eclipse.equinox.internal.ds.Resolver.buildNewlySatisfied(Resolver.java:473)
+	at org.eclipse.equinox.internal.ds.Resolver.enableComponents(Resolver.java:217)
+	at org.eclipse.equinox.internal.ds.SCRManager.performWork(SCRManager.java:816)
+	at org.eclipse.equinox.internal.ds.SCRManager$QueuedJob.dispatch(SCRManager.java:783)
+	at org.eclipse.equinox.internal.ds.WorkThread.run(WorkThread.java:89)
+	at org.eclipse.equinox.internal.util.impl.tpt.threadpool.Executor.run(Executor.java:70)
+!SESSION 2018-10-23 14:56:21.081 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_171
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=de_DE
+Framework arguments:  -application edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim
+Command-line arguments:  -application edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim -data C:\Users\Freddy\git\WorkwaySimAbstractSimEngineHLA\edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim -dev file:C:/Users/Freddy/workspace/.metadata/.plugins/org.eclipse.pde.core/Workway Behaviour Simulation Example/dev.properties -os win32 -ws win32 -arch x86_64 -consoleLog
+
+!ENTRY org.apache.log4j 2 0 2018-10-23 15:05:24.006
+!MESSAGE portico.lrc.jgroups  - Detected that federate [unkonwn] may have crashed, investigating...
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-23 15:05:24.160
+!MESSAGE portico.lrc.jgroups  - Unknown channel member crashed. Don't think it was a federate. Ignoring. uuid=85aa4ef9-6fe4-4b1e-8172-b3315ba7e14e
+
+!SESSION 2018-10-23 15:13:11.545 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_171
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=de_DE
+Framework arguments:  -application edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim
+Command-line arguments:  -application edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim -data C:\Users\Freddy\git\WorkwaySimAbstractSimEngineHLA\edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim -dev file:C:/Users/Freddy/workspace/.metadata/.plugins/org.eclipse.pde.core/Workway Behaviour Simulation Example/dev.properties -os win32 -ws win32 -arch x86_64 -consoleLog
+
+!ENTRY org.apache.log4j 2 0 2018-10-23 15:18:41.409
+!MESSAGE portico.lrc.jgroups  - Detected that federate [unkonwn] may have crashed, investigating...
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-23 15:18:41.565
+!MESSAGE portico.lrc.jgroups  - Unknown channel member crashed. Don't think it was a federate. Ignoring. uuid=f92e901f-4ef3-40b5-8b9b-82cda730bd15
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-23 15:18:52.085
+!MESSAGE portico.lrc.jgroups  - Unknown channel member crashed. Don't think it was a federate. Ignoring. uuid=f92e901f-4ef3-40b5-8b9b-82cda730bd15
+
+!SESSION 2018-10-23 15:20:21.791 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_171
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=de_DE
+Framework arguments:  -application edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim
+Command-line arguments:  -application edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim -data C:\Users\Freddy\git\WorkwaySimAbstractSimEngineHLA\edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim -dev file:C:/Users/Freddy/workspace/.metadata/.plugins/org.eclipse.pde.core/Workway Behaviour Simulation Example/dev.properties -os win32 -ws win32 -arch x86_64 -consoleLog
+
+!ENTRY org.apache.log4j 2 0 2018-10-23 15:26:34.273
+!MESSAGE portico.lrc.jgroups  - Detected that federate [unkonwn] may have crashed, investigating...
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-23 15:26:34.429
+!MESSAGE portico.lrc.jgroups  - Unknown channel member crashed. Don't think it was a federate. Ignoring. uuid=54d2b9da-ee3b-494a-b571-a3517c3d49e2
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-23 15:26:41.874
+!MESSAGE portico.lrc.jgroups  - Unknown channel member crashed. Don't think it was a federate. Ignoring. uuid=54d2b9da-ee3b-494a-b571-a3517c3d49e2
+
+!SESSION 2018-10-23 15:31:06.612 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_171
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=de_DE
+Framework arguments:  -application edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim
+Command-line arguments:  -application edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim -data C:\Users\Freddy\git\WorkwaySimAbstractSimEngineHLA\edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim -dev file:C:/Users/Freddy/workspace/.metadata/.plugins/org.eclipse.pde.core/Workway Behaviour Simulation Example/dev.properties -os win32 -ws win32 -arch x86_64 -consoleLog
+
+!ENTRY org.apache.log4j 2 0 2018-10-23 15:36:36.773
+!MESSAGE portico.lrc.jgroups  - Detected that federate [unkonwn] may have crashed, investigating...
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-23 15:36:36.929
+!MESSAGE portico.lrc.jgroups  - Unknown channel member crashed. Don't think it was a federate. Ignoring. uuid=4532d71f-842d-4e6d-9f94-b5341af2a4b3
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-23 15:36:47.562
+!MESSAGE portico.lrc.jgroups  - Unknown channel member crashed. Don't think it was a federate. Ignoring. uuid=4532d71f-842d-4e6d-9f94-b5341af2a4b3
+
+!SESSION 2018-10-23 16:02:44.264 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_171
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=de_DE
+Framework arguments:  -application edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim
+Command-line arguments:  -application edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim -data C:\Users\Freddy\git\WorkwaySimAbstractSimEngineHLA\edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim -dev file:C:/Users/Freddy/workspace/.metadata/.plugins/org.eclipse.pde.core/Workway Behaviour Simulation Example/dev.properties -os win32 -ws win32 -arch x86_64 -consoleLog
+
+!ENTRY org.apache.log4j 2 0 2018-10-23 16:11:18.978
+!MESSAGE portico.lrc  - WARNING Federate [WorkwayFed89] Not ticking enough, queue is getting fat! (size=534, warningLevel=500)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-23 16:11:19.150
+!MESSAGE portico.lrc  - WARNING Federate [WorkwayFed97] Not ticking enough, queue is getting fat! (size=556, warningLevel=500)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-23 16:11:19.337
+!MESSAGE portico.lrc  - WARNING Federate [WorkwayFed37] Not ticking enough, queue is getting fat! (size=570, warningLevel=500)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-23 16:11:19.369
+!MESSAGE portico.lrc  - WARNING Federate [WorkwayFed36] Not ticking enough, queue is getting fat! (size=570, warningLevel=500)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-23 16:11:19.384
+!MESSAGE portico.lrc  - WARNING Federate [WorkwayFed26] Not ticking enough, queue is getting fat! (size=521, warningLevel=500)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-23 16:11:19.415
+!MESSAGE portico.lrc  - WARNING Federate [WorkwayFed32] Not ticking enough, queue is getting fat! (size=570, warningLevel=500)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-23 16:11:19.603
+!MESSAGE portico.lrc  - WARNING Federate [WorkwayFed27] Not ticking enough, queue is getting fat! (size=521, warningLevel=500)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-23 16:11:19.603
+!MESSAGE portico.lrc  - WARNING Federate [WorkwayFed28] Not ticking enough, queue is getting fat! (size=570, warningLevel=500)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-23 16:11:19.619
+!MESSAGE portico.lrc  - WARNING Federate [WorkwayFed87] Not ticking enough, queue is getting fat! (size=542, warningLevel=500)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-23 16:11:19.619
+!MESSAGE portico.lrc  - WARNING Federate [WorkwayFed82] Not ticking enough, queue is getting fat! (size=541, warningLevel=500)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-23 16:11:19.619
+!MESSAGE portico.lrc  - WARNING Federate [WorkwayFed78] Not ticking enough, queue is getting fat! (size=544, warningLevel=500)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-23 16:11:19.619
+!MESSAGE portico.lrc  - WARNING Federate [WorkwayFed79] Not ticking enough, queue is getting fat! (size=544, warningLevel=500)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-23 16:11:19.619
+!MESSAGE portico.lrc  - WARNING Federate [WorkwayFed71] Not ticking enough, queue is getting fat! (size=539, warningLevel=500)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-23 16:11:19.619
+!MESSAGE portico.lrc  - WARNING Federate [WorkwayFed62] Not ticking enough, queue is getting fat! (size=540, warningLevel=500)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-23 16:11:19.634
+!MESSAGE portico.lrc  - WARNING Federate [WorkwayFed84] Not ticking enough, queue is getting fat! (size=539, warningLevel=500)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-23 16:11:19.650
+!MESSAGE portico.lrc  - WARNING Federate [WorkwayFed58] Not ticking enough, queue is getting fat! (size=544, warningLevel=500)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-23 16:11:19.650
+!MESSAGE portico.lrc  - WARNING Federate [WorkwayFed92] Not ticking enough, queue is getting fat! (size=536, warningLevel=500)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-23 16:11:19.697
+!MESSAGE portico.lrc  - WARNING Federate [WorkwayFed75] Not ticking enough, queue is getting fat! (size=544, warningLevel=500)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-23 16:11:19.712
+!MESSAGE portico.lrc  - WARNING Federate [WorkwayFed80] Not ticking enough, queue is getting fat! (size=548, warningLevel=500)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-23 16:11:19.712
+!MESSAGE portico.lrc  - WARNING Federate [WorkwayFed77] Not ticking enough, queue is getting fat! (size=548, warningLevel=500)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-23 16:11:19.712
+!MESSAGE portico.lrc  - WARNING Federate [WorkwayFed60] Not ticking enough, queue is getting fat! (size=545, warningLevel=500)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-23 16:11:19.728
+!MESSAGE portico.lrc  - WARNING Federate [WorkwayFed64] Not ticking enough, queue is getting fat! (size=545, warningLevel=500)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-23 16:11:19.744
+!MESSAGE portico.lrc  - WARNING Federate [WorkwayFed65] Not ticking enough, queue is getting fat! (size=541, warningLevel=500)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-23 16:11:20.062
+!MESSAGE portico.lrc  - WARNING Federate [WorkwayFed69] Not ticking enough, queue is getting fat! (size=540, warningLevel=500)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-23 16:11:20.109
+!MESSAGE portico.lrc  - WARNING Federate [WorkwayFed66] Not ticking enough, queue is getting fat! (size=538, warningLevel=500)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-23 16:11:20.156
+!MESSAGE portico.lrc  - WARNING Federate [WorkwayFed76] Not ticking enough, queue is getting fat! (size=536, warningLevel=500)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-23 16:11:20.156
+!MESSAGE portico.lrc  - WARNING Federate [WorkwayFed96] Not ticking enough, queue is getting fat! (size=537, warningLevel=500)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-23 16:11:20.156
+!MESSAGE portico.lrc  - WARNING Federate [WorkwayFed95] Not ticking enough, queue is getting fat! (size=535, warningLevel=500)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-23 16:11:20.156
+!MESSAGE portico.lrc  - WARNING Federate [WorkwayFed94] Not ticking enough, queue is getting fat! (size=541, warningLevel=500)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-23 16:11:20.170
+!MESSAGE portico.lrc  - WARNING Federate [WorkwayFed70] Not ticking enough, queue is getting fat! (size=542, warningLevel=500)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-23 16:11:20.176
+!MESSAGE portico.lrc  - WARNING Federate [WorkwayFed74] Not ticking enough, queue is getting fat! (size=534, warningLevel=500)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-23 16:11:20.178
+!MESSAGE portico.lrc  - WARNING Federate [WorkwayFed61] Not ticking enough, queue is getting fat! (size=537, warningLevel=500)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-23 16:11:20.242
+!MESSAGE portico.lrc  - WARNING Federate [WorkwayFed50] Not ticking enough, queue is getting fat! (size=552, warningLevel=500)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-23 16:11:20.473
+!MESSAGE portico.lrc  - WARNING Federate [WorkwayFed49] Not ticking enough, queue is getting fat! (size=557, warningLevel=500)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-23 16:11:20.475
+!MESSAGE portico.lrc  - WARNING Federate [WorkwayFed52] Not ticking enough, queue is getting fat! (size=557, warningLevel=500)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-23 16:11:20.477
+!MESSAGE portico.lrc  - WARNING Federate [WorkwayFed51] Not ticking enough, queue is getting fat! (size=557, warningLevel=500)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-23 16:11:20.479
+!MESSAGE portico.lrc  - WARNING Federate [WorkwayFed46] Not ticking enough, queue is getting fat! (size=552, warningLevel=500)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-23 16:11:20.484
+!MESSAGE portico.lrc  - WARNING Federate [WorkwayFed45] Not ticking enough, queue is getting fat! (size=548, warningLevel=500)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-23 16:24:43.747
+!MESSAGE de.uka.ipd.sdq.simulation.abstractsimengine.AbstractExperiment  - Tried to stop the simulation, which has already been stopped.
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-23 16:24:49.194
+!MESSAGE portico.lrc  - WARNING Federate [WorkwayFed8] Not ticking enough, queue is getting fat! (size=745, warningLevel=500)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-23 16:24:51.288
+!MESSAGE portico.lrc  - WARNING Federate [WorkwayFed9] Not ticking enough, queue is getting fat! (size=754, warningLevel=500)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-23 16:24:51.366
+!MESSAGE portico.lrc  - WARNING Federate [WorkwayFed54] Not ticking enough, queue is getting fat! (size=961, warningLevel=500)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-23 16:24:51.413
+!MESSAGE portico.lrc  - WARNING Federate [WorkwayFed92] Not ticking enough, queue is getting fat! (size=852, warningLevel=500)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-23 16:24:55.295
+!MESSAGE portico.lrc  - WARNING Federate [WorkwayFed67] Not ticking enough, queue is getting fat! (size=1383, warningLevel=500)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-23 16:24:59.171
+!MESSAGE de.uka.ipd.sdq.simulation.abstractsimengine.AbstractExperiment  - Tried to stop the simulation, which has already been stopped.
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-23 16:25:00.467
+!MESSAGE de.uka.ipd.sdq.simulation.abstractsimengine.AbstractExperiment  - Tried to stop the simulation, which has already been stopped.
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-23 16:25:02.845
+!MESSAGE de.uka.ipd.sdq.simulation.abstractsimengine.AbstractExperiment  - Tried to stop the simulation, which has already been stopped.
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-23 16:25:03.937
+!MESSAGE portico.lrc  - WARNING Federate [WorkwayFed69] Not ticking enough, queue is getting fat! (size=1527, warningLevel=500)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-23 16:25:03.984
+!MESSAGE de.uka.ipd.sdq.simulation.abstractsimengine.AbstractExperiment  - Tried to stop the simulation, which has already been stopped.
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-23 16:25:04.046
+!MESSAGE de.uka.ipd.sdq.simulation.abstractsimengine.AbstractExperiment  - Tried to stop the simulation, which has already been stopped.
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-23 16:25:04.046
+!MESSAGE de.uka.ipd.sdq.simulation.abstractsimengine.AbstractExperiment  - Tried to stop the simulation, which has already been stopped.
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-23 16:25:04.108
+!MESSAGE de.uka.ipd.sdq.simulation.abstractsimengine.AbstractExperiment  - Tried to stop the simulation, which has already been stopped.
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-23 16:25:04.109
+!MESSAGE portico.lrc  - WARNING Federate [WorkwayFed40] Not ticking enough, queue is getting fat! (size=788, warningLevel=500)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-23 16:25:04.109
+!MESSAGE de.uka.ipd.sdq.simulation.abstractsimengine.AbstractExperiment  - Tried to stop the simulation, which has already been stopped.
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-23 16:25:04.109
+!MESSAGE de.uka.ipd.sdq.simulation.abstractsimengine.AbstractExperiment  - Tried to stop the simulation, which has already been stopped.
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-23 16:25:04.109
+!MESSAGE portico.lrc  - WARNING Federate [WorkwayFed43] Not ticking enough, queue is getting fat! (size=808, warningLevel=500)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-23 16:25:05.011
+!MESSAGE portico.lrc  - WARNING Federate [WorkwayFed37] Not ticking enough, queue is getting fat! (size=838, warningLevel=500)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-23 16:25:05.076
+!MESSAGE portico.lrc  - WARNING Federate [WorkwayFed49] Not ticking enough, queue is getting fat! (size=826, warningLevel=500)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-23 16:25:05.091
+!MESSAGE portico.lrc  - WARNING Federate [WorkwayFed45] Not ticking enough, queue is getting fat! (size=818, warningLevel=500)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-23 16:25:05.091
+!MESSAGE portico.lrc  - WARNING Federate [WorkwayFed33] Not ticking enough, queue is getting fat! (size=728, warningLevel=500)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-23 16:25:05.091
+!MESSAGE portico.lrc  - WARNING Federate [WorkwayFed39] Not ticking enough, queue is getting fat! (size=737, warningLevel=500)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-23 16:25:05.107
+!MESSAGE portico.lrc  - WARNING Federate [WorkwayFed47] Not ticking enough, queue is getting fat! (size=545, warningLevel=500)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-23 16:25:05.107
+!MESSAGE portico.lrc  - WARNING Federate [WorkwayFed59] Not ticking enough, queue is getting fat! (size=708, warningLevel=500)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-23 16:25:05.132
+!MESSAGE portico.lrc  - WARNING Federate [WorkwayFed14] Not ticking enough, queue is getting fat! (size=735, warningLevel=500)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-23 16:25:05.132
+!MESSAGE portico.lrc  - WARNING Federate [WorkwayFed12] Not ticking enough, queue is getting fat! (size=711, warningLevel=500)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-23 16:25:05.132
+!MESSAGE portico.lrc  - WARNING Federate [WorkwayFed11] Not ticking enough, queue is getting fat! (size=572, warningLevel=500)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-23 16:25:05.147
+!MESSAGE portico.lrc  - WARNING Federate [WorkwayFed7] Not ticking enough, queue is getting fat! (size=521, warningLevel=500)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-23 16:25:05.147
+!MESSAGE portico.lrc  - WARNING Federate [WorkwayFed19] Not ticking enough, queue is getting fat! (size=530, warningLevel=500)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-23 16:25:05.147
+!MESSAGE portico.lrc  - WARNING Federate [WorkwayFed5] Not ticking enough, queue is getting fat! (size=515, warningLevel=500)
+
+
+!ENTRY org.apache.log4j 4 0 2018-10-23 16:25:05.163
+!MESSAGE portico.lrc  - FAILURE Exception encountered while processing incoming message: null
+
+!STACK 0
+java.util.ConcurrentModificationException
+	at java.util.HashMap$HashIterator.nextNode(Unknown Source)
+	at java.util.HashMap$KeyIterator.next(Unknown Source)
+	at org.portico.lrc.services.time.handlers.incoming.TimeAdvanceRequestIncomingHandler.issueAllPossibleAdvances(TimeAdvanceRequestIncomingHandler.java:152)
+	at org.portico.lrc.services.time.handlers.incoming.TimeAdvanceRequestIncomingHandler.process(TimeAdvanceRequestIncomingHandler.java:138)
+	at org.portico.utils.messaging.MessageSink.process(MessageSink.java:187)
+	at org.portico.lrc.LRC.tickProcess(LRC.java:688)
+	at org.portico.lrc.LRC.tick(LRC.java:555)
+	at org.portico.impl.hla1516e.Impl1516eHelper.evokeMultiple(Impl1516eHelper.java:188)
+	at org.portico.impl.hla1516e.Rti1516eAmbassador.evokeMultipleCallbacks(Rti1516eAmbassador.java:5407)
+	at edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.component.WorkwayFederate.advanceTime(WorkwayFederate.java:417)
+	at edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.component.WorkwayFederate.synchronisedAdvancedTime(WorkwayFederate.java:429)
+	at edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.events.HumanWalkFromBusStopHomeToHomeEvent.eventRoutine(HumanWalkFromBusStopHomeToHomeEvent.java:27)
+	at edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.events.HumanWalkFromBusStopHomeToHomeEvent.eventRoutine(HumanWalkFromBusStopHomeToHomeEvent.java:1)
+	at de.uka.ipd.sdq.simulation.abstractsimengine.desmoj.DesmoJSimEvent.eventRoutine(DesmoJSimEvent.java:34)
+	at de.uka.ipd.sdq.simulation.abstractsimengine.desmoj.DesmoJSimEvent.eventRoutine(DesmoJSimEvent.java:1)
+	at desmoj.core.simulator.Scheduler.processNextEventNote(Unknown Source)
+	at desmoj.core.simulator.Experiment.proceed(Unknown Source)
+	at desmoj.core.simulator.Experiment.start(Unknown Source)
+	at desmoj.core.simulator.Experiment.start(Unknown Source)
+	at de.uka.ipd.sdq.simulation.abstractsimengine.desmoj.DesmoJExperiment.startSimulator(DesmoJExperiment.java:48)
+	at de.uka.ipd.sdq.simulation.abstractsimengine.AbstractExperiment.start(AbstractExperiment.java:59)
+	at edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.component.WorkwayModel.run(WorkwayModel.java:436)
+	at java.lang.Thread.run(Unknown Source)
+
+!ENTRY org.apache.log4j 2 0 2018-10-23 16:25:06.207
+!MESSAGE portico.lrc  - WARNING Federate [WorkwayFed97] Not ticking enough, queue is getting fat! (size=2985, warningLevel=500)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-23 16:25:06.310
+!MESSAGE portico.lrc  - WARNING Federate [WorkwayFed15] Not ticking enough, queue is getting fat! (size=588, warningLevel=500)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-23 16:25:06.326
+!MESSAGE de.uka.ipd.sdq.simulation.abstractsimengine.AbstractExperiment  - Tried to stop the simulation, which has already been stopped.
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-23 16:25:06.451
+!MESSAGE portico.lrc  - WARNING Federate [WorkwayFed43] Not ticking enough, queue is getting fat! (size=2269, warningLevel=500)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-23 16:25:06.451
+!MESSAGE portico.lrc.jgroups  - Detected that federate [WorkwayFed93] may have crashed, investigating...
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-23 16:25:06.451
+!MESSAGE de.uka.ipd.sdq.simulation.abstractsimengine.AbstractExperiment  - Tried to stop the simulation, which has already been stopped.
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-23 16:25:06.466
+!MESSAGE de.uka.ipd.sdq.simulation.abstractsimengine.AbstractExperiment  - Tried to stop the simulation, which has already been stopped.
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-23 16:25:06.466
+!MESSAGE de.uka.ipd.sdq.simulation.abstractsimengine.AbstractExperiment  - Tried to stop the simulation, which has already been stopped.
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-23 16:25:06.466
+!MESSAGE de.uka.ipd.sdq.simulation.abstractsimengine.AbstractExperiment  - Tried to stop the simulation, which has already been stopped.
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-23 16:25:06.466
+!MESSAGE de.uka.ipd.sdq.simulation.abstractsimengine.AbstractExperiment  - Tried to stop the simulation, which has already been stopped.
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-23 16:25:06.466
+!MESSAGE de.uka.ipd.sdq.simulation.abstractsimengine.AbstractExperiment  - Tried to stop the simulation, which has already been stopped.
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-23 16:25:06.466
+!MESSAGE de.uka.ipd.sdq.simulation.abstractsimengine.AbstractExperiment  - Tried to stop the simulation, which has already been stopped.
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-23 16:25:06.466
+!MESSAGE de.uka.ipd.sdq.simulation.abstractsimengine.AbstractExperiment  - Tried to stop the simulation, which has already been stopped.
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-23 16:25:06.466
+!MESSAGE de.uka.ipd.sdq.simulation.abstractsimengine.AbstractExperiment  - Tried to stop the simulation, which has already been stopped.
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-23 16:25:06.482
+!MESSAGE de.uka.ipd.sdq.simulation.abstractsimengine.AbstractExperiment  - Tried to stop the simulation, which has already been stopped.
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-23 16:25:06.482
+!MESSAGE de.uka.ipd.sdq.simulation.abstractsimengine.AbstractExperiment  - Tried to stop the simulation, which has already been stopped.
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-23 16:25:06.482
+!MESSAGE portico.lrc  - WARNING Federate [WorkwayFed71] Not ticking enough, queue is getting fat! (size=1529, warningLevel=500)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-23 16:25:06.482
+!MESSAGE de.uka.ipd.sdq.simulation.abstractsimengine.AbstractExperiment  - Tried to stop the simulation, which has already been stopped.
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-23 16:25:06.482
+!MESSAGE de.uka.ipd.sdq.simulation.abstractsimengine.AbstractExperiment  - Tried to stop the simulation, which has already been stopped.
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-23 16:25:06.482
+!MESSAGE de.uka.ipd.sdq.simulation.abstractsimengine.AbstractExperiment  - Tried to stop the simulation, which has already been stopped.
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-23 16:25:06.482
+!MESSAGE portico.lrc  - WARNING Federate [WorkwayFed92] Not ticking enough, queue is getting fat! (size=895, warningLevel=500)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-23 16:25:06.482
+!MESSAGE portico.lrc  - WARNING Federate [WorkwayFed55] Not ticking enough, queue is getting fat! (size=866, warningLevel=500)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-23 16:25:06.482
+!MESSAGE portico.lrc  - WARNING Federate [WorkwayFed54] Not ticking enough, queue is getting fat! (size=1315, warningLevel=500)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-23 16:25:06.498
+!MESSAGE portico.lrc  - WARNING Federate [WorkwayFed84] Not ticking enough, queue is getting fat! (size=1364, warningLevel=500)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-23 16:25:06.498
+!MESSAGE portico.lrc  - WARNING Federate [WorkwayFed41] Not ticking enough, queue is getting fat! (size=556, warningLevel=500)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-23 16:25:06.498
+!MESSAGE portico.lrc  - WARNING Federate [WorkwayFed53] Not ticking enough, queue is getting fat! (size=1313, warningLevel=500)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-23 16:25:06.498
+!MESSAGE portico.lrc  - WARNING Federate [WorkwayFed51] Not ticking enough, queue is getting fat! (size=873, warningLevel=500)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-23 16:25:06.498
+!MESSAGE de.uka.ipd.sdq.simulation.abstractsimengine.AbstractExperiment  - Tried to stop the simulation, which has already been stopped.
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-23 16:25:06.513
+!MESSAGE portico.lrc  - WARNING Federate [WorkwayFed81] Not ticking enough, queue is getting fat! (size=1298, warningLevel=500)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-23 16:25:06.513
+!MESSAGE portico.lrc  - WARNING Federate [WorkwayFed27] Not ticking enough, queue is getting fat! (size=1901, warningLevel=500)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-23 16:25:06.513
+!MESSAGE portico.lrc  - WARNING Federate [WorkwayFed25] Not ticking enough, queue is getting fat! (size=1983, warningLevel=500)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-23 16:25:06.513
+!MESSAGE portico.lrc  - WARNING Federate [WorkwayFed75] Not ticking enough, queue is getting fat! (size=1303, warningLevel=500)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-23 16:25:06.529
+!MESSAGE portico.lrc  - WARNING Federate [WorkwayFed29] Not ticking enough, queue is getting fat! (size=1999, warningLevel=500)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-23 16:25:06.529
+!MESSAGE portico.lrc  - WARNING Federate [WorkwayFed31] Not ticking enough, queue is getting fat! (size=2005, warningLevel=500)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-23 16:25:06.529
+!MESSAGE portico.lrc  - WARNING Federate [WorkwayFed8] Not ticking enough, queue is getting fat! (size=569, warningLevel=500)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-23 16:25:06.529
+!MESSAGE portico.lrc  - WARNING Federate [WorkwayFed63] Not ticking enough, queue is getting fat! (size=1402, warningLevel=500)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-23 16:25:06.545
+!MESSAGE portico.lrc  - WARNING Federate [WorkwayFed77] Not ticking enough, queue is getting fat! (size=1384, warningLevel=500)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-23 16:25:06.545
+!MESSAGE portico.lrc  - WARNING Federate [WorkwayFed73] Not ticking enough, queue is getting fat! (size=1885, warningLevel=500)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-23 16:25:06.545
+!MESSAGE portico.lrc  - WARNING Federate [WorkwayFed87] Not ticking enough, queue is getting fat! (size=1671, warningLevel=500)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-23 16:25:06.560
+!MESSAGE portico.lrc  - WARNING Federate [WorkwayFed85] Not ticking enough, queue is getting fat! (size=1437, warningLevel=500)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-23 16:25:06.560
+!MESSAGE portico.lrc  - WARNING Federate [WorkwayFed78] Not ticking enough, queue is getting fat! (size=1757, warningLevel=500)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-23 16:25:06.560
+!MESSAGE portico.lrc  - WARNING Federate [WorkwayFed80] Not ticking enough, queue is getting fat! (size=1646, warningLevel=500)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-23 16:25:06.560
+!MESSAGE portico.lrc  - WARNING Federate [WorkwayFed79] Not ticking enough, queue is getting fat! (size=1757, warningLevel=500)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-23 16:25:06.576
+!MESSAGE portico.lrc  - WARNING Federate [WorkwayFed65] Not ticking enough, queue is getting fat! (size=1325, warningLevel=500)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-23 16:25:06.576
+!MESSAGE portico.lrc  - WARNING Federate [WorkwayFed61] Not ticking enough, queue is getting fat! (size=1209, warningLevel=500)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-23 16:25:06.576
+!MESSAGE portico.lrc  - WARNING Federate [WorkwayFed83] Not ticking enough, queue is getting fat! (size=1394, warningLevel=500)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-23 16:25:06.591
+!MESSAGE portico.lrc  - WARNING Federate [WorkwayFed35] Not ticking enough, queue is getting fat! (size=1488, warningLevel=500)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-23 16:25:06.591
+!MESSAGE portico.lrc  - WARNING Federate [WorkwayFed6] Not ticking enough, queue is getting fat! (size=545, warningLevel=500)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-23 16:25:06.591
+!MESSAGE portico.lrc  - WARNING Federate [WorkwayFed91] Not ticking enough, queue is getting fat! (size=1606, warningLevel=500)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-23 16:25:06.607
+!MESSAGE de.uka.ipd.sdq.simulation.abstractsimengine.AbstractExperiment  - Tried to stop the simulation, which has already been stopped.
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-23 16:25:06.607
+!MESSAGE de.uka.ipd.sdq.simulation.abstractsimengine.AbstractExperiment  - Tried to stop the simulation, which has already been stopped.
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-23 16:25:06.607
+!MESSAGE de.uka.ipd.sdq.simulation.abstractsimengine.AbstractExperiment  - Tried to stop the simulation, which has already been stopped.
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-23 16:25:06.607
+!MESSAGE de.uka.ipd.sdq.simulation.abstractsimengine.AbstractExperiment  - Tried to stop the simulation, which has already been stopped.
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-23 16:25:06.607
+!MESSAGE de.uka.ipd.sdq.simulation.abstractsimengine.AbstractExperiment  - Tried to stop the simulation, which has already been stopped.
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-23 16:25:06.607
+!MESSAGE de.uka.ipd.sdq.simulation.abstractsimengine.AbstractExperiment  - Tried to stop the simulation, which has already been stopped.
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-23 16:25:06.623
+!MESSAGE portico.lrc  - WARNING Federate [WorkwayFed93] Not ticking enough, queue is getting fat! (size=624, warningLevel=500)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-23 16:25:06.623
+!MESSAGE portico.lrc  - WARNING Federate [WorkwayFed98] Not ticking enough, queue is getting fat! (size=686, warningLevel=500)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-23 16:25:06.623
+!MESSAGE portico.lrc  - WARNING Federate [WorkwayFed1] Not ticking enough, queue is getting fat! (size=1081, warningLevel=500)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-23 16:25:06.623
+!MESSAGE portico.lrc  - WARNING Federate [WorkwayFed4] Not ticking enough, queue is getting fat! (size=620, warningLevel=500)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-23 16:25:14.335
+!MESSAGE de.uka.ipd.sdq.simulation.abstractsimengine.AbstractExperiment  - Tried to stop the simulation, which has already been stopped.
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-23 16:25:14.352
+!MESSAGE de.uka.ipd.sdq.simulation.abstractsimengine.AbstractExperiment  - Tried to stop the simulation, which has already been stopped.
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-23 16:25:14.352
+!MESSAGE de.uka.ipd.sdq.simulation.abstractsimengine.AbstractExperiment  - Tried to stop the simulation, which has already been stopped.
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-23 16:25:14.352
+!MESSAGE de.uka.ipd.sdq.simulation.abstractsimengine.AbstractExperiment  - Tried to stop the simulation, which has already been stopped.
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-23 16:25:14.368
+!MESSAGE de.uka.ipd.sdq.simulation.abstractsimengine.AbstractExperiment  - Tried to stop the simulation, which has already been stopped.
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-23 16:25:14.368
+!MESSAGE de.uka.ipd.sdq.simulation.abstractsimengine.AbstractExperiment  - Tried to stop the simulation, which has already been stopped.
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-23 16:25:14.368
+!MESSAGE de.uka.ipd.sdq.simulation.abstractsimengine.AbstractExperiment  - Tried to stop the simulation, which has already been stopped.
+

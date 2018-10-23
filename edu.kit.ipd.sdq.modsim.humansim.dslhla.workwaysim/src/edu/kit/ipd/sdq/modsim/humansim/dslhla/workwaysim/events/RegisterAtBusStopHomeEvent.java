@@ -20,15 +20,9 @@ public class RegisterAtBusStopHomeEvent extends AbstractSimEventDelegator<Human>
 		
 		WorkwayModel m = (WorkwayModel)this.getModel();
 		
-		try {
-			m.registerHumanAtBusStop(human, human.getHomeBusStop());
-			m.getComponent().changeDestinationAttribute(human, human.getWorkBusStop());
-		} catch (RTIexception e1) {
-			// TODO Auto-generated catch block
-			e1.printStackTrace();
-		}
-		
 		human.setDestination(human.getWorkBusStop());
+		m.registerHumanAtBusStop(human, human.getHomeBusStop(), human.getWorkBusStop());
+		
 		human.arriveAtBusStopWalkingTimePointLog();
 		
 		Utils.log(human, "Registers at bus Stop:" + human.getHomeBusStop().getName());
@@ -38,9 +32,14 @@ public class RegisterAtBusStopHomeEvent extends AbstractSimEventDelegator<Human>
 //		e.schedule(human, 0);
 		m.getComponent().synchronisedAdvancedTime(1.0, e, human);
 		return;
-		}  else {
-			m.startScanningForHLAEvents();
-		}
+		}  
+		
+		System.out.println("Do not use Spinwait - but Registered");
+		m.hasToKeepAlive = true;
+		KeepAliveEvent e = new KeepAliveEvent(this.getModel(), "Keep Alive");
+		e.schedule(human, 0.0);
+	
+		
 		
 	}
 

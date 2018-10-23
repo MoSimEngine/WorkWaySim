@@ -14,7 +14,8 @@ public class Utils {
         StringBuilder s = new StringBuilder();
         s.append("[" + entity.getName() + "] ");
 //        s.append("(t=" + entity.getModel().getSimulationControl().getCurrentSimulationTime() + ") ");
-        s.append("(t=" + ((WorkwayModel)entity.getModel()).getComponent().getCurrentFedTime() + ") ");
+        s.append("(tFed=" + ((WorkwayModel)entity.getModel()).getComponent().getCurrentFedTime() + ") ");
+        s.append("(tSim=" + entity.getModel().getSimulationControl().getCurrentSimulationTime() + ")");
         s.append(msg);
         LOGGER.info(s.toString());
     }

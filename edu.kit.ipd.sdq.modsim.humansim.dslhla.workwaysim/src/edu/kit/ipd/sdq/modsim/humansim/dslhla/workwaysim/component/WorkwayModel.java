@@ -56,6 +56,8 @@ public class WorkwayModel extends AbstractSimulationModel implements Runnable{
 	 private Human human;
 	 private int id;
 	 
+	 public boolean hasToKeepAlive = false;
+	 
 	 private boolean finished = false;
 
 	public WorkwayModel(ISimulationConfig config, ISimEngineFactory factory) {
@@ -68,18 +70,12 @@ public class WorkwayModel extends AbstractSimulationModel implements Runnable{
 		
 		startTime = System.nanoTime();
    
-        
-            // schedule a process for each bus
-            
 		try {
 			component.runFederate("WorkwayFed" + id);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
-		
-        	// schedule a process for each human
 		
 	}
 	
@@ -149,11 +145,6 @@ public class WorkwayModel extends AbstractSimulationModel implements Runnable{
 			 	ArrayList<Duration> waited = human.getBusWaitingTimes();
 			 	ArrayList<Duration> free = human.getFreeTimes();
 			 	
-//			 	System.out.println(away.size());
-//			 	System.out.println(driven.size());
-//			 	System.out.println(waited.size());
-//			 	System.out.println(free.size());
-//			 	
 			 	if(away.size() > i){
 			 		csvAway += away.get(i).toSeconds().value();
 			 		csvDrivingTimes += driven.get(i).toSeconds().value();
@@ -321,8 +312,6 @@ public class WorkwayModel extends AbstractSimulationModel implements Runnable{
 	
 	public void addBusStop(BusStop stop){
 		
-		
-		
 		for (BusStop bs : stops) {
 			if(stop.getOih().equals(bs.getOih())){
 				System.out.println("Stop already there");
@@ -330,8 +319,8 @@ public class WorkwayModel extends AbstractSimulationModel implements Runnable{
 			}
 			
 		}
-		
 		stops.add(stop);
+
 	}
 	
 	public void startScanningForHLAEvents(){
@@ -366,7 +355,7 @@ public class WorkwayModel extends AbstractSimulationModel implements Runnable{
 		}
 	}
 	
-	public void scheduleHumanExitsEvent(String humanName, String busStopName){
+	public void scheduleHumanExitsEvent(String humanName, String busStopName, double passedTime){
 		System.out.println("Scheduling Exit Event");
 		for (Human human : humans) {
 			if(human.getName().equals(humanName)){
@@ -440,10 +429,6 @@ public class WorkwayModel extends AbstractSimulationModel implements Runnable{
     		
     		
     		this.human = new Human(stops.get(homeBS), stops.get(workBS), this, "Bob" + id);
-    		
-    		//System.out.println("Added: " + hu.getName());
-        //new PassengerArrivalEvent(Duration.seconds(2.0), this, "BS").schedule(stop1, 0);
-		
 	}
 
 	@Override
@@ -475,9 +460,9 @@ public class WorkwayModel extends AbstractSimulationModel implements Runnable{
 		this.id = id;
 	}
 	
-	public void registerHumanAtBusStop(Human human, BusStop busStop){
+	public void registerHumanAtBusStop(Human human, BusStop busStop, BusStop destination){
 		try {
-			this.component.sendRegisterInteraction(human.getName(), busStop.getName() );
+			this.component.sendRegisterInteraction(human.getName(), busStop.getName(), destination.getName());
 		} catch (RTIexception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

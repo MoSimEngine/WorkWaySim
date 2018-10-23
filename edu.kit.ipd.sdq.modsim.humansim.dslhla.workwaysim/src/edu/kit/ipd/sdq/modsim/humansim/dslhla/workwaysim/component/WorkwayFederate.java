@@ -58,16 +58,18 @@ public class WorkwayFederate{
 	protected EncoderFactory encoderFactory; // set when we join
 	
 	protected InteractionClassHandle registerAtBusStopHandle;
-	protected InteractionClassHandle humanEntersBusHandle;
-	protected InteractionClassHandle humanExitsBusHandle;
-	protected InteractionClassHandle busStopReadyHandle;
-	
-	protected ParameterHandle humanNameExitBusHandle;
-	protected ParameterHandle humanNameEnterBusHandle;
 	protected ParameterHandle humanNameRegisterHandle;
 	protected ParameterHandle busStopNameRegisterHandle;
-	protected ParameterHandle busStopNameExitHandle;
+	protected ParameterHandle destinationNameRegisterHandle;
+	
+	protected InteractionClassHandle humanEntersBusHandle;
+	protected ParameterHandle humanNameEnterBusHandle;
 	protected ParameterHandle busStopNameEnterHandle;
+
+	protected InteractionClassHandle humanExitsBusHandle;
+	protected ParameterHandle humanNameExitBusHandle;
+	protected ParameterHandle busStopNameExitHandle;
+	protected ParameterHandle humanExitsPassedTimeHandle;
 	
 	protected ObjectClassHandle humanObjectClassHandle;
 	protected AttributeHandle collectedHandle;
@@ -78,7 +80,6 @@ public class WorkwayFederate{
 	protected AttributeHandle busStopNameAttributeHandle;
 	
 	protected ObjectInstanceHandle busObjectHandles;
-
 	
 	
 	
@@ -130,8 +131,11 @@ public class WorkwayFederate{
 		
 //		log(fedInfoStr + "Connecting");
 		fedamb = new WorkwayFederateAmbassador(this);
+		if(HumanSimValues.EVOKE){
 		rtiamb.connect(fedamb, CallbackModel.HLA_EVOKED);
-		
+		} else {
+			rtiamb.connect(fedamb, CallbackModel.HLA_IMMEDIATE);
+		}
 //		log(fedInfoStr + "Creating Federation");
 //		try {
 //			URL[] modules = new URL[] { (new File("FOMS/HumanSimFOM.xml")).toURI().toURL() };
@@ -202,29 +206,22 @@ public class WorkwayFederate{
 		while (fedamb.isReadyToRun == false) {
 			rtiamb.evokeMultipleCallbacks(0.1, 0.2);
 		}
-		//log(fedInfoStr + "Time Policy Enabled");
-		
+
 		publishAndSubscribe();
-		
-		//log(fedInfoStr + "Published and Subscribed");
-		
 	
-		
-	
-		
+
 		while(simulation.getStops().size() != HumanSimValues.NUM_BUSSTOPS){
-			advanceTime(1.0);
-			rtiamb.evokeMultipleCallbacks(0.1, 0.2);
+			if(HumanSimValues.EVOKE){
+				advanceTime(1.0);
+				rtiamb.evokeMultipleCallbacks(0.1, 0.2);
+			} else {
+				System.out.println(simulation.getStops().size());
+			}
 		}
 		
-			initialiseHuman();
-			
+		initialiseHuman();
+		
 			//divestCollectedOwnership();
-			
-			for (BusStop bs : simulation.getStops()) {
-				log("BusStop: " + bs.getName());
-			}
-			
 			
 			simulation.startSimulation();
 			
@@ -319,21 +316,20 @@ public class WorkwayFederate{
 	private void publishAndSubscribe() throws RTIexception {
 		registerAtBusStopHandle = rtiamb.getInteractionClassHandle("HLAinteractionRoot.HumanRegistersAtBusStop");
 		rtiamb.publishInteractionClass(registerAtBusStopHandle);
-
+		humanNameRegisterHandle = rtiamb.getParameterHandle(registerAtBusStopHandle, "HumanName");
+		busStopNameRegisterHandle = rtiamb.getParameterHandle(registerAtBusStopHandle, "BusStopName");
+		destinationNameRegisterHandle = rtiamb.getParameterHandle(registerAtBusStopHandle, "DestinationName");
+		
 		humanEntersBusHandle = rtiamb.getInteractionClassHandle("HLAinteractionRoot.HumanEntersBus");
 		rtiamb.subscribeInteractionClass(humanEntersBusHandle);
+		humanNameEnterBusHandle = rtiamb.getParameterHandle(humanEntersBusHandle, "HumanName");
+		busStopNameEnterHandle = rtiamb.getParameterHandle(humanEntersBusHandle, "BusStopName");
 		
 		humanExitsBusHandle = rtiamb.getInteractionClassHandle("HLAinteractionRoot.HumanExitsBus");
 		rtiamb.subscribeInteractionClass(humanExitsBusHandle);
-		
-			
-		humanNameEnterBusHandle = rtiamb.getParameterHandle(humanEntersBusHandle, "HumanName");
 		humanNameExitBusHandle = rtiamb.getParameterHandle(humanExitsBusHandle, "HumanName");
-		humanNameRegisterHandle = rtiamb.getParameterHandle(registerAtBusStopHandle, "HumanName");
-		
-		busStopNameEnterHandle = rtiamb.getParameterHandle(humanEntersBusHandle, "BusStopName");
 		busStopNameExitHandle = rtiamb.getParameterHandle(humanExitsBusHandle, "BusStopName");
-		busStopNameRegisterHandle = rtiamb.getParameterHandle(registerAtBusStopHandle, "BusStopName");
+		humanExitsPassedTimeHandle = rtiamb.getParameterHandle(humanExitsBusHandle, "PassedTime");
 		
 		humanObjectClassHandle = rtiamb.getObjectClassHandle("HLAobjectRoot.Human");
 		humanNameAttributeHandle = rtiamb.getAttributeHandle(humanObjectClassHandle, "HumanName");
@@ -343,7 +339,7 @@ public class WorkwayFederate{
 		busStopObjectClassHandle = rtiamb.getObjectClassHandle("HLAobjectRoot.BusStop");
 		busStopNameAttributeHandle = rtiamb.getAttributeHandle(busStopObjectClassHandle, "BusStopName");
 		
-		
+	
 		AttributeHandleSet humanSubscribedAttributes = rtiamb.getAttributeHandleSetFactory().create();
 		humanSubscribedAttributes.add(collectedHandle);
 	
@@ -357,11 +353,10 @@ public class WorkwayFederate{
 		
 		rtiamb.publishObjectClassAttributes(humanObjectClassHandle, humanPublishedAttributes);
 		rtiamb.subscribeObjectClassAttributes(humanObjectClassHandle, humanSubscribedAttributes);
-//		
+		
 		busStopObjectClassHandle = rtiamb.getObjectClassHandle("HLAobjectRoot.BusStop");
 		busStopNameAttributeHandle = rtiamb.getAttributeHandle(busStopObjectClassHandle, "BusStopName");
 		
-//		
 		AttributeHandleSet busStopAttributes = rtiamb.getAttributeHandleSetFactory().create();
 		busStopAttributes.add(busStopNameAttributeHandle);
 		rtiamb.subscribeObjectClassAttributes(busStopObjectClassHandle, busStopAttributes);
@@ -427,37 +422,7 @@ public class WorkwayFederate{
 	
 	
 	public synchronized void  synchronisedAdvancedTime(double timestep, AbstractSimEventDelegator simevent, AbstractSimEntityDelegator simentity ){
-//		System.out.println("AbstractSimEngine Time:" + simulation.getSimulationControl().getCurrentSimulationTime());
-//		System.out.println("Federate Time:" + fedamb.federateTime);
-//		System.out.println("TimeStep:" + timestep);
-//		
-		double abstractSimEngineTime = simulation.getSimulationControl().getCurrentSimulationTime();
-		double simEngineNextTime = abstractSimEngineTime  + timestep;
-		double timeDiffFedTimeSETime = getCurrentFedTime() - abstractSimEngineTime;
-		double realTimeStep = 0.0;
-//		try {
-//			advanceTime(timestep);
-//		} catch (RTIexception e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//		}
-//		if(timestep != 0.0){
-//			while(simEngineNextTime > getCurrentFedTime()){
-//				realTimeStep = simEngineNextTime - getCurrentFedTime();
-//				try {
-//					if(!advanceTime(realTimeStep)){
-//						
-//						System.out.println("Not Advancing Time");
-//						//simulation.getSimulationControl().stop();
-//						return;
-//					}
-//				} catch (RTIexception e) {
-//					// TODO Auto-generated catch block
-//					e.printStackTrace();
-//				}
-//			}
-//			
-//		}
+
 		if(timestep != 0.0){
 			
 			try {
@@ -473,27 +438,24 @@ public class WorkwayFederate{
 			}
 
 	
-}
-		
+		}
 		simevent.schedule(simentity, timestep);
 	}
 	
-	public void sendRegisterInteraction(String human, String busStop) throws RTIexception{
+	public void sendRegisterInteraction(String human, String busStop, String destination) throws RTIexception{
 		
-		ParameterHandleValueMap parameters = rtiamb.getParameterHandleValueMapFactory().create(2);
-		HLAASCIIstring humanName = encoderFactory.createHLAASCIIstring(human);
-		HLAASCIIstring busStopName = encoderFactory.createHLAASCIIstring(busStop);
+		ParameterHandleValueMap parameters = rtiamb.getParameterHandleValueMapFactory().create(3);
 		parameters.put(humanNameRegisterHandle, adapterService.filter(human));
 		parameters.put(busStopNameRegisterHandle, adapterService.filter(busStop));
+		parameters.put(destinationNameRegisterHandle, adapterService.filter(destination));
 		HLAfloat64Time time = timeFactory.makeTime(fedamb.federateTime + 1.0);
 
-		//log(human, "Sending RegisterAction for Human:" + human.getName() + " to BusStop: " + busStop.getName());
+		//System.out.println("Human: " + human + " registers at" + busStop + " for " + destination);
 		rtiamb.sendInteraction( registerAtBusStopHandle, parameters, generateTag(), time);
-		
 	}
 	
 	public void initialiseHuman() throws Exception{
-	
+
 		simulation.initialiseHumans();
 		
 		Human human = simulation.getHuman();
@@ -551,7 +513,7 @@ public class WorkwayFederate{
 	}
 	
 	public void handleBusStopAttributeUpdates(BusStop busStop, AttributeHandleValueMap attributes, ObjectInstanceHandle oih){
-
+		System.out.println("BusStopAttr");
 		String busStopName = "";
 	
 		//log("Received BusStop attribute updates");
@@ -593,12 +555,13 @@ public class WorkwayFederate{
 	}
 	
 	public void handleHumanAttributesUpdate(Human human, AttributeHandleValueMap attributes) throws Exception{
-		
+
 		String collected = "";
-		
+	
 		for(AttributeHandle handle : attributes.keySet()){
 			if(handle.equals(collectedHandle)){
 				collected = fedamb.decodeBoolean(attributes.get(collectedHandle));
+				//System.out.println(collected);
 			} else {
 				log("Got more attributes than expected");
 			}
@@ -641,8 +604,8 @@ public class WorkwayFederate{
 			}
 		}
 		
-		for (ObjectInstanceHandle busStopHandles : busStopHandles){
-			if(busStopHandles.equals(oih)){
+		for (ObjectInstanceHandle bsh : busStopHandles){
+			if(bsh.equals(oih)){
 				addBusStop(oih, attributes);
 			}
 		}
@@ -679,5 +642,15 @@ public class WorkwayFederate{
 	public RTIambassador getRTIAmb(){
 		return rtiamb;
 	}
+	
+	public void handleEnterInteraction(String humanName, String busStopName){
+		simulation.scheduleHumanEntersEvent(humanName, busStopName);
+	}
+	
+	public void handleExitInteraction(String humanName, String busStopName, double passedTime){
+		simulation.scheduleHumanExitsEvent(humanName, busStopName, passedTime);
+	}
+	
+	
 }
  

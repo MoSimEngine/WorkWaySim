@@ -161,12 +161,22 @@ public class WorkwayFederateAmbassador extends NullFederateAmbassador{
 			byte[] tag, OrderType sentOrdering, TransportationTypeHandle theTransport, LogicalTime time,
 			OrderType receivedOrdering, SupplementalReceiveInfo receiveInfo) throws FederateInternalError {
 		
+		if(interactionClass.equals(federate.humanEntersBusHandle)){
+			federate.handleEnterInteraction(federate.adapterService.filter(String.class.getTypeName(), theParameters.get(federate.humanNameEnterBusHandle)), 
+					federate.adapterService.filter(String.class.getTypeName(), theParameters.get(federate.busStopNameEnterHandle)));
+		} else if (interactionClass.equals(federate.humanExitsBusHandle)){
+			federate.handleExitInteraction(federate.adapterService.filter(String.class.getTypeName(), theParameters.get(federate.humanNameExitBusHandle)), 
+					federate.adapterService.filter(String.class.getTypeName(), theParameters.get(federate.busStopNameExitHandle)), 
+					1.0);
+		} else {
+			System.out.println("Got Interaction but don't know what to do with it");
+		}
+		
 	}
 
 	@Override
 	public void removeObjectInstance(ObjectInstanceHandle theObject, byte[] tag, OrderType sentOrdering,
 			SupplementalRemoveInfo removeInfo) throws FederateInternalError {
-		log("Object Removed: handle=" + theObject);
 	}
 	
 	

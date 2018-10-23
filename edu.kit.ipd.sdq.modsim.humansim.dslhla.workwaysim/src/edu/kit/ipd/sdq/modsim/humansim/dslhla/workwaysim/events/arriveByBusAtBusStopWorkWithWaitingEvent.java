@@ -18,6 +18,10 @@ public class arriveByBusAtBusStopWorkWithWaitingEvent extends AbstractSimEventDe
 		// TODO Auto-generated method stub
 		WorkwayModel m = (WorkwayModel)this.getModel();
 		
+		m.hasToKeepAlive = false;
+		
+		//System.out.println("ArrivedAtBusStop");
+		
 		human.arriveAtBusStopWorkByDriving();
 		Utils.log(human, human.getName() + "arrived at BusStop at Work - by bus");
 		
