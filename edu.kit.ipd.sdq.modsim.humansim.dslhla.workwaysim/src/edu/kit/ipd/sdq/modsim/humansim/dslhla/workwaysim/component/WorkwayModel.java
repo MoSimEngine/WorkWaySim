@@ -339,38 +339,39 @@ public class WorkwayModel extends AbstractSimulationModel implements Runnable{
 	}
 	
 	public void scheduleHumanEntersEvent(String humanName, String busStopName){
-		for (Human human : humans) {
+		
 			if(human.getName().equals(humanName)){
 				for(BusStop busStop : stops){
 					if(busStop.getName().equals(busStopName)){
 
 						HumanEntersBusEvent e = new HumanEntersBusEvent(this, "HumanEntersBus");
+						Utils.log(human, "Scheduling Enters Event for Human: " + human.getName() + " on BusStop: " + busStop.getName() );
 						e.schedule(human, 0);
 						
 						return;
 					}
-				}
+				
 			}
 			
 		}
 	}
 	
 	public void scheduleHumanExitsEvent(String humanName, String busStopName, double passedTime){
-		System.out.println("Scheduling Exit Event");
-		for (Human human : humans) {
+
+		
 			if(human.getName().equals(humanName)){
-				System.out.println("FoundHuman");
+				
 				for(BusStop busStop : stops){
 					System.out.println("FoundBusStop");
 					if(busStop.getName().equals(busStopName)){
 						
-						HumanExitsBusEvent e = new HumanExitsBusEvent(this, "HumanEntersBus");
+						HumanExitsBusEvent e = new HumanExitsBusEvent(this, "HumanExitsBus");
+						Utils.log(human, "Scheduling Exit Event for Human: " + human.getName() + " exit on BusStop: " + busStop.getName() );
 						e.schedule(human, 0);
-						System.out.println("Event Schedled");
 						return;
 					}
 				}
-			}
+			
 			
 		}
 	}

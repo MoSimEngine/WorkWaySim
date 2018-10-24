@@ -22,8 +22,10 @@ public class KeepAliveEvent extends AbstractSimEventDelegator<Human>{
 		if(m.hasToKeepAlive){
 			KeepAliveEvent e = new KeepAliveEvent(getModel(), getName());
 			try {
-				java.util.concurrent.TimeUnit.SECONDS.sleep(5);
-			} catch (InterruptedException e1) {
+				
+				m.getComponent().modifyLookahead(7000);
+				m.getComponent().getRTIAmb().evokeCallback(0.5);
+			} catch (CallNotAllowedFromWithinCallback | RTIinternalError e1) {
 				// TODO Auto-generated catch block
 				e1.printStackTrace();
 			}

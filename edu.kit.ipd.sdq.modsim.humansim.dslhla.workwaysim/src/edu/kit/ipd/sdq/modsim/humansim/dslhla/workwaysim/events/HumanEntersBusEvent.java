@@ -17,7 +17,7 @@ public class HumanEntersBusEvent extends AbstractSimEventDelegator<Human>{
 	public void eventRoutine(Human human) {
 		// TODO Auto-generated method stub
 		WorkwayModel m = (WorkwayModel)this.getModel();
-		
+		Utils.log(human, "Scheduling Enters Event");
 		human.setCollected(true);
 		human.calculateWaitedTime();
 		human.humanIsCollected();

@@ -36,13 +36,19 @@ import hla.rti1516e.RtiFactoryFactory;
 import hla.rti1516e.encoding.EncoderFactory;
 import hla.rti1516e.encoding.HLAASCIIstring;
 import hla.rti1516e.encoding.HLAinteger32BE;
+import hla.rti1516e.exceptions.CallNotAllowedFromWithinCallback;
 import hla.rti1516e.exceptions.FederateNotExecutionMember;
 import hla.rti1516e.exceptions.FederatesCurrentlyJoined;
 import hla.rti1516e.exceptions.FederationExecutionAlreadyExists;
 import hla.rti1516e.exceptions.FederationExecutionDoesNotExist;
+import hla.rti1516e.exceptions.InTimeAdvancingState;
+import hla.rti1516e.exceptions.InvalidLookahead;
 import hla.rti1516e.exceptions.NotConnected;
 import hla.rti1516e.exceptions.RTIexception;
 import hla.rti1516e.exceptions.RTIinternalError;
+import hla.rti1516e.exceptions.RestoreInProgress;
+import hla.rti1516e.exceptions.SaveInProgress;
+import hla.rti1516e.exceptions.TimeRegulationIsNotEnabled;
 import hla.rti1516e.time.HLAfloat64Interval;
 import hla.rti1516e.time.HLAfloat64Time;
 import hla.rti1516e.time.HLAfloat64TimeFactory;
@@ -222,8 +228,10 @@ public class WorkwayFederate{
 		initialiseHuman();
 		
 			//divestCollectedOwnership();
-			
-			simulation.startSimulation();
+		//TODO Hardcoded Timeadvance to be on equal starting time with BusSim 
+		//not nice but cleaner
+		advanceTime(1.0);
+		simulation.startSimulation();
 			
 		}
 	
@@ -651,6 +659,21 @@ public class WorkwayFederate{
 		simulation.scheduleHumanExitsEvent(humanName, busStopName, passedTime);
 	}
 	
-	
+	public void modifyLookahead(double d){
+		try {
+			rtiamb.modifyLookahead(timeFactory.makeInterval(d));
+		} catch (InvalidLookahead | InTimeAdvancingState | TimeRegulationIsNotEnabled | SaveInProgress
+				| RestoreInProgress | FederateNotExecutionMember | NotConnected | RTIinternalError e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		try {
+			rtiamb.evokeMultipleCallbacks(0.1, 0.2);
+		} catch (CallNotAllowedFromWithinCallback | RTIinternalError e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
 }
  

@@ -3538,3 +3538,1233 @@ java.util.ConcurrentModificationException
 !ENTRY org.apache.log4j 2 0 2018-10-23 16:25:14.368
 !MESSAGE de.uka.ipd.sdq.simulation.abstractsimengine.AbstractExperiment  - Tried to stop the simulation, which has already been stopped.
 
+!SESSION 2018-10-23 16:32:37.162 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_171
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=de_DE
+Framework arguments:  -application edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim
+Command-line arguments:  -application edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim -data C:\Users\Freddy\git\WorkwaySimAbstractSimEngineHLA\edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim -dev file:C:/Users/Freddy/workspace/.metadata/.plugins/org.eclipse.pde.core/Workway Behaviour Simulation Example/dev.properties -os win32 -ws win32 -arch x86_64 -consoleLog
+
+!ENTRY org.apache.log4j 2 0 2018-10-23 16:37:31.473
+!MESSAGE de.uka.ipd.sdq.simulation.abstractsimengine.AbstractExperiment  - Tried to stop the simulation, which has already been stopped.
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-23 16:37:31.566
+!MESSAGE de.uka.ipd.sdq.simulation.abstractsimengine.AbstractExperiment  - Tried to stop the simulation, which has already been stopped.
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-23 16:37:31.582
+!MESSAGE de.uka.ipd.sdq.simulation.abstractsimengine.AbstractExperiment  - Tried to stop the simulation, which has already been stopped.
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-23 16:37:31.598
+!MESSAGE de.uka.ipd.sdq.simulation.abstractsimengine.AbstractExperiment  - Tried to stop the simulation, which has already been stopped.
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-23 16:37:31.645
+!MESSAGE de.uka.ipd.sdq.simulation.abstractsimengine.AbstractExperiment  - Tried to stop the simulation, which has already been stopped.
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-23 16:37:31.645
+!MESSAGE de.uka.ipd.sdq.simulation.abstractsimengine.AbstractExperiment  - Tried to stop the simulation, which has already been stopped.
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-23 16:37:31.645
+!MESSAGE de.uka.ipd.sdq.simulation.abstractsimengine.AbstractExperiment  - Tried to stop the simulation, which has already been stopped.
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-23 16:37:31.691
+!MESSAGE de.uka.ipd.sdq.simulation.abstractsimengine.AbstractExperiment  - Tried to stop the simulation, which has already been stopped.
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-23 16:37:31.707
+!MESSAGE de.uka.ipd.sdq.simulation.abstractsimengine.AbstractExperiment  - Tried to stop the simulation, which has already been stopped.
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-23 16:37:47.065
+!MESSAGE portico.lrc.jgroups  - Detected that federate [unkonwn] may have crashed, investigating...
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-23 16:37:47.224
+!MESSAGE portico.lrc.jgroups  - Unknown channel member crashed. Don't think it was a federate. Ignoring. uuid=b6a4acf7-d799-491a-ac59-018c72333b02
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-23 16:37:51.632
+!MESSAGE de.uka.ipd.sdq.simulation.abstractsimengine.AbstractExperiment  - Tried to stop the simulation, which has already been stopped.
+
+!SESSION 2018-10-24 08:18:50.828 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_171
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=de_DE
+Framework arguments:  -application edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim
+Command-line arguments:  -application edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim -data C:\Users\Freddy\git\WorkwaySimAbstractSimEngineHLA\edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim -dev file:C:/Users/Freddy/workspace/.metadata/.plugins/org.eclipse.pde.core/Workway Behaviour Simulation Example/dev.properties -os win32 -ws win32 -arch x86_64 -consoleLog
+
+!ENTRY org.apache.log4j 2 0 2018-10-24 08:20:38.029
+!MESSAGE de.uka.ipd.sdq.simulation.abstractsimengine.AbstractExperiment  - Tried to stop the simulation, which has already been stopped.
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-24 08:20:38.064
+!MESSAGE de.uka.ipd.sdq.simulation.abstractsimengine.AbstractExperiment  - Tried to stop the simulation, which has already been stopped.
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-24 08:20:38.114
+!MESSAGE de.uka.ipd.sdq.simulation.abstractsimengine.AbstractExperiment  - Tried to stop the simulation, which has already been stopped.
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-24 08:20:38.125
+!MESSAGE de.uka.ipd.sdq.simulation.abstractsimengine.AbstractExperiment  - Tried to stop the simulation, which has already been stopped.
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-24 08:20:38.127
+!MESSAGE de.uka.ipd.sdq.simulation.abstractsimengine.AbstractExperiment  - Tried to stop the simulation, which has already been stopped.
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-24 08:20:38.129
+!MESSAGE de.uka.ipd.sdq.simulation.abstractsimengine.AbstractExperiment  - Tried to stop the simulation, which has already been stopped.
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-24 08:20:38.147
+!MESSAGE de.uka.ipd.sdq.simulation.abstractsimengine.AbstractExperiment  - Tried to stop the simulation, which has already been stopped.
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-24 08:20:38.173
+!MESSAGE de.uka.ipd.sdq.simulation.abstractsimengine.AbstractExperiment  - Tried to stop the simulation, which has already been stopped.
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-24 08:20:38.175
+!MESSAGE de.uka.ipd.sdq.simulation.abstractsimengine.AbstractExperiment  - Tried to stop the simulation, which has already been stopped.
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-24 08:20:49.712
+!MESSAGE portico.lrc.jgroups  - Detected that federate [unkonwn] may have crashed, investigating...
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-24 08:20:49.855
+!MESSAGE portico.lrc.jgroups  - Unknown channel member crashed. Don't think it was a federate. Ignoring. uuid=19f06bb8-539b-462f-a4e6-ee2725f72a40
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-24 08:20:58.218
+!MESSAGE de.uka.ipd.sdq.simulation.abstractsimengine.AbstractExperiment  - Tried to stop the simulation, which has already been stopped.
+
+!SESSION 2018-10-24 08:51:11.010 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_171
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=de_DE
+Framework arguments:  -application edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim
+Command-line arguments:  -application edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim -data C:\Users\Freddy\git\WorkwaySimAbstractSimEngineHLA\edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim -dev file:C:/Users/Freddy/workspace/.metadata/.plugins/org.eclipse.pde.core/Workway Behaviour Simulation Example/dev.properties -os win32 -ws win32 -arch x86_64 -consoleLog
+
+!ENTRY org.apache.log4j 2 0 2018-10-24 08:59:50.587
+!MESSAGE portico.lrc  - WARNING Federate [WorkwayFed9] Not ticking enough, queue is getting fat! (size=542, warningLevel=500)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-24 08:59:50.603
+!MESSAGE portico.lrc  - WARNING Federate [WorkwayFed45] Not ticking enough, queue is getting fat! (size=543, warningLevel=500)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-24 08:59:50.603
+!MESSAGE portico.lrc  - WARNING Federate [WorkwayFed53] Not ticking enough, queue is getting fat! (size=549, warningLevel=500)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-24 08:59:50.603
+!MESSAGE portico.lrc  - WARNING Federate [WorkwayFed52] Not ticking enough, queue is getting fat! (size=542, warningLevel=500)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-24 08:59:50.619
+!MESSAGE portico.lrc  - WARNING Federate [WorkwayFed44] Not ticking enough, queue is getting fat! (size=543, warningLevel=500)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-24 08:59:50.619
+!MESSAGE portico.lrc  - WARNING Federate [WorkwayFed48] Not ticking enough, queue is getting fat! (size=545, warningLevel=500)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-24 08:59:50.619
+!MESSAGE portico.lrc  - WARNING Federate [WorkwayFed65] Not ticking enough, queue is getting fat! (size=541, warningLevel=500)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-24 08:59:50.619
+!MESSAGE portico.lrc  - WARNING Federate [WorkwayFed71] Not ticking enough, queue is getting fat! (size=541, warningLevel=500)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-24 08:59:50.619
+!MESSAGE portico.lrc  - WARNING Federate [WorkwayFed66] Not ticking enough, queue is getting fat! (size=538, warningLevel=500)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-24 08:59:50.619
+!MESSAGE portico.lrc  - WARNING Federate [WorkwayFed70] Not ticking enough, queue is getting fat! (size=542, warningLevel=500)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-24 08:59:50.650
+!MESSAGE portico.lrc  - WARNING Federate [WorkwayFed72] Not ticking enough, queue is getting fat! (size=540, warningLevel=500)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-24 08:59:50.650
+!MESSAGE portico.lrc  - WARNING Federate [WorkwayFed69] Not ticking enough, queue is getting fat! (size=540, warningLevel=500)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-24 08:59:50.650
+!MESSAGE portico.lrc  - WARNING Federate [WorkwayFed73] Not ticking enough, queue is getting fat! (size=537, warningLevel=500)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-24 08:59:50.650
+!MESSAGE portico.lrc  - WARNING Federate [WorkwayFed74] Not ticking enough, queue is getting fat! (size=538, warningLevel=500)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-24 08:59:50.650
+!MESSAGE portico.lrc  - WARNING Federate [WorkwayFed93] Not ticking enough, queue is getting fat! (size=536, warningLevel=500)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-24 08:59:50.665
+!MESSAGE portico.lrc  - WARNING Federate [WorkwayFed96] Not ticking enough, queue is getting fat! (size=540, warningLevel=500)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-24 08:59:50.665
+!MESSAGE portico.lrc  - WARNING Federate [WorkwayFed94] Not ticking enough, queue is getting fat! (size=536, warningLevel=500)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-24 08:59:50.665
+!MESSAGE portico.lrc  - WARNING Federate [WorkwayFed4] Not ticking enough, queue is getting fat! (size=509, warningLevel=500)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-24 08:59:50.665
+!MESSAGE portico.lrc  - WARNING Federate [WorkwayFed38] Not ticking enough, queue is getting fat! (size=542, warningLevel=500)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-24 08:59:50.665
+!MESSAGE portico.lrc  - WARNING Federate [WorkwayFed37] Not ticking enough, queue is getting fat! (size=548, warningLevel=500)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-24 08:59:50.665
+!MESSAGE portico.lrc  - WARNING Federate [WorkwayFed39] Not ticking enough, queue is getting fat! (size=543, warningLevel=500)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-24 08:59:50.665
+!MESSAGE portico.lrc  - WARNING Federate [WorkwayFed40] Not ticking enough, queue is getting fat! (size=549, warningLevel=500)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-24 08:59:50.681
+!MESSAGE portico.lrc  - WARNING Federate [WorkwayFed34] Not ticking enough, queue is getting fat! (size=549, warningLevel=500)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-24 08:59:50.681
+!MESSAGE portico.lrc  - WARNING Federate [WorkwayFed67] Not ticking enough, queue is getting fat! (size=535, warningLevel=500)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-24 08:59:50.681
+!MESSAGE portico.lrc  - WARNING Federate [WorkwayFed68] Not ticking enough, queue is getting fat! (size=537, warningLevel=500)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-24 08:59:50.681
+!MESSAGE portico.lrc  - WARNING Federate [WorkwayFed64] Not ticking enough, queue is getting fat! (size=542, warningLevel=500)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-24 08:59:50.681
+!MESSAGE portico.lrc  - WARNING Federate [WorkwayFed63] Not ticking enough, queue is getting fat! (size=541, warningLevel=500)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-24 08:59:50.681
+!MESSAGE portico.lrc  - WARNING Federate [WorkwayFed62] Not ticking enough, queue is getting fat! (size=541, warningLevel=500)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-24 08:59:50.681
+!MESSAGE portico.lrc  - WARNING Federate [WorkwayFed61] Not ticking enough, queue is getting fat! (size=535, warningLevel=500)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-24 08:59:50.697
+!MESSAGE portico.lrc  - WARNING Federate [WorkwayFed57] Not ticking enough, queue is getting fat! (size=538, warningLevel=500)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-24 08:59:50.697
+!MESSAGE portico.lrc  - WARNING Federate [WorkwayFed59] Not ticking enough, queue is getting fat! (size=538, warningLevel=500)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-24 08:59:50.697
+!MESSAGE portico.lrc  - WARNING Federate [WorkwayFed60] Not ticking enough, queue is getting fat! (size=542, warningLevel=500)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-24 08:59:50.712
+!MESSAGE portico.lrc  - WARNING Federate [WorkwayFed58] Not ticking enough, queue is getting fat! (size=536, warningLevel=500)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-24 08:59:50.712
+!MESSAGE portico.lrc  - WARNING Federate [WorkwayFed55] Not ticking enough, queue is getting fat! (size=542, warningLevel=500)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-24 08:59:50.712
+!MESSAGE portico.lrc  - WARNING Federate [WorkwayFed84] Not ticking enough, queue is getting fat! (size=542, warningLevel=500)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-24 08:59:50.712
+!MESSAGE portico.lrc  - WARNING Federate [WorkwayFed81] Not ticking enough, queue is getting fat! (size=536, warningLevel=500)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-24 08:59:50.728
+!MESSAGE portico.lrc  - WARNING Federate [WorkwayFed83] Not ticking enough, queue is getting fat! (size=541, warningLevel=500)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-24 08:59:50.822
+!MESSAGE portico.lrc  - WARNING Federate [WorkwayFed77] Not ticking enough, queue is getting fat! (size=539, warningLevel=500)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-24 08:59:50.837
+!MESSAGE portico.lrc  - WARNING Federate [WorkwayFed80] Not ticking enough, queue is getting fat! (size=537, warningLevel=500)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-24 08:59:50.837
+!MESSAGE portico.lrc  - WARNING Federate [WorkwayFed79] Not ticking enough, queue is getting fat! (size=537, warningLevel=500)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-24 08:59:50.853
+!MESSAGE portico.lrc  - WARNING Federate [WorkwayFed76] Not ticking enough, queue is getting fat! (size=541, warningLevel=500)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-24 08:59:50.853
+!MESSAGE portico.lrc  - WARNING Federate [WorkwayFed78] Not ticking enough, queue is getting fat! (size=540, warningLevel=500)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-24 08:59:50.853
+!MESSAGE portico.lrc  - WARNING Federate [WorkwayFed75] Not ticking enough, queue is getting fat! (size=536, warningLevel=500)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-24 08:59:50.869
+!MESSAGE portico.lrc  - WARNING Federate [WorkwayFed6] Not ticking enough, queue is getting fat! (size=542, warningLevel=500)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-24 08:59:50.869
+!MESSAGE portico.lrc  - WARNING Federate [WorkwayFed11] Not ticking enough, queue is getting fat! (size=542, warningLevel=500)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-24 08:59:50.869
+!MESSAGE portico.lrc  - WARNING Federate [WorkwayFed12] Not ticking enough, queue is getting fat! (size=539, warningLevel=500)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-24 08:59:50.884
+!MESSAGE portico.lrc  - WARNING Federate [WorkwayFed10] Not ticking enough, queue is getting fat! (size=536, warningLevel=500)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-24 08:59:50.978
+!MESSAGE portico.lrc  - WARNING Federate [WorkwayFed21] Not ticking enough, queue is getting fat! (size=535, warningLevel=500)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-24 08:59:51.577
+!MESSAGE portico.lrc  - WARNING Federate [WorkwayFed41] Not ticking enough, queue is getting fat! (size=540, warningLevel=500)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-24 08:59:51.624
+!MESSAGE portico.lrc  - WARNING Federate [WorkwayFed56] Not ticking enough, queue is getting fat! (size=544, warningLevel=500)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-24 08:59:51.640
+!MESSAGE portico.lrc  - WARNING Federate [WorkwayFed87] Not ticking enough, queue is getting fat! (size=537, warningLevel=500)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-24 08:59:51.640
+!MESSAGE portico.lrc  - WARNING Federate [WorkwayFed86] Not ticking enough, queue is getting fat! (size=541, warningLevel=500)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-24 08:59:51.655
+!MESSAGE portico.lrc  - WARNING Federate [WorkwayFed88] Not ticking enough, queue is getting fat! (size=540, warningLevel=500)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-24 08:59:51.671
+!MESSAGE portico.lrc  - WARNING Federate [WorkwayFed85] Not ticking enough, queue is getting fat! (size=536, warningLevel=500)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-24 08:59:51.671
+!MESSAGE portico.lrc  - WARNING Federate [WorkwayFed89] Not ticking enough, queue is getting fat! (size=536, warningLevel=500)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-24 08:59:51.702
+!MESSAGE portico.lrc  - WARNING Federate [WorkwayFed90] Not ticking enough, queue is getting fat! (size=537, warningLevel=500)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-24 08:59:51.702
+!MESSAGE portico.lrc  - WARNING Federate [WorkwayFed92] Not ticking enough, queue is getting fat! (size=541, warningLevel=500)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-24 08:59:51.718
+!MESSAGE portico.lrc  - WARNING Federate [WorkwayFed95] Not ticking enough, queue is getting fat! (size=542, warningLevel=500)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-24 08:59:51.718
+!MESSAGE portico.lrc  - WARNING Federate [WorkwayFed91] Not ticking enough, queue is getting fat! (size=542, warningLevel=500)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-24 08:59:51.733
+!MESSAGE portico.lrc  - WARNING Federate [WorkwayFed97] Not ticking enough, queue is getting fat! (size=537, warningLevel=500)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-24 08:59:51.749
+!MESSAGE portico.lrc  - WARNING Federate [WorkwayFed98] Not ticking enough, queue is getting fat! (size=543, warningLevel=500)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-24 08:59:51.749
+!MESSAGE portico.lrc  - WARNING Federate [WorkwayFed99] Not ticking enough, queue is getting fat! (size=544, warningLevel=500)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-24 08:59:51.765
+!MESSAGE portico.lrc  - WARNING Federate [WorkwayFed54] Not ticking enough, queue is getting fat! (size=549, warningLevel=500)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-24 08:59:51.765
+!MESSAGE portico.lrc  - WARNING Federate [WorkwayFed22] Not ticking enough, queue is getting fat! (size=540, warningLevel=500)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-24 08:59:51.765
+!MESSAGE portico.lrc  - WARNING Federate [WorkwayFed28] Not ticking enough, queue is getting fat! (size=549, warningLevel=500)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-24 08:59:51.765
+!MESSAGE portico.lrc  - WARNING Federate [WorkwayFed25] Not ticking enough, queue is getting fat! (size=549, warningLevel=500)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-24 08:59:51.780
+!MESSAGE portico.lrc  - WARNING Federate [WorkwayFed30] Not ticking enough, queue is getting fat! (size=540, warningLevel=500)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-24 08:59:51.796
+!MESSAGE portico.lrc  - WARNING Federate [WorkwayFed31] Not ticking enough, queue is getting fat! (size=539, warningLevel=500)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-24 08:59:51.796
+!MESSAGE portico.lrc  - WARNING Federate [WorkwayFed35] Not ticking enough, queue is getting fat! (size=536, warningLevel=500)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-24 08:59:51.796
+!MESSAGE portico.lrc  - WARNING Federate [WorkwayFed36] Not ticking enough, queue is getting fat! (size=536, warningLevel=500)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-24 08:59:51.796
+!MESSAGE portico.lrc  - WARNING Federate [WorkwayFed43] Not ticking enough, queue is getting fat! (size=537, warningLevel=500)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-24 08:59:51.812
+!MESSAGE portico.lrc  - WARNING Federate [WorkwayFed19] Not ticking enough, queue is getting fat! (size=541, warningLevel=500)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-24 08:59:51.812
+!MESSAGE portico.lrc  - WARNING Federate [WorkwayFed49] Not ticking enough, queue is getting fat! (size=537, warningLevel=500)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-24 08:59:51.812
+!MESSAGE portico.lrc  - WARNING Federate [WorkwayFed14] Not ticking enough, queue is getting fat! (size=537, warningLevel=500)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-24 08:59:51.812
+!MESSAGE portico.lrc  - WARNING Federate [WorkwayFed26] Not ticking enough, queue is getting fat! (size=549, warningLevel=500)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-24 08:59:51.827
+!MESSAGE portico.lrc  - WARNING Federate [WorkwayFed29] Not ticking enough, queue is getting fat! (size=542, warningLevel=500)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-24 08:59:51.827
+!MESSAGE portico.lrc  - WARNING Federate [WorkwayFed32] Not ticking enough, queue is getting fat! (size=542, warningLevel=500)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-24 08:59:51.827
+!MESSAGE portico.lrc  - WARNING Federate [WorkwayFed33] Not ticking enough, queue is getting fat! (size=536, warningLevel=500)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-24 08:59:51.827
+!MESSAGE portico.lrc  - WARNING Federate [WorkwayFed42] Not ticking enough, queue is getting fat! (size=539, warningLevel=500)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-24 08:59:51.843
+!MESSAGE portico.lrc  - WARNING Federate [WorkwayFed46] Not ticking enough, queue is getting fat! (size=536, warningLevel=500)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-24 08:59:51.843
+!MESSAGE portico.lrc  - WARNING Federate [WorkwayFed47] Not ticking enough, queue is getting fat! (size=541, warningLevel=500)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-24 08:59:51.843
+!MESSAGE portico.lrc  - WARNING Federate [WorkwayFed51] Not ticking enough, queue is getting fat! (size=538, warningLevel=500)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-24 08:59:51.858
+!MESSAGE portico.lrc  - WARNING Federate [WorkwayFed50] Not ticking enough, queue is getting fat! (size=548, warningLevel=500)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-24 08:59:51.874
+!MESSAGE portico.lrc  - WARNING Federate [WorkwayFed16] Not ticking enough, queue is getting fat! (size=537, warningLevel=500)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-24 08:59:51.952
+!MESSAGE portico.lrc  - WARNING Federate [WorkwayFed15] Not ticking enough, queue is getting fat! (size=542, warningLevel=500)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-24 08:59:52.108
+!MESSAGE portico.lrc  - WARNING Federate [WorkwayFed17] Not ticking enough, queue is getting fat! (size=535, warningLevel=500)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-24 08:59:52.233
+!MESSAGE portico.lrc  - WARNING Federate [WorkwayFed13] Not ticking enough, queue is getting fat! (size=539, warningLevel=500)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-24 08:59:52.233
+!MESSAGE portico.lrc  - WARNING Federate [WorkwayFed18] Not ticking enough, queue is getting fat! (size=542, warningLevel=500)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-24 08:59:52.249
+!MESSAGE portico.lrc  - WARNING Federate [WorkwayFed20] Not ticking enough, queue is getting fat! (size=540, warningLevel=500)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-24 08:59:52.249
+!MESSAGE portico.lrc  - WARNING Federate [WorkwayFed23] Not ticking enough, queue is getting fat! (size=549, warningLevel=500)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-24 08:59:52.249
+!MESSAGE portico.lrc  - WARNING Federate [WorkwayFed24] Not ticking enough, queue is getting fat! (size=542, warningLevel=500)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-24 08:59:52.249
+!MESSAGE portico.lrc  - WARNING Federate [WorkwayFed27] Not ticking enough, queue is getting fat! (size=545, warningLevel=500)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-24 09:12:49.524
+!MESSAGE de.uka.ipd.sdq.simulation.abstractsimengine.AbstractExperiment  - Tried to stop the simulation, which has already been stopped.
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-24 09:12:54.950
+!MESSAGE de.uka.ipd.sdq.simulation.abstractsimengine.AbstractExperiment  - Tried to stop the simulation, which has already been stopped.
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-24 09:12:58.209
+!MESSAGE de.uka.ipd.sdq.simulation.abstractsimengine.AbstractExperiment  - Tried to stop the simulation, which has already been stopped.
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-24 09:12:59.470
+!MESSAGE de.uka.ipd.sdq.simulation.abstractsimengine.AbstractExperiment  - Tried to stop the simulation, which has already been stopped.
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-24 09:13:00.298
+!MESSAGE de.uka.ipd.sdq.simulation.abstractsimengine.AbstractExperiment  - Tried to stop the simulation, which has already been stopped.
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-24 09:13:00.298
+!MESSAGE de.uka.ipd.sdq.simulation.abstractsimengine.AbstractExperiment  - Tried to stop the simulation, which has already been stopped.
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-24 09:13:00.313
+!MESSAGE de.uka.ipd.sdq.simulation.abstractsimengine.AbstractExperiment  - Tried to stop the simulation, which has already been stopped.
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-24 09:13:01.303
+!MESSAGE de.uka.ipd.sdq.simulation.abstractsimengine.AbstractExperiment  - Tried to stop the simulation, which has already been stopped.
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-24 09:13:06.972
+!MESSAGE de.uka.ipd.sdq.simulation.abstractsimengine.AbstractExperiment  - Tried to stop the simulation, which has already been stopped.
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-24 09:13:08.667
+!MESSAGE de.uka.ipd.sdq.simulation.abstractsimengine.AbstractExperiment  - Tried to stop the simulation, which has already been stopped.
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-24 09:13:10.026
+!MESSAGE portico.lrc  - WARNING Federate [WorkwayFed87] Not ticking enough, queue is getting fat! (size=708, warningLevel=500)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-24 09:13:10.037
+!MESSAGE portico.lrc  - WARNING Federate [WorkwayFed82] Not ticking enough, queue is getting fat! (size=696, warningLevel=500)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-24 09:13:10.068
+!MESSAGE portico.lrc  - WARNING Federate [WorkwayFed84] Not ticking enough, queue is getting fat! (size=696, warningLevel=500)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-24 09:13:10.068
+!MESSAGE portico.lrc  - WARNING Federate [WorkwayFed81] Not ticking enough, queue is getting fat! (size=696, warningLevel=500)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-24 09:13:10.068
+!MESSAGE portico.lrc  - WARNING Federate [WorkwayFed83] Not ticking enough, queue is getting fat! (size=696, warningLevel=500)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-24 09:13:10.068
+!MESSAGE portico.lrc  - WARNING Federate [WorkwayFed77] Not ticking enough, queue is getting fat! (size=686, warningLevel=500)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-24 09:13:10.084
+!MESSAGE portico.lrc  - WARNING Federate [WorkwayFed85] Not ticking enough, queue is getting fat! (size=676, warningLevel=500)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-24 09:13:10.084
+!MESSAGE portico.lrc  - WARNING Federate [WorkwayFed61] Not ticking enough, queue is getting fat! (size=845, warningLevel=500)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-24 09:13:10.084
+!MESSAGE portico.lrc  - WARNING Federate [WorkwayFed7] Not ticking enough, queue is getting fat! (size=889, warningLevel=500)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-24 09:13:10.100
+!MESSAGE de.uka.ipd.sdq.simulation.abstractsimengine.AbstractExperiment  - Tried to stop the simulation, which has already been stopped.
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-24 09:13:10.100
+!MESSAGE portico.lrc  - WARNING Federate [WorkwayFed3] Not ticking enough, queue is getting fat! (size=873, warningLevel=500)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-24 09:13:10.115
+!MESSAGE portico.lrc  - WARNING Federate [WorkwayFed9] Not ticking enough, queue is getting fat! (size=1012, warningLevel=500)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-24 09:13:10.115
+!MESSAGE portico.lrc  - WARNING Federate [WorkwayFed99] Not ticking enough, queue is getting fat! (size=883, warningLevel=500)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-24 09:13:10.115
+!MESSAGE de.uka.ipd.sdq.simulation.abstractsimengine.AbstractExperiment  - Tried to stop the simulation, which has already been stopped.
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-24 09:13:10.131
+!MESSAGE portico.lrc  - WARNING Federate [WorkwayFed97] Not ticking enough, queue is getting fat! (size=883, warningLevel=500)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-24 09:13:10.131
+!MESSAGE portico.lrc  - WARNING Federate [WorkwayFed79] Not ticking enough, queue is getting fat! (size=803, warningLevel=500)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-24 09:13:10.131
+!MESSAGE portico.lrc  - WARNING Federate [WorkwayFed73] Not ticking enough, queue is getting fat! (size=815, warningLevel=500)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-24 09:13:10.146
+!MESSAGE portico.lrc  - WARNING Federate [WorkwayFed75] Not ticking enough, queue is getting fat! (size=832, warningLevel=500)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-24 09:13:10.146
+!MESSAGE portico.lrc  - WARNING Federate [WorkwayFed69] Not ticking enough, queue is getting fat! (size=814, warningLevel=500)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-24 09:13:10.162
+!MESSAGE portico.lrc  - WARNING Federate [WorkwayFed76] Not ticking enough, queue is getting fat! (size=817, warningLevel=500)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-24 09:13:10.162
+!MESSAGE portico.lrc  - WARNING Federate [WorkwayFed4] Not ticking enough, queue is getting fat! (size=704, warningLevel=500)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-24 09:13:10.178
+!MESSAGE portico.lrc  - WARNING Federate [WorkwayFed38] Not ticking enough, queue is getting fat! (size=826, warningLevel=500)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-24 09:13:10.178
+!MESSAGE portico.lrc  - WARNING Federate [WorkwayFed21] Not ticking enough, queue is getting fat! (size=516, warningLevel=500)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-24 09:13:10.193
+!MESSAGE portico.lrc  - WARNING Federate [WorkwayFed27] Not ticking enough, queue is getting fat! (size=866, warningLevel=500)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-24 09:13:10.193
+!MESSAGE portico.lrc  - WARNING Federate [WorkwayFed98] Not ticking enough, queue is getting fat! (size=885, warningLevel=500)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-24 09:13:10.193
+!MESSAGE portico.lrc  - WARNING Federate [WorkwayFed95] Not ticking enough, queue is getting fat! (size=884, warningLevel=500)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-24 09:13:10.209
+!MESSAGE portico.lrc  - WARNING Federate [WorkwayFed53] Not ticking enough, queue is getting fat! (size=838, warningLevel=500)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-24 09:13:10.225
+!MESSAGE portico.lrc  - WARNING Federate [WorkwayFed55] Not ticking enough, queue is getting fat! (size=882, warningLevel=500)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-24 09:13:10.225
+!MESSAGE portico.lrc  - WARNING Federate [WorkwayFed47] Not ticking enough, queue is getting fat! (size=942, warningLevel=500)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-24 09:13:10.225
+!MESSAGE portico.lrc  - WARNING Federate [WorkwayFed41] Not ticking enough, queue is getting fat! (size=931, warningLevel=500)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-24 09:13:10.240
+!MESSAGE portico.lrc  - WARNING Federate [WorkwayFed43] Not ticking enough, queue is getting fat! (size=931, warningLevel=500)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-24 09:13:10.240
+!MESSAGE portico.lrc  - WARNING Federate [WorkwayFed37] Not ticking enough, queue is getting fat! (size=702, warningLevel=500)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-24 09:13:10.240
+!MESSAGE portico.lrc  - WARNING Federate [WorkwayFed65] Not ticking enough, queue is getting fat! (size=867, warningLevel=500)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-24 09:13:10.256
+!MESSAGE portico.lrc  - WARNING Federate [WorkwayFed31] Not ticking enough, queue is getting fat! (size=639, warningLevel=500)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-24 09:13:10.271
+!MESSAGE portico.lrc  - WARNING Federate [WorkwayFed51] Not ticking enough, queue is getting fat! (size=909, warningLevel=500)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-24 09:13:10.287
+!MESSAGE portico.lrc  - WARNING Federate [WorkwayFed49] Not ticking enough, queue is getting fat! (size=904, warningLevel=500)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-24 09:13:10.287
+!MESSAGE de.uka.ipd.sdq.simulation.abstractsimengine.AbstractExperiment  - Tried to stop the simulation, which has already been stopped.
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-24 09:13:10.287
+!MESSAGE portico.lrc  - WARNING Federate [WorkwayFed25] Not ticking enough, queue is getting fat! (size=667, warningLevel=500)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-24 09:13:10.303
+!MESSAGE de.uka.ipd.sdq.simulation.abstractsimengine.AbstractExperiment  - Tried to stop the simulation, which has already been stopped.
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-24 09:13:10.303
+!MESSAGE portico.lrc  - WARNING Federate [WorkwayFed39] Not ticking enough, queue is getting fat! (size=872, warningLevel=500)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-24 09:13:10.303
+!MESSAGE portico.lrc  - WARNING Federate [WorkwayFed67] Not ticking enough, queue is getting fat! (size=865, warningLevel=500)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-24 09:13:10.834
+!MESSAGE portico.lrc  - WARNING Federate [WorkwayFed71] Not ticking enough, queue is getting fat! (size=868, warningLevel=500)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-24 09:13:10.834
+!MESSAGE portico.lrc  - WARNING Federate [WorkwayFed35] Not ticking enough, queue is getting fat! (size=851, warningLevel=500)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-24 09:13:10.834
+!MESSAGE portico.lrc  - WARNING Federate [WorkwayFed1] Not ticking enough, queue is getting fat! (size=858, warningLevel=500)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-24 09:13:10.850
+!MESSAGE portico.lrc  - WARNING Federate [WorkwayFed13] Not ticking enough, queue is getting fat! (size=862, warningLevel=500)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-24 09:13:10.865
+!MESSAGE portico.lrc  - WARNING Federate [WorkwayFed15] Not ticking enough, queue is getting fat! (size=660, warningLevel=500)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-24 09:13:10.865
+!MESSAGE portico.lrc  - WARNING Federate [WorkwayFed5] Not ticking enough, queue is getting fat! (size=676, warningLevel=500)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-24 09:13:10.865
+!MESSAGE portico.lrc  - WARNING Federate [WorkwayFed57] Not ticking enough, queue is getting fat! (size=861, warningLevel=500)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-24 09:13:10.881
+!MESSAGE de.uka.ipd.sdq.simulation.abstractsimengine.AbstractExperiment  - Tried to stop the simulation, which has already been stopped.
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-24 09:13:10.881
+!MESSAGE portico.lrc  - WARNING Federate [WorkwayFed11] Not ticking enough, queue is getting fat! (size=846, warningLevel=500)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-24 09:13:10.881
+!MESSAGE portico.lrc  - WARNING Federate [WorkwayFed23] Not ticking enough, queue is getting fat! (size=842, warningLevel=500)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-24 09:13:10.896
+!MESSAGE portico.lrc  - WARNING Federate [WorkwayFed17] Not ticking enough, queue is getting fat! (size=842, warningLevel=500)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-24 09:13:10.896
+!MESSAGE portico.lrc  - WARNING Federate [WorkwayFed19] Not ticking enough, queue is getting fat! (size=784, warningLevel=500)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-24 09:13:10.912
+!MESSAGE portico.lrc  - WARNING Federate [WorkwayFed45] Not ticking enough, queue is getting fat! (size=831, warningLevel=500)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-24 09:13:10.912
+!MESSAGE de.uka.ipd.sdq.simulation.abstractsimengine.AbstractExperiment  - Tried to stop the simulation, which has already been stopped.
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-24 09:13:10.912
+!MESSAGE portico.lrc  - WARNING Federate [WorkwayFed29] Not ticking enough, queue is getting fat! (size=831, warningLevel=500)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-24 09:13:10.928
+!MESSAGE portico.lrc  - WARNING Federate [WorkwayFed63] Not ticking enough, queue is getting fat! (size=769, warningLevel=500)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-24 09:13:10.928
+!MESSAGE portico.lrc  - WARNING Federate [WorkwayFed33] Not ticking enough, queue is getting fat! (size=760, warningLevel=500)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-24 09:13:10.928
+!MESSAGE portico.lrc  - WARNING Federate [WorkwayFed59] Not ticking enough, queue is getting fat! (size=770, warningLevel=500)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-24 09:13:10.943
+!MESSAGE de.uka.ipd.sdq.simulation.abstractsimengine.AbstractExperiment  - Tried to stop the simulation, which has already been stopped.
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-24 09:13:10.943
+!MESSAGE de.uka.ipd.sdq.simulation.abstractsimengine.AbstractExperiment  - Tried to stop the simulation, which has already been stopped.
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-24 09:13:10.943
+!MESSAGE de.uka.ipd.sdq.simulation.abstractsimengine.AbstractExperiment  - Tried to stop the simulation, which has already been stopped.
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-24 09:13:10.959
+!MESSAGE de.uka.ipd.sdq.simulation.abstractsimengine.AbstractExperiment  - Tried to stop the simulation, which has already been stopped.
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-24 09:13:10.959
+!MESSAGE portico.lrc  - WARNING Federate [WorkwayFed39] Not ticking enough, queue is getting fat! (size=2912, warningLevel=500)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-24 09:13:10.959
+!MESSAGE portico.lrc  - WARNING Federate [WorkwayFed25] Not ticking enough, queue is getting fat! (size=711, warningLevel=500)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-24 09:13:10.959
+!MESSAGE de.uka.ipd.sdq.simulation.abstractsimengine.AbstractExperiment  - Tried to stop the simulation, which has already been stopped.
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-24 09:13:10.959
+!MESSAGE de.uka.ipd.sdq.simulation.abstractsimengine.AbstractExperiment  - Tried to stop the simulation, which has already been stopped.
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-24 09:13:10.959
+!MESSAGE de.uka.ipd.sdq.simulation.abstractsimengine.AbstractExperiment  - Tried to stop the simulation, which has already been stopped.
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-24 09:13:10.959
+!MESSAGE de.uka.ipd.sdq.simulation.abstractsimengine.AbstractExperiment  - Tried to stop the simulation, which has already been stopped.
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-24 09:13:10.974
+!MESSAGE de.uka.ipd.sdq.simulation.abstractsimengine.AbstractExperiment  - Tried to stop the simulation, which has already been stopped.
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-24 09:13:10.974
+!MESSAGE de.uka.ipd.sdq.simulation.abstractsimengine.AbstractExperiment  - Tried to stop the simulation, which has already been stopped.
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-24 09:13:10.974
+!MESSAGE de.uka.ipd.sdq.simulation.abstractsimengine.AbstractExperiment  - Tried to stop the simulation, which has already been stopped.
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-24 09:13:10.974
+!MESSAGE de.uka.ipd.sdq.simulation.abstractsimengine.AbstractExperiment  - Tried to stop the simulation, which has already been stopped.
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-24 09:13:10.974
+!MESSAGE de.uka.ipd.sdq.simulation.abstractsimengine.AbstractExperiment  - Tried to stop the simulation, which has already been stopped.
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-24 09:13:10.974
+!MESSAGE de.uka.ipd.sdq.simulation.abstractsimengine.AbstractExperiment  - Tried to stop the simulation, which has already been stopped.
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-24 09:13:10.974
+!MESSAGE de.uka.ipd.sdq.simulation.abstractsimengine.AbstractExperiment  - Tried to stop the simulation, which has already been stopped.
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-24 09:13:10.974
+!MESSAGE de.uka.ipd.sdq.simulation.abstractsimengine.AbstractExperiment  - Tried to stop the simulation, which has already been stopped.
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-24 09:13:10.974
+!MESSAGE de.uka.ipd.sdq.simulation.abstractsimengine.AbstractExperiment  - Tried to stop the simulation, which has already been stopped.
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-24 09:13:10.990
+!MESSAGE de.uka.ipd.sdq.simulation.abstractsimengine.AbstractExperiment  - Tried to stop the simulation, which has already been stopped.
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-24 09:13:10.990
+!MESSAGE de.uka.ipd.sdq.simulation.abstractsimengine.AbstractExperiment  - Tried to stop the simulation, which has already been stopped.
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-24 09:13:10.990
+!MESSAGE de.uka.ipd.sdq.simulation.abstractsimengine.AbstractExperiment  - Tried to stop the simulation, which has already been stopped.
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-24 09:13:10.990
+!MESSAGE de.uka.ipd.sdq.simulation.abstractsimengine.AbstractExperiment  - Tried to stop the simulation, which has already been stopped.
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-24 09:13:10.990
+!MESSAGE de.uka.ipd.sdq.simulation.abstractsimengine.AbstractExperiment  - Tried to stop the simulation, which has already been stopped.
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-24 09:13:10.990
+!MESSAGE de.uka.ipd.sdq.simulation.abstractsimengine.AbstractExperiment  - Tried to stop the simulation, which has already been stopped.
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-24 09:13:10.990
+!MESSAGE portico.lrc  - WARNING Federate [WorkwayFed90] Not ticking enough, queue is getting fat! (size=921, warningLevel=500)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-24 09:13:10.990
+!MESSAGE portico.lrc  - WARNING Federate [WorkwayFed86] Not ticking enough, queue is getting fat! (size=923, warningLevel=500)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-24 09:13:11.006
+!MESSAGE portico.lrc  - WARNING Federate [WorkwayFed88] Not ticking enough, queue is getting fat! (size=937, warningLevel=500)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-24 09:13:11.006
+!MESSAGE portico.lrc  - WARNING Federate [WorkwayFed89] Not ticking enough, queue is getting fat! (size=935, warningLevel=500)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-24 09:13:11.006
+!MESSAGE portico.lrc  - WARNING Federate [WorkwayFed91] Not ticking enough, queue is getting fat! (size=503, warningLevel=500)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-24 09:13:11.006
+!MESSAGE portico.lrc  - WARNING Federate [WorkwayFed93] Not ticking enough, queue is getting fat! (size=934, warningLevel=500)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-24 09:13:11.037
+!MESSAGE portico.lrc  - WARNING Federate [WorkwayFed96] Not ticking enough, queue is getting fat! (size=935, warningLevel=500)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-24 09:13:47.867
+!MESSAGE de.uka.ipd.sdq.simulation.abstractsimengine.AbstractExperiment  - Tried to stop the simulation, which has already been stopped.
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-24 09:13:48.782
+!MESSAGE de.uka.ipd.sdq.simulation.abstractsimengine.AbstractExperiment  - Tried to stop the simulation, which has already been stopped.
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-24 09:13:48.829
+!MESSAGE de.uka.ipd.sdq.simulation.abstractsimengine.AbstractExperiment  - Tried to stop the simulation, which has already been stopped.
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-24 09:13:51.059
+!MESSAGE portico.lrc  - WARNING Federate [WorkwayFed84] Not ticking enough, queue is getting fat! (size=548, warningLevel=500)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-24 09:13:56.174
+!MESSAGE portico.lrc  - WARNING Federate [WorkwayFed38] Not ticking enough, queue is getting fat! (size=504, warningLevel=500)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-24 09:13:56.580
+!MESSAGE portico.lrc  - WARNING Federate [WorkwayFed82] Not ticking enough, queue is getting fat! (size=547, warningLevel=500)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-24 09:13:57.882
+!MESSAGE portico.lrc  - WARNING Federate [WorkwayFed81] Not ticking enough, queue is getting fat! (size=547, warningLevel=500)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-24 09:13:59.301
+!MESSAGE portico.lrc  - WARNING Federate [WorkwayFed85] Not ticking enough, queue is getting fat! (size=547, warningLevel=500)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-24 09:14:03.393
+!MESSAGE portico.lrc  - WARNING Federate [WorkwayFed87] Not ticking enough, queue is getting fat! (size=547, warningLevel=500)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-24 09:14:05.980
+!MESSAGE portico.lrc.jgroups  - Detected that federate [unkonwn] may have crashed, investigating...
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-24 09:14:06.054
+!MESSAGE portico.lrc  - WARNING Federate [WorkwayFed86] Not ticking enough, queue is getting fat! (size=547, warningLevel=500)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-24 09:14:06.101
+!MESSAGE portico.lrc  - WARNING Federate [WorkwayFed29] Not ticking enough, queue is getting fat! (size=920, warningLevel=500)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-24 09:14:06.116
+!MESSAGE portico.lrc  - WARNING Federate [WorkwayFed73] Not ticking enough, queue is getting fat! (size=514, warningLevel=500)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-24 09:14:06.116
+!MESSAGE portico.lrc.jgroups  - Detected that federate [unkonwn] may have crashed, investigating...
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-24 09:14:06.132
+!MESSAGE de.uka.ipd.sdq.simulation.abstractsimengine.AbstractExperiment  - Tried to stop the simulation, which has already been stopped.
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-24 09:14:06.132
+!MESSAGE de.uka.ipd.sdq.simulation.abstractsimengine.AbstractExperiment  - Tried to stop the simulation, which has already been stopped.
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-24 09:14:06.147
+!MESSAGE de.uka.ipd.sdq.simulation.abstractsimengine.AbstractExperiment  - Tried to stop the simulation, which has already been stopped.
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-24 09:14:06.147
+!MESSAGE de.uka.ipd.sdq.simulation.abstractsimengine.AbstractExperiment  - Tried to stop the simulation, which has already been stopped.
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-24 09:14:06.147
+!MESSAGE portico.lrc.jgroups  - Detected that federate [WorkwayFed86] may have crashed, investigating...
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-24 09:14:06.147
+!MESSAGE de.uka.ipd.sdq.simulation.abstractsimengine.AbstractExperiment  - Tried to stop the simulation, which has already been stopped.
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-24 09:14:06.147
+!MESSAGE de.uka.ipd.sdq.simulation.abstractsimengine.AbstractExperiment  - Tried to stop the simulation, which has already been stopped.
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-24 09:14:06.163
+!MESSAGE de.uka.ipd.sdq.simulation.abstractsimengine.AbstractExperiment  - Tried to stop the simulation, which has already been stopped.
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-24 09:14:06.163
+!MESSAGE de.uka.ipd.sdq.simulation.abstractsimengine.AbstractExperiment  - Tried to stop the simulation, which has already been stopped.
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-24 09:14:06.163
+!MESSAGE de.uka.ipd.sdq.simulation.abstractsimengine.AbstractExperiment  - Tried to stop the simulation, which has already been stopped.
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-24 09:14:06.163
+!MESSAGE de.uka.ipd.sdq.simulation.abstractsimengine.AbstractExperiment  - Tried to stop the simulation, which has already been stopped.
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-24 09:14:06.163
+!MESSAGE de.uka.ipd.sdq.simulation.abstractsimengine.AbstractExperiment  - Tried to stop the simulation, which has already been stopped.
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-24 09:14:06.163
+!MESSAGE de.uka.ipd.sdq.simulation.abstractsimengine.AbstractExperiment  - Tried to stop the simulation, which has already been stopped.
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-24 09:14:06.163
+!MESSAGE portico.lrc  - WARNING Federate [WorkwayFed89] Not ticking enough, queue is getting fat! (size=1740, warningLevel=500)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-24 09:14:06.179
+!MESSAGE de.uka.ipd.sdq.simulation.abstractsimengine.AbstractExperiment  - Tried to stop the simulation, which has already been stopped.
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-24 09:14:06.179
+!MESSAGE portico.lrc  - WARNING Federate [WorkwayFed98] Not ticking enough, queue is getting fat! (size=1043, warningLevel=500)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-24 09:14:06.179
+!MESSAGE de.uka.ipd.sdq.simulation.abstractsimengine.AbstractExperiment  - Tried to stop the simulation, which has already been stopped.
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-24 09:14:06.179
+!MESSAGE portico.lrc  - WARNING Federate [WorkwayFed15] Not ticking enough, queue is getting fat! (size=1003, warningLevel=500)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-24 09:14:06.179
+!MESSAGE de.uka.ipd.sdq.simulation.abstractsimengine.AbstractExperiment  - Tried to stop the simulation, which has already been stopped.
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-24 09:14:06.194
+!MESSAGE portico.lrc  - WARNING Federate [WorkwayFed90] Not ticking enough, queue is getting fat! (size=1562, warningLevel=500)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-24 09:14:06.194
+!MESSAGE de.uka.ipd.sdq.simulation.abstractsimengine.AbstractExperiment  - Tried to stop the simulation, which has already been stopped.
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-24 09:14:06.194
+!MESSAGE de.uka.ipd.sdq.simulation.abstractsimengine.AbstractExperiment  - Tried to stop the simulation, which has already been stopped.
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-24 09:14:06.194
+!MESSAGE portico.lrc  - WARNING Federate [WorkwayFed38] Not ticking enough, queue is getting fat! (size=1530, warningLevel=500)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-24 09:14:06.194
+!MESSAGE de.uka.ipd.sdq.simulation.abstractsimengine.AbstractExperiment  - Tried to stop the simulation, which has already been stopped.
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-24 09:14:06.194
+!MESSAGE de.uka.ipd.sdq.simulation.abstractsimengine.AbstractExperiment  - Tried to stop the simulation, which has already been stopped.
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-24 09:14:06.210
+!MESSAGE de.uka.ipd.sdq.simulation.abstractsimengine.AbstractExperiment  - Tried to stop the simulation, which has already been stopped.
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-24 09:14:06.210
+!MESSAGE de.uka.ipd.sdq.simulation.abstractsimengine.AbstractExperiment  - Tried to stop the simulation, which has already been stopped.
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-24 09:14:06.210
+!MESSAGE de.uka.ipd.sdq.simulation.abstractsimengine.AbstractExperiment  - Tried to stop the simulation, which has already been stopped.
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-24 09:14:06.210
+!MESSAGE de.uka.ipd.sdq.simulation.abstractsimengine.AbstractExperiment  - Tried to stop the simulation, which has already been stopped.
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-24 09:14:06.210
+!MESSAGE de.uka.ipd.sdq.simulation.abstractsimengine.AbstractExperiment  - Tried to stop the simulation, which has already been stopped.
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-24 09:14:06.210
+!MESSAGE de.uka.ipd.sdq.simulation.abstractsimengine.AbstractExperiment  - Tried to stop the simulation, which has already been stopped.
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-24 09:14:06.210
+!MESSAGE de.uka.ipd.sdq.simulation.abstractsimengine.AbstractExperiment  - Tried to stop the simulation, which has already been stopped.
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-24 09:14:06.210
+!MESSAGE de.uka.ipd.sdq.simulation.abstractsimengine.AbstractExperiment  - Tried to stop the simulation, which has already been stopped.
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-24 09:14:06.210
+!MESSAGE de.uka.ipd.sdq.simulation.abstractsimengine.AbstractExperiment  - Tried to stop the simulation, which has already been stopped.
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-24 09:14:06.210
+!MESSAGE de.uka.ipd.sdq.simulation.abstractsimengine.AbstractExperiment  - Tried to stop the simulation, which has already been stopped.
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-24 09:14:06.226
+!MESSAGE de.uka.ipd.sdq.simulation.abstractsimengine.AbstractExperiment  - Tried to stop the simulation, which has already been stopped.
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-24 09:14:06.226
+!MESSAGE de.uka.ipd.sdq.simulation.abstractsimengine.AbstractExperiment  - Tried to stop the simulation, which has already been stopped.
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-24 09:14:06.226
+!MESSAGE de.uka.ipd.sdq.simulation.abstractsimengine.AbstractExperiment  - Tried to stop the simulation, which has already been stopped.
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-24 09:14:06.226
+!MESSAGE de.uka.ipd.sdq.simulation.abstractsimengine.AbstractExperiment  - Tried to stop the simulation, which has already been stopped.
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-24 09:14:06.226
+!MESSAGE de.uka.ipd.sdq.simulation.abstractsimengine.AbstractExperiment  - Tried to stop the simulation, which has already been stopped.
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-24 09:14:06.226
+!MESSAGE de.uka.ipd.sdq.simulation.abstractsimengine.AbstractExperiment  - Tried to stop the simulation, which has already been stopped.
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-24 09:14:06.226
+!MESSAGE de.uka.ipd.sdq.simulation.abstractsimengine.AbstractExperiment  - Tried to stop the simulation, which has already been stopped.
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-24 09:14:06.226
+!MESSAGE de.uka.ipd.sdq.simulation.abstractsimengine.AbstractExperiment  - Tried to stop the simulation, which has already been stopped.
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-24 09:14:06.226
+!MESSAGE portico.lrc  - WARNING Federate [WorkwayFed84] Not ticking enough, queue is getting fat! (size=1100, warningLevel=500)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-24 09:14:06.241
+!MESSAGE portico.lrc  - WARNING Federate [WorkwayFed76] Not ticking enough, queue is getting fat! (size=800, warningLevel=500)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-24 09:14:06.241
+!MESSAGE portico.lrc  - WARNING Federate [WorkwayFed99] Not ticking enough, queue is getting fat! (size=729, warningLevel=500)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-24 09:14:06.257
+!MESSAGE portico.lrc  - WARNING Federate [WorkwayFed79] Not ticking enough, queue is getting fat! (size=550, warningLevel=500)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-24 09:14:06.257
+!MESSAGE portico.lrc  - WARNING Federate [WorkwayFed88] Not ticking enough, queue is getting fat! (size=1103, warningLevel=500)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-24 09:14:06.272
+!MESSAGE portico.lrc  - WARNING Federate [WorkwayFed4] Not ticking enough, queue is getting fat! (size=835, warningLevel=500)
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-24 09:14:06.288
+!MESSAGE portico.lrc  - WARNING Federate [WorkwayFed1] Not ticking enough, queue is getting fat! (size=1151, warningLevel=500)
+
+!SESSION 2018-10-24 13:16:16.005 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_171
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=de_DE
+Framework arguments:  -application edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim
+Command-line arguments:  -application edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim -data C:\Users\Freddy\git\WorkwaySimAbstractSimEngineHLA\edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim -dev file:C:/Users/Freddy/workspace/.metadata/.plugins/org.eclipse.pde.core/Workway Behaviour Simulation Example/dev.properties -os win32 -ws win32 -arch x86_64 -consoleLog
+
+!ENTRY org.apache.log4j 2 0 2018-10-24 13:27:09.176
+!MESSAGE de.uka.ipd.sdq.simulation.abstractsimengine.AbstractExperiment  - Tried to stop the simulation, which has already been stopped.
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-24 13:27:09.176
+!MESSAGE de.uka.ipd.sdq.simulation.abstractsimengine.AbstractExperiment  - Tried to stop the simulation, which has already been stopped.
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-24 13:27:09.176
+!MESSAGE de.uka.ipd.sdq.simulation.abstractsimengine.AbstractExperiment  - Tried to stop the simulation, which has already been stopped.
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-24 13:27:09.191
+!MESSAGE de.uka.ipd.sdq.simulation.abstractsimengine.AbstractExperiment  - Tried to stop the simulation, which has already been stopped.
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-24 13:27:09.285
+!MESSAGE de.uka.ipd.sdq.simulation.abstractsimengine.AbstractExperiment  - Tried to stop the simulation, which has already been stopped.
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-24 13:27:09.285
+!MESSAGE de.uka.ipd.sdq.simulation.abstractsimengine.AbstractExperiment  - Tried to stop the simulation, which has already been stopped.
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-24 13:27:09.285
+!MESSAGE de.uka.ipd.sdq.simulation.abstractsimengine.AbstractExperiment  - Tried to stop the simulation, which has already been stopped.
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-24 13:27:09.301
+!MESSAGE de.uka.ipd.sdq.simulation.abstractsimengine.AbstractExperiment  - Tried to stop the simulation, which has already been stopped.
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-24 13:27:09.301
+!MESSAGE de.uka.ipd.sdq.simulation.abstractsimengine.AbstractExperiment  - Tried to stop the simulation, which has already been stopped.
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-24 13:27:24.030
+!MESSAGE portico.lrc.jgroups  - Detected that federate [unkonwn] may have crashed, investigating...
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-24 13:27:24.189
+!MESSAGE portico.lrc.jgroups  - Unknown channel member crashed. Don't think it was a federate. Ignoring. uuid=44b10d81-4ffc-4af8-b838-f0fa2b8166a6
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-24 13:27:29.276
+!MESSAGE de.uka.ipd.sdq.simulation.abstractsimengine.AbstractExperiment  - Tried to stop the simulation, which has already been stopped.
+
+!SESSION 2018-10-24 13:38:54.662 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_171
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=de_DE
+Framework arguments:  -application edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim
+Command-line arguments:  -application edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim -data C:\Users\Freddy\git\WorkwaySimAbstractSimEngineHLA\edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim -dev file:C:/Users/Freddy/workspace/.metadata/.plugins/org.eclipse.pde.core/Workway Behaviour Simulation Example/dev.properties -os win32 -ws win32 -arch x86_64 -consoleLog
+
+!ENTRY org.apache.log4j 2 0 2018-10-24 13:39:17.252
+!MESSAGE portico.lrc.jgroups  - Detected that federate [unkonwn] may have crashed, investigating...
+
+
+!ENTRY org.apache.log4j 2 0 2018-10-24 13:39:17.408
+!MESSAGE portico.lrc.jgroups  - Unknown channel member crashed. Don't think it was a federate. Ignoring. uuid=c1813f7d-b71f-470d-8e13-9dbcbc652348
+
+!SESSION 2018-10-24 16:48:59.751 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_171
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=de_DE
+Framework arguments:  -application edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim
+Command-line arguments:  -application edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim -data C:\Users\Freddy\git\WorkwaySimAbstractSimEngineHLA\edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim -dev file:C:/Users/Freddy/workspace/.metadata/.plugins/org.eclipse.pde.core/Workway Behaviour Simulation Example/dev.properties -os win32 -ws win32 -arch x86_64 -consoleLog
+
+!ENTRY org.apache.log4j 4 0 2018-10-24 16:49:14.769
+!MESSAGE portico.lrc  - FAILURE [WorkwayFed0] requested lookahead was too low: 1.0E-9
+
+
+!ENTRY org.apache.log4j 4 0 2018-10-24 16:49:14.769
+!MESSAGE portico.lrc  - FAILURE [WorkwayFed1] requested lookahead was too low: 1.0E-9
+

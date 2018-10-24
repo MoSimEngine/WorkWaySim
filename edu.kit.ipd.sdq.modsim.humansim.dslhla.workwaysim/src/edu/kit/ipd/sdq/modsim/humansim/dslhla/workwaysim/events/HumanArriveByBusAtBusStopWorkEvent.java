@@ -17,6 +17,9 @@ public class HumanArriveByBusAtBusStopWorkEvent extends AbstractSimEventDelegato
 	public void eventRoutine(Human human) {
 		// TODO Auto-generated method stub
 		WorkwayModel m = (WorkwayModel)this.getModel();
+		Utils.log(human, "In ArrivingAtBS");
+		
+		m.hasToKeepAlive = false;
 		
 		human.arriveAtBusStopWorkByDriving();
 		human.setCollected(false);
