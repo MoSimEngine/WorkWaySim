@@ -15,7 +15,7 @@ import hla.rti1516e.ObjectInstanceHandle;
 
 public class Human extends AbstractSimEntityDelegator {
 
-	public enum HumanState {
+	public static enum HumanState {
 		AT_HOME, 
 		AT_WORK, 
 		GO_TO_BUSSTOP_HOME, 
@@ -463,6 +463,8 @@ public class Human extends AbstractSimEntityDelegator {
 	public void setOch(ObjectClassHandle och) {
 		this.och = och;
 	}
+	
+
 	
 
 }

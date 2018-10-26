@@ -20,9 +20,7 @@ public class HumanExitsBusEvent extends AbstractSimEventDelegator<Human>{
 		// TODO Auto-generated method stub
 		
 		WorkwayModel m = (WorkwayModel)this.getModel();
-		System.out.println("In Exit Bus Event");
-		//m.getComponent().modifyLookahead(500);
-		m.hasToKeepAlive = false;
+		
 		try {
 			m.getComponent().getRTIAmb().evokeCallback(0.5);
 		} catch (CallNotAllowedFromWithinCallback | RTIinternalError e1) {

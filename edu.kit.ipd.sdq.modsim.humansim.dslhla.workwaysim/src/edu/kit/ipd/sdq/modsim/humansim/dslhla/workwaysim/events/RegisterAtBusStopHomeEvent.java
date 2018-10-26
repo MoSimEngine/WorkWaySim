@@ -2,6 +2,7 @@ package edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.events;
 
 import de.uka.ipd.sdq.simulation.abstractsimengine.AbstractSimEventDelegator;
 import de.uka.ipd.sdq.simulation.abstractsimengine.ISimulationModel;
+import edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.component.Duration;
 import edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.component.HumanSimValues;
 import edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.component.WorkwayModel;
 import edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.entities.Human;
@@ -20,6 +21,7 @@ public class RegisterAtBusStopHomeEvent extends AbstractSimEventDelegator<Human>
 		
 		WorkwayModel m = (WorkwayModel)this.getModel();
 		
+		human.setPosition(human.getHomeBusStop());
 		human.setDestination(human.getWorkBusStop());
 		m.registerHumanAtBusStop(human, human.getHomeBusStop(), human.getWorkBusStop());
 		
@@ -32,14 +34,15 @@ public class RegisterAtBusStopHomeEvent extends AbstractSimEventDelegator<Human>
 //		e.schedule(human, 0);
 		m.getComponent().synchronisedAdvancedTime(1.0, e, human);
 		return;
-		}  
+		} else {
+			PickUpTimeoutEvent e = new PickUpTimeoutEvent(getModel(), "PickUpTimeoutAtBSH");
+			
+			m.getComponent().synchronisedAdvancedTime(Duration.minutes(50).toSeconds().value(), e, human);
+		}
 		
-		System.out.println("Do not use Spinwait - but Registered");
-		m.hasToKeepAlive = true;
-		KeepAliveEvent e = new KeepAliveEvent(this.getModel(), "Keep Alive");
-		e.schedule(human, 0.0);
+		
+		
 	
-		
 		
 	}
 

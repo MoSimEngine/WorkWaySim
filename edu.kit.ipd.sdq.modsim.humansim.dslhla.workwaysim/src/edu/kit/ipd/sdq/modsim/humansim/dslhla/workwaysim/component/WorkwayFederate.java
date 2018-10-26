@@ -225,9 +225,10 @@ public class WorkwayFederate{
 				advanceTime(1.0);
 				rtiamb.evokeMultipleCallbacks(0.1, 0.2);
 			} else {
-				System.out.println(simulation.getStops().size());
+				System.out.print("");
 			}
 		}
+		
 		
 		initialiseHuman();
 		

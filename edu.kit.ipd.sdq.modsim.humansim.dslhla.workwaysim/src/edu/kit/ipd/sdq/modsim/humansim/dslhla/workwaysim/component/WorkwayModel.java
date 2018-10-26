@@ -345,7 +345,7 @@ public class WorkwayModel extends AbstractSimulationModel implements Runnable{
 					if(busStop.getName().equals(busStopName)){
 
 						HumanEntersBusEvent e = new HumanEntersBusEvent(this, "HumanEntersBus");
-						Utils.log(human, "Scheduling Enters Event for Human: " + human.getName() + " on BusStop: " + busStop.getName() );
+						//Utils.log(human, "Scheduling Enters Event for Human: " + human.getName() + " on BusStop: " + busStop.getName() );
 						e.schedule(human, 0);
 						
 						return;
@@ -362,11 +362,11 @@ public class WorkwayModel extends AbstractSimulationModel implements Runnable{
 			if(human.getName().equals(humanName)){
 				
 				for(BusStop busStop : stops){
-					System.out.println("FoundBusStop");
+					//System.out.println("FoundBusStop");
 					if(busStop.getName().equals(busStopName)){
 						
 						HumanExitsBusEvent e = new HumanExitsBusEvent(this, "HumanExitsBus");
-						Utils.log(human, "Scheduling Exit Event for Human: " + human.getName() + " exit on BusStop: " + busStop.getName() );
+						//Utils.log(human, "Scheduling Exit Event for Human: " + human.getName() + " exit on BusStop: " + busStop.getName() );
 						e.schedule(human, 0);
 						return;
 					}
