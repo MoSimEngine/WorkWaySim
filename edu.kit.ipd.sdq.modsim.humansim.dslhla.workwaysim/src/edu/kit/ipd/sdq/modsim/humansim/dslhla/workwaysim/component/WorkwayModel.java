@@ -375,14 +375,6 @@ public class WorkwayModel extends AbstractSimulationModel implements Runnable{
 			
 		}
 	}
-
-	public boolean isScanning() {
-		return scanning;
-	}
-
-	public void setScanning(boolean scanning) {
-		this.scanning = scanning;
-	}
 	
 	public void initialiseHumans(){
 			BusStop[] tmpStops = new BusStop[3];

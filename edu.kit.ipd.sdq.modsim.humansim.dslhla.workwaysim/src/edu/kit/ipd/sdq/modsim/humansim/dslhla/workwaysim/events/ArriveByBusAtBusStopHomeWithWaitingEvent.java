@@ -16,7 +16,7 @@ public class ArriveByBusAtBusStopHomeWithWaitingEvent extends AbstractSimEventDe
 	public void eventRoutine(Human human) {
 		// TODO Auto-generated method stub
 		WorkwayModel m = (WorkwayModel)this.getModel();
-		
+		m.hasToKeepAlive = false;
 		Utils.log(human, human.getName() + "Arrived at Home BusStop at " + human.getHomeBusStop().getName() +" by bus");
 		human.arriveAtBusStopHomeByDriving();
 		HumanWalkFromBusStopHomeToHomeEvent e = new HumanWalkFromBusStopHomeToHomeEvent(getModel(), "WalkFromBusStopHomeToHome");

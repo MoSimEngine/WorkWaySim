@@ -23,7 +23,7 @@ public class KeepAliveEvent extends AbstractSimEventDelegator<Human>{
 			KeepAliveEvent e = new KeepAliveEvent(getModel(), getName());
 			try {
 				
-				m.getComponent().modifyLookahead(7000);
+				m.getComponent().modifyLookahead(1);
 				m.getComponent().getRTIAmb().evokeCallback(0.5);
 			} catch (CallNotAllowedFromWithinCallback | RTIinternalError e1) {
 				// TODO Auto-generated catch block

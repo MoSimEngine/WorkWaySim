@@ -68,6 +68,10 @@ public class WorkwayFederate{
 	protected ParameterHandle busStopNameRegisterHandle;
 	protected ParameterHandle destinationNameRegisterHandle;
 	
+	protected InteractionClassHandle unregisterAtBusStopHandle;
+	protected ParameterHandle humanNameUnregisterHandle;
+	protected ParameterHandle busStopNameUnregisterHandle;
+	
 	protected InteractionClassHandle humanEntersBusHandle;
 	protected ParameterHandle humanNameEnterBusHandle;
 	protected ParameterHandle busStopNameEnterHandle;
@@ -327,6 +331,11 @@ public class WorkwayFederate{
 		humanNameRegisterHandle = rtiamb.getParameterHandle(registerAtBusStopHandle, "HumanName");
 		busStopNameRegisterHandle = rtiamb.getParameterHandle(registerAtBusStopHandle, "BusStopName");
 		destinationNameRegisterHandle = rtiamb.getParameterHandle(registerAtBusStopHandle, "DestinationName");
+		
+		unregisterAtBusStopHandle = rtiamb.getInteractionClassHandle("HLAinteractionRoot.HumanUnRegistersAtBusStop");
+		rtiamb.publishInteractionClass(unregisterAtBusStopHandle);
+		humanNameUnregisterHandle = rtiamb.getParameterHandle(unregisterAtBusStopHandle, "HumanName");
+		busStopNameUnregisterHandle = rtiamb.getParameterHandle(unregisterAtBusStopHandle, "BusStopName");
 		
 		humanEntersBusHandle = rtiamb.getInteractionClassHandle("HLAinteractionRoot.HumanEntersBus");
 		rtiamb.subscribeInteractionClass(humanEntersBusHandle);

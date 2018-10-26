@@ -157,6 +157,29 @@
                 </parameter>
             </interactionClass>
             <interactionClass>
+                <name>HumanUnRegistersAtBusStop</name>
+                <sharing>PublishSubscribe</sharing>
+                <dimensions/>
+                <transportation>HLAreliable</transportation>
+                <order>TimeStamp</order>
+                <semantics>An interaction to signal that a human arrived at a bus stop</semantics>
+                 <parameter>
+                    <name>HumanName</name>
+                    <dataType>HLAASCIIstring</dataType>
+                    <semantics>The name of the Human</semantics>
+                </parameter>
+                <parameter>
+                    <name>BusStopName</name>
+                    <dataType>HLAASCIIstring</dataType>
+                    <semantics>The name of the bus stop to register</semantics>
+                </parameter>
+                <parameter>
+                    <name>DestinationName</name>
+                    <dataType>HLAASCIIstring</dataType>
+                    <semantics>The name of the bus stop to be unloaded</semantics>
+                </parameter>
+            </interactionClass>
+            <interactionClass>
                 <name>HumanEntersBus</name>
                 <sharing>PublishSubscribe</sharing>
                 <dimensions/>
@@ -197,6 +220,7 @@
                     <semantics> The passed time in a double </semantics>
                 </parameter>
             </interactionClass>
+            
         </interactionClass>
     </interactions>
     <dimensions>

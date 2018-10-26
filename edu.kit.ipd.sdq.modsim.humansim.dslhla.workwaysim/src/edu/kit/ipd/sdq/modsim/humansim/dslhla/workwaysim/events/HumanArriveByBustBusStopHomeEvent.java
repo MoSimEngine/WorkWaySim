@@ -18,6 +18,8 @@ public class HumanArriveByBustBusStopHomeEvent extends AbstractSimEventDelegator
 		// TODO Auto-generated method stub
 		WorkwayModel m = (WorkwayModel)this.getModel();
 		
+		m.hasToKeepAlive = false;
+		
 		human.arriveAtBusStopHomeByDriving();
 		human.setCollected(false);
 		human.calculateDrivingTime();

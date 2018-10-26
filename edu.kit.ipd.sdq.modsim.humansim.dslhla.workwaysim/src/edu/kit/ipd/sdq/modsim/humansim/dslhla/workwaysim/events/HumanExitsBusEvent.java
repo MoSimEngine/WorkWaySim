@@ -21,7 +21,7 @@ public class HumanExitsBusEvent extends AbstractSimEventDelegator<Human>{
 		
 		WorkwayModel m = (WorkwayModel)this.getModel();
 		System.out.println("In Exit Bus Event");
-		m.getComponent().modifyLookahead(0);
+		//m.getComponent().modifyLookahead(500);
 		m.hasToKeepAlive = false;
 		try {
 			m.getComponent().getRTIAmb().evokeCallback(0.5);
@@ -39,8 +39,6 @@ public class HumanExitsBusEvent extends AbstractSimEventDelegator<Human>{
 //			e.schedule(human, 0);
 			m.getComponent().synchronisedAdvancedTime(0, e, human);
 		}
-		
-		m.setScanning(false);
 		
 	}
 
