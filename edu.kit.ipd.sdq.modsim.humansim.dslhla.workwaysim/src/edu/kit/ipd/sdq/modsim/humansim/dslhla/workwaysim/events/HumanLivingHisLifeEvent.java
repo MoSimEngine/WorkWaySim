@@ -22,8 +22,8 @@ public class HumanLivingHisLifeEvent extends AbstractSimEventDelegator<Human>{
 		double livingHisLife = human.FREETIME.toSeconds().value();
 		
 		HumanStopsLivingHisLifeEvent e = new HumanStopsLivingHisLifeEvent(human.getModel(), "Human stops living his life");
-//		e.schedule(human, livingHisLife);
-		m.getComponent().synchronisedAdvancedTime(livingHisLife, e, human);
+		e.schedule(human, livingHisLife);
+//		m.getComponent().synchronisedAdvancedTime(livingHisLife, e, human);
 		
 	}
 

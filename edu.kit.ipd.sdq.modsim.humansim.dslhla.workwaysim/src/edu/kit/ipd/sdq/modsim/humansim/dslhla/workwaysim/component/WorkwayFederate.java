@@ -203,10 +203,6 @@ public class WorkwayFederate{
 
 //		log(fedInfoStr + "Before Time Policy Enable");
 
-				
-		
-		
-		
 		regulateTime = true;
 		constrainTime = true;
 		runTimePolicyEnabling();
@@ -232,10 +228,11 @@ public class WorkwayFederate{
 		
 		initialiseHuman();
 		
-			//divestCollectedOwnership();
-		//TODO Hardcoded Timeadvance to be on equal starting time with BusSim 
-		//not nice but cleaner
+		if(HumanSimValues.EVOKE) {
 		advanceTime(1.0);
+		}
+			//divestCollectedOwnership();
+
 		simulation.startSimulation();
 			
 		}
@@ -398,7 +395,7 @@ public class WorkwayFederate{
 	 */
 	public synchronized boolean advanceTime( double timestep ) throws RTIexception
 	{
-		
+
 		double advancingTo = 0;
 		double miniStep = 0.000000001;
 		if(fedamb.federateTime + timestep <= HumanSimValues.MAX_SIM_TIME.toSeconds().value()){
@@ -408,6 +405,7 @@ public class WorkwayFederate{
 			advancingTo =  HumanSimValues.MAX_SIM_TIME.toSeconds().value() + miniStep;
 			return false;
 		}
+		
 		// request the advance
 		fedamb.isAdvancing = true;
 		HLAfloat64Time time = timeFactory.makeTime( advancingTo );
@@ -441,12 +439,9 @@ public class WorkwayFederate{
 	
 	public synchronized void  synchronisedAdvancedTime(double timestep, AbstractSimEventDelegator simevent, AbstractSimEntityDelegator simentity ){
 
-		if(timestep != 0.0){
-			
+		if(timestep != 0.0) {
 			try {
 				if(!advanceTime(timestep)){
-					
-					System.out.println("Not Advancing Time");
 				simulation.getSimulationControl().stop();
 					return;
 				}

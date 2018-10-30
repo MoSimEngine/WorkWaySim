@@ -23,10 +23,7 @@ public class HumanArriveByBustBusStopHomeEvent extends AbstractSimEventDelegator
 		human.arriveAtBusStopHomeByDriving();
 		human.setCollected(false);
 		human.calculateDrivingTime();
-		Utils.log(human, human.getName() + "arrived at BusStop at home - by bus");
-		
 		HumanWalkFromBusStopHomeToHomeEvent e = new HumanWalkFromBusStopHomeToHomeEvent(this.getModel(), "Human walks home");
-//		e.schedule(human, 0);
 		m.getComponent().synchronisedAdvancedTime(0, e, human);
 		
 	}

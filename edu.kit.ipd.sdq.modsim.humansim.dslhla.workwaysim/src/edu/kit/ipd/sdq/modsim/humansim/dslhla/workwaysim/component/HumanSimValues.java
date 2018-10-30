@@ -14,6 +14,6 @@ public class HumanSimValues {
 	public static final boolean WALKING_ENABLED = false;
 	public static final boolean RANDOMIZED_HUMAN_VALUES = false;
 	public static final boolean RANDOMIZED_HUMAN_STATIONS = false;
-	public static final boolean EVOKE = true;
+	public static final boolean EVOKE = false;
 	
 }

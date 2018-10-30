@@ -11,13 +11,13 @@ import de.uka.ipd.sdq.simulation.abstractsimengine.ISimulationModel;
 import hla.rti1516e.ObjectClassHandle;
 import hla.rti1516e.ObjectInstanceHandle;
 
-public class BusStop extends AbstractSimEntityDelegator {
+public class BusStop extends Position {
 
 	private ObjectInstanceHandle oih;
 
 	private ObjectClassHandle och;
     public BusStop(ISimulationModel model, String name) {
-        super(model, name);
+        super(model, name, PositionType.BUSSTOP);
     }
 
 

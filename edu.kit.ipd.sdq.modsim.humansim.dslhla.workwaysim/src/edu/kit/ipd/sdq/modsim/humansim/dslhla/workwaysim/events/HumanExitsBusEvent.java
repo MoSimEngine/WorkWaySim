@@ -21,12 +21,6 @@ public class HumanExitsBusEvent extends AbstractSimEventDelegator<Human>{
 		
 		WorkwayModel m = (WorkwayModel)this.getModel();
 		
-		try {
-			m.getComponent().getRTIAmb().evokeCallback(0.5);
-		} catch (CallNotAllowedFromWithinCallback | RTIinternalError e1) {
-			// TODO Auto-generated catch block
-			e1.printStackTrace();
-		}
 		if(human.getDestination().equals(human.getHomeBusStop())){
 			HumanArriveByBustBusStopHomeEvent e = new HumanArriveByBustBusStopHomeEvent(getModel(), "ArriveAtBSHomeByBus");
 //			e.schedule(human, 0);

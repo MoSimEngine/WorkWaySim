@@ -345,9 +345,8 @@ public class WorkwayModel extends AbstractSimulationModel implements Runnable{
 					if(busStop.getName().equals(busStopName)){
 
 						HumanEntersBusEvent e = new HumanEntersBusEvent(this, "HumanEntersBus");
-						//Utils.log(human, "Scheduling Enters Event for Human: " + human.getName() + " on BusStop: " + busStop.getName() );
+						Utils.log(human, "Scheduling Enters Event for Human: " + human.getName() + " on BusStop: " + busStop.getName() );
 						e.schedule(human, 0);
-						
 						return;
 					}
 				
