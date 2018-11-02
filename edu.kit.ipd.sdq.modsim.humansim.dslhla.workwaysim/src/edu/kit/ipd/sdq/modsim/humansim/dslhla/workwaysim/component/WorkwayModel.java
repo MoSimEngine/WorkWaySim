@@ -1,11 +1,5 @@
 package edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.component;
 
-
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.Random;
@@ -18,8 +12,7 @@ import edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.entities.BusStop;
 import edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.entities.Human;
 import edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.events.HumanEntersBusEvent;
 import edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.events.HumanExitsBusEvent;
-import edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.events.HumanWalksDirectlyToWorkEvent;
-import edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.events.WalkToBusStopAtHomeEvent;
+import edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.events.TravelToNextEvent;
 import edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.util.CSVHandler;
 import edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.util.Utils;
 import hla.rti1516e.ResignAction;
@@ -37,8 +30,6 @@ import hla.rti1516e.exceptions.RTIinternalError;
 
 public class WorkwayModel extends AbstractSimulationModel implements Runnable{
 
-	 private boolean PROCESS_ORIENTED = false;
-	 
 	 private LinkedList<BusStop> stops;
 
 	 private double startTime; 
@@ -88,6 +79,7 @@ public class WorkwayModel extends AbstractSimulationModel implements Runnable{
 			e.printStackTrace();
 		}
 		
+		
 		finished = true;
 		
 		int countFinished = 0;
@@ -97,22 +89,19 @@ public class WorkwayModel extends AbstractSimulationModel implements Runnable{
 			
 		while(countFinished != HumanSimValues.NUM_HUMANS){
 			countFinished = 0;
-			try {
-				java.util.concurrent.TimeUnit.SECONDS.sleep(20);
-			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
+			
 			for (WorkwayModel model : models) {
 				if(model.finished){
 						countFinished++;
 				}
 			}
 		}
-			
 		
-		System.out.println("Writing Data");
+		
+		
+//		System.out.println("Writing Data");
 	 	Double finalTime = (System.nanoTime() - startTime) / Math.pow(10, 9);
+	 	System.out.println("Time taken");
 		String file_header = "";
 		String csvAway = "";
 		String csvWaitingAtStation = "";
@@ -235,22 +224,20 @@ public class WorkwayModel extends AbstractSimulationModel implements Runnable{
 	       	
 	       	CSVHandler.readCSVAndAppend("ExecutionTimes", s + CSVHandler.CSV_DELIMITER);
 	       	
-	       	try{
+	       	System.out.println("Done writing data");
+	      
+	      
 				try {
 					component.getRTIAmb().destroyFederationExecution("HumanSim1");
-				} catch (NotConnected | RTIinternalError e) {
+				} catch (NotConnected | RTIinternalError | FederatesCurrentlyJoined | FederationExecutionDoesNotExist e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
-				System.out.println("Destroyed HumanSim federation");
-			} catch (FederationExecutionDoesNotExist fedne){
-				System.out.println(" Federation does not exist");
-			} catch (FederatesCurrentlyJoined fcj) {
-				System.out.println("Federates still joined at HumanSim");
-			}
+	       	
 		}
 		
 		System.out.println("Finalized in " + getId());
+	
 	}
 
     /**
@@ -274,20 +261,7 @@ public class WorkwayModel extends AbstractSimulationModel implements Runnable{
     }
     
     public void startSimulation(){
-    	
-    	
-    	  if (PROCESS_ORIENTED) {
-              // schedule a process for each bus
-              
-    	  } else {
-    		  if(human.willWalk()){
-      			new HumanWalksDirectlyToWorkEvent(this, human.getName() + "walks directly").schedule(human, component.getCurrentFedTime());
-      		} else {
-      			System.out.println("Starting at " + component.getCurrentFedTime());
-      			new WalkToBusStopAtHomeEvent(this, human.getName() + "walks to bus station").schedule(human , component.getCurrentFedTime());
-      		}
-    	  }
-    	
+    	  new TravelToNextEvent(this, human.getName() + "starts travelling").schedule(human, component.getCurrentFedTime());
     }
 
 	public WorkwayFederate getComponent() {
@@ -323,29 +297,13 @@ public class WorkwayModel extends AbstractSimulationModel implements Runnable{
 
 	}
 	
-	public void startScanningForHLAEvents(){
-		
-		this.scanning = true;
-		
-		while(scanning){
-			try {
-				component.advanceTime(HumanSimValues.BUSY_WAITING_TIME_STEP.toSeconds().value());
-			} catch (RTIexception e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-		}
-		
-	}
-	
 	public void scheduleHumanEntersEvent(String humanName, String busStopName){
 		
 			if(human.getName().equals(humanName)){
 				for(BusStop busStop : stops){
 					if(busStop.getName().equals(busStopName)){
-
+						Utils.log(human, "Handle Enters-Event on " + getComponent().getCurrentFedTime());
 						HumanEntersBusEvent e = new HumanEntersBusEvent(this, "HumanEntersBus");
-						Utils.log(human, "Scheduling Enters Event for Human: " + human.getName() + " on BusStop: " + busStop.getName() );
 						e.schedule(human, 0);
 						return;
 					}
@@ -364,6 +322,7 @@ public class WorkwayModel extends AbstractSimulationModel implements Runnable{
 					//System.out.println("FoundBusStop");
 					if(busStop.getName().equals(busStopName)){
 						
+						Utils.log(human, "Handle Exits-Event on " + getComponent().getCurrentFedTime());
 						HumanExitsBusEvent e = new HumanExitsBusEvent(this, "HumanExitsBus");
 						//Utils.log(human, "Scheduling Exit Event for Human: " + human.getName() + " exit on BusStop: " + busStop.getName() );
 						e.schedule(human, 0);
@@ -409,7 +368,7 @@ public class WorkwayModel extends AbstractSimulationModel implements Runnable{
     	
     		
     		
-    		if(HumanSimValues.RANDOMIZED_HUMAN_STATIONS){
+    		if(HumanSimValues.STOCHASTIC){
     		while(homeBS == workBS){
     			homeBS = new Random().nextInt(HumanSimValues.NUM_BUSSTOPS);
     			workBS = new Random().nextInt(HumanSimValues.NUM_BUSSTOPS);
@@ -454,7 +413,7 @@ public class WorkwayModel extends AbstractSimulationModel implements Runnable{
 	
 	public void registerHumanAtBusStop(Human human, BusStop busStop, BusStop destination){
 		try {
-			this.component.sendRegisterInteraction(human.getName(), busStop.getName(), destination.getName());
+			this.component.sendRegisterInteraction(human, busStop.getName(), destination.getName());
 		} catch (RTIexception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

@@ -20,6 +20,7 @@ import edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.adaption.HLAByteArrayAd
 import edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.adaption.HLAByteArrayDerivedElement;
 import edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.entities.BusStop;
 import edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.entities.Human;
+import edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.entities.Human.HumanBehaviour;
 import edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.util.Utils;
 import hla.rti1516e.AttributeHandle;
 import hla.rti1516e.AttributeHandleSet;
@@ -85,6 +86,7 @@ public class WorkwayFederate{
 	protected AttributeHandle collectedHandle;
 	protected AttributeHandle humanNameAttributeHandle;
 	protected AttributeHandle destinationHandle;
+	protected AttributeHandle movementTypeHandle;
 	
 	protected ObjectClassHandle busStopObjectClassHandle;
 	protected AttributeHandle busStopNameAttributeHandle;
@@ -176,28 +178,8 @@ public class WorkwayFederate{
 			rtiamb.evokeMultipleCallbacks(0.1, 0.2);
 		}
 		
-		adapterService = new HLAAdapter();
 		
-
-		DataMarker byteArray = new DataMarker("byteArray");
-		DataMarker stringMarker = new DataMarker("string");
-		DataMarker intMarker = new DataMarker("int");
-		
-		
-		DataMarkerMapping mappingByteArray = new DataMarkerMapping(byteArray, byte[].class.getTypeName());
-		DataMarkerMapping mappingHLAString = new DataMarkerMapping(stringMarker, String.class.getTypeName());
-		DataMarkerMapping mappingHLAInt32 = new DataMarkerMapping(intMarker, Integer.class.getTypeName());
-		
-		
-		HLAByteArrayAdaption byteArrayDesription = new HLAByteArrayAdaption(mappingByteArray);
-		
-	
-		HLAByteArrayDerivedElement HLAStringElement = new HLAByteArrayDerivedElement(mappingHLAString, new ByteArrayToStringConversion(encoderFactory));
-		HLAByteArrayDerivedElement HLAInt32Element = new HLAByteArrayDerivedElement(mappingHLAInt32, new ByteArrayToInteger32BEConversion(encoderFactory));
-		byteArrayDesription.addDerivedElement(HLAStringElement);
-		byteArrayDesription.addDerivedElement(HLAInt32Element);
-		
-		adapterService.addDescription(byteArrayDesription);
+		setUpAdaptation();
 		
 		rtiamb.synchronizationPointAchieved(HumanSimValues.READY_TO_RUN);
 
@@ -241,7 +223,7 @@ public class WorkwayFederate{
 	public void endExecution() throws Exception{
 		
 		rtiamb.resignFederationExecution(ResignAction.DELETE_OBJECTS);
-		log("Resigned from Federatin");
+		log("Resigned from Federation");
 		
 		try{
 			rtiamb.destroyFederationExecution("HumanSim1");
@@ -350,6 +332,7 @@ public class WorkwayFederate{
 		humanNameAttributeHandle = rtiamb.getAttributeHandle(humanObjectClassHandle, "HumanName");
 		collectedHandle = rtiamb.getAttributeHandle(humanObjectClassHandle, "HumanCollected");
 		destinationHandle = rtiamb.getAttributeHandle(humanObjectClassHandle, "Destination");
+		movementTypeHandle = rtiamb.getAttributeHandle(humanObjectClassHandle, "Movementtype");
 		
 		busStopObjectClassHandle = rtiamb.getObjectClassHandle("HLAobjectRoot.BusStop");
 		busStopNameAttributeHandle = rtiamb.getAttributeHandle(busStopObjectClassHandle, "BusStopName");
@@ -362,9 +345,7 @@ public class WorkwayFederate{
 		AttributeHandleSet humanPublishedAttributes = rtiamb.getAttributeHandleSetFactory().create();
 		humanPublishedAttributes.add(humanNameAttributeHandle);
 		humanPublishedAttributes.add(destinationHandle);
-
-		
-		
+		humanPublishedAttributes.add(movementTypeHandle);
 		
 		rtiamb.publishObjectClassAttributes(humanObjectClassHandle, humanPublishedAttributes);
 		rtiamb.subscribeObjectClassAttributes(humanObjectClassHandle, humanSubscribedAttributes);
@@ -398,12 +379,14 @@ public class WorkwayFederate{
 
 		double advancingTo = 0;
 		double miniStep = 0.000000001;
+		boolean belowTime = true;
+		
 		if(fedamb.federateTime + timestep <= HumanSimValues.MAX_SIM_TIME.toSeconds().value()){
 			advancingTo = fedamb.federateTime + timestep;
 		} else {
-			Utils.log(simulation.getHuman(), "Sim overtime - wants to advance to: " + fedamb.federateTime + timestep + " current time: " + fedamb.federateTime);
+//			Utils.log(simulation.getHuman(), "Sim overtime - wants to advance to: " + fedamb.federateTime + timestep + " current time: " + fedamb.federateTime);
 			advancingTo =  HumanSimValues.MAX_SIM_TIME.toSeconds().value() + miniStep;
-			return false;
+			belowTime = false;
 		}
 		
 		// request the advance
@@ -420,7 +403,7 @@ public class WorkwayFederate{
 				try{
 					rtiamb.timeAdvanceRequest( time );
 					} catch (Exception e){
-						log(e.getMessage());
+						log(e.getMessage() + rtiamb.queryLogicalTime());
 						return false;
 					}
 			}
@@ -433,15 +416,25 @@ public class WorkwayFederate{
 			rtiamb.evokeMultipleCallbacks( 0.1, 0.2 );
 		}
 //		System.out.println("New Fed Time: " + fedamb.federateTime);
-		return true;
+		return belowTime;
 	}
-	
 	
 	public synchronized void  synchronisedAdvancedTime(double timestep, AbstractSimEventDelegator simevent, AbstractSimEntityDelegator simentity ){
 
-		if(timestep != 0.0) {
+		
+		double advanceStep = 0.0;
+		if(getCurrentFedTime() < simulation.getSimulationControl().getCurrentSimulationTime()) {
+			double diff = 0.0;
+			diff = simulation.getSimulationControl().getCurrentSimulationTime() - getCurrentFedTime();
+			advanceStep = timestep + diff;
+		} else {
+			advanceStep = timestep;
+		}
+		
+		
+		if(advanceStep != 0.0) {
 			try {
-				if(!advanceTime(timestep)){
+				if(!advanceTime(advanceStep)){
 				simulation.getSimulationControl().stop();
 					return;
 				}
@@ -455,15 +448,23 @@ public class WorkwayFederate{
 		simevent.schedule(simentity, timestep);
 	}
 	
-	public void sendRegisterInteraction(String human, String busStop, String destination) throws RTIexception{
+
+	
+	public void sendRegisterInteraction(Human human, String busStop, String destination) throws RTIexception{
 		
 		ParameterHandleValueMap parameters = rtiamb.getParameterHandleValueMapFactory().create(3);
-		parameters.put(humanNameRegisterHandle, adapterService.filter(human));
+		parameters.put(humanNameRegisterHandle, adapterService.filter(human.getName()));
 		parameters.put(busStopNameRegisterHandle, adapterService.filter(busStop));
 		parameters.put(destinationNameRegisterHandle, adapterService.filter(destination));
-		HLAfloat64Time time = timeFactory.makeTime(fedamb.federateTime + 1.0);
+		HLAfloat64Time time;
+		if(HumanSimValues.FULL_SYNC) {
+			time = timeFactory.makeTime(fedamb.federateTime + 1.0);
+		} else {
+			time = timeFactory.makeTime(simulation.getSimulationControl().getCurrentSimulationTime() + 1.0);
+		}
+		
 
-		//System.out.println("Human: " + human + " registers at" + busStop + " for " + destination);
+//		Utils.log(human, " Register Humanregister-Event on " + fedamb.federateTime + " for time: " + time.getValue() );
 		rtiamb.sendInteraction( registerAtBusStopHandle, parameters, generateTag(), time);
 	}
 	
@@ -479,27 +480,23 @@ public class WorkwayFederate{
 		human.setOih(oih);
 		human.setOch(humanObjectClassHandle);
 //		System.out.println("Set Handles for: " + human.getName());
-		AttributeHandleValueMap attributes = rtiamb.getAttributeHandleValueMapFactory().create(2);
+		AttributeHandleValueMap attributes = rtiamb.getAttributeHandleValueMapFactory().create(3);
 		attributes.put(humanNameAttributeHandle, adapterService.filter(human.getName()));
 		attributes.put(destinationHandle, adapterService.filter(human.getDestination().getName()));
-		HLAfloat64Time time = timeFactory.makeTime(fedamb.federateTime + 1.0);
+		attributes.put(movementTypeHandle, adapterService.filter(human.getBehaviour().toString()));
+		HLAfloat64Time time;
+		time = timeFactory.makeTime(fedamb.federateTime + 1.0);
+//		if(HumanSimValues.FULL_SYNC) {
+//			
+//		} else {
+//			time = timeFactory.makeTime(simulation.getSimulationControl().getCurrentSimulationTime() + 1.0);
+//		}
 //		System.out.print("Updating Values");
 		rtiamb.updateAttributeValues(human.getOih(), attributes, generateTag(), time);
 		
 		
 	}
 	
-	public void changeDestinationAttribute(Human human, BusStop destination) throws RTIexception{
-		
-		//log(human, "Changing destination to: " + destination.getName());
-		AttributeHandleValueMap attributes = rtiamb.getAttributeHandleValueMapFactory().create(1);
-		
-		attributes.put(destinationHandle, adapterService.filter(destination.getName()));
-		HLAfloat64Time time = timeFactory.makeTime( fedamb.federateTime + 1.0);
-	
-		rtiamb.updateAttributeValues(human.getOih(), attributes, generateTag(), time);
-		
-	}
 	
 	public double getCurrentFedTime(){
 		return fedamb.federateTime;
@@ -581,6 +578,8 @@ public class WorkwayFederate{
 		}
 		//System.out.println("Received Collected at " + "Current time:" + fedamb.federateTime + "SimTime: " + simulation.getSimulationControl().getCurrentSimulationTime());
 		//Utils.log(human, "Setting Collected to " + collected);
+		
+//		Utils.log(human, " Collected is changed to " + collected + " on " + fedamb.federateTime);
 		switch (collected) {
 		case "True":
 			human.setCollected(true);
@@ -664,21 +663,30 @@ public class WorkwayFederate{
 		simulation.scheduleHumanExitsEvent(humanName, busStopName, passedTime);
 	}
 	
-	public void modifyLookahead(double d){
-		try {
-			rtiamb.modifyLookahead(timeFactory.makeInterval(d));
-		} catch (InvalidLookahead | InTimeAdvancingState | TimeRegulationIsNotEnabled | SaveInProgress
-				| RestoreInProgress | FederateNotExecutionMember | NotConnected | RTIinternalError e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+	private void setUpAdaptation(){
+
+		adapterService = new HLAAdapter();
 		
-		try {
-			rtiamb.evokeMultipleCallbacks(0.1, 0.2);
-		} catch (CallNotAllowedFromWithinCallback | RTIinternalError e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+
+		DataMarker byteArray = new DataMarker("byteArray");
+		DataMarker stringMarker = new DataMarker("string");
+		DataMarker intMarker = new DataMarker("int");
+		
+		
+		DataMarkerMapping mappingByteArray = new DataMarkerMapping(byteArray, byte[].class.getTypeName());
+		DataMarkerMapping mappingHLAString = new DataMarkerMapping(stringMarker, String.class.getTypeName());
+		DataMarkerMapping mappingHLAInt32 = new DataMarkerMapping(intMarker, Integer.class.getTypeName());
+		
+		
+		HLAByteArrayAdaption byteArrayDesription = new HLAByteArrayAdaption(mappingByteArray);
+		
+	
+		HLAByteArrayDerivedElement HLAStringElement = new HLAByteArrayDerivedElement(mappingHLAString, new ByteArrayToStringConversion(encoderFactory));
+		HLAByteArrayDerivedElement HLAInt32Element = new HLAByteArrayDerivedElement(mappingHLAInt32, new ByteArrayToInteger32BEConversion(encoderFactory));
+		byteArrayDesription.addDerivedElement(HLAStringElement);
+		byteArrayDesription.addDerivedElement(HLAInt32Element);
+		
+		adapterService.addDescription(byteArrayDesription);
 	}
 }
  

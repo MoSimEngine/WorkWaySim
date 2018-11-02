@@ -17,16 +17,11 @@ public class HumanEntersBusEvent extends AbstractSimEventDelegator<Human>{
 	public void eventRoutine(Human human) {
 		// TODO Auto-generated method stub
 		WorkwayModel m = (WorkwayModel)this.getModel();
+		
 		human.setCollected(true);
 		human.calculateWaitedTime();
+		human.travellingToNext();
 		human.humanIsCollected();
-		if(human.getDestination().equals(human.getHomeBusStop())){
-			human.driveToBusStopAtHome();
-		} else if(human.getDestination().equals(human.getWorkBusStop())){
-			human.driveToBusStopAtWork();
-		} else {
-			throw new IllegalStateException("Human is collected, but not at correct stop");
-		}
 		
 	}
 

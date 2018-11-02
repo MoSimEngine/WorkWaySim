@@ -16,8 +16,6 @@ public class HLAAdapter {
 	
 	
 	public HLAAdapter(){
-
-	
 		attachments = new LinkedList<AdaptationDescription>();
 	}
 	
@@ -43,7 +41,7 @@ public class HLAAdapter {
 		throw new IllegalArgumentException("No Marker correspondance found");
 	}
 	
-	@SuppressWarnings("unchecked")
+
 	public <E> byte[] filter(E convert){
 		for (AdaptationDescription description : attachments) {
 			if(description instanceof HLAByteArrayAdaption){
@@ -60,7 +58,6 @@ public class HLAAdapter {
 			} 
 		}
 		throw new IllegalArgumentException("No Marker correspondance found");
-		
 	}
 	
 	public void addDescription(AdaptationDescription description){

@@ -20,7 +20,7 @@ public class CSVHandler {
 		
 		String workingDirectory = "HumanSimData";
 		
-		System.out.println(workingDirectory);
+//		System.out.println(workingDirectory);
    		try {
        		fileWriter = new FileWriter(workingDirectory.toString() + "\\" + filename + ".csv" + "\\");
        		fileWriter.append(csvString);

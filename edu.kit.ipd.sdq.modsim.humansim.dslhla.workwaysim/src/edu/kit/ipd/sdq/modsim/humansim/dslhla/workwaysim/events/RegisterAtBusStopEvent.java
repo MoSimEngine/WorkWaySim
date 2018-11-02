@@ -9,6 +9,7 @@ import edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.entities.BusStop;
 import edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.entities.Human;
 import edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.util.Utils;
 
+
 public class RegisterAtBusStopEvent extends AbstractSimEventDelegator<Human>{
 
 	protected RegisterAtBusStopEvent(ISimulationModel model, String name) {
@@ -28,8 +29,13 @@ public class RegisterAtBusStopEvent extends AbstractSimEventDelegator<Human>{
 		Utils.log(human, "Registers at bus Stop:" + human.getPosition().getName() + " with Destination" + human.getDestination().getName());
 		
 		if(HumanSimValues.USE_SPIN_WAIT){
-		WaitForBusAtHomeEvent e = new WaitForBusAtHomeEvent(this.getModel(), "Waiting for bus at home event");
-		m.getComponent().synchronisedAdvancedTime(HumanSimValues.BUSY_WAITING_TIME_STEP.toSeconds().value(), e, human);
+		WaitForBusEvent e = new WaitForBusEvent(this.getModel(), "Waiting for bus at home event");
+		if(HumanSimValues.FULL_SYNC) {
+			m.getComponent().synchronisedAdvancedTime(1.0, e, human);
+		} else {
+			m.getComponent().synchronisedAdvancedTime(1.0, e, human);
+		}
+		
 		return;
 		} else {
 			PickUpTimeoutEvent e = new PickUpTimeoutEvent(getModel(), "PickUpTimeoutAtBSH");

@@ -7,9 +7,9 @@ import edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.component.WorkwayModel;
 import edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.entities.Human;
 import edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.util.Utils;
 
-public class DrivingBusHomeEvent extends AbstractSimEventDelegator<Human>{
+public class WaitForBusEvent extends AbstractSimEventDelegator<Human>{
 
-	protected DrivingBusHomeEvent(ISimulationModel model, String name) {
+	protected WaitForBusEvent(ISimulationModel model, String name) {
 		super(model, name);
 		// TODO Auto-generated constructor stub
 	}
@@ -17,23 +17,30 @@ public class DrivingBusHomeEvent extends AbstractSimEventDelegator<Human>{
 	@Override
 	public void eventRoutine(Human human) {
 		// TODO Auto-generated method stub
-
 		WorkwayModel m = (WorkwayModel)this.getModel();
 		
 		
-		if(human.isCollected()){
-			
-			DrivingBusHomeEvent e = new DrivingBusHomeEvent(getModel(), "reschedulingDrivingBusHome");
+		if(!human.isCollected()){
+			WaitForBusEvent e = new WaitForBusEvent(getModel(), "redscheduled wait for bus at home event");
 //			e.schedule(human, HumanSimValues.BUSY_WAITING_TIME_STEP.toSeconds().value());
 			m.getComponent().synchronisedAdvancedTime(HumanSimValues.BUSY_WAITING_TIME_STEP.toSeconds().value(), e, human);
 			return;
 		}
-		Utils.log(human, human.getName() + " left bus at " + human.getHomeBusStop().getName() );
-		human.calculateDrivingTime();
 		
-		ArriveByBusAtBusStopHomeWithWaitingEvent e = new ArriveByBusAtBusStopHomeWithWaitingEvent(getModel(), "ArriveAtHomeByBusWaiting");
-//		e.schedule(human, 0);
-		m.getComponent().synchronisedAdvancedTime(0, e, human);
+		human.calculateWaitedTime();
+		
+		
+		Utils.log(human, human.getName() + " entered bus at " + human.getPosition().getName() );
+		human.travellingToNext();
+		human.humanIsCollected();
+		DrivingBusEvent e = new DrivingBusEvent(getModel(), "DrivingBusToWorkEvent");
+//		
+		if(HumanSimValues.FULL_SYNC) {
+			m.getComponent().synchronisedAdvancedTime(0, e, human);
+		} else {
+			e.schedule(human, 0);
+		}
+		
 	}
 
 }

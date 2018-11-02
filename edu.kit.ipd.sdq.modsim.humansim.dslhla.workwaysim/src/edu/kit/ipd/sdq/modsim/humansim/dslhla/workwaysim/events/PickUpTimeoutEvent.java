@@ -22,7 +22,7 @@ public class PickUpTimeoutEvent extends AbstractSimEventDelegator<Human>{
 		// TODO Auto-generated method stub
 		WorkwayModel m = (WorkwayModel)this.getModel();
 		
-		if(!human.isCollected() && (human.getState().equals(HumanState.AT_BUSSTOP_HOME) || human.getState().equals(HumanState.AT_BUSSTOP_WORK))){
+		if(!human.isCollected() && (human.getState().equals(HumanState.AT_BUSSTOP))){
 			boolean changeToWalking = false;
 			
 			if(changeToWalking){
