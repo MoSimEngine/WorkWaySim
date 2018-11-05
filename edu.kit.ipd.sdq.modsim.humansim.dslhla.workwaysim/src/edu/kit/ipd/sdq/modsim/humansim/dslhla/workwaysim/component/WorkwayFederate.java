@@ -119,8 +119,8 @@ public class WorkwayFederate{
 	
 	protected boolean busReady = false;
 	
-	private boolean regulateTime = false;
-	private boolean constrainTime = false;
+	private boolean regulateTime = true;
+	private boolean constrainTime = true;
 	
 	public LinkedList<ObjectInstanceHandle> busStopHandles;
 	
@@ -173,7 +173,6 @@ public class WorkwayFederate{
 
 		rtiamb.registerFederationSynchronizationPoint(HumanSimValues.READY_TO_RUN, null);
 	
-		
 		while (fedamb.isAnnounced == false) {
 			rtiamb.evokeMultipleCallbacks(0.1, 0.2);
 		}
@@ -378,15 +377,16 @@ public class WorkwayFederate{
 	{
 
 		double advancingTo = 0;
-		double miniStep = 0.000000001;
+//		double miniStep = 0.000000001;
 		boolean belowTime = true;
 		
 		if(fedamb.federateTime + timestep <= HumanSimValues.MAX_SIM_TIME.toSeconds().value()){
 			advancingTo = fedamb.federateTime + timestep;
 		} else {
 //			Utils.log(simulation.getHuman(), "Sim overtime - wants to advance to: " + fedamb.federateTime + timestep + " current time: " + fedamb.federateTime);
-			advancingTo =  HumanSimValues.MAX_SIM_TIME.toSeconds().value() + miniStep;
-			belowTime = false;
+//			advancingTo =  HumanSimValues.MAX_SIM_TIME.toSeconds().value() + miniStep;
+			return false;
+//			belowTime = false;
 		}
 		
 		// request the advance
@@ -415,6 +415,8 @@ public class WorkwayFederate{
 		{
 			rtiamb.evokeMultipleCallbacks( 0.1, 0.2 );
 		}
+
+		
 //		System.out.println("New Fed Time: " + fedamb.federateTime);
 		return belowTime;
 	}
@@ -655,8 +657,8 @@ public class WorkwayFederate{
 		return rtiamb;
 	}
 	
-	public void handleEnterInteraction(String humanName, String busStopName){
-		simulation.scheduleHumanEntersEvent(humanName, busStopName);
+	public void handleEnterInteraction(String humanName, String busStopName, double passedTime){
+		simulation.scheduleHumanEntersEvent(humanName, busStopName, passedTime);
 	}
 	
 	public void handleExitInteraction(String humanName, String busStopName, double passedTime){
@@ -688,5 +690,10 @@ public class WorkwayFederate{
 		
 		adapterService.addDescription(byteArrayDesription);
 	}
+	
+	public Human getHuman() {
+		return simulation.getHuman();
+	}
+
 }
  

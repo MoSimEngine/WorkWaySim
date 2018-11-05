@@ -290,7 +290,7 @@ public class Human extends AbstractSimEntityDelegator {
 		double total= 24.00 - onTheWay.toHours().value();
 		FREETIME = Duration.hours(total);
 		freeTimes.add(FREETIME);
-
+		Utils.log(this, "Enjoys: " + FREETIME.toHours().value() + " of Freetime");
 		if(FREETIME.toSeconds().value() < 0.0){
 			Utils.log(this, this.getName() + " has no freetime :(");
 			FREETIME = Duration.hours(0);

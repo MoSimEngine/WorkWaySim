@@ -19,13 +19,14 @@ public class DrivingTimeoOutEvent extends AbstractSimEventDelegator<Human> {
 		
 		WorkwayModel m = (WorkwayModel)this.getModel();
 		
+		
+		
 		if(human.isCollected()){
 			boolean panik = false;
-			
 			if(panik){
 				Utils.log(human, "Human is still in the bus! Panik!!!!!!");
 			} else {
-				Utils.log(human, "Human waits again");
+//				Utils.log(human, "Human still driving");
 				DrivingTimeoOutEvent e = new DrivingTimeoOutEvent(getModel(), getName());
 				m.getComponent().synchronisedAdvancedTime(Duration.minutes(20).toSeconds().value(), e, human);
 			}

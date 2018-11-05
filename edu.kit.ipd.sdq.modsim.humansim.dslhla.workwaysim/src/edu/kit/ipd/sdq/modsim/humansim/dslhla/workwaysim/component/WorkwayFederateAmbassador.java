@@ -1,5 +1,6 @@
 package edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.component;
 
+import edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.util.Utils;
 import hla.rti1516e.AttributeHandleValueMap;
 import hla.rti1516e.FederateHandleSet;
 import hla.rti1516e.InteractionClassHandle;
@@ -22,7 +23,7 @@ public class WorkwayFederateAmbassador extends NullFederateAmbassador{
 	private WorkwayFederate federate;
 	
 	public double federateTime = 0.0;
-	protected double federateLookahead = 1.0;
+	protected double federateLookahead = 0.0;
 
 	protected boolean isRegulating = false;
 	protected boolean isConstrained = false;
@@ -137,6 +138,10 @@ public class WorkwayFederateAmbassador extends NullFederateAmbassador{
 			byte[] tag, OrderType sentOrdering, TransportationTypeHandle theTransport, LogicalTime time,
 			OrderType receivedOrdering, SupplementalReflectInfo reflectInfo) throws FederateInternalError {
 		//federate.log(federate.fedName + " got attributes");
+		
+		if(federate.getHuman() != null)
+			Utils.log(federate.getHuman(), "LogicalTime for AttributeChange:" + time);
+		
 		try {
 			federate.handleAttributeUpdate(theObject, theAttributes);
 		} catch (Exception e) {
@@ -161,13 +166,17 @@ public class WorkwayFederateAmbassador extends NullFederateAmbassador{
 			byte[] tag, OrderType sentOrdering, TransportationTypeHandle theTransport, LogicalTime time,
 			OrderType receivedOrdering, SupplementalReceiveInfo receiveInfo) throws FederateInternalError {
 		
+		
+		Utils.log(federate.getHuman(), "LogicalTime for Interaction:" + time);
+		
 		if(interactionClass.equals(federate.humanEntersBusHandle)){
 			federate.handleEnterInteraction(federate.adapterService.filter(String.class.getTypeName(), theParameters.get(federate.humanNameEnterBusHandle)), 
-					federate.adapterService.filter(String.class.getTypeName(), theParameters.get(federate.busStopNameEnterHandle)));
+					federate.adapterService.filter(String.class.getTypeName(), theParameters.get(federate.busStopNameEnterHandle)), 
+					((HLAfloat64Time) time).getValue());
 		} else if (interactionClass.equals(federate.humanExitsBusHandle)){
 			federate.handleExitInteraction(federate.adapterService.filter(String.class.getTypeName(), theParameters.get(federate.humanNameExitBusHandle)), 
 					federate.adapterService.filter(String.class.getTypeName(), theParameters.get(federate.busStopNameExitHandle)), 
-					1.0);
+					((HLAfloat64Time) time).getValue());
 		} else {
 			System.out.println("Got Interaction but don't know what to do with it");
 		}

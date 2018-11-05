@@ -45,7 +45,6 @@ public class WorkwaySimulationExample implements IApplication {
 		BasicConfigurator.configure();
         Logger.getRootLogger().setLevel(Level.INFO);
        
-        int spincounter = 0;
         for (int i = 0; i < threads.length; i++) {
 			threads[i] = new Thread(models.get(i));
 			models.get(i).setModels(models);
@@ -53,7 +52,7 @@ public class WorkwaySimulationExample implements IApplication {
 			
 			if(i != 0 && (i % 4) == 0 ){
 				System.out.println("Started " + i + " Human Models");
-				java.util.concurrent.TimeUnit.SECONDS.sleep(20);
+				java.util.concurrent.TimeUnit.SECONDS.sleep(10);
 			}
 			
 		

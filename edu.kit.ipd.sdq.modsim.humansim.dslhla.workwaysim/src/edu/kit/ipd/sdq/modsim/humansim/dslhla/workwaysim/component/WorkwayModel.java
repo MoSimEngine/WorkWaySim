@@ -71,6 +71,8 @@ public class WorkwayModel extends AbstractSimulationModel implements Runnable{
 	}
 	
 	public void finalise() {
+		
+		
 		try {
 			component.getRTIAmb().resignFederationExecution(ResignAction.DELETE_OBJECTS);
 		} catch (InvalidResignAction | OwnershipAcquisitionPending | FederateOwnsAttributes | FederateNotExecutionMember
@@ -78,7 +80,7 @@ public class WorkwayModel extends AbstractSimulationModel implements Runnable{
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
+
 		
 		finished = true;
 		
@@ -88,6 +90,12 @@ public class WorkwayModel extends AbstractSimulationModel implements Runnable{
 		if(this.getId() == 0){
 			
 		while(countFinished != HumanSimValues.NUM_HUMANS){
+			try {
+				java.util.concurrent.TimeUnit.SECONDS.sleep(20);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 			countFinished = 0;
 			
 			for (WorkwayModel model : models) {
@@ -228,8 +236,8 @@ public class WorkwayModel extends AbstractSimulationModel implements Runnable{
 	      
 	      
 				try {
-					component.getRTIAmb().destroyFederationExecution("HumanSim1");
-				} catch (NotConnected | RTIinternalError | FederatesCurrentlyJoined | FederationExecutionDoesNotExist e) {
+					getComponent().endExecution();
+				} catch (Exception e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
@@ -297,14 +305,16 @@ public class WorkwayModel extends AbstractSimulationModel implements Runnable{
 
 	}
 	
-	public void scheduleHumanEntersEvent(String humanName, String busStopName){
+	public void scheduleHumanEntersEvent(String humanName, String busStopName, double passedTime){
 		
 			if(human.getName().equals(humanName)){
 				for(BusStop busStop : stops){
 					if(busStop.getName().equals(busStopName)){
-						Utils.log(human, "Handle Enters-Event on " + getComponent().getCurrentFedTime());
+//						Utils.log(human, "Handle Enters-Event on " + getComponent().getCurrentFedTime());
 						HumanEntersBusEvent e = new HumanEntersBusEvent(this, "HumanEntersBus");
-						e.schedule(human, 0);
+						double diff = passedTime - getSimulationControl().getCurrentSimulationTime();
+//						Utils.log(human, "Bridging timediff:" + diff);
+						e.schedule(human, diff);
 						return;
 					}
 				
@@ -322,10 +332,12 @@ public class WorkwayModel extends AbstractSimulationModel implements Runnable{
 					//System.out.println("FoundBusStop");
 					if(busStop.getName().equals(busStopName)){
 						
-						Utils.log(human, "Handle Exits-Event on " + getComponent().getCurrentFedTime());
+//						Utils.log(human, "Handle Exits-Event on " + getComponent().getCurrentFedTime());
 						HumanExitsBusEvent e = new HumanExitsBusEvent(this, "HumanExitsBus");
+						double diff = passedTime - getSimulationControl().getCurrentSimulationTime();
+//						Utils.log(human, "Bridging timediff:" + diff);
 						//Utils.log(human, "Scheduling Exit Event for Human: " + human.getName() + " exit on BusStop: " + busStop.getName() );
-						e.schedule(human, 0);
+						e.schedule(human, diff);
 						return;
 					}
 				}

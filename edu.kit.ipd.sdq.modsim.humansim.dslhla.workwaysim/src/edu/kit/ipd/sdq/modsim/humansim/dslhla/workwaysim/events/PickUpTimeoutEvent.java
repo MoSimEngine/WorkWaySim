@@ -24,26 +24,18 @@ public class PickUpTimeoutEvent extends AbstractSimEventDelegator<Human>{
 		
 		if(!human.isCollected() && (human.getState().equals(HumanState.AT_BUSSTOP))){
 			boolean changeToWalking = false;
-			
 			if(changeToWalking){
-				Utils.log(human, "Human has enough! Time to walk!");
+//				Utils.log(human, "Human has enough! Time to walk!");
 				new HumanArrivesAtWorkEvent(this.getModel(), "Human Arrives At Work Walking after waiting at BS").schedule(human, human.WALK_DIRECTLY.toSeconds().value());
 				return;
 			} else {
-				Utils.log(human, "Human waits again");
+//				Utils.log(human, "Human waits for pickup again");
 				PickUpTimeoutEvent e = new PickUpTimeoutEvent(getModel(), getName());
 				m.getComponent().synchronisedAdvancedTime(Duration.minutes(20).toSeconds().value(), e, human);
 				return;
 			}
-		} else if (human.isCollected()) {
-			Utils.log(human, "Human sits in bus, time for next waiting!");
-			DrivingTimeoOutEvent e = new DrivingTimeoOutEvent(getModel(), "Driving Timeout Event");
-			m.getComponent().synchronisedAdvancedTime(Duration.minutes(20).toSeconds().value(), e, human);
-			return;
 		}
-		
-		
-		
+
 	}
 
 }

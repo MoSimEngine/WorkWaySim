@@ -18,7 +18,7 @@ public class HumanWorksEvent extends AbstractSimEventDelegator<Human>{
 	public void eventRoutine(Human human) {
 		WorkwayModel m = (WorkwayModel)this.getModel();
 		
-		Utils.log(human, human.getName() + " works and works.");
+//		Utils.log(human, human.getName() + " works and works.");
 		double working = human.WORKTIME.toSeconds().value();
 		HumanEndsWorkingEvent e = new HumanEndsWorkingEvent(this.getModel(), "Human stops working");
 //		

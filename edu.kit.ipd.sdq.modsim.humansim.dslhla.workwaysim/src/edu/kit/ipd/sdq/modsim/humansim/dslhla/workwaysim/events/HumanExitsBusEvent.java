@@ -23,6 +23,7 @@ public class HumanExitsBusEvent extends AbstractSimEventDelegator<Human>{
 		
 		Utils.log(human, human.getName() + " left bus at " + human.getDestination().getName() );
 		human.calculateDrivingTime();
+		human.setCollected(false);
 		
 		ArriveAtNextEvent e = new ArriveAtNextEvent(getModel(), "ArriveAtHomeByBusWaiting");
 		
