@@ -11,27 +11,14 @@ public class HumanArrivesHomeEvent extends AbstractSimEventDelegator<Human>{
 
 	protected HumanArrivesHomeEvent(ISimulationModel model, String name) {
 		super(model, name);
-		// TODO Auto-generated constructor stub
+
 	}
 
 	@Override
 	public void eventRoutine(Human human) {
-		// TODO Auto-generated method stub
-		WorkwayModel m = (WorkwayModel)this.getModel();
-		
-		
-			human.arriveAtHome();
-		
-	
+		human.arriveAtHome();
 		Utils.log(human, human.getName() + " arrives at home. Afterwork Party!");
 		HumanLivingHisLifeEvent e = new HumanLivingHisLifeEvent(human.getModel(), "Human is living his life");
-//		
-		if(HumanSimValues.FULL_SYNC) {
-			m.getComponent().synchronisedAdvancedTime(0, e, human);
-		} else {
-			e.schedule(human, 0);
-		}
-		
+		e.schedule(human, 0);
 	}
-
 }

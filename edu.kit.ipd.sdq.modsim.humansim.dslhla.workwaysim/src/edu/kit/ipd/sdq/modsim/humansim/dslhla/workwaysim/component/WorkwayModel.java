@@ -38,18 +38,12 @@ public class WorkwayModel extends AbstractSimulationModel implements Runnable{
 	 
 	 public int modelRun;
 	 public LinkedList<Double> durations;
-	 
 	 private LinkedList<Human> humans;
-	 
 	 private WorkwayFederate component;
-	 
-	 private boolean scanning;
-	 
+
 	 private LinkedList<WorkwayModel> models;
 	 private Human human;
 	 private int id;
-	 
-	 public boolean hasToKeepAlive = false;
 	 
 	 private boolean finished = false;
 
@@ -73,7 +67,6 @@ public class WorkwayModel extends AbstractSimulationModel implements Runnable{
 	}
 	
 	public void finalise() {
-		
 		
 		try {
 			component.getRTIAmb().resignFederationExecution(ResignAction.DELETE_OBJECTS);
@@ -240,7 +233,6 @@ public class WorkwayModel extends AbstractSimulationModel implements Runnable{
 				try {
 					getComponent().endExecution();
 				} catch (Exception e) {
-					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
 	       	
@@ -312,30 +304,13 @@ public class WorkwayModel extends AbstractSimulationModel implements Runnable{
 			if(human.getName().equals(humanName)){
 				for(BusStop busStop : stops){
 					if(busStop.getName().equals(busStopName)){
-						Utils.log(human, "Scheduling Enters Event on " + getSimulationControl().getCurrentSimulationTime() + "for Time:" + passedTime);
-//						Utils.log(human, "Handle Enters-Event on " + getComponent().getCurrentFedTime());
 						HumanEntersBusEvent e = new HumanEntersBusEvent(this, "HumanEntersBus");
-						Utils.log(human, "Time to Pass: " + passedTime + " SimulationTime: " + getSimulationControl().getCurrentSimulationTime());
-						double diff = passedTime - getSimulationControl().getCurrentSimulationTime();
+						
 						BigDecimal st = BigDecimal.valueOf(getSimulationControl().getCurrentSimulationTime());
 						BigDecimal pt = BigDecimal.valueOf(passedTime);
-						BigDecimal d2 = pt.subtract(st);
+						BigDecimal timeDiff = pt.subtract(st);
 						
-						Utils.log(human, "BC: " + "Time to Pass: " + pt.doubleValue() + " SimulationTime: " + st.doubleValue() + " Res:" + d2.doubleValue() + " would result in : " + st.add(d2));
-						
-						diff = Utils.roundTo4Decimals(diff);
-						Utils.log(human, "Bridging timediff:" + diff);
-			
-						BigDecimal d = BigDecimal.valueOf(diff);
-						
-						st.add(d);
-						
-						Utils.log(human, "BigDecimal: " + st.add(d).doubleValue());
-						
-						double reach = getSimulationControl().getCurrentSimulationTime() + diff;
-						Utils.log(human, "Time with diff: " + reach);
-						
-						e.schedule(human, d2.doubleValue());
+						e.schedule(human, timeDiff.doubleValue());
 						return;
 					}
 				
@@ -348,22 +323,14 @@ public class WorkwayModel extends AbstractSimulationModel implements Runnable{
 
 		
 			if(human.getName().equals(humanName)){
-				
 				for(BusStop busStop : stops){
-					//System.out.println("FoundBusStop");
 					if(busStop.getName().equals(busStopName)){
-						
-						Utils.log(human, "Scheduling Exit Event on " + getComponent().getCurrentFedTime() + "for Time:" + passedTime);
-						HumanExitsBusEvent e = new HumanExitsBusEvent(this, "HumanExitsBus");
-						double diff = passedTime - getSimulationControl().getCurrentSimulationTime();
 						BigDecimal st = BigDecimal.valueOf(getSimulationControl().getCurrentSimulationTime());
 						BigDecimal pt = BigDecimal.valueOf(passedTime);
-						BigDecimal d2 = pt.subtract(st);
-						Utils.log(human, "BC: " + "Time to Pass: " + pt.doubleValue() + " SimulationTime: " + st.doubleValue() + " Res:" + d2.doubleValue() );
-//						diff = Utils.roundTo4Decimals(diff);
-						Utils.log(human, "Bridging timediff:" + diff);
-						//Utils.log(human, "Scheduling Exit Event for Human: " + human.getName() + " exit on BusStop: " + busStop.getName() );
-						e.schedule(human, d2.doubleValue());
+						BigDecimal timeDiff = pt.subtract(st);
+						
+						HumanExitsBusEvent e = new HumanExitsBusEvent(this, "HumanExitsBus");
+						e.schedule(human, timeDiff.doubleValue());
 						return;
 					}
 				}
@@ -453,7 +420,6 @@ public class WorkwayModel extends AbstractSimulationModel implements Runnable{
 		try {
 			this.component.sendRegisterInteraction(human, busStop.getName(), destination.getName());
 		} catch (RTIexception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}

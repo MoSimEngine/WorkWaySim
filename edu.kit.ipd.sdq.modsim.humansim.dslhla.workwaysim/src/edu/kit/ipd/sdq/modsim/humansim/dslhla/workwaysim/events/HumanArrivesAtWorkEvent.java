@@ -11,26 +11,14 @@ public class HumanArrivesAtWorkEvent extends AbstractSimEventDelegator<Human>{
 
 	protected HumanArrivesAtWorkEvent(ISimulationModel model, String name) {
 		super(model, name);
-		// TODO Auto-generated constructor stub
 	}
 
 	@Override
 	public void eventRoutine(Human human) {
-		WorkwayModel m = (WorkwayModel)this.getModel();
-		
-	
-			human.arriveAtWork();
-	
-	
+		human.arriveAtWork();
 		Utils.log(human, human.getName() + " starts to work.");
 		HumanWorksEvent e = new HumanWorksEvent(this.getModel(), "Human Works");
-		
-		if(HumanSimValues.FULL_SYNC) {
-			m.getComponent().synchronisedAdvancedTime(0, e, human);
-		} else {
-			e.schedule(human, 0);
-		}
-		
+		e.schedule(human, 0);
 	}
 
 }

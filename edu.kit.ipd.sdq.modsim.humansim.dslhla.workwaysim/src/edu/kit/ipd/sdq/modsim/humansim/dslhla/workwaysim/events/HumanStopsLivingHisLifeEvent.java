@@ -11,24 +11,12 @@ public class HumanStopsLivingHisLifeEvent extends AbstractSimEventDelegator<Huma
 
 	protected HumanStopsLivingHisLifeEvent(ISimulationModel model, String name) {
 		super(model, name);
-		// TODO Auto-generated constructor stub
 	}
 
 	@Override
 	public void eventRoutine(Human human) {
-		WorkwayModel m = (WorkwayModel)this.getModel();
-		
-		// TODO Auto-generated method stub
 		Utils.log(human, "Oh boy, time flies by... " + human.getName() + " stops living his life.");
-		
 		TravelToNextEvent e = new TravelToNextEvent(getModel(), "Travel from Home");
-//		
-		if(HumanSimValues.FULL_SYNC) {
-			m.getComponent().synchronisedAdvancedTime(0, e, human);
-		} else {
-			e.schedule(human, 0);
-		}
-		
+		e.schedule(human, 0);
 	}
-
 }

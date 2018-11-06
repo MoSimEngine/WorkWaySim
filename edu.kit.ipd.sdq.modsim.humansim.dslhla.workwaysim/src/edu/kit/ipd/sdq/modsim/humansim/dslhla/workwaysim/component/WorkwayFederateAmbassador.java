@@ -116,9 +116,6 @@ public class WorkwayFederateAmbassador extends NullFederateAmbassador{
 	@Override
 	public void discoverObjectInstance(ObjectInstanceHandle theObject, ObjectClassHandle theObjectClass,
 			String objectName) throws FederateInternalError {
-		//log("Discoverd Object: handle=" + theObject + ", classHandle=" + theObjectClass + ", name=" + objectName);	
-		
-		
 		if(theObjectClass.equals(federate.busStopObjectClassHandle)){
 			federate.addBusStopHandle(theObject);
 		}
@@ -130,22 +127,16 @@ public class WorkwayFederateAmbassador extends NullFederateAmbassador{
 			byte[] tag, OrderType sentOrder, TransportationTypeHandle transport, SupplementalReflectInfo reflectInfo)
 			throws FederateInternalError {
 		reflectAttributeValues(theObject, theAttributes, tag, sentOrder, transport, null, sentOrder, reflectInfo);
-		//federate.log(federate.fedName + " got attributes");
 	}
 
 	@Override
 	public void reflectAttributeValues(ObjectInstanceHandle theObject, AttributeHandleValueMap theAttributes,
 			byte[] tag, OrderType sentOrdering, TransportationTypeHandle theTransport, LogicalTime time,
 			OrderType receivedOrdering, SupplementalReflectInfo reflectInfo) throws FederateInternalError {
-		//federate.log(federate.fedName + " got attributes");
-		
-		if(federate.getHuman() != null)
-			Utils.log(federate.getHuman(), "LogicalTime for AttributeChange:" + time);
 		
 		try {
 			federate.handleAttributeUpdate(theObject, theAttributes);
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 
@@ -157,17 +148,12 @@ public class WorkwayFederateAmbassador extends NullFederateAmbassador{
 			SupplementalReceiveInfo receiveInfo) throws FederateInternalError {
 		this.receiveInteraction(interactionClass, theParameters, tag, sentOrdering, theTransport, null, sentOrdering,
 				receiveInfo);
-		
-		//federate.log("Received Interaction");
 	}
 
 	@Override
 	public void receiveInteraction(InteractionClassHandle interactionClass, ParameterHandleValueMap theParameters,
 			byte[] tag, OrderType sentOrdering, TransportationTypeHandle theTransport, LogicalTime time,
 			OrderType receivedOrdering, SupplementalReceiveInfo receiveInfo) throws FederateInternalError {
-		
-		
-//		Utils.log(federate.getHuman(), "LogicalTime for Interaction:" + time);
 		
 		if(interactionClass.equals(federate.humanEntersBusHandle)){
 			federate.handleEnterInteraction(federate.adapterService.filter(String.class.getTypeName(), theParameters.get(federate.humanNameEnterBusHandle)), 
@@ -186,25 +172,5 @@ public class WorkwayFederateAmbassador extends NullFederateAmbassador{
 	@Override
 	public void removeObjectInstance(ObjectInstanceHandle theObject, byte[] tag, OrderType sentOrdering,
 			SupplementalRemoveInfo removeInfo) throws FederateInternalError {
-	}
-	
-	
-	public String decodeStringValues(byte[] bytes){
-		
-		//federate.log(bytes.toString());
-		HLAASCIIstring value = federate.encoderFactory.createHLAASCIIstring();
-		
-		
-		try
-		{
-			value.decode( bytes );
-			return value.getValue();
-		}
-		catch( DecoderException de )
-		{
-			de.printStackTrace();
-			return "";
-		}
-		
 	}
 }

@@ -18,7 +18,6 @@ public class TravelToNextEvent extends AbstractSimEventDelegator<Human>{
 	@Override
 	public void eventRoutine(Human human) {
 	
-		WorkwayModel m = (WorkwayModel)this.getModel();
 		PositionType posType = human.getPosition().getPositionType();
 		PositionType destType = human.getDestination().getPositionType();
 		
@@ -90,15 +89,6 @@ public class TravelToNextEvent extends AbstractSimEventDelegator<Human>{
 		}
 		
 		ArriveAtNextEvent e = new ArriveAtNextEvent(getModel(), eventName);
-		if(HumanSimValues.FULL_SYNC) {
-			m.getComponent().synchronisedAdvancedTime(travelTime.toSeconds().value(), e, human);
-		} else {
-			e.schedule(human, travelTime.toSeconds().value());
-		}
-		
-//		
-		
-		
+		e.schedule(human, travelTime.toSeconds().value());
 	}
-
 }

@@ -107,7 +107,6 @@ public class WorkwayFederate{
 	public double executionTime = 0.0;
 	public boolean finished = false;
 	public boolean finishedCounted = false;
-	private boolean isFedInit = false;
 	private WorkwayModel simulation;
 	public HLAAdapter adapterService;
 	
@@ -137,40 +136,19 @@ public class WorkwayFederate{
 	public void runFederate(String fedName) throws Exception{
 
 		this.federateName = fedName;
-//		log(fedInfoStr + "Creating RTIambassador");
+		
 		rtiamb = RtiFactoryFactory.getRtiFactory().getRtiAmbassador();
 		encoderFactory = RtiFactoryFactory.getRtiFactory().getEncoderFactory();
 
 	
-		
-//		log(fedInfoStr + "Connecting");
 		fedamb = new WorkwayFederateAmbassador(this);
-		if(HumanSimValues.EVOKE){
+
 		rtiamb.connect(fedamb, CallbackModel.HLA_EVOKED);
-		} else {
-			rtiamb.connect(fedamb, CallbackModel.HLA_IMMEDIATE);
-		}
-//		log(fedInfoStr + "Creating Federation");
-//		try {
-//			URL[] modules = new URL[] { (new File("FOMS/HumanSimFOM.xml")).toURI().toURL() };
-//
-//			rtiamb.createFederationExecution("HumanSim", modules);
-////			log(fedInfoStr + "Created Federation");
-//		} catch (FederationExecutionAlreadyExists exists) {
-////			log(fedInfoStr + "Didn't create federation, it already existed");
-//		} catch (MalformedURLException urle) {
-//			log(fedInfoStr + "Exception loading one of the FOM modules from disk: " + urle.getMessage());
-//			urle.printStackTrace();
-//			return;
-//		}
+		
 //		
 		URL[] joinModules = new URL[] { (new File("FOMS/HumanSimFOM.xml")).toURI().toURL() };
 		rtiamb.joinFederationExecution(federateName, "HumanSim1", "HumanSim1", joinModules);
 		
-		
-//		log(fedInfoStr + "Joined fedration as " + federateName);
-		
-
 		this.timeFactory = (HLAfloat64TimeFactory) rtiamb.getTimeFactory();
 
 		rtiamb.registerFederationSynchronizationPoint(HumanSimValues.READY_TO_RUN, null);
@@ -179,12 +157,11 @@ public class WorkwayFederate{
 			rtiamb.evokeMultipleCallbacks(0.1, 0.2);
 		}
 		
-		
 		setUpAdaptation();
 		
 		rtiamb.synchronizationPointAchieved(HumanSimValues.READY_TO_RUN);
 
-//		log(fedInfoStr + "Before Time Policy Enable");
+
 
 		regulateTime = true;
 		constrainTime = true;
@@ -200,22 +177,16 @@ public class WorkwayFederate{
 	
 
 		while(simulation.getStops().size() != HumanSimValues.NUM_BUSSTOPS){
-			if(HumanSimValues.EVOKE){
+		
 				advanceTime(1.0);
 				rtiamb.evokeMultipleCallbacks(0.1, 0.2);
-			} else {
-				System.out.print("");
-			}
 		}
 		
 		
 		initialiseHuman();
 		
-		if(HumanSimValues.EVOKE) {
-		advanceTime(1.0);
-		}
-			//divestCollectedOwnership();
 
+		advanceTime(1.0);
 		simulation.startSimulation();
 			
 		}
@@ -224,15 +195,15 @@ public class WorkwayFederate{
 	public void endExecution() throws Exception{
 		
 		rtiamb.resignFederationExecution(ResignAction.DELETE_OBJECTS);
-		log("Resigned from Federation");
+		Utils.log("Resigned from Federation");
 		
 		try{
 			rtiamb.destroyFederationExecution("HumanSim1");
-			log("Destroyed HumanSim federation");
+			Utils.log("Destroyed HumanSim federation");
 		} catch (FederationExecutionDoesNotExist fedne){
-			log(" Federation does not exist");
+			Utils.log(" Federation does not exist");
 		} catch (FederatesCurrentlyJoined fcj) {
-			log("Federates still joined at HumanSim");
+			Utils.log("Federates still joined at HumanSim");
 		}
 	}
 
@@ -246,8 +217,6 @@ public class WorkwayFederate{
 		while (fedamb.isRegulating == false) {
 			rtiamb.evokeMultipleCallbacks(0.1, 0.2);
 			}
-		
-		//log(fedInfoStr + "activated time regulation");
 		}
 		
 		if(constrainTime){
@@ -256,7 +225,6 @@ public class WorkwayFederate{
 		while (fedamb.isConstrained == false) {
 			rtiamb.evokeMultipleCallbacks(0.1, 0.2);
 			}
-		//log(fedInfoStr + "activated time contrained");
 		}
 	}
 	
@@ -268,7 +236,7 @@ public class WorkwayFederate{
 				try{
 				enableTimePolicy();
 				} catch (Exception e){
-					log(e.getMessage());
+					Utils.log(e.getMessage());
 				}
 			}
 		} else if (regulateTime){
@@ -276,7 +244,7 @@ public class WorkwayFederate{
 				try{
 					enableTimePolicy();
 					} catch (Exception e){
-						log(e.getMessage());
+						Utils.log(e.getMessage());
 					}
 				}
 			
@@ -285,24 +253,13 @@ public class WorkwayFederate{
 				try{
 					enableTimePolicy();
 					} catch (Exception e){
-						log(e.getMessage());
+						Utils.log(e.getMessage());
 					}
 				}
 		} else {
-			log("No time policy to enable");
+			Utils.log("No time policy to enable");
 		}
 		
-		
-	}
-
-
-	private void divestCollectedOwnership() throws Exception{
-		
-		AttributeHandleSet handles = rtiamb.getAttributeHandleSetFactory().create();
-		handles.add(collectedHandle);
-		for (Human human : simulation.getHumans()) {
-			rtiamb.unconditionalAttributeOwnershipDivestiture(human.getOih(), handles);
-		}
 		
 	}
 	
@@ -379,36 +336,24 @@ public class WorkwayFederate{
 	{
 
 		double advancingTo = 0;
-//		double miniStep = 0.000000001;
 		boolean belowTime = true;
 		
 		if(fedamb.federateTime + timestep <= HumanSimValues.MAX_SIM_TIME.toSeconds().value()){
 			advancingTo = fedamb.federateTime + timestep;
 		} else {
-//			Utils.log(simulation.getHuman(), "Sim overtime - wants to advance to: " + fedamb.federateTime + timestep + " current time: " + fedamb.federateTime);
-//			advancingTo =  HumanSimValues.MAX_SIM_TIME.toSeconds().value() + miniStep;
 			return false;
-//			belowTime = false;
 		}
 		
 		// request the advance
 		fedamb.isAdvancing = true;
 		HLAfloat64Time time = timeFactory.makeTime( advancingTo );
-		if(HumanSimValues.MESSAGE){
-			try{
-			rtiamb.nextMessageRequest( time );
-			} catch (Exception e){
-				log(e.getMessage());
-				return false;
-			}
-			} else {
 				try{
 					rtiamb.timeAdvanceRequest( time );
 					} catch (Exception e){
-						log(e.getMessage() + rtiamb.queryLogicalTime());
+						Utils.log(e.getMessage() + rtiamb.queryLogicalTime());
 						return false;
 					}
-			}
+			
 			
 	
 		// wait for the time advance to be granted. ticking will tell the
@@ -418,8 +363,6 @@ public class WorkwayFederate{
 			rtiamb.evokeMultipleCallbacks( 0.1, 0.2 );
 		}
 
-		
-//		System.out.println("New Fed Time: " + fedamb.federateTime);
 		return belowTime;
 	}
 	
@@ -442,7 +385,6 @@ public class WorkwayFederate{
 					return;
 				}
 			} catch (RTIexception e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 
@@ -459,44 +401,25 @@ public class WorkwayFederate{
 		parameters.put(humanNameRegisterHandle, adapterService.filter(human.getName()));
 		parameters.put(busStopNameRegisterHandle, adapterService.filter(busStop));
 		parameters.put(destinationNameRegisterHandle, adapterService.filter(destination));
-		HLAfloat64Time time;
-		if(HumanSimValues.FULL_SYNC) {
-			time = timeFactory.makeTime(fedamb.federateTime + 1.0);
-		} else {
-			time = timeFactory.makeTime(simulation.getSimulationControl().getCurrentSimulationTime() + 1.0);
-		}
-		
-
-//		Utils.log(human, " Register Humanregister-Event on " + fedamb.federateTime + " for time: " + time.getValue() );
+		HLAfloat64Time time = timeFactory.makeTime(simulation.getSimulationControl().getCurrentSimulationTime() + 1.0);
 		rtiamb.sendInteraction( registerAtBusStopHandle, parameters, generateTag(), time);
 	}
 	
 	public void initialiseHuman() throws Exception{
 
 		simulation.initialiseHumans();
-		
 		Human human = simulation.getHuman();
 
-//		System.out.println("Initialising: " + human.getName());
 		ObjectInstanceHandle oih = registerHumanObject();
 		
 		human.setOih(oih);
 		human.setOch(humanObjectClassHandle);
-//		System.out.println("Set Handles for: " + human.getName());
 		AttributeHandleValueMap attributes = rtiamb.getAttributeHandleValueMapFactory().create(3);
 		attributes.put(humanNameAttributeHandle, adapterService.filter(human.getName()));
 		attributes.put(destinationHandle, adapterService.filter(human.getDestination().getName()));
 		attributes.put(movementTypeHandle, adapterService.filter(human.getBehaviour().toString()));
-		HLAfloat64Time time;
-		time = timeFactory.makeTime(fedamb.federateTime + 1.0);
-//		if(HumanSimValues.FULL_SYNC) {
-//			
-//		} else {
-//			time = timeFactory.makeTime(simulation.getSimulationControl().getCurrentSimulationTime() + 1.0);
-//		}
-//		System.out.print("Updating Values");
+		HLAfloat64Time time = timeFactory.makeTime(fedamb.federateTime + 1.0);
 		rtiamb.updateAttributeValues(human.getOih(), attributes, generateTag(), time);
-		
 		
 	}
 	
@@ -511,58 +434,42 @@ public class WorkwayFederate{
 			return false;
 		}
 		
-		//log("Current FedTime:" + fedamb.federateTime);
-		//log("Max sim time:" + maxSimTime.toSeconds().value());	
 		if(fedamb.federateTime > HumanSimValues.MAX_SIM_TIME.toSeconds().value())
 			return true;
 		else
 			return false;
 	}
 	
-	public void log(String msg){
-		 StringBuilder s = new StringBuilder();
-    	 s.append(msg);
-    	 System.out.println(s);
-	}
-	
 	public void handleBusStopAttributeUpdates(BusStop busStop, AttributeHandleValueMap attributes, ObjectInstanceHandle oih){
 		System.out.println("BusStopAttr");
 		String busStopName = "";
-	
-		//log("Received BusStop attribute updates");
-		
 		
 		for(AttributeHandle handle : attributes.keySet()){
 			if(handle.equals(busStopNameAttributeHandle)){
 				busStopName = (String)adapterService.filter(String.class.getTypeName(), attributes.get(busStopNameAttributeHandle));
 			} else {
-				log("Got more than expected");
+				Utils.log("Got more than expected");
 			}
 		}
 		
 		
 		if(busStopName.equals("")){
-			log(fedInfoStr + " ERROR: got empty name");
+			Utils.log(fedInfoStr + " ERROR: got empty name");
 		} else {
-			
-			
-			System.out.println("Got new busstop name, dont know what to do" );
+			Utils.log("Got new busstop name, dont know what to do" );
 			return;
 		}
-		
-		
-		
-		log(fedInfoStr + "No corresponding busStop to handle found");
-	
+
+		Utils.log(fedInfoStr + "No corresponding busStop to handle found");
 	}
 	
 	public void waitForUser() {
-		log(" >>>>>>>>>> Press Enter to Continue <<<<<<<<<<");
+		Utils.log(" >>>>>>>>>> Press Enter to Continue <<<<<<<<<<");
 		BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 		try {
 			reader.readLine();
 		} catch (Exception e) {
-			log("Error while waiting for user input: " + e.getMessage());
+			Utils.log("Error while waiting for user input: " + e.getMessage());
 			e.printStackTrace();
 		}
 	}
@@ -576,24 +483,19 @@ public class WorkwayFederate{
 				collected = fedamb.decodeBoolean(attributes.get(collectedHandle));
 				//System.out.println(collected);
 			} else {
-				log("Got more attributes than expected");
+				Utils.log("Got more attributes than expected");
 			}
 		}
-		//System.out.println("Received Collected at " + "Current time:" + fedamb.federateTime + "SimTime: " + simulation.getSimulationControl().getCurrentSimulationTime());
-		//Utils.log(human, "Setting Collected to " + collected);
-		
-//		Utils.log(human, " Collected is changed to " + collected + " on " + fedamb.federateTime);
+
 		switch (collected) {
 		case "True":
 			human.setCollected(true);
-			//log(human, "setting achieved");
 			break;
 		case "False":
 			human.setCollected(false);
-			//log(human, "setting achieved");
 			break;
 		default:
-			log(fedInfoStr + " ERROR: got faulty boolean");
+			Utils.log(fedInfoStr + " ERROR: got faulty boolean");
 		}
 		
 		
@@ -604,7 +506,7 @@ public class WorkwayFederate{
 	public void handleAttributeUpdate(ObjectInstanceHandle oih, AttributeHandleValueMap attributes) throws Exception{
 
 		
-		//log("Got Update Handle:" + oih.toString());
+		
 		if(simulation.getHuman() != null && simulation.getHuman().getOih().equals(oih)) {
 				handleHumanAttributesUpdate(simulation.getHuman(), attributes);
 				return;
@@ -613,7 +515,7 @@ public class WorkwayFederate{
 		
 		for (BusStop busStop : simulation.getStops()) {
 			if(busStop.getOih().equals(oih)){
-				//log("Handle busStop attribute" + oih.toString());
+				Utils.log("Handle busStop attribute" + oih.toString());
 				handleBusStopAttributeUpdates(busStop, attributes, oih);
 				return;
 			}
@@ -636,9 +538,9 @@ public class WorkwayFederate{
 		
 		for(AttributeHandle handle : attributes.keySet()){
 			if(handle.equals(busStopNameAttributeHandle)){
-				busStopName = fedamb.decodeStringValues(attributes.get(busStopNameAttributeHandle));
+				busStopName = (String) adapterService.filter(String.class.getTypeName(), attributes.get(busStopNameAttributeHandle));
 			} else {
-				log("Got more than expected");
+				Utils.log("Got more than expected");
 			}
 		}
 		
@@ -646,7 +548,6 @@ public class WorkwayFederate{
 		bs.setOih(oih);
 		bs.setOch(busStopObjectClassHandle);
 		simulation.addBusStop(bs);
-		//log("Created BusStop: " + bs.getName());
 		busStopInitialised++;
 	}
 	

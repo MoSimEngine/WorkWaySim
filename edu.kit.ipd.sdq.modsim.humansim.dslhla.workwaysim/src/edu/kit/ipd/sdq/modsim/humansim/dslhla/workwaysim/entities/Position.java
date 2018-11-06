@@ -22,10 +22,4 @@ public class Position extends AbstractSimEntityDelegator{
 		return positionType;
 	}
 
-//	private void setPositionType(PositionType posType) {
-//		this.positionType = posType;
-//	}
-	
-	
-	
 }

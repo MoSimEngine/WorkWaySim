@@ -18,20 +18,11 @@ public class HumanExitsBusEvent extends AbstractSimEventDelegator<Human>{
 
 	@Override
 	public void eventRoutine(Human human) {
-		// TODO Auto-generated method stub
-		WorkwayModel m = (WorkwayModel)this.getModel();
-		
+
 		Utils.log(human, human.getName() + " left bus at " + human.getDestination().getName() );
 		human.calculateDrivingTime();
 		human.setCollected(false);
-		
 		ArriveAtNextEvent e = new ArriveAtNextEvent(getModel(), "ArriveAtHomeByBusWaiting");
-		
-		if(HumanSimValues.FULL_SYNC) {
-			m.getComponent().synchronisedAdvancedTime(0, e, human);
-		} else {
-			e.schedule(human, 0);
-		}
+		e.schedule(human, 0);
 	}
-
 }
