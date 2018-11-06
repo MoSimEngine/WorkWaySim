@@ -41,12 +41,15 @@ import hla.rti1516e.encoding.HLAASCIIstring;
 import hla.rti1516e.encoding.HLAinteger32BE;
 import hla.rti1516e.exceptions.CallNotAllowedFromWithinCallback;
 import hla.rti1516e.exceptions.FederateNotExecutionMember;
+import hla.rti1516e.exceptions.FederateOwnsAttributes;
 import hla.rti1516e.exceptions.FederatesCurrentlyJoined;
 import hla.rti1516e.exceptions.FederationExecutionAlreadyExists;
 import hla.rti1516e.exceptions.FederationExecutionDoesNotExist;
 import hla.rti1516e.exceptions.InTimeAdvancingState;
 import hla.rti1516e.exceptions.InvalidLookahead;
+import hla.rti1516e.exceptions.InvalidResignAction;
 import hla.rti1516e.exceptions.NotConnected;
+import hla.rti1516e.exceptions.OwnershipAcquisitionPending;
 import hla.rti1516e.exceptions.RTIexception;
 import hla.rti1516e.exceptions.RTIinternalError;
 import hla.rti1516e.exceptions.RestoreInProgress;
@@ -56,25 +59,22 @@ import hla.rti1516e.time.HLAfloat64Interval;
 import hla.rti1516e.time.HLAfloat64Time;
 import hla.rti1516e.time.HLAfloat64TimeFactory;
 
-public class WorkwayFederate{
+public class WorkwayFederate {
 
-	
-
-	
 	private RTIambassador rtiamb;
 	public WorkwayFederateAmbassador fedamb; // created when we connect
 	public HLAfloat64TimeFactory timeFactory; // set when we join
 	protected EncoderFactory encoderFactory; // set when we join
-	
+
 	protected InteractionClassHandle registerAtBusStopHandle;
 	protected ParameterHandle humanNameRegisterHandle;
 	protected ParameterHandle busStopNameRegisterHandle;
 	protected ParameterHandle destinationNameRegisterHandle;
-	
+
 	protected InteractionClassHandle unregisterAtBusStopHandle;
 	protected ParameterHandle humanNameUnregisterHandle;
 	protected ParameterHandle busStopNameUnregisterHandle;
-	
+
 	protected InteractionClassHandle humanEntersBusHandle;
 	protected ParameterHandle humanNameEnterBusHandle;
 	protected ParameterHandle busStopNameEnterHandle;
@@ -83,335 +83,319 @@ public class WorkwayFederate{
 	protected ParameterHandle humanNameExitBusHandle;
 	protected ParameterHandle busStopNameExitHandle;
 	protected ParameterHandle humanExitsPassedTimeHandle;
-	
+
 	protected ObjectClassHandle humanObjectClassHandle;
-	protected AttributeHandle collectedHandle;
 	protected AttributeHandle humanNameAttributeHandle;
 	protected AttributeHandle destinationHandle;
 	protected AttributeHandle movementTypeHandle;
-	
+
 	protected ObjectClassHandle busStopObjectClassHandle;
 	protected AttributeHandle busStopNameAttributeHandle;
-	
+
 	protected ObjectInstanceHandle busObjectHandles;
-	
-	
-	
-	String fedName;
-	String humanName;
-	
-	private final String fedInfoStr =  "!Workway Federate-Info!: ";
+
+	private final String fedInfoStr = "!Workway Federate-Info!: ";
 	private String federateName;
-	
-	
-	public double executionTime = 0.0;
-	public boolean finished = false;
-	public boolean finishedCounted = false;
+
 	private WorkwayModel simulation;
 	public HLAAdapter adapterService;
-	
-	double startTime;
 
-	protected InteractionClassHandle humanReadyHandle;
-
-	protected InteractionClassHandle busSimReadyHandle;
-	
 	protected int busStopInitialised = 0;
-	
-	protected boolean busReady = false;
-	
+
 	private boolean regulateTime = true;
 	private boolean constrainTime = true;
-	
+
 	public LinkedList<ObjectInstanceHandle> busStopHandles;
-	
-	
-	public WorkwayFederate(WorkwayModel simulation){
+
+	public WorkwayFederate(WorkwayModel simulation) {
 		this.simulation = simulation;
-		
+
 		busStopHandles = new LinkedList<ObjectInstanceHandle>();
 	}
-	 
-	
-	public void runFederate(String fedName) throws Exception{
+
+	public void runFederate(String fedName) throws Exception {
 
 		this.federateName = fedName;
-		
+
 		rtiamb = RtiFactoryFactory.getRtiFactory().getRtiAmbassador();
 		encoderFactory = RtiFactoryFactory.getRtiFactory().getEncoderFactory();
 
-	
 		fedamb = new WorkwayFederateAmbassador(this);
 
 		rtiamb.connect(fedamb, CallbackModel.HLA_EVOKED);
-		
-//		
+
 		URL[] joinModules = new URL[] { (new File("FOMS/HumanSimFOM.xml")).toURI().toURL() };
 		rtiamb.joinFederationExecution(federateName, "HumanSim1", "HumanSim1", joinModules);
-		
+
 		this.timeFactory = (HLAfloat64TimeFactory) rtiamb.getTimeFactory();
 
 		rtiamb.registerFederationSynchronizationPoint(HumanSimValues.READY_TO_RUN, null);
-	
+
 		while (fedamb.isAnnounced == false) {
 			rtiamb.evokeMultipleCallbacks(0.1, 0.2);
 		}
-		
+
 		setUpAdaptation();
-		
+
 		rtiamb.synchronizationPointAchieved(HumanSimValues.READY_TO_RUN);
-
-
 
 		regulateTime = true;
 		constrainTime = true;
 		runTimePolicyEnabling();
-		
+
 		rtiamb.enableCallbacks();
-		
+
 		while (fedamb.isReadyToRun == false) {
 			rtiamb.evokeMultipleCallbacks(0.1, 0.2);
 		}
 
 		publishAndSubscribe();
-	
 
-		while(simulation.getStops().size() != HumanSimValues.NUM_BUSSTOPS){
-		
-				advanceTime(1.0);
-				rtiamb.evokeMultipleCallbacks(0.1, 0.2);
+		while (simulation.getStops().size() != HumanSimValues.NUM_BUSSTOPS) {
+
+			advanceTime(1.0);
+			rtiamb.evokeMultipleCallbacks(0.1, 0.2);
 		}
-		
-		
+
 		initialiseHuman();
-		
 
 		advanceTime(1.0);
 		simulation.startSimulation();
-			
+
+	}
+
+	public void endExecution() throws Exception {
+
+		resignFromExecution();
+
+		destroyExecution();
+
+	}
+
+	public void resignFromExecution() {
+		try {
+			rtiamb.resignFederationExecution(ResignAction.DELETE_OBJECTS);
+		} catch (InvalidResignAction e) {
+			e.printStackTrace();
+		} catch (OwnershipAcquisitionPending e) {
+			e.printStackTrace();
+		} catch (FederateOwnsAttributes e) {
+			e.printStackTrace();
+		} catch (FederateNotExecutionMember e) {
+			Utils.log("Federate not execution member anymore");
+		} catch (NotConnected e) {
+			e.printStackTrace();
+		} catch (CallNotAllowedFromWithinCallback e) {
+			e.printStackTrace();
+		} catch (RTIinternalError e) {
+			e.printStackTrace();
 		}
-	
-	
-	public void endExecution() throws Exception{
-		
-		rtiamb.resignFederationExecution(ResignAction.DELETE_OBJECTS);
 		Utils.log("Resigned from Federation");
-		
-		try{
+	}
+
+	public void destroyExecution() {
+
+		try {
 			rtiamb.destroyFederationExecution("HumanSim1");
-			Utils.log("Destroyed HumanSim federation");
-		} catch (FederationExecutionDoesNotExist fedne){
-			Utils.log(" Federation does not exist");
-		} catch (FederatesCurrentlyJoined fcj) {
-			Utils.log("Federates still joined at HumanSim");
+		} catch (FederatesCurrentlyJoined e) {
+			Utils.log("There are still other simulations joined");
+		} catch (FederationExecutionDoesNotExist e) {
+			Utils.log("Federation Exectuion does not exist anymore");
+		} catch (NotConnected e) {
+			e.printStackTrace();
+		} catch (RTIinternalError e) {
+			e.printStackTrace();
 		}
+		Utils.log("Destroyed HumanSim federation");
+
 	}
 
-	
 	private void enableTimePolicy() throws Exception {
-		
-		if(regulateTime){
-		HLAfloat64Interval lookahead = timeFactory.makeInterval(fedamb.federateLookahead);
-		this.rtiamb.enableTimeRegulation(lookahead);
 
-		while (fedamb.isRegulating == false) {
-			rtiamb.evokeMultipleCallbacks(0.1, 0.2);
+		if (regulateTime) {
+			HLAfloat64Interval lookahead = timeFactory.makeInterval(fedamb.federateLookahead);
+			this.rtiamb.enableTimeRegulation(lookahead);
+
+			while (fedamb.isRegulating == false) {
+				rtiamb.evokeMultipleCallbacks(0.1, 0.2);
 			}
 		}
-		
-		if(constrainTime){
-		this.rtiamb.enableTimeConstrained();
-			
-		while (fedamb.isConstrained == false) {
-			rtiamb.evokeMultipleCallbacks(0.1, 0.2);
+
+		if (constrainTime) {
+			this.rtiamb.enableTimeConstrained();
+
+			while (fedamb.isConstrained == false) {
+				rtiamb.evokeMultipleCallbacks(0.1, 0.2);
 			}
 		}
 	}
-	
-	
-	private void runTimePolicyEnabling() throws Exception{
-		
-		if(regulateTime && constrainTime){
-			while(!fedamb.isConstrained && !fedamb.isRegulating){
-				try{
-				enableTimePolicy();
-				} catch (Exception e){
+
+	private void runTimePolicyEnabling() throws Exception {
+
+		if (regulateTime && constrainTime) {
+			while (!fedamb.isConstrained && !fedamb.isRegulating) {
+				try {
+					enableTimePolicy();
+				} catch (Exception e) {
 					Utils.log(e.getMessage());
 				}
 			}
-		} else if (regulateTime){
-			while(!fedamb.isRegulating){
-				try{
+		} else if (regulateTime) {
+			while (!fedamb.isRegulating) {
+				try {
 					enableTimePolicy();
-					} catch (Exception e){
-						Utils.log(e.getMessage());
-					}
+				} catch (Exception e) {
+					Utils.log(e.getMessage());
 				}
-			
-		} else if (constrainTime){
-			while(!fedamb.isConstrained){
-				try{
+			}
+
+		} else if (constrainTime) {
+			while (!fedamb.isConstrained) {
+				try {
 					enableTimePolicy();
-					} catch (Exception e){
-						Utils.log(e.getMessage());
-					}
+				} catch (Exception e) {
+					Utils.log(e.getMessage());
 				}
+			}
 		} else {
 			Utils.log("No time policy to enable");
 		}
-		
-		
+
 	}
-	
+
 	private void publishAndSubscribe() throws RTIexception {
 		registerAtBusStopHandle = rtiamb.getInteractionClassHandle("HLAinteractionRoot.HumanRegistersAtBusStop");
 		rtiamb.publishInteractionClass(registerAtBusStopHandle);
 		humanNameRegisterHandle = rtiamb.getParameterHandle(registerAtBusStopHandle, "HumanName");
 		busStopNameRegisterHandle = rtiamb.getParameterHandle(registerAtBusStopHandle, "BusStopName");
 		destinationNameRegisterHandle = rtiamb.getParameterHandle(registerAtBusStopHandle, "DestinationName");
-		
+
 		unregisterAtBusStopHandle = rtiamb.getInteractionClassHandle("HLAinteractionRoot.HumanUnRegistersAtBusStop");
 		rtiamb.publishInteractionClass(unregisterAtBusStopHandle);
 		humanNameUnregisterHandle = rtiamb.getParameterHandle(unregisterAtBusStopHandle, "HumanName");
 		busStopNameUnregisterHandle = rtiamb.getParameterHandle(unregisterAtBusStopHandle, "BusStopName");
-		
+
 		humanEntersBusHandle = rtiamb.getInteractionClassHandle("HLAinteractionRoot.HumanEntersBus");
 		rtiamb.subscribeInteractionClass(humanEntersBusHandle);
 		humanNameEnterBusHandle = rtiamb.getParameterHandle(humanEntersBusHandle, "HumanName");
 		busStopNameEnterHandle = rtiamb.getParameterHandle(humanEntersBusHandle, "BusStopName");
-		
+
 		humanExitsBusHandle = rtiamb.getInteractionClassHandle("HLAinteractionRoot.HumanExitsBus");
 		rtiamb.subscribeInteractionClass(humanExitsBusHandle);
 		humanNameExitBusHandle = rtiamb.getParameterHandle(humanExitsBusHandle, "HumanName");
 		busStopNameExitHandle = rtiamb.getParameterHandle(humanExitsBusHandle, "BusStopName");
 		humanExitsPassedTimeHandle = rtiamb.getParameterHandle(humanExitsBusHandle, "PassedTime");
-		
+
 		humanObjectClassHandle = rtiamb.getObjectClassHandle("HLAobjectRoot.Human");
 		humanNameAttributeHandle = rtiamb.getAttributeHandle(humanObjectClassHandle, "HumanName");
-		collectedHandle = rtiamb.getAttributeHandle(humanObjectClassHandle, "HumanCollected");
 		destinationHandle = rtiamb.getAttributeHandle(humanObjectClassHandle, "Destination");
 		movementTypeHandle = rtiamb.getAttributeHandle(humanObjectClassHandle, "Movementtype");
-		
+
 		busStopObjectClassHandle = rtiamb.getObjectClassHandle("HLAobjectRoot.BusStop");
 		busStopNameAttributeHandle = rtiamb.getAttributeHandle(busStopObjectClassHandle, "BusStopName");
-		
-	
-		AttributeHandleSet humanSubscribedAttributes = rtiamb.getAttributeHandleSetFactory().create();
-		humanSubscribedAttributes.add(collectedHandle);
-	
-		
+
 		AttributeHandleSet humanPublishedAttributes = rtiamb.getAttributeHandleSetFactory().create();
 		humanPublishedAttributes.add(humanNameAttributeHandle);
 		humanPublishedAttributes.add(destinationHandle);
 		humanPublishedAttributes.add(movementTypeHandle);
-		
+
 		rtiamb.publishObjectClassAttributes(humanObjectClassHandle, humanPublishedAttributes);
-		rtiamb.subscribeObjectClassAttributes(humanObjectClassHandle, humanSubscribedAttributes);
-		
+
 		busStopObjectClassHandle = rtiamb.getObjectClassHandle("HLAobjectRoot.BusStop");
 		busStopNameAttributeHandle = rtiamb.getAttributeHandle(busStopObjectClassHandle, "BusStopName");
-		
+
 		AttributeHandleSet busStopAttributes = rtiamb.getAttributeHandleSetFactory().create();
 		busStopAttributes.add(busStopNameAttributeHandle);
 		rtiamb.subscribeObjectClassAttributes(busStopObjectClassHandle, busStopAttributes);
-		
+
 	}
-	
-	private ObjectInstanceHandle registerHumanObject() throws RTIexception{
+
+	private ObjectInstanceHandle registerHumanObject() throws RTIexception {
 		return rtiamb.registerObjectInstance(humanObjectClassHandle);
 	}
-	
+
 	private byte[] generateTag() {
 		return ("(timestamp) " + System.currentTimeMillis()).getBytes();
 	}
-	
-	
 
 	/**
 	 * This method will request a time advance to the current time, plus the given
 	 * timestep. It will then wait until a notification of the time advance grant
 	 * has been received.
 	 */
-	public synchronized boolean advanceTime( double timestep ) throws RTIexception
-	{
+	public synchronized boolean advanceTime(double timestep) throws RTIexception {
 
 		double advancingTo = 0;
 		boolean belowTime = true;
-		
-		if(fedamb.federateTime + timestep <= HumanSimValues.MAX_SIM_TIME.toSeconds().value()){
+
+		if (fedamb.federateTime + timestep <= HumanSimValues.MAX_SIM_TIME.toSeconds().value()) {
 			advancingTo = fedamb.federateTime + timestep;
 		} else {
 			return false;
 		}
-		
+
 		// request the advance
 		fedamb.isAdvancing = true;
-		HLAfloat64Time time = timeFactory.makeTime( advancingTo );
-				try{
-					rtiamb.timeAdvanceRequest( time );
-					} catch (Exception e){
-						Utils.log(e.getMessage() + rtiamb.queryLogicalTime());
-						return false;
-					}
-			
-			
-	
+		HLAfloat64Time time = timeFactory.makeTime(advancingTo);
+		try {
+			rtiamb.timeAdvanceRequest(time);
+		} catch (Exception e) {
+			Utils.log(e.getMessage() + rtiamb.queryLogicalTime());
+			return false;
+		}
+
 		// wait for the time advance to be granted. ticking will tell the
 		// LRC to start delivering callbacks to the federate
-		while( fedamb.isAdvancing )
-		{
-			rtiamb.evokeMultipleCallbacks( 0.1, 0.2 );
+		while (fedamb.isAdvancing) {
+			rtiamb.evokeMultipleCallbacks(0.1, 0.2);
 		}
 
 		return belowTime;
 	}
-	
-	public synchronized void  synchronisedAdvancedTime(double timestep, AbstractSimEventDelegator simevent, AbstractSimEntityDelegator simentity ){
 
+	public synchronized void synchronisedAdvancedTime(double timestep, AbstractSimEventDelegator simevent,
+			AbstractSimEntityDelegator simentity) {
 
 		double advanceStep = 0.0;
-		if(getCurrentFedTime() < simulation.getSimulationControl().getCurrentSimulationTime()) {
+		if (getCurrentFedTime() < simulation.getSimulationControl().getCurrentSimulationTime()) {
 			double diff = 0.0;
 			diff = simulation.getSimulationControl().getCurrentSimulationTime() - getCurrentFedTime();
 			advanceStep = timestep + diff;
 		} else {
 			advanceStep = timestep;
 		}
-		
-		if(advanceStep != 0.0) {
+
+		if (advanceStep != 0.0) {
 			try {
-				if(!advanceTime(advanceStep)){
-				simulation.getSimulationControl().stop();
+				if (!advanceTime(advanceStep)) {
+					simulation.getSimulationControl().stop();
 					return;
 				}
 			} catch (RTIexception e) {
 				e.printStackTrace();
 			}
 
-	
 		}
 		simevent.schedule(simentity, timestep);
 	}
-	
 
-	
-	public void sendRegisterInteraction(Human human, String busStop, String destination) throws RTIexception{
-		
+	public void sendRegisterInteraction(Human human, String busStop, String destination) throws RTIexception {
+
 		ParameterHandleValueMap parameters = rtiamb.getParameterHandleValueMapFactory().create(3);
 		parameters.put(humanNameRegisterHandle, adapterService.filter(human.getName()));
 		parameters.put(busStopNameRegisterHandle, adapterService.filter(busStop));
 		parameters.put(destinationNameRegisterHandle, adapterService.filter(destination));
 		HLAfloat64Time time = timeFactory.makeTime(simulation.getSimulationControl().getCurrentSimulationTime() + 1.0);
-		rtiamb.sendInteraction( registerAtBusStopHandle, parameters, generateTag(), time);
+		rtiamb.sendInteraction(registerAtBusStopHandle, parameters, generateTag(), time);
 	}
-	
-	public void initialiseHuman() throws Exception{
+
+	public void initialiseHuman() throws Exception {
 
 		simulation.initialiseHumans();
 		Human human = simulation.getHuman();
 
 		ObjectInstanceHandle oih = registerHumanObject();
-		
+
 		human.setOih(oih);
 		human.setOch(humanObjectClassHandle);
 		AttributeHandleValueMap attributes = rtiamb.getAttributeHandleValueMapFactory().create(3);
@@ -420,38 +404,37 @@ public class WorkwayFederate{
 		attributes.put(movementTypeHandle, adapterService.filter(human.getBehaviour().toString()));
 		HLAfloat64Time time = timeFactory.makeTime(fedamb.federateTime + 1.0);
 		rtiamb.updateAttributeValues(human.getOih(), attributes, generateTag(), time);
-		
+
 	}
-	
-	
-	public double getCurrentFedTime(){
+
+	public double getCurrentFedTime() {
 		return fedamb.federateTime;
 	}
-	
-	
-	public void handleBusStopAttributeUpdates(BusStop busStop, AttributeHandleValueMap attributes, ObjectInstanceHandle oih){
+
+	public void handleBusStopAttributeUpdates(BusStop busStop, AttributeHandleValueMap attributes,
+			ObjectInstanceHandle oih) {
 		System.out.println("BusStopAttr");
 		String busStopName = "";
-		
-		for(AttributeHandle handle : attributes.keySet()){
-			if(handle.equals(busStopNameAttributeHandle)){
-				busStopName = (String)adapterService.filter(String.class.getTypeName(), attributes.get(busStopNameAttributeHandle));
+
+		for (AttributeHandle handle : attributes.keySet()) {
+			if (handle.equals(busStopNameAttributeHandle)) {
+				busStopName = (String) adapterService.filter(String.class.getTypeName(),
+						attributes.get(busStopNameAttributeHandle));
 			} else {
 				Utils.log("Got more than expected");
 			}
 		}
-		
-		
-		if(busStopName.equals("")){
+
+		if (busStopName.equals("")) {
 			Utils.log(fedInfoStr + " ERROR: got empty name");
 		} else {
-			Utils.log("Got new busstop name, dont know what to do" );
+			Utils.log("Got new busstop name, dont know what to do");
 			return;
 		}
 
 		Utils.log(fedInfoStr + "No corresponding busStop to handle found");
 	}
-	
+
 	public void waitForUser() {
 		Utils.log(" >>>>>>>>>> Press Enter to Continue <<<<<<<<<<");
 		BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
@@ -462,91 +445,87 @@ public class WorkwayFederate{
 			e.printStackTrace();
 		}
 	}
-	
-	
-	public void handleAttributeUpdate(ObjectInstanceHandle oih, AttributeHandleValueMap attributes) throws Exception{
+
+	public void handleAttributeUpdate(ObjectInstanceHandle oih, AttributeHandleValueMap attributes) throws Exception {
 
 		for (BusStop busStop : simulation.getStops()) {
-			if(busStop.getOih().equals(oih)){
+			if (busStop.getOih().equals(oih)) {
 				Utils.log("Handle busStop attribute" + oih.toString());
 				handleBusStopAttributeUpdates(busStop, attributes, oih);
 				return;
 			}
 		}
-		
-		for (ObjectInstanceHandle bsh : busStopHandles){
-			if(bsh.equals(oih)){
+
+		for (ObjectInstanceHandle bsh : busStopHandles) {
+			if (bsh.equals(oih)) {
 				addBusStop(oih, attributes);
 			}
 		}
-		
-	}
-	
-	public void addBusStop(ObjectInstanceHandle oih, AttributeHandleValueMap attributes){
-		
-		String busStopName = "";
-		
 
-		for(AttributeHandle handle : attributes.keySet()){
-			if(handle.equals(busStopNameAttributeHandle)){
-				busStopName = (String) adapterService.filter(String.class.getTypeName(), attributes.get(busStopNameAttributeHandle));
+	}
+
+	public void addBusStop(ObjectInstanceHandle oih, AttributeHandleValueMap attributes) {
+
+		String busStopName = "";
+
+		for (AttributeHandle handle : attributes.keySet()) {
+			if (handle.equals(busStopNameAttributeHandle)) {
+				busStopName = (String) adapterService.filter(String.class.getTypeName(),
+						attributes.get(busStopNameAttributeHandle));
 			} else {
 				Utils.log("Got more than expected");
 			}
 		}
-		
+
 		BusStop bs = new BusStop(simulation, busStopName);
 		bs.setOih(oih);
 		bs.setOch(busStopObjectClassHandle);
 		simulation.addBusStop(bs);
 		busStopInitialised++;
 	}
-	
-	public void addBusStopHandle(ObjectInstanceHandle oih){
+
+	public void addBusStopHandle(ObjectInstanceHandle oih) {
 		busStopHandles.add(oih);
 	}
-	
-	public RTIambassador getRTIAmb(){
+
+	public RTIambassador getRTIAmb() {
 		return rtiamb;
 	}
-	
-	public void handleEnterInteraction(String humanName, String busStopName, double passedTime){
+
+	public void handleEnterInteraction(String humanName, String busStopName, double passedTime) {
 		simulation.scheduleHumanEntersEvent(humanName, busStopName, passedTime);
 	}
-	
-	public void handleExitInteraction(String humanName, String busStopName, double passedTime){
+
+	public void handleExitInteraction(String humanName, String busStopName, double passedTime) {
 		simulation.scheduleHumanExitsEvent(humanName, busStopName, passedTime);
 	}
-	
-	private void setUpAdaptation(){
+
+	private void setUpAdaptation() {
 
 		adapterService = new HLAAdapter();
-		
 
 		DataMarker byteArray = new DataMarker("byteArray");
 		DataMarker stringMarker = new DataMarker("string");
 		DataMarker intMarker = new DataMarker("int");
-		
-		
+
 		DataMarkerMapping mappingByteArray = new DataMarkerMapping(byteArray, byte[].class.getTypeName());
 		DataMarkerMapping mappingHLAString = new DataMarkerMapping(stringMarker, String.class.getTypeName());
 		DataMarkerMapping mappingHLAInt32 = new DataMarkerMapping(intMarker, Integer.class.getTypeName());
-		
-		
+
 		HLAByteArrayAdaption byteArrayDesription = new HLAByteArrayAdaption(mappingByteArray);
-		
-	
-		HLAByteArrayDerivedElement HLAStringElement = new HLAByteArrayDerivedElement(mappingHLAString, new ByteArrayToStringConversion(encoderFactory));
-		HLAByteArrayDerivedElement HLAInt32Element = new HLAByteArrayDerivedElement(mappingHLAInt32, new ByteArrayToInteger32BEConversion(encoderFactory));
+
+		HLAByteArrayDerivedElement HLAStringElement = new HLAByteArrayDerivedElement(mappingHLAString,
+				new ByteArrayToStringConversion(encoderFactory));
+		HLAByteArrayDerivedElement HLAInt32Element = new HLAByteArrayDerivedElement(mappingHLAInt32,
+				new ByteArrayToInteger32BEConversion(encoderFactory));
 		byteArrayDesription.addDerivedElement(HLAStringElement);
 		byteArrayDesription.addDerivedElement(HLAInt32Element);
-		
+
 		adapterService.addDescription(byteArrayDesription);
 	}
-	
+
 	public Human getHuman() {
 		return simulation.getHuman();
 	}
 
 }
- 
