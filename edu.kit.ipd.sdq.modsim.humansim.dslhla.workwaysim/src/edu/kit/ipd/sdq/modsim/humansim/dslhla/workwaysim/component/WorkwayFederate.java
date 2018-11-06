@@ -3,6 +3,8 @@ package edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.component;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.InputStreamReader;
+import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.LinkedList;
@@ -423,7 +425,7 @@ public class WorkwayFederate{
 	
 	public synchronized void  synchronisedAdvancedTime(double timestep, AbstractSimEventDelegator simevent, AbstractSimEntityDelegator simentity ){
 
-		
+
 		double advanceStep = 0.0;
 		if(getCurrentFedTime() < simulation.getSimulationControl().getCurrentSimulationTime()) {
 			double diff = 0.0;
@@ -432,7 +434,6 @@ public class WorkwayFederate{
 		} else {
 			advanceStep = timestep;
 		}
-		
 		
 		if(advanceStep != 0.0) {
 			try {

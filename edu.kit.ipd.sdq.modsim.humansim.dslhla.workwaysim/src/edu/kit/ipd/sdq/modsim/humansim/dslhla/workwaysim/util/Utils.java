@@ -1,5 +1,8 @@
 package edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.util;
 
+import java.math.BigDecimal;
+import java.math.RoundingMode;
+
 import org.apache.log4j.Logger;
 
 import de.uka.ipd.sdq.simulation.abstractsimengine.AbstractSimEntityDelegator;
@@ -43,5 +46,9 @@ public class Utils {
  
     public static void log(String msg) {
     	log(msg, true);
+    }
+    
+    public static double roundTo4Decimals(double d) {
+    	return BigDecimal.valueOf(d).setScale(4, RoundingMode.CEILING).doubleValue();
     }
 }

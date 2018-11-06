@@ -167,7 +167,7 @@ public class WorkwayFederateAmbassador extends NullFederateAmbassador{
 			OrderType receivedOrdering, SupplementalReceiveInfo receiveInfo) throws FederateInternalError {
 		
 		
-		Utils.log(federate.getHuman(), "LogicalTime for Interaction:" + time);
+//		Utils.log(federate.getHuman(), "LogicalTime for Interaction:" + time);
 		
 		if(interactionClass.equals(federate.humanEntersBusHandle)){
 			federate.handleEnterInteraction(federate.adapterService.filter(String.class.getTypeName(), theParameters.get(federate.humanNameEnterBusHandle)), 

@@ -1,5 +1,7 @@
 package edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.component;
 
+import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.Random;
@@ -310,11 +312,30 @@ public class WorkwayModel extends AbstractSimulationModel implements Runnable{
 			if(human.getName().equals(humanName)){
 				for(BusStop busStop : stops){
 					if(busStop.getName().equals(busStopName)){
+						Utils.log(human, "Scheduling Enters Event on " + getSimulationControl().getCurrentSimulationTime() + "for Time:" + passedTime);
 //						Utils.log(human, "Handle Enters-Event on " + getComponent().getCurrentFedTime());
 						HumanEntersBusEvent e = new HumanEntersBusEvent(this, "HumanEntersBus");
+						Utils.log(human, "Time to Pass: " + passedTime + " SimulationTime: " + getSimulationControl().getCurrentSimulationTime());
 						double diff = passedTime - getSimulationControl().getCurrentSimulationTime();
-//						Utils.log(human, "Bridging timediff:" + diff);
-						e.schedule(human, diff);
+						BigDecimal st = BigDecimal.valueOf(getSimulationControl().getCurrentSimulationTime());
+						BigDecimal pt = BigDecimal.valueOf(passedTime);
+						BigDecimal d2 = pt.subtract(st);
+						
+						Utils.log(human, "BC: " + "Time to Pass: " + pt.doubleValue() + " SimulationTime: " + st.doubleValue() + " Res:" + d2.doubleValue() + " would result in : " + st.add(d2));
+						
+						diff = Utils.roundTo4Decimals(diff);
+						Utils.log(human, "Bridging timediff:" + diff);
+			
+						BigDecimal d = BigDecimal.valueOf(diff);
+						
+						st.add(d);
+						
+						Utils.log(human, "BigDecimal: " + st.add(d).doubleValue());
+						
+						double reach = getSimulationControl().getCurrentSimulationTime() + diff;
+						Utils.log(human, "Time with diff: " + reach);
+						
+						e.schedule(human, d2.doubleValue());
 						return;
 					}
 				
@@ -332,12 +353,17 @@ public class WorkwayModel extends AbstractSimulationModel implements Runnable{
 					//System.out.println("FoundBusStop");
 					if(busStop.getName().equals(busStopName)){
 						
-//						Utils.log(human, "Handle Exits-Event on " + getComponent().getCurrentFedTime());
+						Utils.log(human, "Scheduling Exit Event on " + getComponent().getCurrentFedTime() + "for Time:" + passedTime);
 						HumanExitsBusEvent e = new HumanExitsBusEvent(this, "HumanExitsBus");
 						double diff = passedTime - getSimulationControl().getCurrentSimulationTime();
-//						Utils.log(human, "Bridging timediff:" + diff);
+						BigDecimal st = BigDecimal.valueOf(getSimulationControl().getCurrentSimulationTime());
+						BigDecimal pt = BigDecimal.valueOf(passedTime);
+						BigDecimal d2 = pt.subtract(st);
+						Utils.log(human, "BC: " + "Time to Pass: " + pt.doubleValue() + " SimulationTime: " + st.doubleValue() + " Res:" + d2.doubleValue() );
+//						diff = Utils.roundTo4Decimals(diff);
+						Utils.log(human, "Bridging timediff:" + diff);
 						//Utils.log(human, "Scheduling Exit Event for Human: " + human.getName() + " exit on BusStop: " + busStop.getName() );
-						e.schedule(human, diff);
+						e.schedule(human, d2.doubleValue());
 						return;
 					}
 				}
