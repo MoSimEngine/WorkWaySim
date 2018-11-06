@@ -428,17 +428,6 @@ public class WorkwayFederate{
 		return fedamb.federateTime;
 	}
 	
-	public boolean timeOver(){
-		
-		if(fedamb == null){
-			return false;
-		}
-		
-		if(fedamb.federateTime > HumanSimValues.MAX_SIM_TIME.toSeconds().value())
-			return true;
-		else
-			return false;
-	}
 	
 	public void handleBusStopAttributeUpdates(BusStop busStop, AttributeHandleValueMap attributes, ObjectInstanceHandle oih){
 		System.out.println("BusStopAttr");
@@ -474,45 +463,9 @@ public class WorkwayFederate{
 		}
 	}
 	
-	public void handleHumanAttributesUpdate(Human human, AttributeHandleValueMap attributes) throws Exception{
-
-		String collected = "";
-	
-		for(AttributeHandle handle : attributes.keySet()){
-			if(handle.equals(collectedHandle)){
-				collected = fedamb.decodeBoolean(attributes.get(collectedHandle));
-				//System.out.println(collected);
-			} else {
-				Utils.log("Got more attributes than expected");
-			}
-		}
-
-		switch (collected) {
-		case "True":
-			human.setCollected(true);
-			break;
-		case "False":
-			human.setCollected(false);
-			break;
-		default:
-			Utils.log(fedInfoStr + " ERROR: got faulty boolean");
-		}
-		
-		
-		//log(fedInfoStr + "No corresponding busStop to handle found");
-	}
-	
 	
 	public void handleAttributeUpdate(ObjectInstanceHandle oih, AttributeHandleValueMap attributes) throws Exception{
 
-		
-		
-		if(simulation.getHuman() != null && simulation.getHuman().getOih().equals(oih)) {
-				handleHumanAttributesUpdate(simulation.getHuman(), attributes);
-				return;
-			}
-
-		
 		for (BusStop busStop : simulation.getStops()) {
 			if(busStop.getOih().equals(oih)){
 				Utils.log("Handle busStop attribute" + oih.toString());
@@ -533,9 +486,7 @@ public class WorkwayFederate{
 		
 		String busStopName = "";
 		
-		//log("Received BusStop attribute updates");
-		
-		
+
 		for(AttributeHandle handle : attributes.keySet()){
 			if(handle.equals(busStopNameAttributeHandle)){
 				busStopName = (String) adapterService.filter(String.class.getTypeName(), attributes.get(busStopNameAttributeHandle));
