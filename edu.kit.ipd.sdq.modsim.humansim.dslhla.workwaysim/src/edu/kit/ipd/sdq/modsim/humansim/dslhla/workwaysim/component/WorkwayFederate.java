@@ -151,14 +151,16 @@ public class WorkwayFederate {
 
 		publishAndSubscribe();
 
+		//Wait until all bus stops are received
 		while (simulation.getStops().size() != HumanSimValues.NUM_BUSSTOPS) {
-
 			advanceTime(1.0);
 			rtiamb.evokeMultipleCallbacks(0.1, 0.2);
 		}
 
 		initialiseHuman();
 
+		//TODO Hardcoded step to be on same time with BusSim due to exchange of busstops and humans
+		//Maybe find more elegant solution?
 		advanceTime(1.0);
 		simulation.startSimulation();
 
@@ -365,7 +367,7 @@ public class WorkwayFederate {
 			advanceStep = timestep;
 		}
 
-		if (advanceStep != 0.0) {
+		if (advanceStep > fedamb.federateLookahead) {
 			try {
 				if (!advanceTime(advanceStep)) {
 					simulation.getSimulationControl().stop();
