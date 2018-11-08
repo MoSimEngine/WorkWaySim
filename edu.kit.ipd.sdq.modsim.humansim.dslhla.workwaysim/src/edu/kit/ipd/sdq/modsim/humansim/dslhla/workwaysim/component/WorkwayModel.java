@@ -46,7 +46,7 @@ public class WorkwayModel extends AbstractSimulationModel implements Runnable {
 		startTime = System.nanoTime();
 
 		try {
-			component.runFederate("WorkwayFed" + id);
+			component.runFederate("WorkwayFed");
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -61,24 +61,6 @@ public class WorkwayModel extends AbstractSimulationModel implements Runnable {
 		finished = true;
 
 		int countFinished = 0;
-
-		if (this.getId() == 0) {
-
-			while (countFinished != HumanSimValues.NUM_HUMANS) {
-				try {
-					java.util.concurrent.TimeUnit.SECONDS.sleep(20);
-				} catch (InterruptedException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
-				countFinished = 0;
-
-				for (WorkwayModel model : models) {
-					if (model.finished) {
-						countFinished++;
-					}
-				}
-			}
 
 			Double finalTime = (System.nanoTime() - startTime) / Math.pow(10, 9);
 			System.out.println("Time taken");
@@ -184,8 +166,7 @@ public class WorkwayModel extends AbstractSimulationModel implements Runnable {
 
 			component.destroyExecution();
 
-		}
-
+		
 		System.out.println("Finalized in " + getId());
 
 	}
@@ -210,8 +191,11 @@ public class WorkwayModel extends AbstractSimulationModel implements Runnable {
 	}
 
 	public void startSimulation() {
-		new TravelToNextEvent(this, human.getName() + "starts travelling").schedule(human,
-				component.getCurrentFedTime());
+		
+		for (Human human : humans) {
+			new TravelToNextEvent(this, human.getName() + "starts travelling").schedule(human,
+					component.getCurrentFedTime());
+		}
 	}
 
 	public WorkwayFederate getComponent() {
@@ -314,6 +298,8 @@ public class WorkwayModel extends AbstractSimulationModel implements Runnable {
 		int homeBS = 0;
 		int workBS = 0;
 
+		for(int i = 0; i < HumanSimValues.NUM_HUMANS; i++){
+		
 		if (HumanSimValues.STOCHASTIC) {
 			while (homeBS == workBS) {
 				homeBS = new Random().nextInt(HumanSimValues.NUM_BUSSTOPS);
@@ -324,7 +310,8 @@ public class WorkwayModel extends AbstractSimulationModel implements Runnable {
 			workBS = (this.id % 2) + 1;
 		}
 
-		this.human = new Human(stops.get(homeBS), stops.get(workBS), this, "Bob" + id);
+		humans.add(new Human(stops.get(homeBS), stops.get(workBS), this, "Bob" + i));
+		}
 	}
 
 	@Override

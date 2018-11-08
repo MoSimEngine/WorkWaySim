@@ -394,8 +394,11 @@ public class WorkwayFederate {
 	public void initialiseHuman() throws Exception {
 
 		simulation.initialiseHumans();
-		Human human = simulation.getHuman();
-
+		
+		for (Human human : simulation.getHumans()) {
+			
+		
+	
 		ObjectInstanceHandle oih = registerHumanObject();
 
 		human.setOih(oih);
@@ -406,6 +409,7 @@ public class WorkwayFederate {
 		attributes.put(movementTypeHandle, adapterService.filter(human.getBehaviour().toString()));
 		HLAfloat64Time time = timeFactory.makeTime(fedamb.federateTime + 1.0);
 		rtiamb.updateAttributeValues(human.getOih(), attributes, generateTag(), time);
+		}
 
 	}
 
