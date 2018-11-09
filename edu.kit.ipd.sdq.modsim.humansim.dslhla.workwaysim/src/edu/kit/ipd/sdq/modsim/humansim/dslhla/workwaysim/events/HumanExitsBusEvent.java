@@ -18,10 +18,13 @@ public class HumanExitsBusEvent extends AbstractSimEventDelegator<Human>{
 
 	@Override
 	public void eventRoutine(Human human) {
-
+		WorkwayModel m = (WorkwayModel)this.getModel();
 		Utils.log(human, human.getName() + " left bus at " + human.getDestination().getName() );
 		human.calculateDrivingTime();
 		human.setCollected(false);
+		if(human.getTaToken() != null) {
+		m.getTimelineSynchronizer().revokeToken(human.getTaToken());
+		}
 		ArriveAtNextEvent e = new ArriveAtNextEvent(getModel(), "ArriveAtHomeByBusWaiting");
 		e.schedule(human, 0);
 	}

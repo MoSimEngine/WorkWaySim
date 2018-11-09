@@ -1,6 +1,7 @@
 package edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.entities;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.Random;
 
 import de.uka.ipd.sdq.simulation.abstractsimengine.AbstractSimEntityDelegator;
@@ -8,6 +9,9 @@ import de.uka.ipd.sdq.simulation.abstractsimengine.ISimulationModel;
 import edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.component.Duration;
 import edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.component.HumanSimValues;
 import edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.entities.Position.PositionType;
+import edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.timelinesynchronization.RegisterToken;
+import edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.timelinesynchronization.SynchroniseToken;
+import edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.timelinesynchronization.TimeAdvanceToken;
 import edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.util.Utils;
 import hla.rti1516e.ObjectClassHandle;
 import hla.rti1516e.ObjectInstanceHandle;
@@ -46,6 +50,10 @@ public class Human extends AbstractSimEntityDelegator {
 	public Duration WORK_TO_STATION;
 	
 	public Duration WALK_DIRECTLY;
+	
+	private SynchroniseToken taToken;
+	
+	private LinkedList<SynchroniseToken> regTokens;
 	
 	public  final Duration WORKTIME = Duration.hours(8);
 	
@@ -107,7 +115,7 @@ public class Human extends AbstractSimEntityDelegator {
 		busWaitingTimes = new ArrayList<Duration>();
 		drivingTimes = new ArrayList<Duration>();
 		freeTimes = new ArrayList<Duration>();	
-		
+		regTokens = new LinkedList<SynchroniseToken>();
 	}
 
 	public Human(BusStop home, BusStop work, ISimulationModel model, String name, ObjectInstanceHandle oih, ObjectClassHandle och){
@@ -334,6 +342,26 @@ public class Human extends AbstractSimEntityDelegator {
 		
 		return this.position;
 		
+	}
+
+	public SynchroniseToken getTaToken() {
+		return taToken;
+	}
+
+	public void setTaToken(SynchroniseToken token) {
+		this.taToken = token;
+	}
+
+	public LinkedList<SynchroniseToken> getRegTokens() {
+		return regTokens;
+	}
+
+	public void addRegToken(SynchroniseToken regToken) {
+		regTokens.add(regToken);
+	}
+	
+	public void removeRegToken(SynchroniseToken regToken) {
+		regTokens.remove(regToken);
 	}
 	
 

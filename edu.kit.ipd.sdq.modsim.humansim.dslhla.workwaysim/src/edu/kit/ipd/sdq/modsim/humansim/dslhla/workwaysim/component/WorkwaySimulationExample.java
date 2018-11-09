@@ -31,7 +31,6 @@ public class WorkwaySimulationExample implements IApplication {
 			simControl.setMaxSimTime((long) MAX_SIMULATION_TIME.toSeconds().value());
 			component = new WorkwayFederate(model);
 			model.setComponent(component);
-			model.setId(0);
 		
 	}
 	public synchronized Object start(IApplicationContext context) throws Exception {

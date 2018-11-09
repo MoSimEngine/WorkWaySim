@@ -9,6 +9,7 @@ import edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.component.HumanSimValue
 import edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.component.WorkwayModel;
 import edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.entities.Human;
 import edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.entities.Human.HumanState;
+import edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.timelinesynchronization.TimeAdvanceToken;
 import edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.util.Utils;
 
 public class PickUpTimeoutEvent extends AbstractSimEventDelegator<Human>{
@@ -31,7 +32,8 @@ public class PickUpTimeoutEvent extends AbstractSimEventDelegator<Human>{
 				return;
 			} else {
 				PickUpTimeoutEvent e = new PickUpTimeoutEvent(getModel(), getName());
-				m.getComponent().synchronisedAdvancedTime(Duration.minutes(20).toSeconds().value(), e, human);
+				TimeAdvanceToken token = new TimeAdvanceToken(e, human, Duration.minutes(20).toSeconds().value());
+				m.getTimelineSynchronizer().putToken(token);
 				return;
 			}
 		}

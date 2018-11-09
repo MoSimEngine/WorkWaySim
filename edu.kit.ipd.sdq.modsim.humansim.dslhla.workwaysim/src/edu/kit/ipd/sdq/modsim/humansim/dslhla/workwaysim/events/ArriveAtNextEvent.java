@@ -19,7 +19,7 @@ public class ArriveAtNextEvent extends AbstractSimEventDelegator<Human>{
 
 	@Override
 	public void eventRoutine(Human human) {
-
+		Utils.log(human, "Arrive Event");
 		human.nextPosition();
 		PositionType posType = human.getPosition().getPositionType();
 		PositionType destType = human.getDestination().getPositionType();

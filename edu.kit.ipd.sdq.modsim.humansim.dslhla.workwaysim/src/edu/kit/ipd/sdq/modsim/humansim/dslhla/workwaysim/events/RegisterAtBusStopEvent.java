@@ -7,6 +7,8 @@ import edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.component.HumanSimValue
 import edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.component.WorkwayModel;
 import edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.entities.BusStop;
 import edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.entities.Human;
+import edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.timelinesynchronization.RegisterToken;
+import edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.timelinesynchronization.TimeAdvanceToken;
 import edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.util.Utils;
 
 
@@ -20,11 +22,15 @@ public class RegisterAtBusStopEvent extends AbstractSimEventDelegator<Human>{
 	public void eventRoutine(Human human) {
 		
 		WorkwayModel m = (WorkwayModel)this.getModel();
-		m.registerHumanAtBusStop(human, (BusStop)human.getPosition(), (BusStop)human.getDestination());
 		human.arriveAtBusStopWalkingTimePointLog();
+		RegisterToken regTok = new RegisterToken(null, human, 1.0, 0.0, (BusStop)human.getPosition() , (BusStop)human.getDestination());
+		m.getTimelineSynchronizer().putToken(regTok);
+		
 		Utils.log(human, "Registers at bus Stop:" + human.getPosition().getName() + " with Destination" + human.getDestination().getName());
 		PickUpTimeoutEvent e = new PickUpTimeoutEvent(getModel(), "PickUpTimeoutAtBSH");
-		m.getComponent().synchronisedAdvancedTime(Duration.minutes(20).toSeconds().value(), e, human);
+		TimeAdvanceToken token = new TimeAdvanceToken(e, human, Duration.minutes(20).toSeconds().value());
+		m.getTimelineSynchronizer().putToken(token);
+		return;
 	}
 
 }

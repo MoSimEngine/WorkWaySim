@@ -7,6 +7,7 @@ import edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.component.HumanSimValue
 import edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.component.WorkwayModel;
 import edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.entities.Human;
 import edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.entities.Position.PositionType;
+import edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.timelinesynchronization.TimeAdvanceToken;
 import edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.util.Utils;
 
 public class TravelToNextEvent extends AbstractSimEventDelegator<Human>{
@@ -17,10 +18,10 @@ public class TravelToNextEvent extends AbstractSimEventDelegator<Human>{
 
 	@Override
 	public void eventRoutine(Human human) {
-	
+		WorkwayModel m = (WorkwayModel)this.getModel();
 		PositionType posType = human.getPosition().getPositionType();
 		PositionType destType = human.getDestination().getPositionType();
-		
+		Utils.log(human, "Travel to next event");
 		Duration travelTime;
 		String eventName = "";
 		
@@ -89,6 +90,7 @@ public class TravelToNextEvent extends AbstractSimEventDelegator<Human>{
 		}
 		
 		ArriveAtNextEvent e = new ArriveAtNextEvent(getModel(), eventName);
-		e.schedule(human, travelTime.toSeconds().value());
+		TimeAdvanceToken token = new TimeAdvanceToken(e, human, travelTime.toSeconds().value());
+		m.getTimelineSynchronizer().putToken(token);
 	}
 }

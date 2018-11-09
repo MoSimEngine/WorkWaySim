@@ -5,6 +5,7 @@ import de.uka.ipd.sdq.simulation.abstractsimengine.ISimulationModel;
 import edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.component.Duration;
 import edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.component.WorkwayModel;
 import edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.entities.Human;
+import edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.timelinesynchronization.TimeAdvanceToken;
 import edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.util.Utils;
 
 public class HumanEntersBusEvent extends AbstractSimEventDelegator<Human>{
@@ -23,7 +24,8 @@ public class HumanEntersBusEvent extends AbstractSimEventDelegator<Human>{
 		human.humanIsCollected();
 		Utils.log(human, human.getName() + " enters bus at " + human.getPosition().getName() );
 		DrivingTimeoOutEvent e = new DrivingTimeoOutEvent(getModel(), "Driving Timeout Event");
-		m.getComponent().synchronisedAdvancedTime(Duration.minutes(20).toSeconds().value(), e, human);
+		TimeAdvanceToken token = new TimeAdvanceToken(e, human, Duration.minutes(20).toSeconds().value());
+		m.getTimelineSynchronizer().putToken(token);
 		return;
 	}
 

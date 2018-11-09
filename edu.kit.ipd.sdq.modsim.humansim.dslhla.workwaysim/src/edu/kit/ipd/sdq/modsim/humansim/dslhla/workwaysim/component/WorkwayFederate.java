@@ -329,13 +329,13 @@ public class WorkwayFederate {
 
 		double advancingTo = 0;
 		boolean belowTime = true;
-
+		
 		if (fedamb.federateTime + timestep <= HumanSimValues.MAX_SIM_TIME.toSeconds().value()) {
 			advancingTo = fedamb.federateTime + timestep;
 		} else {
 			return false;
 		}
-
+//		Utils.log("Advancing from: " + fedamb.federateTime + " to " + (fedamb.federateTime + timestep));
 		// request the advance
 		fedamb.isAdvancing = true;
 		HLAfloat64Time time = timeFactory.makeTime(advancingTo);
@@ -355,10 +355,14 @@ public class WorkwayFederate {
 		return belowTime;
 	}
 
-	public synchronized void synchronisedAdvancedTime(double timestep, AbstractSimEventDelegator simevent,
-			AbstractSimEntityDelegator simentity) {
+	public synchronized void synchronisedAdvancedTime(double timestep) {
 
 		double advanceStep = 0.0;
+		
+		if(-0.000000001 < timestep && timestep < 0.00000001) {
+			return;
+		}
+		
 		if (getCurrentFedTime() < simulation.getSimulationControl().getCurrentSimulationTime()) {
 			double diff = 0.0;
 			diff = simulation.getSimulationControl().getCurrentSimulationTime() - getCurrentFedTime();
@@ -370,7 +374,6 @@ public class WorkwayFederate {
 		if (advanceStep > fedamb.federateLookahead) {
 			try {
 				if (!advanceTime(advanceStep)) {
-					simulation.getSimulationControl().stop();
 					return;
 				}
 			} catch (RTIexception e) {
@@ -378,16 +381,15 @@ public class WorkwayFederate {
 			}
 
 		}
-		simevent.schedule(simentity, timestep);
 	}
 
-	public void sendRegisterInteraction(Human human, String busStop, String destination) throws RTIexception {
+	public void sendRegisterInteraction(Human human, String busStop, String destination, double timestep) throws RTIexception {
 
 		ParameterHandleValueMap parameters = rtiamb.getParameterHandleValueMapFactory().create(3);
 		parameters.put(humanNameRegisterHandle, adapterService.filter(human.getName()));
 		parameters.put(busStopNameRegisterHandle, adapterService.filter(busStop));
 		parameters.put(destinationNameRegisterHandle, adapterService.filter(destination));
-		HLAfloat64Time time = timeFactory.makeTime(simulation.getSimulationControl().getCurrentSimulationTime() + 1.0);
+		HLAfloat64Time time = timeFactory.makeTime(simulation.getSimulationControl().getCurrentSimulationTime() + timestep);
 		rtiamb.sendInteraction(registerAtBusStopHandle, parameters, generateTag(), time);
 	}
 
@@ -530,8 +532,5 @@ public class WorkwayFederate {
 		adapterService.addDescription(byteArrayDesription);
 	}
 
-	public Human getHuman() {
-		return simulation.getHuman();
-	}
 
 }

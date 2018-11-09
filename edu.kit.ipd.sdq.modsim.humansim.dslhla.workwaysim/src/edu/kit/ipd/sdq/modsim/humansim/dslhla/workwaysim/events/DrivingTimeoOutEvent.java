@@ -8,6 +8,7 @@ import edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.component.Duration;
 import edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.component.HumanSimValues;
 import edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.component.WorkwayModel;
 import edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.entities.Human;
+import edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.timelinesynchronization.TimeAdvanceToken;
 import edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.util.Utils;
 
 public class DrivingTimeoOutEvent extends AbstractSimEventDelegator<Human> {
@@ -26,12 +27,13 @@ public class DrivingTimeoOutEvent extends AbstractSimEventDelegator<Human> {
 			
 			//TODO:Include here a stochastical assertion of panik
 			
-			
+			Utils.log(human, "Still in Driving");
 			if(panik){
 				Utils.log(human, "Human is still in the bus! Panik!!!!!!");
 			} else {
 				DrivingTimeoOutEvent e = new DrivingTimeoOutEvent(getModel(), getName());
-				m.getComponent().synchronisedAdvancedTime(Duration.minutes(20).toSeconds().value(), e, human);
+				TimeAdvanceToken token = new TimeAdvanceToken(e, human, Duration.minutes(20).toSeconds().value());
+				m.getTimelineSynchronizer().putToken(token);
 			}
 		}
 		
