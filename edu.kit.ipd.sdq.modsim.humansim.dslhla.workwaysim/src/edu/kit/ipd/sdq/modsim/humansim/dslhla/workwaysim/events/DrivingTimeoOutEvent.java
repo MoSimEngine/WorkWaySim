@@ -22,7 +22,7 @@ public class DrivingTimeoOutEvent extends AbstractSimEventDelegator<Human> {
 		
 		WorkwayModel m = (WorkwayModel)this.getModel();
 		boolean panik = false;
-				
+		
 		if(human.isCollected()){
 			
 			//TODO:Include here a stochastical assertion of panik

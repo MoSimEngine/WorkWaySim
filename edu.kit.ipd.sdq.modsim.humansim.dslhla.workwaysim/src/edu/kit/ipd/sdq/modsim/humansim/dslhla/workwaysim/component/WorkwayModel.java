@@ -5,6 +5,8 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.Random;
 
+import javax.rmi.CORBA.Util;
+
 import de.uka.ipd.sdq.simulation.abstractsimengine.AbstractSimulationModel;
 import de.uka.ipd.sdq.simulation.abstractsimengine.ISimEngineFactory;
 import de.uka.ipd.sdq.simulation.abstractsimengine.ISimulationConfig;
@@ -15,6 +17,8 @@ import edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.events.HumanEntersBusEv
 import edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.events.HumanExitsBusEvent;
 import edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.events.TravelToNextEvent;
 import edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.timelinesynchronization.RTITimelineSynchronizer;
+import edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.timelinesynchronization.TimeAdvanceSynchronisationEvent;
+import edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.timelinesynchronization.TimeAdvanceToken;
 import edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.util.CSVHandler;
 import edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.util.Utils;
 import hla.rti1516e.exceptions.RTIexception;
@@ -187,7 +191,6 @@ public class WorkwayModel extends AbstractSimulationModel implements Runnable {
 		this.timelineSynchronizer = new RTITimelineSynchronizer(this);
 
 		for (Human human : humans) {
-			Utils.log(human, "Start Human " + human.getName() + " at " + component.getCurrentFedTime());
 			new TravelToNextEvent(this, human.getName() + "starts travelling").schedule(human,
 					component.getCurrentFedTime());
 		}
@@ -233,12 +236,17 @@ public class WorkwayModel extends AbstractSimulationModel implements Runnable {
 			if (human.getName().equals(humanName)) {
 				for (BusStop busStop : stops) {
 					if (busStop.getName().equals(busStopName)) {
+						
+						
 						HumanEntersBusEvent e = new HumanEntersBusEvent(this, "HumanEntersBus");
 
 						BigDecimal st = BigDecimal.valueOf(getSimulationControl().getCurrentSimulationTime());
 						BigDecimal pt = BigDecimal.valueOf(passedTime);
 						BigDecimal timeDiff = pt.subtract(st);
-
+						Utils.log(human, "Scheduling HumanEntersEvent with diff: " + timeDiff.doubleValue() + " Destined for " + passedTime);
+//						TimeAdvanceSynchronisationEvent ta = new TimeAdvanceSynchronisationEvent(human.getModel(), "TimeAdvance Event", e, timeDiff.doubleValue());
+//						ta.schedule(human, 0);
+//						timelineSynchronizer.breakExecution(human);
 						e.schedule(human, timeDiff.doubleValue());
 						return;
 					}
@@ -252,17 +260,23 @@ public class WorkwayModel extends AbstractSimulationModel implements Runnable {
 			if (human.getName().equals(humanName)) {
 				for (BusStop busStop : stops) {
 					if (busStop.getName().equals(busStopName)) {
+						
 						BigDecimal st = BigDecimal.valueOf(getSimulationControl().getCurrentSimulationTime());
 						BigDecimal pt = BigDecimal.valueOf(passedTime);
 						BigDecimal timeDiff = pt.subtract(st);
-
 						HumanExitsBusEvent e = new HumanExitsBusEvent(this, "HumanExitsBus");
+						Utils.log(human, "Scheduling HumanExitsEvent with diff: " + timeDiff.doubleValue());
 						e.schedule(human, timeDiff.doubleValue());
+						
+//						TimeAdvanceSynchronisationEvent ta = new TimeAdvanceSynchronisationEvent(human.getModel(), "TimeAdvance Event", e, timeDiff.doubleValue());
+//						ta.schedule(human, 0);
+//						timelineSynchronizer.breakExecution(human);
 						return;
 					}
 				}
 			}
 		}
+		
 	}
 
 	public void initialiseHumans() {

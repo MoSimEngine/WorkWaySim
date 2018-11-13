@@ -23,8 +23,14 @@ public class HumanEntersBusEvent extends AbstractSimEventDelegator<Human>{
 		human.travellingToNext();
 		human.humanIsCollected();
 		Utils.log(human, human.getName() + " enters bus at " + human.getPosition().getName() );
+		
 		DrivingTimeoOutEvent e = new DrivingTimeoOutEvent(getModel(), "Driving Timeout Event");
 		TimeAdvanceToken token = new TimeAdvanceToken(e, human, Duration.minutes(20).toSeconds().value());
+		
+		if(human.getTaToken() != null) {
+			m.getTimelineSynchronizer().revokeToken(human.getTaToken());
+		}
+		
 		m.getTimelineSynchronizer().putToken(token);
 		return;
 	}

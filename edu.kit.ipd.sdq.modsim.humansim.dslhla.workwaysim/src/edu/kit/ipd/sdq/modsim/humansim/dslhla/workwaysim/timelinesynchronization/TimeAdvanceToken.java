@@ -12,13 +12,27 @@ public class TimeAdvanceToken extends SynchroniseToken {
 			AbstractSimEntityDelegator entity, 
 			double timestep) {
 		super(returnEvent, entity, SynchronisedActionTypen.ADVANCE_TIME, timestep, entity.getModel().getSimulationControl().getCurrentSimulationTime(), timestep);
-		Utils.log(entity, "Want to Advance from: " + entity.getModel().getSimulationControl().getCurrentSimulationTime() + " to: " + getResultingTimepoint());
+//		Utils.log(entity, "Want to Advance from: " + entity.getModel().getSimulationControl().getCurrentSimulationTime() + " to: " + getResultingTimepoint());
 	}
 
 	@Override
 	public void executeAction() {
-	
-			((WorkwayModel)(getEntity().getModel())).getComponent().synchronisedAdvancedTime(getTimeStep());
+			WorkwayModel m = (WorkwayModel)getEntity().getModel();
+			
+			double fedTime = m.getComponent().getCurrentFedTime();
+
+			double resTime = this.getResultingTimepoint();
+		
+			double targetTime = fedTime + this.getTimeStep();
+			double diff = 0; 
+			
+			if(targetTime > resTime) {
+				diff = targetTime - resTime;
+				Utils.log(this.getEntity(), "Diff: " + diff);
+			}
+			
+
+			m.getComponent().synchronisedAdvancedTime(getTimeStep() - diff);
 	
 	}
 

@@ -14,6 +14,7 @@ public abstract class SynchroniseToken implements Comparable<SynchroniseToken>{
 	private BigDecimal currentTimepoint;
 	private double resultingTimepoint;
 	private double returnEventTimestep;
+	private BigDecimal returnEventTimepoint;
 	
 	public enum SynchronisedActionTypen{
 		RTI_ACTION,
@@ -35,6 +36,10 @@ public abstract class SynchroniseToken implements Comparable<SynchroniseToken>{
 		this.currentTimepoint = BigDecimal.valueOf(currentTimepoint);
 		this.returnEventTimestep = returnEventTimestep;
 		this.resultingTimepoint = this.currentTimepoint.add(this.timestep).doubleValue();
+		returnEventTimepoint = this.currentTimepoint.add(BigDecimal.valueOf(returnEventTimestep));
+		
+		Utils.log(entity, "Current timepoint:" + currentTimepoint + "Return Event Step: " + returnEventTimestep + " Return Event TP :" + returnEventTimepoint);
+		
 	}
 
 	public AbstractSimEntityDelegator getEntity() {
@@ -65,6 +70,10 @@ public abstract class SynchroniseToken implements Comparable<SynchroniseToken>{
 		return currentTimepoint.doubleValue();
 	}
 	
+	public double getReturnEventTimepoint() {
+		return returnEventTimepoint.doubleValue();
+	}
+	
 	public void reduceTimestep(double reductor) {
 		double tmp = timestep.doubleValue();
 		this.timestep = timestep.subtract(BigDecimal.valueOf(reductor));
@@ -73,7 +82,7 @@ public abstract class SynchroniseToken implements Comparable<SynchroniseToken>{
 			timestep = BigDecimal.ZERO;
 		}
 		
-		Utils.log("Reduced Timestep from: " + tmp + "to: " + timestep.doubleValue());
+		//Utils.log("Reduced Timestep from: " + tmp + "to: " + timestep.doubleValue());
 	}
 
 	@Override

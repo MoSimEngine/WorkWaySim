@@ -26,7 +26,7 @@ public class PickUpTimeoutEvent extends AbstractSimEventDelegator<Human>{
 		if(!human.isCollected() && (human.getState().equals(HumanState.AT_BUSSTOP))){
 			
 			//TODO Insert here random assertion of change to walking and also a handling
-			
+			Utils.log(human, "Still Waiting");
 			if(changeToWalking){
 				new HumanArrivesAtWorkEvent(this.getModel(), "Human Arrives At Work Walking after waiting at BS").schedule(human, human.WALK_DIRECTLY.toSeconds().value());
 				return;
