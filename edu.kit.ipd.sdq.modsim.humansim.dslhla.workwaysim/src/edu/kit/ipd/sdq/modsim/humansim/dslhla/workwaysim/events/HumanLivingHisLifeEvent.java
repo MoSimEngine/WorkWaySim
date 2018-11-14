@@ -23,6 +23,6 @@ public class HumanLivingHisLifeEvent extends AbstractSimEventDelegator<Human>{
 		HumanStopsLivingHisLifeEvent e = new HumanStopsLivingHisLifeEvent(human.getModel(), "Human stops living his life");
 		
 		TimeAdvanceToken token = new TimeAdvanceToken(e, human, livingHisLife);
-		m.getTimelineSynchronizer().putToken(token);
+		m.getTimelineSynchronizer().putToken(token,false);
 	}
 }

@@ -6,7 +6,7 @@ public interface TimelineSynchronizer {
 	
 
 	
-	public boolean putToken(SynchroniseToken token);
+	public boolean putToken(SynchroniseToken token, boolean forcedOverride);
 	public void sortTokens();
 	public void executeTimeorderedEvents();
 	public void scheduleReturnEvent(SynchroniseToken token);

@@ -244,13 +244,14 @@ public class WorkwayModel extends AbstractSimulationModel implements Runnable {
 						BigDecimal pt = BigDecimal.valueOf(passedTime);
 						BigDecimal timeDiff = pt.subtract(st);
 						TimeAdvanceSynchronisationEvent advanceEvent = new TimeAdvanceSynchronisationEvent(human.getModel(), "TimeAdvance Event", e, 0);
-
+						Utils.log(human, "In Human Enters Event Scheduling");
+						
 //						ta.schedule(human, 0);
 //						timelineSynchronizer.breakExecution(human);
 						
 						TimeAdvanceToken ta = new TimeAdvanceToken(e, human, timeDiff.doubleValue());
-						((WorkwayModel)human.getModel()).getTimelineSynchronizer().rescheduleToken(ta, false, true);
-						advanceEvent.schedule(human, 0);
+						((WorkwayModel)human.getModel()).getTimelineSynchronizer().putToken(ta, true);
+
 						
 //						e.schedule(human, timeDiff.doubleValue());
 						return;
@@ -272,12 +273,17 @@ public class WorkwayModel extends AbstractSimulationModel implements Runnable {
 						
 						HumanExitsBusEvent e = new HumanExitsBusEvent(this, "HumanExitsBus");
 						Utils.log(human, "Exits Bus");
-						TimeAdvanceSynchronisationEvent advanceEvent = new TimeAdvanceSynchronisationEvent(human.getModel(), "TimeAdvance Event", e, 0);
+//						TimeAdvanceSynchronisationEvent advanceEvent = new TimeAdvanceSynchronisationEvent(human.getModel(), "TimeAdvance Event", e, 0);
+//						TimeAdvanceToken ta = new TimeAdvanceToken(e, human, timeDiff.doubleValue());
+//						((WorkwayModel)human.getModel()).getTimelineSynchronizer().rescheduleToken(ta, false, true);
+//						
+//						advanceEvent.schedule(human, 0);
+						
+//						e.schedule(human, 0);
+//						TimeAdvanceToken ta = new TimeAdvanceToken(e, human, timeDiff.doubleValue());
+						
 						TimeAdvanceToken ta = new TimeAdvanceToken(e, human, timeDiff.doubleValue());
-						((WorkwayModel)human.getModel()).getTimelineSynchronizer().rescheduleToken(ta, false, true);
-						
-						advanceEvent.schedule(human, 0);
-						
+						((WorkwayModel)human.getModel()).getTimelineSynchronizer().putToken(ta, true);
 //						TimeAdvanceSynchronisationEvent ta = new TimeAdvanceSynchronisationEvent(human.getModel(), "TimeAdvance Event", e, timeDiff.doubleValue());
 //						ta.schedule(human, 0);
 //						timelineSynchronizer.breakExecution(human);

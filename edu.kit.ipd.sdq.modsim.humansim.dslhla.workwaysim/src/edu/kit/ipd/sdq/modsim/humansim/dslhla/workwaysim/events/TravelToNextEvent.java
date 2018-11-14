@@ -91,6 +91,6 @@ public class TravelToNextEvent extends AbstractSimEventDelegator<Human>{
 		
 		ArriveAtNextEvent e = new ArriveAtNextEvent(getModel(), eventName);
 		TimeAdvanceToken token = new TimeAdvanceToken(e, human, travelTime.toSeconds().value());
-		m.getTimelineSynchronizer().putToken(token);
+		m.getTimelineSynchronizer().putToken(token, false);
 	}
 }

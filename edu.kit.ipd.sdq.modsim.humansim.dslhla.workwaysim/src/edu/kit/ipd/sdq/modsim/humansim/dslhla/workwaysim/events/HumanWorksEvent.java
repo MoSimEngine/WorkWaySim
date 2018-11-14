@@ -20,6 +20,6 @@ public class HumanWorksEvent extends AbstractSimEventDelegator<Human>{
 		double working = human.WORKTIME.toSeconds().value();
 		HumanEndsWorkingEvent e = new HumanEndsWorkingEvent(this.getModel(), "Human stops working");
 		TimeAdvanceToken token = new TimeAdvanceToken(e, human, working); 
-		m.getTimelineSynchronizer().putToken(token);
+		m.getTimelineSynchronizer().putToken(token, false);
 	}
 }

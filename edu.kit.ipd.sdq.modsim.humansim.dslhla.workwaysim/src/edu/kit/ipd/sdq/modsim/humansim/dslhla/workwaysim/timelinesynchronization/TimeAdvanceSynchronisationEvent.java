@@ -27,7 +27,7 @@ public class TimeAdvanceSynchronisationEvent extends AbstractSimEventDelegator{
 		WorkwayModel m = ((WorkwayModel)e.getModel());
 	
 		
-		
+//		Utils.log("In TA Synch");
 
 		if(m.getTimelineSynchronizer().checkAndExecute()) {
 			

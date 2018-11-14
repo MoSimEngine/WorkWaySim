@@ -27,13 +27,13 @@ public class DrivingTimeoOutEvent extends AbstractSimEventDelegator<Human> {
 			
 			//TODO:Include here a stochastical assertion of panik
 			
-			Utils.log(human, "Still in Driving");
+//			Utils.log(human, "Still in Driving");
 			if(panik){
 				Utils.log(human, "Human is still in the bus! Panik!!!!!!");
 			} else {
 				DrivingTimeoOutEvent e = new DrivingTimeoOutEvent(getModel(), getName());
 				TimeAdvanceToken token = new TimeAdvanceToken(e, human, Duration.minutes(20).toSeconds().value());
-				m.getTimelineSynchronizer().putToken(token);
+				m.getTimelineSynchronizer().putToken(token, false);
 			}
 		}
 		

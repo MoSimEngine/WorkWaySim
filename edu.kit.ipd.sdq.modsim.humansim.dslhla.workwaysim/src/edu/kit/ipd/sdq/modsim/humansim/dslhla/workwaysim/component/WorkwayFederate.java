@@ -531,6 +531,14 @@ public class WorkwayFederate {
 
 		adapterService.addDescription(byteArrayDesription);
 	}
-
+	public WorkwayFederateAmbassador getFedAmb() {
+		return fedamb;
+	}
+	
+	public boolean isAdvancingTime() {
+		return fedamb.isAdvancing;
+	}
 
 }
+
+

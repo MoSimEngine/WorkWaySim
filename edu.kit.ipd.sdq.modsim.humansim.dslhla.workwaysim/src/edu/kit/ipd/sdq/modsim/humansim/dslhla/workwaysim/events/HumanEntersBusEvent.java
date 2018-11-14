@@ -31,7 +31,7 @@ public class HumanEntersBusEvent extends AbstractSimEventDelegator<Human>{
 			m.getTimelineSynchronizer().revokeToken(human.getTaToken());
 		}
 		
-		m.getTimelineSynchronizer().putToken(token);
+		m.getTimelineSynchronizer().putToken(token, true);
 		return;
 	}
 
