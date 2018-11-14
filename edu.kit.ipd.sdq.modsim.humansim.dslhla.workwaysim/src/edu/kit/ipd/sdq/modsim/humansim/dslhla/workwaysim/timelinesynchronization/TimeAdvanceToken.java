@@ -26,9 +26,14 @@ public class TimeAdvanceToken extends SynchroniseToken {
 			double targetTime = fedTime + this.getTimeStep();
 			double diff = 0; 
 			
+//			if(fedTime > resTime) {
+//				Utils.log(this.getEntity(), "Dont advance time, would advance over my time> " + fedTime + ":" + resTime);
+//				return;
+//			}
+//			
+			
 			if(targetTime > resTime) {
 				diff = targetTime - resTime;
-				Utils.log(this.getEntity(), "Diff: " + diff);
 			}
 			
 

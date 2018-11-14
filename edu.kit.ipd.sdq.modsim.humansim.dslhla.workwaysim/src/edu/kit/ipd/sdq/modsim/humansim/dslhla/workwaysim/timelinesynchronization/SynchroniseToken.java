@@ -15,6 +15,7 @@ public abstract class SynchroniseToken implements Comparable<SynchroniseToken>{
 	private double resultingTimepoint;
 	private double returnEventTimestep;
 	private BigDecimal returnEventTimepoint;
+	private boolean blockedFromRemove = false;
 	
 	public enum SynchronisedActionTypen{
 		RTI_ACTION,
@@ -38,7 +39,7 @@ public abstract class SynchroniseToken implements Comparable<SynchroniseToken>{
 		this.resultingTimepoint = this.currentTimepoint.add(this.timestep).doubleValue();
 		returnEventTimepoint = this.currentTimepoint.add(BigDecimal.valueOf(returnEventTimestep));
 		
-		Utils.log(entity, "Current timepoint:" + currentTimepoint + "Return Event Step: " + returnEventTimestep + " Return Event TP :" + returnEventTimepoint);
+//		Utils.log(entity, "Current timepoint:" + currentTimepoint + "Return Event Step: " + returnEventTimestep + " Return Event TP :" + returnEventTimepoint);
 		
 	}
 
@@ -91,5 +92,13 @@ public abstract class SynchroniseToken implements Comparable<SynchroniseToken>{
 	}
 	
 	public abstract void executeAction();
+
+	public boolean isBlockedFromRemove() {
+		return blockedFromRemove;
+	}
+
+	public void setBlockedFromRemove(boolean blockedFromRemove) {
+		this.blockedFromRemove = blockedFromRemove;
+	}
 	
 }

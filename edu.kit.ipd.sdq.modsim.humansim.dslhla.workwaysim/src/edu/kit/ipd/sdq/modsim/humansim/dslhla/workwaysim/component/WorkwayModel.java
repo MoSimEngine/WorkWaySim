@@ -243,11 +243,16 @@ public class WorkwayModel extends AbstractSimulationModel implements Runnable {
 						BigDecimal st = BigDecimal.valueOf(getSimulationControl().getCurrentSimulationTime());
 						BigDecimal pt = BigDecimal.valueOf(passedTime);
 						BigDecimal timeDiff = pt.subtract(st);
-						Utils.log(human, "Scheduling HumanEntersEvent with diff: " + timeDiff.doubleValue() + " Destined for " + passedTime);
-//						TimeAdvanceSynchronisationEvent ta = new TimeAdvanceSynchronisationEvent(human.getModel(), "TimeAdvance Event", e, timeDiff.doubleValue());
+						TimeAdvanceSynchronisationEvent advanceEvent = new TimeAdvanceSynchronisationEvent(human.getModel(), "TimeAdvance Event", e, 0);
+
 //						ta.schedule(human, 0);
 //						timelineSynchronizer.breakExecution(human);
-						e.schedule(human, timeDiff.doubleValue());
+						
+						TimeAdvanceToken ta = new TimeAdvanceToken(e, human, timeDiff.doubleValue());
+						((WorkwayModel)human.getModel()).getTimelineSynchronizer().rescheduleToken(ta, false, true);
+						advanceEvent.schedule(human, 0);
+						
+//						e.schedule(human, timeDiff.doubleValue());
 						return;
 					}
 				}
@@ -264,9 +269,14 @@ public class WorkwayModel extends AbstractSimulationModel implements Runnable {
 						BigDecimal st = BigDecimal.valueOf(getSimulationControl().getCurrentSimulationTime());
 						BigDecimal pt = BigDecimal.valueOf(passedTime);
 						BigDecimal timeDiff = pt.subtract(st);
+						
 						HumanExitsBusEvent e = new HumanExitsBusEvent(this, "HumanExitsBus");
-						Utils.log(human, "Scheduling HumanExitsEvent with diff: " + timeDiff.doubleValue());
-						e.schedule(human, timeDiff.doubleValue());
+						Utils.log(human, "Exits Bus");
+						TimeAdvanceSynchronisationEvent advanceEvent = new TimeAdvanceSynchronisationEvent(human.getModel(), "TimeAdvance Event", e, 0);
+						TimeAdvanceToken ta = new TimeAdvanceToken(e, human, timeDiff.doubleValue());
+						((WorkwayModel)human.getModel()).getTimelineSynchronizer().rescheduleToken(ta, false, true);
+						
+						advanceEvent.schedule(human, 0);
 						
 //						TimeAdvanceSynchronisationEvent ta = new TimeAdvanceSynchronisationEvent(human.getModel(), "TimeAdvance Event", e, timeDiff.doubleValue());
 //						ta.schedule(human, 0);
@@ -322,7 +332,7 @@ public class WorkwayModel extends AbstractSimulationModel implements Runnable {
 				workBS = (i % 2) + 1;
 			}
 
-			humans.add(new Human(stops.get(homeBS), stops.get(workBS), this, "Bob" + i));
+			humans.add(new Human(stops.get(homeBS), stops.get(workBS), this, "Hugo" + i));
 		}
 	}
 

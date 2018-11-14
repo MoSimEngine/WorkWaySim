@@ -51,13 +51,16 @@ public class Human extends AbstractSimEntityDelegator {
 	
 	public Duration WALK_DIRECTLY;
 	
-	private SynchroniseToken taToken;
+	private SynchroniseToken currentTAToken;
 	
 	private LinkedList<SynchroniseToken> regTokens;
 	
 	public  final Duration WORKTIME = Duration.hours(8);
 	
 	private ArrayList<Position> workway = new ArrayList<Position>();
+	
+	private int taTokenIndex = -1;
+	
 	
 	private int positionIndex = 0;
 	//Regulates the index direction for traversal of the workway list 
@@ -345,11 +348,11 @@ public class Human extends AbstractSimEntityDelegator {
 	}
 
 	public SynchroniseToken getTaToken() {
-		return taToken;
+		return currentTAToken;
 	}
 
 	public void setTaToken(SynchroniseToken token) {
-		this.taToken = token;
+		this.currentTAToken = token;
 	}
 
 	public LinkedList<SynchroniseToken> getRegTokens() {
@@ -362,6 +365,14 @@ public class Human extends AbstractSimEntityDelegator {
 	
 	public void removeRegToken(SynchroniseToken regToken) {
 		regTokens.remove(regToken);
+	}
+
+	public int getTaTokenIndex() {
+		return taTokenIndex;
+	}
+
+	public void setTaTokenIndex(int taTokenIndex) {
+		this.taTokenIndex = taTokenIndex;
 	}
 	
 

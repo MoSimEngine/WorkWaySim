@@ -335,12 +335,12 @@ public class WorkwayFederate {
 		} else {
 			return false;
 		}
-		Utils.log("Advancing from: " + fedamb.federateTime + " to " + (fedamb.federateTime + timestep));
+//		Utils.log("Advancing from: " + fedamb.federateTime + " to " + (fedamb.federateTime + timestep));
 		// request the advance
 		fedamb.isAdvancing = true;
 		HLAfloat64Time time = timeFactory.makeTime(advancingTo);
 		try {
-			rtiamb.timeAdvanceRequest(time);
+			rtiamb.nextMessageRequest(time);
 		} catch (Exception e) {
 			Utils.log(e.getMessage() + rtiamb.queryLogicalTime());
 			return false;

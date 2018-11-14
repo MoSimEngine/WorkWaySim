@@ -25,16 +25,13 @@ public class TimeAdvanceSynchronisationEvent extends AbstractSimEventDelegator{
 		AbstractSimEntityDelegator e = (AbstractSimEntityDelegator)entity;
 		
 		WorkwayModel m = ((WorkwayModel)e.getModel());
-		Human h = (Human) e;
-		
-		if(h.getTaToken() != null) {
-		m.getTimelineSynchronizer().revokeToken(h.getTaToken());
-		}
 	
 		
-		TimeAdvanceToken token = new TimeAdvanceToken(event, e, timestep);
-//		Utils.log(e, "Executing TASEvent with return event: " + event.getName() + "to be scheduled for: " + token.getReturnEventTimepoint());
-		m.getTimelineSynchronizer().putToken(token);
+		
+
+		if(m.getTimelineSynchronizer().checkAndExecute()) {
+			
+		}
 		
 	}
 

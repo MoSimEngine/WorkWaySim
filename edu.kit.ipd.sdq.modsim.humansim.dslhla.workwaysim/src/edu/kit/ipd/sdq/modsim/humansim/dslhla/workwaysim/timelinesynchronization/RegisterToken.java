@@ -27,7 +27,7 @@ public class RegisterToken extends SynchroniseToken{
 
 	@Override
 	public void executeAction() {
-		Utils.log(this.getEntity(), "Executing register token");
+
 		((WorkwayModel)(getEntity().getModel())).registerHumanAtBusStop((Human)getEntity(), (BusStop) position, (BusStop) destination, this.getTimeStep());
 	}
 
