@@ -38,9 +38,6 @@ public abstract class SynchroniseToken implements Comparable<SynchroniseToken>{
 		this.returnEventTimestep = returnEventTimestep;
 		this.resultingTimepoint = this.currentTimepoint.add(this.timestep).doubleValue();
 		returnEventTimepoint = this.currentTimepoint.add(BigDecimal.valueOf(returnEventTimestep));
-		
-//		Utils.log(entity, "Current timepoint:" + currentTimepoint + "Return Event Step: " + returnEventTimestep + " Return Event TP :" + returnEventTimepoint);
-		
 	}
 
 	public AbstractSimEntityDelegator getEntity() {
@@ -73,17 +70,6 @@ public abstract class SynchroniseToken implements Comparable<SynchroniseToken>{
 	
 	public double getReturnEventTimepoint() {
 		return returnEventTimepoint.doubleValue();
-	}
-	
-	public void reduceTimestep(double reductor) {
-		double tmp = timestep.doubleValue();
-		this.timestep = timestep.subtract(BigDecimal.valueOf(reductor));
-		
-		if(timestep.doubleValue() < 0.0) {
-			timestep = BigDecimal.ZERO;
-		}
-		
-		//Utils.log("Reduced Timestep from: " + tmp + "to: " + timestep.doubleValue());
 	}
 
 	@Override

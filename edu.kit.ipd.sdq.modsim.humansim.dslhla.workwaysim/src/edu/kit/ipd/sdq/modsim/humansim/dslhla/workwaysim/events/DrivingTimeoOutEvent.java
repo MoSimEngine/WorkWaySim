@@ -27,7 +27,6 @@ public class DrivingTimeoOutEvent extends AbstractSimEventDelegator<Human> {
 			
 			//TODO:Include here a stochastical assertion of panik
 			
-//			Utils.log(human, "Still in Driving");
 			if(panik){
 				Utils.log(human, "Human is still in the bus! Panik!!!!!!");
 			} else {

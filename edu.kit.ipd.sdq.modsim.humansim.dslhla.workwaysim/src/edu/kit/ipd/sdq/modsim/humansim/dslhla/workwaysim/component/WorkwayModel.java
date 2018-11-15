@@ -47,7 +47,6 @@ public class WorkwayModel extends AbstractSimulationModel implements Runnable {
 		try {
 			component.runFederate("WorkwayFed");
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 
@@ -56,11 +55,7 @@ public class WorkwayModel extends AbstractSimulationModel implements Runnable {
 	public void finalise() {
 
 		component.resignFromExecution();
-
-		int countFinished = 0;
-
 		Double finalTime = (System.nanoTime() - startTime) / Math.pow(10, 9);
-		System.out.println("Time taken. Result: " + finalTime);
 		String file_header = "";
 		String csvAway = "";
 		String csvWaitingAtStation = "";
@@ -121,7 +116,7 @@ public class WorkwayModel extends AbstractSimulationModel implements Runnable {
 			csvFreeTimes += CSVHandler.NEWLINE;
 		}
 
-		String[] csvs = { csvAway, csvDrivingTimes, csvWaitingAtStation, csvFreeTimes };
+		String[] csvs = {csvAway, csvDrivingTimes, csvWaitingAtStation, csvFreeTimes};
 
 		for (int i = 0; i < csvs.length; i++) {
 			String s = "";
@@ -158,9 +153,6 @@ public class WorkwayModel extends AbstractSimulationModel implements Runnable {
 		s = s.replace('.', ',');
 
 		CSVHandler.readCSVAndAppend("ExecutionTimes", s + CSVHandler.CSV_DELIMITER);
-
-		System.out.println("Done writing data");
-
 		component.destroyExecution();
 
 		System.out.println("Finalized");
@@ -237,23 +229,13 @@ public class WorkwayModel extends AbstractSimulationModel implements Runnable {
 				for (BusStop busStop : stops) {
 					if (busStop.getName().equals(busStopName)) {
 						
-						
-						HumanEntersBusEvent e = new HumanEntersBusEvent(this, "HumanEntersBus");
-
 						BigDecimal st = BigDecimal.valueOf(getSimulationControl().getCurrentSimulationTime());
 						BigDecimal pt = BigDecimal.valueOf(passedTime);
 						BigDecimal timeDiff = pt.subtract(st);
-						TimeAdvanceSynchronisationEvent advanceEvent = new TimeAdvanceSynchronisationEvent(human.getModel(), "TimeAdvance Event", e, 0);
-						Utils.log(human, "In Human Enters Event Scheduling");
 						
-//						ta.schedule(human, 0);
-//						timelineSynchronizer.breakExecution(human);
-						
+						HumanEntersBusEvent e = new HumanEntersBusEvent(this, "HumanEntersBus");
 						TimeAdvanceToken ta = new TimeAdvanceToken(e, human, timeDiff.doubleValue());
 						((WorkwayModel)human.getModel()).getTimelineSynchronizer().putToken(ta, true);
-
-						
-//						e.schedule(human, timeDiff.doubleValue());
 						return;
 					}
 				}
@@ -272,21 +254,8 @@ public class WorkwayModel extends AbstractSimulationModel implements Runnable {
 						BigDecimal timeDiff = pt.subtract(st);
 						
 						HumanExitsBusEvent e = new HumanExitsBusEvent(this, "HumanExitsBus");
-						Utils.log(human, "Exits Bus");
-//						TimeAdvanceSynchronisationEvent advanceEvent = new TimeAdvanceSynchronisationEvent(human.getModel(), "TimeAdvance Event", e, 0);
-//						TimeAdvanceToken ta = new TimeAdvanceToken(e, human, timeDiff.doubleValue());
-//						((WorkwayModel)human.getModel()).getTimelineSynchronizer().rescheduleToken(ta, false, true);
-//						
-//						advanceEvent.schedule(human, 0);
-						
-//						e.schedule(human, 0);
-//						TimeAdvanceToken ta = new TimeAdvanceToken(e, human, timeDiff.doubleValue());
-						
 						TimeAdvanceToken ta = new TimeAdvanceToken(e, human, timeDiff.doubleValue());
 						((WorkwayModel)human.getModel()).getTimelineSynchronizer().putToken(ta, true);
-//						TimeAdvanceSynchronisationEvent ta = new TimeAdvanceSynchronisationEvent(human.getModel(), "TimeAdvance Event", e, timeDiff.doubleValue());
-//						ta.schedule(human, 0);
-//						timelineSynchronizer.breakExecution(human);
 						return;
 					}
 				}
@@ -321,8 +290,6 @@ public class WorkwayModel extends AbstractSimulationModel implements Runnable {
 		stops.add(tmpStops[1]);
 		stops.add(tmpStops[2]);
 
-		// new HumanProcess(new Human(stop1, stop3, this, "Bob" + i),
-		// bus).scheduleAt(0);
 		int homeBS = 0;
 		int workBS = 0;
 

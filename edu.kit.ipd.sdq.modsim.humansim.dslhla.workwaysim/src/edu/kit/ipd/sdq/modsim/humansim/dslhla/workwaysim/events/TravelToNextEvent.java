@@ -21,7 +21,6 @@ public class TravelToNextEvent extends AbstractSimEventDelegator<Human>{
 		WorkwayModel m = (WorkwayModel)this.getModel();
 		PositionType posType = human.getPosition().getPositionType();
 		PositionType destType = human.getDestination().getPositionType();
-		Utils.log(human, "Travel to next event");
 		Duration travelTime;
 		String eventName = "";
 		

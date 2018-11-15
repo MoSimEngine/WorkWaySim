@@ -335,12 +335,11 @@ public class WorkwayFederate {
 		} else {
 			return false;
 		}
-//		Utils.log("Advancing from: " + fedamb.federateTime + " to " + (fedamb.federateTime + timestep));
-		// request the advance
+
 		fedamb.isAdvancing = true;
 		HLAfloat64Time time = timeFactory.makeTime(advancingTo);
 		try {
-			rtiamb.nextMessageRequest(time);
+			rtiamb.timeAdvanceRequest(time);
 		} catch (Exception e) {
 			Utils.log(e.getMessage() + rtiamb.queryLogicalTime());
 			return false;
@@ -370,7 +369,7 @@ public class WorkwayFederate {
 		} else {
 			advanceStep = timestep;
 		}
-
+		
 		if (advanceStep > fedamb.federateLookahead) {
 			try {
 				if (!advanceTime(advanceStep)) {
@@ -399,8 +398,6 @@ public class WorkwayFederate {
 		
 		for (Human human : simulation.getHumans()) {
 			
-		
-	
 		ObjectInstanceHandle oih = registerHumanObject();
 
 		human.setOih(oih);

@@ -12,6 +12,5 @@ public interface TimelineSynchronizer {
 	public void scheduleReturnEvent(SynchroniseToken token);
 	public void handleEntityLeft(AbstractSimEntityDelegator entity);
 	public boolean revokeToken(SynchroniseToken token);
-	public void breakExecution(AbstractSimEntityDelegator entity);
 	
 }

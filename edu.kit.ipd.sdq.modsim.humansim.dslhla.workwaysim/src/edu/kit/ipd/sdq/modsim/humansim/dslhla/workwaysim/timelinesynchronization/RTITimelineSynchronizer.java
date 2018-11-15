@@ -1,5 +1,6 @@
 package edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.timelinesynchronization;
 
+import java.math.BigDecimal;
 import java.util.Collections;
 import java.util.LinkedList;
 
@@ -12,36 +13,22 @@ import edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.entities.Human;
 public class RTITimelineSynchronizer implements TimelineSynchronizer {
 	private LinkedList<SynchroniseToken> advanceTimeTokens;
 	private LinkedList<SynchroniseToken> rtiActivityTokens;
-	private LinkedList<SynchroniseToken> rescheduleList;
 	private WorkwayModel model;
-	private boolean breakExecution = false;
-	private boolean rescheduleExecution = false;
 	private boolean replacedToken = false;
 
 	public RTITimelineSynchronizer(WorkwayModel model) {
 		this.advanceTimeTokens = new LinkedList<SynchroniseToken>();
 		this.rtiActivityTokens = new LinkedList<SynchroniseToken>();
-		this.rescheduleList = new LinkedList<SynchroniseToken>();
 		this.model = model;
 	}
 
 	public boolean putToken(SynchroniseToken token, boolean forcedOverride) {
 
 		Human h = (Human) token.getEntity();
-//		
-//		if(!forcedOverride && (h.getTaToken() != null) && token.getTokenSynchroType().equals(SynchronisedActionTypen.ADVANCE_TIME)) {
-//			
-//			printTokenOccupationNames();
-//		
-//			return false;
-//		}
-//		
-
 
 		if (token.getTokenSynchroType().equals(SynchronisedActionTypen.RTI_ACTION)) {
 			rtiActivityTokens.add(token);
 			((Human) token.getEntity()).addRegToken(token);
-			printTokenOccupationNames();
 			return true;
 		}
 
@@ -50,7 +37,6 @@ public class RTITimelineSynchronizer implements TimelineSynchronizer {
 				if (forcedOverride) {
 					for (int i = 0; i < advanceTimeTokens.size(); i++) {
 						if (token.getEntity().getName().equals(advanceTimeTokens.get(i).getEntity().getName())) {
-//							Utils.log(token.getEntity(), "In replacement");
 							advanceTimeTokens.set(i, token);
 							h.setTaToken(token);
 							break;
@@ -65,7 +51,6 @@ public class RTITimelineSynchronizer implements TimelineSynchronizer {
 					return false;
 				}
 			} else {
-//				Utils.log(h, "Putting Elsewise");
 				advanceTimeTokens.add(token);
 				h.setTaToken(token);
 			}
@@ -88,28 +73,19 @@ public class RTITimelineSynchronizer implements TimelineSynchronizer {
 
 	}
 
-	public boolean checkAndExecute() {
-		if (checkForExecution()) {
-			executeTimeorderedEvents();
-			return true;
-		} else {
-			return false;
-		}
-	}
 
 	@Override
 	public void executeTimeorderedEvents() {
 
-		breakExecution = false;
+
 		sortTokens();
-//		printTokenOccupationNames();
 
 		int counter = 0;
 		int j = 0;
-		double ts = 0.0;
 		SynchroniseToken actionTok;
 		SynchroniseToken timeAdvanceTok = null;
 
+		
 		timeAdvanceTok = advanceTimeTokens.pop();
 		((Human) timeAdvanceTok.getEntity()).setTaToken(null);
 		for (; j < rtiActivityTokens.size(); j++) {
@@ -129,15 +105,7 @@ public class RTITimelineSynchronizer implements TimelineSynchronizer {
 			}
 		}
 
-		// TODO time step independent in two executions ==> H0 Advance by Far (e.g.
-		// 27000s) H1 advance by 10
-		// next execution H1 advance by 28800 --> large difference between RTI and
-		// FedTime --> cannot schedule in past.
-		// Large difference between RTI and FedTime.
-
-//			Utils.log("TS: " + timeAdvanceTok.getTimeStep() );
-
-//			Utils.log(timeAdvanceTok.getEntity(), "Executing TimeAdvance Token");
+		
 		timeAdvanceTok.executeAction();
 
 		if (replacedToken) {
@@ -148,7 +116,7 @@ public class RTITimelineSynchronizer implements TimelineSynchronizer {
 
 				TimeAdvanceSynchronisationEvent e = new TimeAdvanceSynchronisationEvent(model, "TimeAdvanceEvent",
 						t.getReturnEvent(), t.getReturnEventTimestep());
-				Utils.log(timeAdvanceTok.getEntity(), "Scheduling TA synch");
+
 				e.schedule(t.getEntity(), 0);
 				replacedToken = false;
 				return;
@@ -156,23 +124,30 @@ public class RTITimelineSynchronizer implements TimelineSynchronizer {
 		}
 
 		replacedToken = false;
-
+		
 		scheduleReturnEvent(timeAdvanceTok);
-
+		
 //			Utils.log("!!!!!!!!End Execution!!!!!!!!!!!");
 	}
 
 	@Override
 	public void scheduleReturnEvent(SynchroniseToken token) {
-//		Utils.log(token.getEntity(), "Scheduling:" + token.getReturnEvent().getName() + " for " + token.getReturnEventTimepoint() + ":" + token.getReturnEventTimestep());
-//		Utils.log("CT " + token.getEntity().getModel().getSimulationControl().getCurrentSimulationTime());
-//		Utils.log("RetTS: " + token.getReturnEventTimestep());
-//		Utils.log("RetTP " + token.getReturnEventTimepoint() );
-		double step = token.getReturnEventTimepoint() - token.getReturnEventTimestep()
-				- token.getEntity().getModel().getSimulationControl().getCurrentSimulationTime();
-//		Utils.log(token.getEntity(),"ResStep " + step + "ResTime: " + (this.model.getSimulationControl().getCurrentSimulationTime() + token.getReturnEventTimestep() + step) + ":" + token.getReturnEventTimepoint());
-//		Utils.log(token.getEntity(), " Event scheduled: " + token.getReturnEvent().getName());
-		token.getReturnEvent().schedule(token.getEntity(), token.getReturnEventTimestep() + step);
+
+		
+		//Use BigDecimal to avoid rounding errors
+		
+		BigDecimal returnEventTimepoint = BigDecimal.valueOf(token.getReturnEventTimepoint());
+		BigDecimal returnEventTimeStep = BigDecimal.valueOf(token.getReturnEventTimestep());
+		BigDecimal currentSimulationTime = BigDecimal.valueOf(token.getEntity().getModel().getSimulationControl().getCurrentSimulationTime());
+		BigDecimal correctureStep = returnEventTimepoint.subtract(returnEventTimeStep).subtract(currentSimulationTime);
+		BigDecimal resultingTimeStep = returnEventTimeStep.add(correctureStep);
+		
+		// ignore differences smaller than -+10^(-9) and set to zero 
+		if(resultingTimeStep.doubleValue() < 0.0000000001 && resultingTimeStep.doubleValue() > (-0.000000001)) {
+			resultingTimeStep = BigDecimal.ZERO;
+		}
+		
+		token.getReturnEvent().schedule(token.getEntity(), resultingTimeStep.doubleValue());
 
 	}
 
@@ -185,6 +160,15 @@ public class RTITimelineSynchronizer implements TimelineSynchronizer {
 		return false;
 	}
 
+	public boolean checkAndExecute() {
+		if (checkForExecution()) {
+			executeTimeorderedEvents();
+			return true;
+		} else {
+			return false;
+		}
+	}
+	
 	@Override
 	public void handleEntityLeft(AbstractSimEntityDelegator entity) {
 		for (SynchroniseToken synchroniseToken : advanceTimeTokens) {
@@ -205,24 +189,17 @@ public class RTITimelineSynchronizer implements TimelineSynchronizer {
 		}
 	}
 
-	public void printTokenOccupationNames(int i, int j) {
+	public void printTokenOccupationNames() {
 
-		String sign = "";
 
 		System.out.println("------TokenList" + " FedTime:" + model.getComponent().getCurrentFedTime() + " SimTime:"
 				+ model.getSimulationControl().getCurrentSimulationTime() + "--------");
 		System.out.print("| TimeAdvances: ");
 
 		for (int m = 0; m < advanceTimeTokens.size(); m++) {
-
-			if ((m == i) && (i != -1)) {
-				sign = "(X)";
-			}
 			System.out.print(advanceTimeTokens.get(m).getEntity().getName() + ":"
 					+ advanceTimeTokens.get(m).getReturnEvent().getName() + " -> "
-					+ advanceTimeTokens.get(m).getReturnEventTimepoint() + sign + ", ");
-
-			sign = "";
+					+ advanceTimeTokens.get(m).getReturnEventTimepoint() + ", ");
 		}
 
 		System.out.println(" |");
@@ -230,36 +207,13 @@ public class RTITimelineSynchronizer implements TimelineSynchronizer {
 		System.out.print("| Actions: ");
 
 		for (int n = 0; n < rtiActivityTokens.size(); n++) {
-
-			if ((n == j) && (j != -1)) {
-				sign = "(X)";
-			}
 			System.out.print(rtiActivityTokens.get(n).getEntity().getName() + ":" + "Register Activity" + " -> "
-					+ rtiActivityTokens.get(n).getResultingTimepoint() + sign + ", ");
-
-			sign = "";
-		}
-
-		System.out.println(" |");
-
-		System.out.print("| ExchangeList: ");
-
-		for (int o = 0; o < rescheduleList.size(); o++) {
-
-			System.out.print(
-					rescheduleList.get(o).getEntity().getName() + ":" + rescheduleList.get(o).getReturnEvent().getName()
-							+ " -> " + rescheduleList.get(o).getResultingTimepoint() + sign + ", ");
-
-			sign = "";
+					+ rtiActivityTokens.get(n).getResultingTimepoint() + ", ");
 		}
 
 		System.out.println(" |");
 		System.out.println("-----------------------TokenList--------------------");
 
-	}
-
-	public void printTokenOccupationNames() {
-		printTokenOccupationNames(-1, -1);
 	}
 
 	@Override
@@ -283,50 +237,4 @@ public class RTITimelineSynchronizer implements TimelineSynchronizer {
 
 		return false;
 	}
-
-	@Override
-	public void breakExecution(AbstractSimEntityDelegator entity) {
-		this.breakExecution = true;
-		Utils.log(entity, "Break Received");
-	}
-
-	public void rescheduleToken(SynchroniseToken token, boolean retainOld, boolean forced) {
-
-		// TODO Mark exchanged element as "not to delete" --> first element executes,
-		// second elements receives but exchanges first --> dont delete first
-
-		SynchroniseToken oldToken;
-//		printTokenOccupationNames();
-		if (token.getTokenSynchroType().equals(SynchronisedActionTypen.ADVANCE_TIME)) {
-			for (int i = 0; i < advanceTimeTokens.size(); i++) {
-				oldToken = advanceTimeTokens.get(i);
-				if (oldToken.getEntity().getName().equals(token.getEntity().getName())) {
-					if ((token.getReturnEventTimepoint() < oldToken.getReturnEventTimepoint()) || forced) {
-						token.setBlockedFromRemove(true);
-						advanceTimeTokens.add(token);
-
-//						if(maxDistance < i) {
-//							maxDistance = i;
-//						}
-
-						Utils.log(token.getEntity(), "Replaced on " + i);
-						((Human) token.getEntity()).setTaToken(token);
-						if (retainOld) {
-							rescheduleList.add(oldToken);
-						}
-
-					} else {
-						rescheduleList.add(token);
-
-					}
-
-					breakExecution = true;
-					break;
-				}
-			}
-		}
-
-//		printTokenOccupationNames();
-	}
-
 }
