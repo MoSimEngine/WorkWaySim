@@ -2,6 +2,7 @@ package edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.component;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.LinkedList;
 import java.util.Random;
 
@@ -23,7 +24,7 @@ import edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.util.CSVHandler;
 import edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.util.Utils;
 import hla.rti1516e.exceptions.RTIexception;
 
-public class WorkwayModel extends AbstractSimulationModel implements Runnable {
+public class WorkwayModel extends AbstractSimulationModel{
 
 	private LinkedList<BusStop> stops;
 
@@ -174,7 +175,6 @@ public class WorkwayModel extends AbstractSimulationModel implements Runnable {
 
 		// create and return simulation model
 		final WorkwayModel model = new WorkwayModel(config, factory);
-
 		return model;
 	}
 
@@ -209,22 +209,18 @@ public class WorkwayModel extends AbstractSimulationModel implements Runnable {
 	}
 
 	public void addBusStop(BusStop stop) {
-
 		for (BusStop bs : stops) {
 			if (stop.getOih().equals(bs.getOih())) {
 				System.out.println("Stop already there");
 				return;
 			}
-
 		}
 		stops.add(stop);
-
 	}
 
 	public void scheduleHumanEntersEvent(String humanName, String busStopName, double passedTime) {
-
+		
 		for (Human human : humans) {
-
 			if (human.getName().equals(humanName)) {
 				for (BusStop busStop : stops) {
 					if (busStop.getName().equals(busStopName)) {
@@ -244,6 +240,7 @@ public class WorkwayModel extends AbstractSimulationModel implements Runnable {
 	}
 
 	public void scheduleHumanExitsEvent(String humanName, String busStopName, double passedTime) {
+		
 		for (Human human : humans) {
 			if (human.getName().equals(humanName)) {
 				for (BusStop busStop : stops) {
@@ -265,31 +262,9 @@ public class WorkwayModel extends AbstractSimulationModel implements Runnable {
 	}
 
 	public void initialiseHumans() {
-		BusStop[] tmpStops = new BusStop[3];
 
-		for (BusStop stop : stops) {
-
-			switch (stop.getName()) {
-			case "Stop1":
-				tmpStops[0] = stop;
-				break;
-			case "Stop2":
-				tmpStops[1] = stop;
-				break;
-			case "Stop3":
-				tmpStops[2] = stop;
-				break;
-			default:
-				break;
-			}
-
-		}
-
-		stops.clear();
-		stops.add(tmpStops[0]);
-		stops.add(tmpStops[1]);
-		stops.add(tmpStops[2]);
-
+		Collections.sort(stops);
+		
 		int homeBS = 0;
 		int workBS = 0;
 
@@ -301,17 +276,15 @@ public class WorkwayModel extends AbstractSimulationModel implements Runnable {
 					workBS = new Random().nextInt(HumanSimValues.NUM_BUSSTOPS);
 				}
 			} else {
-				homeBS = i % 2;
-				workBS = (i % 2) + 1;
+				int route = i % 2;
+				
+				
+				homeBS = route * 3;
+				workBS = (route * 3) + 1;
 			}
 
 			humans.add(new Human(stops.get(homeBS), stops.get(workBS), this, "Hugo" + i));
 		}
-	}
-
-	@Override
-	public void run() {
-		getSimulationControl().start();
 	}
 
 	public void registerHumanAtBusStop(Human human, BusStop busStop, BusStop destination, double timestep) {

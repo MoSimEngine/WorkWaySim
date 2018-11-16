@@ -8,10 +8,11 @@ import java.util.concurrent.ConcurrentLinkedQueue;
 
 import de.uka.ipd.sdq.simulation.abstractsimengine.AbstractSimEntityDelegator;
 import de.uka.ipd.sdq.simulation.abstractsimengine.ISimulationModel;
+import edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.timelinesynchronization.SynchroniseToken;
 import hla.rti1516e.ObjectClassHandle;
 import hla.rti1516e.ObjectInstanceHandle;
 
-public class BusStop extends Position {
+public class BusStop extends Position implements Comparable<BusStop>{
 
 	private ObjectInstanceHandle oih;
 
@@ -44,6 +45,11 @@ public class BusStop extends Position {
 
 	public void setOih(ObjectInstanceHandle oih) {
 		this.oih = oih;
+	}
+
+	@Override
+	public int compareTo(BusStop arg0) {
+		return this.getName().compareTo(arg0.getName());
 	}
 
 }
