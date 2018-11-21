@@ -15,7 +15,7 @@ public class HumanStopsLivingHisLifeEvent extends AbstractSimEventDelegator<Huma
 
 	@Override
 	public void eventRoutine(Human human) {
-		Utils.log(human, "Oh boy, time flies by... " + human.getName() + " stops living his life.");
+//		Utils.log(human, "Oh boy, time flies by... " + human.getName() + " stops living his life.");
 		TravelToNextEvent e = new TravelToNextEvent(getModel(), "Travel from Home");
 		e.schedule(human, 0);
 	}

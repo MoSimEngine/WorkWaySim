@@ -17,7 +17,7 @@ public class HumanLivingHisLifeEvent extends AbstractSimEventDelegator<Human>{
 	@Override
 	public void eventRoutine(Human human) {
 		WorkwayModel m = (WorkwayModel)this.getModel();
-		Utils.log(human, human.getName() + " lives his life. Black Jack and Hookers baby.");
+//		Utils.log(human, human.getName() + " lives his life. Black Jack and Hookers baby.");
 		human.calculateFreeTime();
 		double livingHisLife = human.FREETIME.toSeconds().value();
 		HumanStopsLivingHisLifeEvent e = new HumanStopsLivingHisLifeEvent(human.getModel(), "Human stops living his life");

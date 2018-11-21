@@ -19,7 +19,7 @@ public class HumanExitsBusEvent extends AbstractSimEventDelegator<Human>{
 	@Override
 	public void eventRoutine(Human human) {
 		WorkwayModel m = (WorkwayModel)this.getModel();
-		Utils.log(human, human.getName() + " left bus at " + human.getDestination().getName() );
+//		Utils.log(human, human.getName() + " left bus at " + human.getDestination().getName() );
 		human.calculateDrivingTime();
 		human.setCollected(false);
 		if(human.getTaToken() != null) {

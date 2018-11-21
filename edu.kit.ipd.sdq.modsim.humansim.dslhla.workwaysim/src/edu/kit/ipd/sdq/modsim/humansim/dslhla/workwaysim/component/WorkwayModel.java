@@ -14,6 +14,9 @@ import de.uka.ipd.sdq.simulation.abstractsimengine.ISimulationConfig;
 import de.uka.ipd.sdq.simulation.preferences.SimulationPreferencesHelper;
 import edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.entities.BusStop;
 import edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.entities.Human;
+import edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.entities.Position;
+import edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.entities.Human.HumanBehaviour;
+import edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.entities.Position.PositionType;
 import edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.events.HumanEntersBusEvent;
 import edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.events.HumanExitsBusEvent;
 import edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.events.TravelToNextEvent;
@@ -71,7 +74,7 @@ public class WorkwayModel extends AbstractSimulationModel{
 			file_header += h.getName() + CSVHandler.CSV_DELIMITER;
 			behaviourMarker += h.getBehaviour().toString() + CSVHandler.CSV_DELIMITER;
 			System.out.println("Human " + h.getName() + " is in State " + h.getState() + " and is "
-					+ h.getBehaviour().toString());
+					+ h.getBehaviour().toString()+ "starting from: " + h.getWorkway().get(2).getName());
 			if (getMaxNumValues < h.getAwayFromHomeTimes().size()) {
 				getMaxNumValues = h.getAwayFromHomeTimes().size();
 			}
@@ -229,6 +232,8 @@ public class WorkwayModel extends AbstractSimulationModel{
 						BigDecimal pt = BigDecimal.valueOf(passedTime);
 						BigDecimal timeDiff = pt.subtract(st);
 						
+//						Utils.log(human, "Received EntersEvent for " + passedTime);
+						
 						HumanEntersBusEvent e = new HumanEntersBusEvent(this, "HumanEntersBus");
 						TimeAdvanceToken ta = new TimeAdvanceToken(e, human, timeDiff.doubleValue());
 						((WorkwayModel)human.getModel()).getTimelineSynchronizer().putToken(ta, true);
@@ -250,6 +255,8 @@ public class WorkwayModel extends AbstractSimulationModel{
 						BigDecimal pt = BigDecimal.valueOf(passedTime);
 						BigDecimal timeDiff = pt.subtract(st);
 						
+//						Utils.log(human, "Received ExitsEvent for " + passedTime);
+						
 						HumanExitsBusEvent e = new HumanExitsBusEvent(this, "HumanExitsBus");
 						TimeAdvanceToken ta = new TimeAdvanceToken(e, human, timeDiff.doubleValue());
 						((WorkwayModel)human.getModel()).getTimelineSynchronizer().putToken(ta, true);
@@ -262,28 +269,42 @@ public class WorkwayModel extends AbstractSimulationModel{
 	}
 
 	public void initialiseHumans() {
-
+		
+	
+		
 		Collections.sort(stops);
+		
+		ArrayList<ArrayList<Position>> routes = getRoutes();
 		
 		int homeBS = 0;
 		int workBS = 0;
 
 		for (int i = 0; i < HumanSimValues.NUM_HUMANS; i++) {
-
+			ArrayList<Position> usedRoute = new ArrayList<Position>();
 			if (HumanSimValues.STOCHASTIC) {
-				while (homeBS == workBS) {
-					homeBS = new Random().nextInt(HumanSimValues.NUM_BUSSTOPS);
-					workBS = new Random().nextInt(HumanSimValues.NUM_BUSSTOPS);
+				
+				
+				homeBS = new Random().nextInt(HumanSimValues.NUM_BUSSTOPS);
+				if(homeBS % 2 == 0) {
+					workBS = homeBS + 1;
+				} else {
+					workBS = homeBS - 1;
 				}
+				
 			} else {
-				int route = i % 2;
+				
+				usedRoute = routes.get(i%3);
 				
 				
-				homeBS = route * 3;
-				workBS = (route * 3) + 1;
+				
+//				int route = i % 2;
+//				
+//				
+//				homeBS = route * 3;
+//				workBS = (route * 3) + 1;
 			}
 
-			humans.add(new Human(stops.get(homeBS), stops.get(workBS), this, "Hugo" + i));
+			humans.add(new Human(usedRoute, this, "Hugo" + i));
 		}
 	}
 
@@ -297,6 +318,39 @@ public class WorkwayModel extends AbstractSimulationModel{
 
 	public RTITimelineSynchronizer getTimelineSynchronizer() {
 		return timelineSynchronizer;
+	}
+	
+	
+	public ArrayList<ArrayList<Position>> getRoutes(){
+		ArrayList<ArrayList<Position>> routes = new ArrayList<ArrayList<Position>>();
+		Position home = new Position(this, "Home", PositionType.HOME);
+		Position work = new Position(this, "Work", PositionType.WORK);
+		
+		ArrayList<Position> routeOne = new ArrayList<Position>();
+		routeOne.add(home);
+		routeOne.add(stops.get(0));
+		routeOne.add(stops.get(1));
+		routeOne.add(work);
+		
+		ArrayList<Position> routeTwo = new ArrayList<Position>();
+		routeTwo.add(home);
+		routeTwo.add(stops.get(2));
+		routeTwo.add(stops.get(3));
+		routeTwo.add(work);
+
+		ArrayList<Position> routeThree = new ArrayList<Position>();
+		routeThree.add(home);
+		routeThree.add(stops.get(4));
+		routeThree.add(stops.get(5));
+		routeThree.add(work);
+	
+
+		routes.add(routeOne);
+		routes.add(routeTwo);
+		routes.add(routeThree);
+		
+		return routes;
+		
 	}
 
 }

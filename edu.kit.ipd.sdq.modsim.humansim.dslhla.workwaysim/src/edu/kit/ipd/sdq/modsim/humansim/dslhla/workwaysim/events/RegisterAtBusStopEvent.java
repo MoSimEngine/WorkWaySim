@@ -26,7 +26,7 @@ public class RegisterAtBusStopEvent extends AbstractSimEventDelegator<Human>{
 		RegisterToken regTok = new RegisterToken(null, human, 1.0, 0.0, (BusStop)human.getPosition() , (BusStop)human.getDestination());
 		m.getTimelineSynchronizer().putToken(regTok, false);
 		
-		Utils.log(human, "Registers at bus Stop:" + human.getPosition().getName() + " with Destination" + human.getDestination().getName());
+//		Utils.log(human, "Registers at bus Stop:" + human.getPosition().getName() + " with Destination" + human.getDestination().getName());
 		PickUpTimeoutEvent e = new PickUpTimeoutEvent(getModel(), "PickUpTimeoutAtBSH");
 		TimeAdvanceToken token = new TimeAdvanceToken(e, human, Duration.minutes(20).toSeconds().value());
 		m.getTimelineSynchronizer().putToken(token, false);

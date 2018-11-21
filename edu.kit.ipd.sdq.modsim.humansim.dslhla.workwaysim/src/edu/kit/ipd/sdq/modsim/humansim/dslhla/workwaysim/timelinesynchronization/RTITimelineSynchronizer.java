@@ -43,11 +43,11 @@ public class RTITimelineSynchronizer implements TimelineSynchronizer {
 						}
 					}
 				} else {
-					Utils.log(token.getEntity(), "Denied: " + token.getReturnEvent().getName() + ":"
-							+ token.getEntity().getName() + "->" + token.getReturnEventTimepoint()
-							+ " due to already existing TA Token with returnEvent "
-							+ h.getTaToken().getReturnEvent().getName() + "-> "
-							+ h.getTaToken().getReturnEventTimepoint() + ":" + h.getTaToken().getEntity().getName());
+//					Utils.log(token.getEntity(), "Denied: " + token.getReturnEvent().getName() + ":"
+//							+ token.getEntity().getName() + "->" + token.getReturnEventTimepoint()
+//							+ " due to already existing TA Token with returnEvent "
+//							+ h.getTaToken().getReturnEvent().getName() + "-> "
+//							+ h.getTaToken().getReturnEventTimepoint() + ":" + h.getTaToken().getEntity().getName());
 					return false;
 				}
 			} else {

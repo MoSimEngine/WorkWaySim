@@ -13,7 +13,7 @@ public class Position extends AbstractSimEntityDelegator{
 	
 	private PositionType positionType;
 	
-	protected Position(ISimulationModel model, String name, PositionType type) {
+	public Position(ISimulationModel model, String name, PositionType type) {
 		super(model, name);
 		this.positionType = type;
 	}

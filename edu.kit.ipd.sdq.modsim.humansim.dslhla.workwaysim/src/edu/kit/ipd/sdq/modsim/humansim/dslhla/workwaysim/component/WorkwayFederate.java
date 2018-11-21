@@ -139,8 +139,6 @@ public class WorkwayFederate {
 
 		rtiamb.synchronizationPointAchieved(HumanSimValues.READY_TO_RUN);
 
-		regulateTime = true;
-		constrainTime = true;
 		runTimePolicyEnabling();
 
 		rtiamb.enableCallbacks();
@@ -221,6 +219,8 @@ public class WorkwayFederate {
 			while (fedamb.isRegulating == false) {
 				rtiamb.evokeMultipleCallbacks(0.1, 0.2);
 			}
+			
+			Utils.log(fedInfoStr + "Timeregulating: " + fedamb.isRegulating);
 		}
 
 		if (constrainTime) {
@@ -229,6 +229,8 @@ public class WorkwayFederate {
 			while (fedamb.isConstrained == false) {
 				rtiamb.evokeMultipleCallbacks(0.1, 0.2);
 			}
+			
+			Utils.log(fedInfoStr + "Timeconstrained: " + fedamb.isConstrained);
 		}
 	}
 
@@ -327,12 +329,9 @@ public class WorkwayFederate {
 	 */
 	public synchronized boolean advanceTime(double timestep) throws RTIexception {
 
-		double advancingTo = 0;
-		boolean belowTime = true;
+		double advancingTo = fedamb.federateTime + timestep;
 		
-		if (fedamb.federateTime + timestep <= HumanSimValues.MAX_SIM_TIME.toSeconds().value()) {
-			advancingTo = fedamb.federateTime + timestep;
-		} else {
+		if (!(advancingTo <= HumanSimValues.MAX_SIM_TIME.toSeconds().value())) {
 			return false;
 		}
 
@@ -350,8 +349,7 @@ public class WorkwayFederate {
 		while (fedamb.isAdvancing) {
 			rtiamb.evokeMultipleCallbacks(0.1, 0.2);
 		}
-
-		return belowTime;
+		return true;
 	}
 
 	public synchronized void synchronisedAdvancedTime(double timestep) {

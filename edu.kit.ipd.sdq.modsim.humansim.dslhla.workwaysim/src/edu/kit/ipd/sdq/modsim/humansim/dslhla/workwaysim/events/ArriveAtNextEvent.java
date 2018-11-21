@@ -38,7 +38,7 @@ public class ArriveAtNextEvent extends AbstractSimEventDelegator<Human>{
 			}
 			
 		case HOME:
-			Utils.log(human, human.getName() + " arrives at home. Afterwork Party!");
+//			Utils.log(human, human.getName() + " arrives at home. Afterwork Party!");
 			human.arriveAtHome();
 			HumanLivingHisLifeEvent livingEvent = new HumanLivingHisLifeEvent(human.getModel(), "Human is living his life");
 			livingEvent.schedule(human, 0);
@@ -46,7 +46,7 @@ public class ArriveAtNextEvent extends AbstractSimEventDelegator<Human>{
 			
 		case WORK:
 			human.arriveAtWork();
-			Utils.log(human, human.getName() + " arrives at work.");
+//			Utils.log(human, human.getName() + " arrives at work.");
 			HumanWorksEvent workingEvent = new HumanWorksEvent(this.getModel(), "Human Works");
 			workingEvent.schedule(human, 0);
 			break;

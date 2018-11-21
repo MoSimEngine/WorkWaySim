@@ -158,12 +158,45 @@ public class Human extends AbstractSimEntityDelegator {
 		busWaitingTimes = new ArrayList<Duration>();
 		drivingTimes = new ArrayList<Duration>();
 		freeTimes = new ArrayList<Duration>();	
-		
+		regTokens = new LinkedList<SynchroniseToken>();
 		this.oih = oih;
 		this.och = och;
 		
 	}
 
+	public Human(ArrayList<Position> route, ISimulationModel model, String name){
+		super(model, name);
+	
+		// start at home
+		state = HumanState.AT_HOME;
+		if(HumanSimValues.STOCHASTIC){
+		behaviour = HumanBehaviour.values()[new Random().nextInt(2)];
+		} else {
+			behaviour = HumanBehaviour.DRIVING_BY_BUS;
+		}
+		
+		this.workway = route;
+		
+		position = workway.get(positionIndex);
+		destination = workway.get(positionIndex+1);
+		
+		if(HumanSimValues.STOCHASTIC){
+			HOME_TO_STATION = Duration.minutes(new Random().nextInt(60) + 1);
+			WORK_TO_STATION = Duration.minutes(new Random().nextInt(60) + 1);
+			WALK_DIRECTLY = Duration.minutes(Duration.minutes(new Random().nextInt(200) + 1).value());
+		} else {
+			HOME_TO_STATION = Duration.minutes(30);
+			WORK_TO_STATION = Duration.minutes(30);
+			WALK_DIRECTLY = Duration.minutes(90);
+		}
+		
+		awayFromHomeTimes = new ArrayList<Duration>();
+		busWaitingTimes = new ArrayList<Duration>();
+		drivingTimes = new ArrayList<Duration>();
+		freeTimes = new ArrayList<Duration>();	
+		regTokens = new LinkedList<SynchroniseToken>();
+		
+	}
 
 	//BusDriving state changes
 	
@@ -300,7 +333,7 @@ public class Human extends AbstractSimEntityDelegator {
 		double total= 24.00 - onTheWay.toHours().value();
 		FREETIME = Duration.hours(total);
 		freeTimes.add(FREETIME);
-		Utils.log(this, "Enjoys: " + FREETIME.toHours().value() + " of Freetime");
+//		Utils.log(this, "Enjoys: " + FREETIME.toHours().value() + " of Freetime");
 		if(FREETIME.toSeconds().value() < 0.0){
 			Utils.log(this, this.getName() + " has no freetime :(");
 			FREETIME = Duration.hours(0);
@@ -327,6 +360,9 @@ public class Human extends AbstractSimEntityDelegator {
 		this.och = och;
 	}
 
+	public ArrayList<Position> getWorkway(){
+		return workway;
+	}
 	
 	public Position nextPosition() {
 		
