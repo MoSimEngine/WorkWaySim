@@ -4,7 +4,7 @@ import de.uka.ipd.sdq.simulation.abstractsimengine.AbstractSimEntityDelegator;
 import de.uka.ipd.sdq.simulation.abstractsimengine.AbstractSimEventDelegator;
 import de.uka.ipd.sdq.simulation.abstractsimengine.IEntity;
 import de.uka.ipd.sdq.simulation.abstractsimengine.ISimulationModel;
-import edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.entities.Human;
+import edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.entities.Token;
 import edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.util.Utils;
 import edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.component.WorkwayModel;
 

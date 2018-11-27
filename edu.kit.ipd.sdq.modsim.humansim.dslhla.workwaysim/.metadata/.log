@@ -4768,3 +4768,1088 @@ Command-line arguments:  -application edu.kit.ipd.sdq.modsim.humansim.dslhla.wor
 !ENTRY org.apache.log4j 4 0 2018-10-24 16:49:14.769
 !MESSAGE portico.lrc  - FAILURE [WorkwayFed1] requested lookahead was too low: 1.0E-9
 
+!SESSION 2018-11-21 11:12:48.891 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_191
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=de_DE
+Framework arguments:  -application edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim
+Command-line arguments:  -application edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim -data C:\Users\Frederik Reiche\git\WorkWaySimHLA\edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim -dev file:C:/Users/Frederik Reiche/eclipse-workspace/.metadata/.plugins/org.eclipse.pde.core/Workway Behaviour Simulation Example/dev.properties -os win32 -ws win32 -arch x86_64 -consoleLog
+
+!ENTRY org.eclipse.gmf.runtime.common.ui.printing.win32 2 0 2018-11-21 11:14:16.237
+!MESSAGE Could not resolve module: org.eclipse.gmf.runtime.common.ui.printing.win32 [676]
+  Unresolved requirement: Fragment-Host: org.eclipse.gmf.runtime.common.ui.printing
+
+
+!ENTRY org.eclipse.osgi 4 0 2018-11-21 11:14:16.239
+!MESSAGE Application error
+!STACK 1
+java.lang.IllegalStateException: start() called with an empty event list
+	at umontreal.iro.lecuyer.simevents.Simulator.start(Simulator.java:192)
+	at org.palladiosimulator.simulation.abstractsimengine.ssj.SSJExperiment.startSimulator(SSJExperiment.java:44)
+	at de.uka.ipd.sdq.simulation.abstractsimengine.AbstractExperiment.start(AbstractExperiment.java:59)
+	at edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.component.WorkwaySimulationExample.start(WorkwaySimulationExample.java:42)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:199)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:137)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:107)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:391)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:246)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:659)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:595)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1501)
+	at org.eclipse.equinox.launcher.Main.main(Main.java:1474)
+!SESSION 2018-11-21 11:17:05.207 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_191
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=de_DE
+Framework arguments:  -application edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim
+Command-line arguments:  -application edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim -data C:\Users\Frederik Reiche\git\WorkWaySimHLA\edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim -dev file:C:/Users/Frederik Reiche/eclipse-workspace/.metadata/.plugins/org.eclipse.pde.core/Workway Behaviour Simulation Example/dev.properties -os win32 -ws win32 -arch x86_64 -consoleLog
+
+!ENTRY org.eclipse.gmf.runtime.common.ui.printing.win32 2 0 2018-11-21 11:17:16.142
+!MESSAGE Could not resolve module: org.eclipse.gmf.runtime.common.ui.printing.win32 [676]
+  Unresolved requirement: Fragment-Host: org.eclipse.gmf.runtime.common.ui.printing
+
+
+!ENTRY org.eclipse.osgi 4 0 2018-11-21 11:17:16.157
+!MESSAGE Application error
+!STACK 1
+java.lang.IllegalStateException: start() called with an empty event list
+	at umontreal.iro.lecuyer.simevents.Simulator.start(Simulator.java:192)
+	at org.palladiosimulator.simulation.abstractsimengine.ssj.SSJExperiment.startSimulator(SSJExperiment.java:44)
+	at de.uka.ipd.sdq.simulation.abstractsimengine.AbstractExperiment.start(AbstractExperiment.java:59)
+	at edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.component.WorkwaySimulationExample.start(WorkwaySimulationExample.java:42)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:199)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:137)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:107)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:391)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:246)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:659)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:595)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1501)
+	at org.eclipse.equinox.launcher.Main.main(Main.java:1474)
+!SESSION 2018-11-21 11:24:35.657 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_191
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=de_DE
+Framework arguments:  -application edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim
+Command-line arguments:  -application edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim -data C:\Users\Frederik Reiche\git\WorkWaySimHLA\edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim -dev file:C:/Users/Frederik Reiche/eclipse-workspace/.metadata/.plugins/org.eclipse.pde.core/Workway Behaviour Simulation Example/dev.properties -os win32 -ws win32 -arch x86_64 -consoleLog
+
+!ENTRY org.eclipse.gmf.runtime.common.ui.printing.win32 2 0 2018-11-21 11:24:51.039
+!MESSAGE Could not resolve module: org.eclipse.gmf.runtime.common.ui.printing.win32 [676]
+  Unresolved requirement: Fragment-Host: org.eclipse.gmf.runtime.common.ui.printing
+
+
+!ENTRY org.eclipse.osgi 4 0 2018-11-21 11:24:51.039
+!MESSAGE Application error
+!STACK 1
+java.lang.IllegalStateException: start() called with an empty event list
+	at umontreal.iro.lecuyer.simevents.Simulator.start(Simulator.java:192)
+	at org.palladiosimulator.simulation.abstractsimengine.ssj.SSJExperiment.startSimulator(SSJExperiment.java:44)
+	at de.uka.ipd.sdq.simulation.abstractsimengine.AbstractExperiment.start(AbstractExperiment.java:59)
+	at edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.component.WorkwaySimulationExample.start(WorkwaySimulationExample.java:42)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:199)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:137)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:107)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:391)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:246)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:659)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:595)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1501)
+	at org.eclipse.equinox.launcher.Main.main(Main.java:1474)
+!SESSION 2018-11-21 11:26:17.367 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_191
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=de_DE
+Framework arguments:  -application edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim
+Command-line arguments:  -application edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim -data C:\Users\Frederik Reiche\git\WorkWaySimHLA\edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim -dev file:C:/Users/Frederik Reiche/eclipse-workspace/.metadata/.plugins/org.eclipse.pde.core/Workway Behaviour Simulation Example/dev.properties -os win32 -ws win32 -arch x86_64 -consoleLog
+
+!ENTRY org.eclipse.gmf.runtime.common.ui.printing.win32 2 0 2018-11-21 11:27:05.716
+!MESSAGE Could not resolve module: org.eclipse.gmf.runtime.common.ui.printing.win32 [676]
+  Unresolved requirement: Fragment-Host: org.eclipse.gmf.runtime.common.ui.printing
+
+
+!ENTRY org.eclipse.osgi 4 0 2018-11-21 11:27:05.716
+!MESSAGE Application error
+!STACK 1
+java.lang.IllegalStateException: start() called with an empty event list
+	at umontreal.iro.lecuyer.simevents.Simulator.start(Simulator.java:192)
+	at org.palladiosimulator.simulation.abstractsimengine.ssj.SSJExperiment.startSimulator(SSJExperiment.java:44)
+	at de.uka.ipd.sdq.simulation.abstractsimengine.AbstractExperiment.start(AbstractExperiment.java:59)
+	at edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.component.WorkwaySimulationExample.start(WorkwaySimulationExample.java:42)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:199)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:137)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:107)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:391)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:246)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:659)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:595)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1501)
+	at org.eclipse.equinox.launcher.Main.main(Main.java:1474)
+!SESSION 2018-11-21 11:29:59.176 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_191
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=de_DE
+Framework arguments:  -application edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim
+Command-line arguments:  -application edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim -data C:\Users\Frederik Reiche\git\WorkWaySimHLA\edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim -dev file:C:/Users/Frederik Reiche/eclipse-workspace/.metadata/.plugins/org.eclipse.pde.core/Workway Behaviour Simulation Example/dev.properties -os win32 -ws win32 -arch x86_64 -consoleLog
+
+!ENTRY org.eclipse.gmf.runtime.common.ui.printing.win32 2 0 2018-11-21 11:30:09.683
+!MESSAGE Could not resolve module: org.eclipse.gmf.runtime.common.ui.printing.win32 [676]
+  Unresolved requirement: Fragment-Host: org.eclipse.gmf.runtime.common.ui.printing
+
+
+!ENTRY org.eclipse.osgi 4 0 2018-11-21 11:30:09.683
+!MESSAGE Application error
+!STACK 1
+java.lang.IllegalStateException: start() called with an empty event list
+	at umontreal.iro.lecuyer.simevents.Simulator.start(Simulator.java:192)
+	at org.palladiosimulator.simulation.abstractsimengine.ssj.SSJExperiment.startSimulator(SSJExperiment.java:44)
+	at de.uka.ipd.sdq.simulation.abstractsimengine.AbstractExperiment.start(AbstractExperiment.java:59)
+	at edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.component.WorkwaySimulationExample.start(WorkwaySimulationExample.java:42)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:199)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:137)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:107)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:391)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:246)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:659)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:595)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1501)
+	at org.eclipse.equinox.launcher.Main.main(Main.java:1474)
+!SESSION 2018-11-21 11:32:55.260 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_191
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=de_DE
+Framework arguments:  -application edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim
+Command-line arguments:  -application edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim -data C:\Users\Frederik Reiche\git\WorkWaySimHLA\edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim -dev file:C:/Users/Frederik Reiche/eclipse-workspace/.metadata/.plugins/org.eclipse.pde.core/Workway Behaviour Simulation Example/dev.properties -os win32 -ws win32 -arch x86_64 -consoleLog
+
+!ENTRY org.eclipse.gmf.runtime.common.ui.printing.win32 2 0 2018-11-21 11:33:04.619
+!MESSAGE Could not resolve module: org.eclipse.gmf.runtime.common.ui.printing.win32 [676]
+  Unresolved requirement: Fragment-Host: org.eclipse.gmf.runtime.common.ui.printing
+
+
+!ENTRY org.eclipse.osgi 4 0 2018-11-21 11:33:04.619
+!MESSAGE Application error
+!STACK 1
+java.lang.IllegalStateException: start() called with an empty event list
+	at umontreal.iro.lecuyer.simevents.Simulator.start(Simulator.java:192)
+	at org.palladiosimulator.simulation.abstractsimengine.ssj.SSJExperiment.startSimulator(SSJExperiment.java:44)
+	at de.uka.ipd.sdq.simulation.abstractsimengine.AbstractExperiment.start(AbstractExperiment.java:59)
+	at edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.component.WorkwaySimulationExample.start(WorkwaySimulationExample.java:42)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:199)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:137)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:107)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:391)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:246)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:659)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:595)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1501)
+	at org.eclipse.equinox.launcher.Main.main(Main.java:1474)
+!SESSION 2018-11-21 11:34:28.645 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_191
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=de_DE
+Framework arguments:  -application edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim
+Command-line arguments:  -application edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim -data C:\Users\Frederik Reiche\git\WorkWaySimHLA\edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim -dev file:C:/Users/Frederik Reiche/eclipse-workspace/.metadata/.plugins/org.eclipse.pde.core/Workway Behaviour Simulation Example/dev.properties -os win32 -ws win32 -arch x86_64 -consoleLog
+
+!ENTRY org.eclipse.gmf.runtime.common.ui.printing.win32 2 0 2018-11-21 11:34:37.899
+!MESSAGE Could not resolve module: org.eclipse.gmf.runtime.common.ui.printing.win32 [676]
+  Unresolved requirement: Fragment-Host: org.eclipse.gmf.runtime.common.ui.printing
+
+
+!ENTRY org.eclipse.osgi 4 0 2018-11-21 11:34:37.899
+!MESSAGE Application error
+!STACK 1
+java.lang.IllegalStateException: start() called with an empty event list
+	at umontreal.iro.lecuyer.simevents.Simulator.start(Simulator.java:192)
+	at org.palladiosimulator.simulation.abstractsimengine.ssj.SSJExperiment.startSimulator(SSJExperiment.java:44)
+	at de.uka.ipd.sdq.simulation.abstractsimengine.AbstractExperiment.start(AbstractExperiment.java:59)
+	at edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.component.WorkwaySimulationExample.start(WorkwaySimulationExample.java:42)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:199)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:137)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:107)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:391)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:246)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:659)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:595)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1501)
+	at org.eclipse.equinox.launcher.Main.main(Main.java:1474)
+!SESSION 2018-11-21 11:37:12.360 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_191
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=de_DE
+Framework arguments:  -application edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim
+Command-line arguments:  -application edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim -data C:\Users\Frederik Reiche\git\WorkWaySimHLA\edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim -dev file:C:/Users/Frederik Reiche/eclipse-workspace/.metadata/.plugins/org.eclipse.pde.core/Workway Behaviour Simulation Example/dev.properties -os win32 -ws win32 -arch x86_64 -consoleLog
+
+!ENTRY org.eclipse.gmf.runtime.common.ui.printing.win32 2 0 2018-11-21 11:37:21.241
+!MESSAGE Could not resolve module: org.eclipse.gmf.runtime.common.ui.printing.win32 [676]
+  Unresolved requirement: Fragment-Host: org.eclipse.gmf.runtime.common.ui.printing
+
+
+!ENTRY org.eclipse.osgi 4 0 2018-11-21 11:37:21.241
+!MESSAGE Application error
+!STACK 1
+java.lang.IllegalStateException: start() called with an empty event list
+	at umontreal.iro.lecuyer.simevents.Simulator.start(Simulator.java:192)
+	at org.palladiosimulator.simulation.abstractsimengine.ssj.SSJExperiment.startSimulator(SSJExperiment.java:44)
+	at de.uka.ipd.sdq.simulation.abstractsimengine.AbstractExperiment.start(AbstractExperiment.java:59)
+	at edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.component.WorkwaySimulationExample.start(WorkwaySimulationExample.java:42)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:199)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:137)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:107)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:391)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:246)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:659)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:595)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1501)
+	at org.eclipse.equinox.launcher.Main.main(Main.java:1474)
+!SESSION 2018-11-21 11:38:30.581 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_191
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=de_DE
+Framework arguments:  -application edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim
+Command-line arguments:  -application edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim -data C:\Users\Frederik Reiche\git\WorkWaySimHLA\edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim -dev file:C:/Users/Frederik Reiche/eclipse-workspace/.metadata/.plugins/org.eclipse.pde.core/Workway Behaviour Simulation Example/dev.properties -os win32 -ws win32 -arch x86_64 -consoleLog
+
+!ENTRY org.eclipse.gmf.runtime.common.ui.printing.win32 2 0 2018-11-21 11:38:40.324
+!MESSAGE Could not resolve module: org.eclipse.gmf.runtime.common.ui.printing.win32 [676]
+  Unresolved requirement: Fragment-Host: org.eclipse.gmf.runtime.common.ui.printing
+
+
+!ENTRY org.eclipse.osgi 4 0 2018-11-21 11:38:40.324
+!MESSAGE Application error
+!STACK 1
+java.lang.IllegalStateException: start() called with an empty event list
+	at umontreal.iro.lecuyer.simevents.Simulator.start(Simulator.java:192)
+	at org.palladiosimulator.simulation.abstractsimengine.ssj.SSJExperiment.startSimulator(SSJExperiment.java:44)
+	at de.uka.ipd.sdq.simulation.abstractsimengine.AbstractExperiment.start(AbstractExperiment.java:59)
+	at edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.component.WorkwaySimulationExample.start(WorkwaySimulationExample.java:42)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:199)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:137)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:107)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:391)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:246)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:659)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:595)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1501)
+	at org.eclipse.equinox.launcher.Main.main(Main.java:1474)
+!SESSION 2018-11-21 11:39:41.989 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_191
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=de_DE
+Framework arguments:  -application edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim
+Command-line arguments:  -application edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim -data C:\Users\Frederik Reiche\git\WorkWaySimHLA\edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim -dev file:C:/Users/Frederik Reiche/eclipse-workspace/.metadata/.plugins/org.eclipse.pde.core/Workway Behaviour Simulation Example/dev.properties -os win32 -ws win32 -arch x86_64 -consoleLog
+
+!ENTRY org.eclipse.gmf.runtime.common.ui.printing.win32 2 0 2018-11-21 11:39:56.470
+!MESSAGE Could not resolve module: org.eclipse.gmf.runtime.common.ui.printing.win32 [676]
+  Unresolved requirement: Fragment-Host: org.eclipse.gmf.runtime.common.ui.printing
+
+
+!ENTRY org.eclipse.osgi 4 0 2018-11-21 11:39:56.470
+!MESSAGE Application error
+!STACK 1
+java.lang.IllegalStateException: start() called with an empty event list
+	at umontreal.iro.lecuyer.simevents.Simulator.start(Simulator.java:192)
+	at org.palladiosimulator.simulation.abstractsimengine.ssj.SSJExperiment.startSimulator(SSJExperiment.java:44)
+	at de.uka.ipd.sdq.simulation.abstractsimengine.AbstractExperiment.start(AbstractExperiment.java:59)
+	at edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.component.WorkwaySimulationExample.start(WorkwaySimulationExample.java:42)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:199)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:137)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:107)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:391)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:246)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:659)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:595)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1501)
+	at org.eclipse.equinox.launcher.Main.main(Main.java:1474)
+!SESSION 2018-11-21 11:41:29.732 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_191
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=de_DE
+Framework arguments:  -application edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim
+Command-line arguments:  -application edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim -data C:\Users\Frederik Reiche\git\WorkWaySimHLA\edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim -dev file:C:/Users/Frederik Reiche/eclipse-workspace/.metadata/.plugins/org.eclipse.pde.core/Workway Behaviour Simulation Example/dev.properties -os win32 -ws win32 -arch x86_64 -consoleLog
+
+!ENTRY org.eclipse.gmf.runtime.common.ui.printing.win32 2 0 2018-11-21 11:41:38.813
+!MESSAGE Could not resolve module: org.eclipse.gmf.runtime.common.ui.printing.win32 [676]
+  Unresolved requirement: Fragment-Host: org.eclipse.gmf.runtime.common.ui.printing
+
+
+!ENTRY org.eclipse.osgi 4 0 2018-11-21 11:41:38.813
+!MESSAGE Application error
+!STACK 1
+java.lang.IllegalStateException: start() called with an empty event list
+	at umontreal.iro.lecuyer.simevents.Simulator.start(Simulator.java:192)
+	at org.palladiosimulator.simulation.abstractsimengine.ssj.SSJExperiment.startSimulator(SSJExperiment.java:44)
+	at de.uka.ipd.sdq.simulation.abstractsimengine.AbstractExperiment.start(AbstractExperiment.java:59)
+	at edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.component.WorkwaySimulationExample.start(WorkwaySimulationExample.java:42)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:199)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:137)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:107)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:391)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:246)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:659)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:595)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1501)
+	at org.eclipse.equinox.launcher.Main.main(Main.java:1474)
+!SESSION 2018-11-21 11:47:22.605 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_191
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=de_DE
+Framework arguments:  -application edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim
+Command-line arguments:  -application edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim -data C:\Users\Frederik Reiche\git\WorkWaySimHLA\edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim -dev file:C:/Users/Frederik Reiche/eclipse-workspace/.metadata/.plugins/org.eclipse.pde.core/Workway Behaviour Simulation Example/dev.properties -os win32 -ws win32 -arch x86_64 -consoleLog
+
+!ENTRY org.eclipse.gmf.runtime.common.ui.printing.win32 2 0 2018-11-21 11:47:32.539
+!MESSAGE Could not resolve module: org.eclipse.gmf.runtime.common.ui.printing.win32 [676]
+  Unresolved requirement: Fragment-Host: org.eclipse.gmf.runtime.common.ui.printing
+
+
+!ENTRY org.eclipse.osgi 4 0 2018-11-21 11:47:32.539
+!MESSAGE Application error
+!STACK 1
+java.lang.IllegalStateException: start() called with an empty event list
+	at umontreal.iro.lecuyer.simevents.Simulator.start(Simulator.java:192)
+	at org.palladiosimulator.simulation.abstractsimengine.ssj.SSJExperiment.startSimulator(SSJExperiment.java:44)
+	at de.uka.ipd.sdq.simulation.abstractsimengine.AbstractExperiment.start(AbstractExperiment.java:59)
+	at edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.component.WorkwaySimulationExample.start(WorkwaySimulationExample.java:42)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:199)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:137)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:107)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:391)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:246)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:659)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:595)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1501)
+	at org.eclipse.equinox.launcher.Main.main(Main.java:1474)
+!SESSION 2018-11-21 11:49:51.880 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_191
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=de_DE
+Framework arguments:  -application edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim
+Command-line arguments:  -application edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim -data C:\Users\Frederik Reiche\git\WorkWaySimHLA\edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim -dev file:C:/Users/Frederik Reiche/eclipse-workspace/.metadata/.plugins/org.eclipse.pde.core/Workway Behaviour Simulation Example/dev.properties -os win32 -ws win32 -arch x86_64 -consoleLog
+
+!ENTRY org.eclipse.gmf.runtime.common.ui.printing.win32 2 0 2018-11-21 11:50:01.352
+!MESSAGE Could not resolve module: org.eclipse.gmf.runtime.common.ui.printing.win32 [676]
+  Unresolved requirement: Fragment-Host: org.eclipse.gmf.runtime.common.ui.printing
+
+
+!ENTRY org.eclipse.osgi 4 0 2018-11-21 11:50:01.352
+!MESSAGE Application error
+!STACK 1
+java.lang.IllegalStateException: start() called with an empty event list
+	at umontreal.iro.lecuyer.simevents.Simulator.start(Simulator.java:192)
+	at org.palladiosimulator.simulation.abstractsimengine.ssj.SSJExperiment.startSimulator(SSJExperiment.java:44)
+	at de.uka.ipd.sdq.simulation.abstractsimengine.AbstractExperiment.start(AbstractExperiment.java:59)
+	at edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.component.WorkwaySimulationExample.start(WorkwaySimulationExample.java:42)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:199)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:137)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:107)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:391)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:246)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:659)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:595)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1501)
+	at org.eclipse.equinox.launcher.Main.main(Main.java:1474)
+!SESSION 2018-11-21 12:22:11.705 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_191
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=de_DE
+Framework arguments:  -application edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim
+Command-line arguments:  -application edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim -data C:\Users\Frederik Reiche\git\WorkWaySimHLA\edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim -dev file:C:/Users/Frederik Reiche/eclipse-workspace/.metadata/.plugins/org.eclipse.pde.core/Workway Behaviour Simulation Example/dev.properties -os win32 -ws win32 -arch x86_64 -consoleLog
+
+!ENTRY org.eclipse.gmf.runtime.common.ui.printing.win32 2 0 2018-11-21 12:22:24.062
+!MESSAGE Could not resolve module: org.eclipse.gmf.runtime.common.ui.printing.win32 [676]
+  Unresolved requirement: Fragment-Host: org.eclipse.gmf.runtime.common.ui.printing
+
+
+!ENTRY org.eclipse.osgi 4 0 2018-11-21 12:22:24.065
+!MESSAGE Application error
+!STACK 1
+java.lang.IllegalArgumentException: Cannot schedule in the past.
+	at umontreal.iro.lecuyer.simevents.Event.schedule(Event.java:94)
+	at org.palladiosimulator.simulation.abstractsimengine.ssj.SSJSimEvent.schedule(SSJSimEvent.java:72)
+	at de.uka.ipd.sdq.simulation.abstractsimengine.AbstractSimEventDelegator.schedule(AbstractSimEventDelegator.java:45)
+	at edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.timelinesynchronization.RTITimelineSynchronizer.scheduleReturnEvent(RTITimelineSynchronizer.java:150)
+	at edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.timelinesynchronization.RTITimelineSynchronizer.executeTimeorderedEvents(RTITimelineSynchronizer.java:128)
+	at edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.timelinesynchronization.RTITimelineSynchronizer.checkAndExecute(RTITimelineSynchronizer.java:165)
+	at edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.timelinesynchronization.RTITimelineSynchronizer.putToken(RTITimelineSynchronizer.java:65)
+	at edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.events.RegisterAtBusStopEvent.eventRoutine(RegisterAtBusStopEvent.java:32)
+	at edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.events.RegisterAtBusStopEvent.eventRoutine(RegisterAtBusStopEvent.java:1)
+	at org.palladiosimulator.simulation.abstractsimengine.ssj.SSJSimEvent.actions(SSJSimEvent.java:59)
+	at umontreal.iro.lecuyer.simevents.Simulator.start(Simulator.java:201)
+	at org.palladiosimulator.simulation.abstractsimengine.ssj.SSJExperiment.startSimulator(SSJExperiment.java:44)
+	at de.uka.ipd.sdq.simulation.abstractsimengine.AbstractExperiment.start(AbstractExperiment.java:59)
+	at edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.component.WorkwaySimulationExample.start(WorkwaySimulationExample.java:42)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:199)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:137)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:107)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:391)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:246)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:659)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:595)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1501)
+	at org.eclipse.equinox.launcher.Main.main(Main.java:1474)
+!SESSION 2018-11-21 12:23:20.441 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_191
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=de_DE
+Framework arguments:  -application edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim
+Command-line arguments:  -application edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim -data C:\Users\Frederik Reiche\git\WorkWaySimHLA\edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim -dev file:C:/Users/Frederik Reiche/eclipse-workspace/.metadata/.plugins/org.eclipse.pde.core/Workway Behaviour Simulation Example/dev.properties -os win32 -ws win32 -arch x86_64 -consoleLog
+
+!ENTRY org.eclipse.gmf.runtime.common.ui.printing.win32 2 0 2018-11-21 12:23:33.150
+!MESSAGE Could not resolve module: org.eclipse.gmf.runtime.common.ui.printing.win32 [676]
+  Unresolved requirement: Fragment-Host: org.eclipse.gmf.runtime.common.ui.printing
+
+
+!ENTRY org.eclipse.osgi 4 0 2018-11-21 12:23:33.151
+!MESSAGE Application error
+!STACK 1
+java.lang.IllegalArgumentException: Cannot schedule in the past.
+	at umontreal.iro.lecuyer.simevents.Event.schedule(Event.java:94)
+	at org.palladiosimulator.simulation.abstractsimengine.ssj.SSJSimEvent.schedule(SSJSimEvent.java:72)
+	at de.uka.ipd.sdq.simulation.abstractsimengine.AbstractSimEventDelegator.schedule(AbstractSimEventDelegator.java:45)
+	at edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.timelinesynchronization.RTITimelineSynchronizer.scheduleReturnEvent(RTITimelineSynchronizer.java:150)
+	at edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.timelinesynchronization.RTITimelineSynchronizer.executeTimeorderedEvents(RTITimelineSynchronizer.java:128)
+	at edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.timelinesynchronization.RTITimelineSynchronizer.checkAndExecute(RTITimelineSynchronizer.java:165)
+	at edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.timelinesynchronization.RTITimelineSynchronizer.putToken(RTITimelineSynchronizer.java:65)
+	at edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.events.TravelToNextEvent.eventRoutine(TravelToNextEvent.java:93)
+	at edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.events.TravelToNextEvent.eventRoutine(TravelToNextEvent.java:1)
+	at org.palladiosimulator.simulation.abstractsimengine.ssj.SSJSimEvent.actions(SSJSimEvent.java:59)
+	at umontreal.iro.lecuyer.simevents.Simulator.start(Simulator.java:201)
+	at org.palladiosimulator.simulation.abstractsimengine.ssj.SSJExperiment.startSimulator(SSJExperiment.java:44)
+	at de.uka.ipd.sdq.simulation.abstractsimengine.AbstractExperiment.start(AbstractExperiment.java:59)
+	at edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.component.WorkwaySimulationExample.start(WorkwaySimulationExample.java:42)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:199)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:137)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:107)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:391)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:246)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:659)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:595)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1501)
+	at org.eclipse.equinox.launcher.Main.main(Main.java:1474)
+!SESSION 2018-11-21 15:50:07.351 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_191
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=de_DE
+Framework arguments:  -application edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim
+Command-line arguments:  -application edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim -data C:\Users\Frederik Reiche\git\WorkWaySimHLA\edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim -dev file:C:/Users/Frederik Reiche/eclipse-workspace/.metadata/.plugins/org.eclipse.pde.core/Workway Behaviour Simulation Example/dev.properties -os win32 -ws win32 -arch x86_64 -consoleLog
+
+!ENTRY org.eclipse.gmf.runtime.common.ui.printing.win32 2 0 2018-11-21 15:50:53.710
+!MESSAGE Could not resolve module: org.eclipse.gmf.runtime.common.ui.printing.win32 [676]
+  Unresolved requirement: Fragment-Host: org.eclipse.gmf.runtime.common.ui.printing
+
+
+!ENTRY org.eclipse.osgi 4 0 2018-11-21 15:50:53.710
+!MESSAGE Application error
+!STACK 1
+java.lang.NullPointerException
+	at edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.util.CSVHandler.writeCSVFile(CSVHandler.java:32)
+	at edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.component.WorkwayModel.finalise(WorkwayModel.java:147)
+	at org.palladiosimulator.simulation.abstractsimengine.ssj.SSJModel.finalise(SSJModel.java:28)
+	at de.uka.ipd.sdq.simulation.abstractsimengine.AbstractExperiment.stop(AbstractExperiment.java:85)
+	at org.palladiosimulator.simulation.abstractsimengine.ssj.SSJSimEvent.actions(SSJSimEvent.java:49)
+	at umontreal.iro.lecuyer.simevents.Simulator.start(Simulator.java:201)
+	at org.palladiosimulator.simulation.abstractsimengine.ssj.SSJExperiment.startSimulator(SSJExperiment.java:44)
+	at de.uka.ipd.sdq.simulation.abstractsimengine.AbstractExperiment.start(AbstractExperiment.java:59)
+	at edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.component.WorkwaySimulationExample.start(WorkwaySimulationExample.java:42)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:199)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:137)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:107)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:391)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:246)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:659)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:595)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1501)
+	at org.eclipse.equinox.launcher.Main.main(Main.java:1474)
+!SESSION 2018-11-22 13:37:08.495 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_191
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=de_DE
+Framework arguments:  -application edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim
+Command-line arguments:  -application edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim -data C:\Users\Frederik Reiche\git\WorkWaySimHLA\edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim -dev file:C:/Users/Frederik Reiche/eclipse-workspace/.metadata/.plugins/org.eclipse.pde.core/Workway Behaviour Simulation Example/dev.properties -os win32 -ws win32 -arch x86_64 -consoleLog
+
+!ENTRY org.eclipse.gmf.runtime.common.ui.printing.win32 2 0 2018-11-22 13:37:18.926
+!MESSAGE Could not resolve module: org.eclipse.gmf.runtime.common.ui.printing.win32 [676]
+  Unresolved requirement: Fragment-Host: org.eclipse.gmf.runtime.common.ui.printing
+
+
+!ENTRY org.eclipse.osgi 4 0 2018-11-22 13:37:18.926
+!MESSAGE Application error
+!STACK 1
+java.lang.IllegalStateException: start() called with an empty event list
+	at umontreal.iro.lecuyer.simevents.Simulator.start(Simulator.java:192)
+	at org.palladiosimulator.simulation.abstractsimengine.ssj.SSJExperiment.startSimulator(SSJExperiment.java:44)
+	at de.uka.ipd.sdq.simulation.abstractsimengine.AbstractExperiment.start(AbstractExperiment.java:59)
+	at edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.component.WorkwaySimulationExample.start(WorkwaySimulationExample.java:42)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:199)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:137)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:107)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:391)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:246)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:659)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:595)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1501)
+	at org.eclipse.equinox.launcher.Main.main(Main.java:1474)
+!SESSION 2018-11-22 13:38:38.188 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_191
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=de_DE
+Framework arguments:  -application edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim
+Command-line arguments:  -application edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim -data C:\Users\Frederik Reiche\git\WorkWaySimHLA\edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim -dev file:C:/Users/Frederik Reiche/eclipse-workspace/.metadata/.plugins/org.eclipse.pde.core/Workway Behaviour Simulation Example/dev.properties -os win32 -ws win32 -arch x86_64 -consoleLog
+
+!ENTRY org.eclipse.gmf.runtime.common.ui.printing.win32 2 0 2018-11-22 13:38:50.309
+!MESSAGE Could not resolve module: org.eclipse.gmf.runtime.common.ui.printing.win32 [676]
+  Unresolved requirement: Fragment-Host: org.eclipse.gmf.runtime.common.ui.printing
+
+
+!ENTRY org.eclipse.osgi 4 0 2018-11-22 13:38:50.309
+!MESSAGE Application error
+!STACK 1
+java.lang.IllegalStateException: How to drive by bus when not at BusStop???CurrentState: ENQUEUING
+	at edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.entities.Token.enqueueAgain(Token.java:145)
+	at edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.events.TravelToNextEvent.eventRoutine(TravelToNextEvent.java:35)
+	at edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.events.TravelToNextEvent.eventRoutine(TravelToNextEvent.java:1)
+	at org.palladiosimulator.simulation.abstractsimengine.ssj.SSJSimEvent.actions(SSJSimEvent.java:59)
+	at umontreal.iro.lecuyer.simevents.Simulator.start(Simulator.java:201)
+	at org.palladiosimulator.simulation.abstractsimengine.ssj.SSJExperiment.startSimulator(SSJExperiment.java:44)
+	at de.uka.ipd.sdq.simulation.abstractsimengine.AbstractExperiment.start(AbstractExperiment.java:59)
+	at edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.component.WorkwaySimulationExample.start(WorkwaySimulationExample.java:42)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:199)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:137)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:107)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:391)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:246)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:659)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:595)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1501)
+	at org.eclipse.equinox.launcher.Main.main(Main.java:1474)
+!SESSION 2018-11-22 13:40:56.471 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_191
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=de_DE
+Framework arguments:  -application edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim
+Command-line arguments:  -application edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim -data C:\Users\Frederik Reiche\git\WorkWaySimHLA\edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim -dev file:C:/Users/Frederik Reiche/eclipse-workspace/.metadata/.plugins/org.eclipse.pde.core/Workway Behaviour Simulation Example/dev.properties -os win32 -ws win32 -arch x86_64 -consoleLog
+
+!ENTRY org.eclipse.gmf.runtime.common.ui.printing.win32 2 0 2018-11-22 13:41:07.182
+!MESSAGE Could not resolve module: org.eclipse.gmf.runtime.common.ui.printing.win32 [676]
+  Unresolved requirement: Fragment-Host: org.eclipse.gmf.runtime.common.ui.printing
+
+
+!ENTRY org.eclipse.osgi 4 0 2018-11-22 13:41:07.182
+!MESSAGE Application error
+!STACK 1
+java.lang.IllegalStateException: How to drive by bus when not at BusStop???CurrentState: ENQUEUING
+	at edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.entities.Token.enqueueAgain(Token.java:145)
+	at edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.events.TravelToNextEvent.eventRoutine(TravelToNextEvent.java:35)
+	at edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.events.TravelToNextEvent.eventRoutine(TravelToNextEvent.java:1)
+	at org.palladiosimulator.simulation.abstractsimengine.ssj.SSJSimEvent.actions(SSJSimEvent.java:59)
+	at umontreal.iro.lecuyer.simevents.Simulator.start(Simulator.java:201)
+	at org.palladiosimulator.simulation.abstractsimengine.ssj.SSJExperiment.startSimulator(SSJExperiment.java:44)
+	at de.uka.ipd.sdq.simulation.abstractsimengine.AbstractExperiment.start(AbstractExperiment.java:59)
+	at edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.component.WorkwaySimulationExample.start(WorkwaySimulationExample.java:42)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:199)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:137)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:107)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:391)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:246)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:659)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:595)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1501)
+	at org.eclipse.equinox.launcher.Main.main(Main.java:1474)
+!SESSION 2018-11-22 14:52:33.139 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_191
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=de_DE
+Framework arguments:  -application edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim
+Command-line arguments:  -application edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim -data C:\Users\Frederik Reiche\git\WorkWaySimHLA\edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim -dev file:C:/Users/Frederik Reiche/eclipse-workspace/.metadata/.plugins/org.eclipse.pde.core/Workway Behaviour Simulation Example/dev.properties -os win32 -ws win32 -arch x86_64 -consoleLog
+
+!ENTRY org.eclipse.gmf.runtime.common.ui.printing.win32 2 0 2018-11-22 14:52:40.524
+!MESSAGE Could not resolve module: org.eclipse.gmf.runtime.common.ui.printing.win32 [676]
+  Unresolved requirement: Fragment-Host: org.eclipse.gmf.runtime.common.ui.printing
+
+
+!ENTRY org.eclipse.osgi 4 0 2018-11-22 14:52:40.524
+!MESSAGE Application error
+!STACK 1
+java.lang.IllegalStateException: start() called with an empty event list
+	at umontreal.iro.lecuyer.simevents.Simulator.start(Simulator.java:192)
+	at org.palladiosimulator.simulation.abstractsimengine.ssj.SSJExperiment.startSimulator(SSJExperiment.java:44)
+	at de.uka.ipd.sdq.simulation.abstractsimengine.AbstractExperiment.start(AbstractExperiment.java:59)
+	at edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.component.WorkwaySimulationExample.start(WorkwaySimulationExample.java:42)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:199)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:137)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:107)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:391)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:246)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:659)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:595)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1501)
+	at org.eclipse.equinox.launcher.Main.main(Main.java:1474)
+!SESSION 2018-11-22 16:47:27.264 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_191
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=de_DE
+Framework arguments:  -application edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim
+Command-line arguments:  -application edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim -data C:\Users\Frederik Reiche\git\WorkWaySimHLA\edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim -dev file:C:/Users/Frederik Reiche/eclipse-workspace/.metadata/.plugins/org.eclipse.pde.core/Workway Behaviour Simulation Example/dev.properties -os win32 -ws win32 -arch x86_64 -consoleLog
+
+!ENTRY org.eclipse.gmf.runtime.common.ui.printing.win32 2 0 2018-11-22 16:47:39.399
+!MESSAGE Could not resolve module: org.eclipse.gmf.runtime.common.ui.printing.win32 [676]
+  Unresolved requirement: Fragment-Host: org.eclipse.gmf.runtime.common.ui.printing
+
+
+!ENTRY org.eclipse.osgi 4 0 2018-11-22 16:47:39.401
+!MESSAGE Application error
+!STACK 1
+java.lang.IllegalStateException: start() called with an empty event list
+	at umontreal.iro.lecuyer.simevents.Simulator.start(Simulator.java:192)
+	at org.palladiosimulator.simulation.abstractsimengine.ssj.SSJExperiment.startSimulator(SSJExperiment.java:44)
+	at de.uka.ipd.sdq.simulation.abstractsimengine.AbstractExperiment.start(AbstractExperiment.java:59)
+	at edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.component.WorkwaySimulationExample.start(WorkwaySimulationExample.java:42)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:199)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:137)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:107)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:391)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:246)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:659)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:595)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1501)
+	at org.eclipse.equinox.launcher.Main.main(Main.java:1474)
+!SESSION 2018-11-22 16:48:57.263 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_191
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=de_DE
+Framework arguments:  -application edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim
+Command-line arguments:  -application edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim -data C:\Users\Frederik Reiche\git\WorkWaySimHLA\edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim -dev file:C:/Users/Frederik Reiche/eclipse-workspace/.metadata/.plugins/org.eclipse.pde.core/Workway Behaviour Simulation Example/dev.properties -os win32 -ws win32 -arch x86_64 -consoleLog
+
+!ENTRY org.eclipse.gmf.runtime.common.ui.printing.win32 2 0 2018-11-22 16:49:08.429
+!MESSAGE Could not resolve module: org.eclipse.gmf.runtime.common.ui.printing.win32 [676]
+  Unresolved requirement: Fragment-Host: org.eclipse.gmf.runtime.common.ui.printing
+
+
+!ENTRY org.eclipse.osgi 4 0 2018-11-22 16:49:08.431
+!MESSAGE Application error
+!STACK 1
+java.lang.IllegalStateException: start() called with an empty event list
+	at umontreal.iro.lecuyer.simevents.Simulator.start(Simulator.java:192)
+	at org.palladiosimulator.simulation.abstractsimengine.ssj.SSJExperiment.startSimulator(SSJExperiment.java:44)
+	at de.uka.ipd.sdq.simulation.abstractsimengine.AbstractExperiment.start(AbstractExperiment.java:59)
+	at edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.component.WorkwaySimulationExample.start(WorkwaySimulationExample.java:42)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:199)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:137)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:107)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:391)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:246)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:659)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:595)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1501)
+	at org.eclipse.equinox.launcher.Main.main(Main.java:1474)
+!SESSION 2018-11-25 11:45:21.930 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_191
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=de_DE
+Framework arguments:  -application edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim
+Command-line arguments:  -application edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim -data C:\Users\Frederik Reiche\git\WorkWaySimHLA\edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim -dev file:C:/Users/Frederik Reiche/eclipse-workspace/.metadata/.plugins/org.eclipse.pde.core/Workway Behaviour Simulation Example/dev.properties -os win32 -ws win32 -arch x86_64 -consoleLog
+
+!ENTRY org.eclipse.gmf.runtime.common.ui.printing.win32 2 0 2018-11-25 11:45:36.121
+!MESSAGE Could not resolve module: org.eclipse.gmf.runtime.common.ui.printing.win32 [676]
+  Unresolved requirement: Fragment-Host: org.eclipse.gmf.runtime.common.ui.printing
+
+
+!ENTRY org.eclipse.osgi 4 0 2018-11-25 11:45:36.121
+!MESSAGE Application error
+!STACK 1
+java.util.NoSuchElementException
+	at java.util.LinkedList.removeFirst(Unknown Source)
+	at java.util.LinkedList.pop(Unknown Source)
+	at edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.timelinesynchronization.RTITimelineSynchronizer.executeTimeorderedEvents(RTITimelineSynchronizer.java:89)
+	at edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.timelinesynchronization.RTITimelineSynchronizer.checkAndExecute(RTITimelineSynchronizer.java:165)
+	at edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.events.HumanExitsBusEvent.eventRoutine(HumanExitsBusEvent.java:33)
+	at edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.events.HumanExitsBusEvent.eventRoutine(HumanExitsBusEvent.java:1)
+	at org.palladiosimulator.simulation.abstractsimengine.ssj.SSJSimEvent.actions(SSJSimEvent.java:59)
+	at umontreal.iro.lecuyer.simevents.Simulator.start(Simulator.java:201)
+	at org.palladiosimulator.simulation.abstractsimengine.ssj.SSJExperiment.startSimulator(SSJExperiment.java:44)
+	at de.uka.ipd.sdq.simulation.abstractsimengine.AbstractExperiment.start(AbstractExperiment.java:59)
+	at edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.component.WorkwaySimulationExample.start(WorkwaySimulationExample.java:47)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:199)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:137)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:107)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:391)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:246)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:659)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:595)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1501)
+	at org.eclipse.equinox.launcher.Main.main(Main.java:1474)
+!SESSION 2018-11-25 12:08:02.045 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_191
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=de_DE
+Framework arguments:  -application edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim
+Command-line arguments:  -application edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim -data C:\Users\Frederik Reiche\git\WorkWaySimHLA\edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim -dev file:C:/Users/Frederik Reiche/eclipse-workspace/.metadata/.plugins/org.eclipse.pde.core/Workway Behaviour Simulation Example/dev.properties -os win32 -ws win32 -arch x86_64 -consoleLog
+
+!ENTRY org.eclipse.gmf.runtime.common.ui.printing.win32 2 0 2018-11-25 12:08:09.354
+!MESSAGE Could not resolve module: org.eclipse.gmf.runtime.common.ui.printing.win32 [676]
+  Unresolved requirement: Fragment-Host: org.eclipse.gmf.runtime.common.ui.printing
+
+
+!ENTRY org.eclipse.osgi 4 0 2018-11-25 12:08:09.355
+!MESSAGE Application error
+!STACK 1
+java.lang.IllegalStateException: start() called with an empty event list
+	at umontreal.iro.lecuyer.simevents.Simulator.start(Simulator.java:192)
+	at org.palladiosimulator.simulation.abstractsimengine.ssj.SSJExperiment.startSimulator(SSJExperiment.java:44)
+	at de.uka.ipd.sdq.simulation.abstractsimengine.AbstractExperiment.start(AbstractExperiment.java:59)
+	at edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.component.WorkwaySimulationExample.start(WorkwaySimulationExample.java:47)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:199)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:137)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:107)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:391)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:246)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:659)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:595)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1501)
+	at org.eclipse.equinox.launcher.Main.main(Main.java:1474)
+!SESSION 2018-11-25 12:11:06.013 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_191
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=de_DE
+Framework arguments:  -application edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim
+Command-line arguments:  -application edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim -data C:\Users\Frederik Reiche\git\WorkWaySimHLA\edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim -dev file:C:/Users/Frederik Reiche/eclipse-workspace/.metadata/.plugins/org.eclipse.pde.core/Workway Behaviour Simulation Example/dev.properties -os win32 -ws win32 -arch x86_64 -consoleLog
+
+!ENTRY org.eclipse.gmf.runtime.common.ui.printing.win32 2 0 2018-11-25 12:11:13.519
+!MESSAGE Could not resolve module: org.eclipse.gmf.runtime.common.ui.printing.win32 [676]
+  Unresolved requirement: Fragment-Host: org.eclipse.gmf.runtime.common.ui.printing
+
+
+!ENTRY org.eclipse.osgi 4 0 2018-11-25 12:11:13.520
+!MESSAGE Application error
+!STACK 1
+java.lang.IllegalStateException: start() called with an empty event list
+	at umontreal.iro.lecuyer.simevents.Simulator.start(Simulator.java:192)
+	at org.palladiosimulator.simulation.abstractsimengine.ssj.SSJExperiment.startSimulator(SSJExperiment.java:44)
+	at de.uka.ipd.sdq.simulation.abstractsimengine.AbstractExperiment.start(AbstractExperiment.java:59)
+	at edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.component.WorkwaySimulationExample.start(WorkwaySimulationExample.java:47)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:199)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:137)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:107)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:391)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:246)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:659)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:595)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1501)
+	at org.eclipse.equinox.launcher.Main.main(Main.java:1474)
+!SESSION 2018-11-25 12:11:11.351 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_191
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=de_DE
+Framework arguments:  -application edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim
+Command-line arguments:  -application edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim -data C:\Users\Frederik Reiche\git\WorkWaySimHLA\edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim -dev file:C:/Users/Frederik Reiche/eclipse-workspace/.metadata/.plugins/org.eclipse.pde.core/Workway Behaviour Simulation Example/dev.properties -os win32 -ws win32 -arch x86_64 -consoleLog
+
+!ENTRY org.eclipse.gmf.runtime.common.ui.printing.win32 2 0 2018-11-25 12:11:18.697
+!MESSAGE Could not resolve module: org.eclipse.gmf.runtime.common.ui.printing.win32 [676]
+  Unresolved requirement: Fragment-Host: org.eclipse.gmf.runtime.common.ui.printing
+
+
+!ENTRY org.eclipse.osgi 4 0 2018-11-25 12:11:18.698
+!MESSAGE Application error
+!STACK 1
+java.lang.IllegalStateException: start() called with an empty event list
+	at umontreal.iro.lecuyer.simevents.Simulator.start(Simulator.java:192)
+	at org.palladiosimulator.simulation.abstractsimengine.ssj.SSJExperiment.startSimulator(SSJExperiment.java:44)
+	at de.uka.ipd.sdq.simulation.abstractsimengine.AbstractExperiment.start(AbstractExperiment.java:59)
+	at edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.component.WorkwaySimulationExample.start(WorkwaySimulationExample.java:47)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:199)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:137)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:107)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:391)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:246)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:659)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:595)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1501)
+	at org.eclipse.equinox.launcher.Main.main(Main.java:1474)
+!SESSION 2018-11-26 09:39:50.791 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_191
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=de_DE
+Framework arguments:  -application edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim
+Command-line arguments:  -application edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim -data C:\Users\Frederik Reiche\git\WorkWaySimHLA\edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim -dev file:C:/Users/Frederik Reiche/eclipse-workspace/.metadata/.plugins/org.eclipse.pde.core/Workway Behaviour Simulation Example/dev.properties -os win32 -ws win32 -arch x86_64 -consoleLog
+
+!ENTRY org.eclipse.gmf.runtime.common.ui.printing.win32 2 0 2018-11-26 09:40:32.690
+!MESSAGE Could not resolve module: org.eclipse.gmf.runtime.common.ui.printing.win32 [676]
+  Unresolved requirement: Fragment-Host: org.eclipse.gmf.runtime.common.ui.printing
+
+
+!ENTRY org.eclipse.osgi 4 0 2018-11-26 09:40:32.690
+!MESSAGE Application error
+!STACK 1
+java.lang.NullPointerException
+	at edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.util.CSVHandler.writeCSVFile(CSVHandler.java:32)
+	at edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.component.WorkwayModel.finalise(WorkwayModel.java:119)
+	at org.palladiosimulator.simulation.abstractsimengine.ssj.SSJModel.finalise(SSJModel.java:28)
+	at de.uka.ipd.sdq.simulation.abstractsimengine.AbstractExperiment.stop(AbstractExperiment.java:85)
+	at edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.component.WorkwayModel.tokenProcessed(WorkwayModel.java:369)
+	at edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.events.HumanExitsBusEvent.eventRoutine(HumanExitsBusEvent.java:32)
+	at edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.events.HumanExitsBusEvent.eventRoutine(HumanExitsBusEvent.java:1)
+	at org.palladiosimulator.simulation.abstractsimengine.ssj.SSJSimEvent.actions(SSJSimEvent.java:59)
+	at umontreal.iro.lecuyer.simevents.Simulator.start(Simulator.java:201)
+	at org.palladiosimulator.simulation.abstractsimengine.ssj.SSJExperiment.startSimulator(SSJExperiment.java:44)
+	at de.uka.ipd.sdq.simulation.abstractsimengine.AbstractExperiment.start(AbstractExperiment.java:59)
+	at edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.component.WorkwaySimulationExample.start(WorkwaySimulationExample.java:47)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:199)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:137)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:107)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:391)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:246)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:659)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:595)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1501)
+	at org.eclipse.equinox.launcher.Main.main(Main.java:1474)
+!SESSION 2018-11-26 09:41:03.633 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_191
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=de_DE
+Framework arguments:  -application edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim
+Command-line arguments:  -application edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim -data C:\Users\Frederik Reiche\git\WorkWaySimHLA\edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim -dev file:C:/Users/Frederik Reiche/eclipse-workspace/.metadata/.plugins/org.eclipse.pde.core/Workway Behaviour Simulation Example/dev.properties -os win32 -ws win32 -arch x86_64 -consoleLog
+
+!ENTRY org.eclipse.gmf.runtime.common.ui.printing.win32 2 0 2018-11-26 09:41:44.456
+!MESSAGE Could not resolve module: org.eclipse.gmf.runtime.common.ui.printing.win32 [676]
+  Unresolved requirement: Fragment-Host: org.eclipse.gmf.runtime.common.ui.printing
+
+
+!ENTRY org.eclipse.osgi 4 0 2018-11-26 09:41:44.456
+!MESSAGE Application error
+!STACK 1
+java.lang.NullPointerException
+	at edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.util.CSVHandler.writeCSVFile(CSVHandler.java:32)
+	at edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.component.WorkwayModel.finalise(WorkwayModel.java:119)
+	at org.palladiosimulator.simulation.abstractsimengine.ssj.SSJModel.finalise(SSJModel.java:28)
+	at de.uka.ipd.sdq.simulation.abstractsimengine.AbstractExperiment.stop(AbstractExperiment.java:85)
+	at edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.component.WorkwayModel.tokenProcessed(WorkwayModel.java:369)
+	at edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.events.HumanExitsBusEvent.eventRoutine(HumanExitsBusEvent.java:32)
+	at edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.events.HumanExitsBusEvent.eventRoutine(HumanExitsBusEvent.java:1)
+	at org.palladiosimulator.simulation.abstractsimengine.ssj.SSJSimEvent.actions(SSJSimEvent.java:59)
+	at umontreal.iro.lecuyer.simevents.Simulator.start(Simulator.java:201)
+	at org.palladiosimulator.simulation.abstractsimengine.ssj.SSJExperiment.startSimulator(SSJExperiment.java:44)
+	at de.uka.ipd.sdq.simulation.abstractsimengine.AbstractExperiment.start(AbstractExperiment.java:59)
+	at edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.component.WorkwaySimulationExample.start(WorkwaySimulationExample.java:47)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:199)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:137)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:107)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:391)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:246)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:659)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:595)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1501)
+	at org.eclipse.equinox.launcher.Main.main(Main.java:1474)
+!SESSION 2018-11-27 08:03:30.775 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_191
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=de_DE
+Framework arguments:  -application edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim
+Command-line arguments:  -application edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim -data C:\Users\Frederik Reiche\git\WorkWaySimHLA\edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim -dev file:C:/Users/Frederik Reiche/eclipse-workspace/.metadata/.plugins/org.eclipse.pde.core/Workway Behaviour Simulation Example/dev.properties -os win32 -ws win32 -arch x86_64 -consoleLog
+
+!ENTRY org.eclipse.gmf.runtime.common.ui.printing.win32 2 0 2018-11-27 08:04:59.864
+!MESSAGE Could not resolve module: org.eclipse.gmf.runtime.common.ui.printing.win32 [676]
+  Unresolved requirement: Fragment-Host: org.eclipse.gmf.runtime.common.ui.printing
+
+
+!ENTRY org.eclipse.osgi 4 0 2018-11-27 08:04:59.864
+!MESSAGE Application error
+!STACK 1
+java.lang.NullPointerException
+	at edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.util.CSVHandler.writeCSVFile(CSVHandler.java:32)
+	at edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.util.CSVHandler.readCSVAndAppend(CSVHandler.java:86)
+	at edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.component.WorkwayModel.finalise(WorkwayModel.java:130)
+	at org.palladiosimulator.simulation.abstractsimengine.ssj.SSJModel.finalise(SSJModel.java:28)
+	at de.uka.ipd.sdq.simulation.abstractsimengine.AbstractExperiment.stop(AbstractExperiment.java:85)
+	at edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.component.WorkwayModel.tokenProcessed(WorkwayModel.java:366)
+	at edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.events.HumanExitsBusEvent.eventRoutine(HumanExitsBusEvent.java:32)
+	at edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.events.HumanExitsBusEvent.eventRoutine(HumanExitsBusEvent.java:1)
+	at org.palladiosimulator.simulation.abstractsimengine.ssj.SSJSimEvent.actions(SSJSimEvent.java:59)
+	at umontreal.iro.lecuyer.simevents.Simulator.start(Simulator.java:201)
+	at org.palladiosimulator.simulation.abstractsimengine.ssj.SSJExperiment.startSimulator(SSJExperiment.java:44)
+	at de.uka.ipd.sdq.simulation.abstractsimengine.AbstractExperiment.start(AbstractExperiment.java:59)
+	at edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.component.WorkwaySimulationExample.start(WorkwaySimulationExample.java:47)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:199)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:137)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:107)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:391)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:246)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:659)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:595)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1501)
+	at org.eclipse.equinox.launcher.Main.main(Main.java:1474)
+!SESSION 2018-11-27 10:09:31.350 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_191
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=de_DE
+Framework arguments:  -application edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim
+Command-line arguments:  -application edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim -data C:\Users\Frederik Reiche\git\WorkWaySimHLA\edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim -dev file:C:/Users/Frederik Reiche/eclipse-workspace/.metadata/.plugins/org.eclipse.pde.core/Workway Behaviour Simulation Example/dev.properties -os win32 -ws win32 -arch x86_64 -consoleLog
+
+!ENTRY org.eclipse.gmf.runtime.common.ui.printing.win32 2 0 2018-11-27 10:09:38.652
+!MESSAGE Could not resolve module: org.eclipse.gmf.runtime.common.ui.printing.win32 [676]
+  Unresolved requirement: Fragment-Host: org.eclipse.gmf.runtime.common.ui.printing
+
+
+!ENTRY org.eclipse.osgi 4 0 2018-11-27 10:09:38.653
+!MESSAGE Application error
+!STACK 1
+java.lang.IllegalStateException: start() called with an empty event list
+	at umontreal.iro.lecuyer.simevents.Simulator.start(Simulator.java:192)
+	at org.palladiosimulator.simulation.abstractsimengine.ssj.SSJExperiment.startSimulator(SSJExperiment.java:44)
+	at de.uka.ipd.sdq.simulation.abstractsimengine.AbstractExperiment.start(AbstractExperiment.java:59)
+	at edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.component.WorkwaySimulationExample.start(WorkwaySimulationExample.java:47)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:199)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:137)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:107)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:391)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:246)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:659)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:595)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1501)
+	at org.eclipse.equinox.launcher.Main.main(Main.java:1474)

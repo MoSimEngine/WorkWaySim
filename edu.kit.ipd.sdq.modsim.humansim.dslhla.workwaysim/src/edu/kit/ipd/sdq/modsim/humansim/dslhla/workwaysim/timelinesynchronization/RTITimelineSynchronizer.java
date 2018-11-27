@@ -8,7 +8,7 @@ import de.uka.ipd.sdq.simulation.abstractsimengine.AbstractSimEntityDelegator;
 import edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.component.WorkwayModel;
 import edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.timelinesynchronization.SynchroniseToken.SynchronisedActionTypen;
 import edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.util.Utils;
-import edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.entities.Human;
+import edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.entities.Token;
 
 public class RTITimelineSynchronizer implements TimelineSynchronizer {
 	private LinkedList<SynchroniseToken> advanceTimeTokens;
@@ -24,11 +24,11 @@ public class RTITimelineSynchronizer implements TimelineSynchronizer {
 
 	public boolean putToken(SynchroniseToken token, boolean forcedOverride) {
 
-		Human h = (Human) token.getEntity();
+		Token h = (Token) token.getEntity();
 
 		if (token.getTokenSynchroType().equals(SynchronisedActionTypen.RTI_ACTION)) {
 			rtiActivityTokens.add(token);
-			((Human) token.getEntity()).addRegToken(token);
+			((Token) token.getEntity()).addRegToken(token);
 			return true;
 		}
 
@@ -87,12 +87,12 @@ public class RTITimelineSynchronizer implements TimelineSynchronizer {
 
 		
 		timeAdvanceTok = advanceTimeTokens.pop();
-		((Human) timeAdvanceTok.getEntity()).setTaToken(null);
+		((Token) timeAdvanceTok.getEntity()).setTaToken(null);
 		for (; j < rtiActivityTokens.size(); j++) {
 			actionTok = rtiActivityTokens.get(j);
 			if (actionTok.getReturnEventTimepoint() <= timeAdvanceTok.getReturnEventTimepoint()) {
 				actionTok.executeAction();
-				((Human) actionTok.getEntity()).removeRegToken(actionTok);
+				((Token) actionTok.getEntity()).removeRegToken(actionTok);
 				counter++;
 			} else {
 				break;
@@ -153,7 +153,9 @@ public class RTITimelineSynchronizer implements TimelineSynchronizer {
 
 	public boolean checkForExecution() {
 
-		if (advanceTimeTokens.size() == model.getHumans().size()) {
+		int runningTokens = model.calculateRunningTokens();
+		
+		if (runningTokens > 0 && advanceTimeTokens.size() == runningTokens) {
 			return true;
 		}
 
@@ -222,7 +224,7 @@ public class RTITimelineSynchronizer implements TimelineSynchronizer {
 		for (SynchroniseToken synchroniseToken : advanceTimeTokens) {
 			if (synchroniseToken.equals(token)) {
 				advanceTimeTokens.remove(synchroniseToken);
-				((Human) token.getEntity()).setTaToken(null);
+				((Token) token.getEntity()).setTaToken(null);
 				return true;
 			}
 		}
@@ -230,7 +232,7 @@ public class RTITimelineSynchronizer implements TimelineSynchronizer {
 		for (SynchroniseToken synchroniseToken : rtiActivityTokens) {
 			if (synchroniseToken.equals(token)) {
 				advanceTimeTokens.remove(synchroniseToken);
-				((Human) token.getEntity()).removeRegToken(token);
+				((Token) token.getEntity()).removeRegToken(token);
 				return true;
 			}
 		}

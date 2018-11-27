@@ -1,25 +1,33 @@
 package edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.component;
 
 import java.math.BigDecimal;
+import java.math.MathContext;
+import java.math.RoundingMode;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.LinkedList;
+import java.util.List;
 import java.util.Random;
 
 import javax.rmi.CORBA.Util;
+
+import org.apache.log4j.Level;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 
 import de.uka.ipd.sdq.simulation.abstractsimengine.AbstractSimulationModel;
 import de.uka.ipd.sdq.simulation.abstractsimengine.ISimEngineFactory;
 import de.uka.ipd.sdq.simulation.abstractsimengine.ISimulationConfig;
 import de.uka.ipd.sdq.simulation.preferences.SimulationPreferencesHelper;
-import edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.entities.BusStop;
-import edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.entities.Human;
+import edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.entities.Queue;
+import edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.entities.Token;
 import edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.entities.Position;
-import edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.entities.Human.HumanBehaviour;
+
 import edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.entities.Position.PositionType;
 import edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.events.HumanEntersBusEvent;
 import edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.events.HumanExitsBusEvent;
 import edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.events.TravelToNextEvent;
+import edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.events.WorkloadGenerationEvent;
 import edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.timelinesynchronization.RTITimelineSynchronizer;
 import edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.timelinesynchronization.TimeAdvanceSynchronisationEvent;
 import edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.timelinesynchronization.TimeAdvanceToken;
@@ -27,21 +35,23 @@ import edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.util.CSVHandler;
 import edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.util.Utils;
 import hla.rti1516e.exceptions.RTIexception;
 
-public class WorkwayModel extends AbstractSimulationModel{
-
-	private LinkedList<BusStop> stops;
+public class WorkwayModel extends AbstractSimulationModel {
 
 	private double startTime;
+	private LinkedList<Token> tokens;
+	private LinkedList<Queue> queues;
 
-	private LinkedList<Human> humans;
 	private WorkwayFederate component;
-
+	private int processedTokens = 0;
 	private RTITimelineSynchronizer timelineSynchronizer;
+
+	private int receivedEventCounter = 0;
+	private int sendEventCounter = 0;
 
 	public WorkwayModel(ISimulationConfig config, ISimEngineFactory factory) {
 		super(config, factory);
-		humans = new LinkedList<Human>();
-		stops = new LinkedList<BusStop>();
+		tokens = new LinkedList<Token>();
+		queues = new LinkedList<Queue>();
 	}
 
 	public void init() {
@@ -60,105 +70,90 @@ public class WorkwayModel extends AbstractSimulationModel{
 
 		component.resignFromExecution();
 		Double finalTime = (System.nanoTime() - startTime) / Math.pow(10, 9);
-		String file_header = "";
-		String csvAway = "";
-		String csvWaitingAtStation = "";
-		String csvDrivingTimes = "";
-		String behaviourMarker = "";
-		String csvFreeTimes = "";
+		String fileHeader = "";
+		String csvActive = "";
+		String csvEnqueued = "";
+		String csvProcessed = "";
 
-		int getMaxNumValues = 0;
+		for (int j = 0; j < tokens.size(); j++) {
 
-		for (Human h : humans) {
+			Token human = tokens.get(j);
 
-			file_header += h.getName() + CSVHandler.CSV_DELIMITER;
-			behaviourMarker += h.getBehaviour().toString() + CSVHandler.CSV_DELIMITER;
-			System.out.println("Human " + h.getName() + " is in State " + h.getState() + " and is "
-					+ h.getBehaviour().toString()+ "starting from: " + h.getWorkway().get(2).getName());
-			if (getMaxNumValues < h.getAwayFromHomeTimes().size()) {
-				getMaxNumValues = h.getAwayFromHomeTimes().size();
-			}
-		}
+			if (HumanSimValues.WORKLOAD_OPEN) {
+				double active = human.calculatePositiveMean(human.getActiveTimes());
+				double processing = human.calculatePositiveMean(human.getProcessedTimes());
+				double enqueued = human.calculatePositiveMean(human.getEnqueuedTimes());
 
-		file_header += CSVHandler.NEWLINE;
-		behaviourMarker += CSVHandler.NEWLINE;
+				fileHeader += human.getName();
+				csvActive += active;
+				csvProcessed += processing;
+				csvEnqueued += enqueued;
 
-		for (int i = 0; i < getMaxNumValues; i++) {
+			} else {
+				LinkedList<Duration> active = human.getActiveTimes();
+				LinkedList<Duration> processing = human.getProcessedTimes();
+				LinkedList<Duration> enqueued = human.getEnqueuedTimes();
 
-			for (int j = 0; j < humans.size(); j++) {
+				if (active.size() == 0) {
+					fileHeader += human.getName();
+					csvActive += ("" + -1);
+					csvEnqueued += ("" + -1);
+					csvProcessed += ("" + -1);
 
-				Human human = humans.get(j);
-				ArrayList<Duration> away = human.getAwayFromHomeTimes();
-				ArrayList<Duration> driven = human.getDrivingTimes();
-				ArrayList<Duration> waited = human.getBusWaitingTimes();
-				ArrayList<Duration> free = human.getFreeTimes();
-
-				if (away.size() > i) {
-					csvAway += away.get(i).toSeconds().value();
-					csvDrivingTimes += driven.get(i).toSeconds().value();
-					csvWaitingAtStation += waited.get(i).toSeconds().value();
-					csvFreeTimes += free.get(i).toSeconds().value();
 				} else {
-					csvAway += "-1";
-					csvDrivingTimes += "-1";
-					csvWaitingAtStation += "-1";
-					csvFreeTimes += "-1";
-				}
 
-				if (j < humans.size() - 1) {
-					csvAway += CSVHandler.CSV_DELIMITER;
-					csvDrivingTimes += CSVHandler.CSV_DELIMITER;
-					csvWaitingAtStation += CSVHandler.CSV_DELIMITER;
-					csvFreeTimes += CSVHandler.CSV_DELIMITER;
-				}
+					for (int i = 0; i < active.size(); i++) {
+						fileHeader += human.getName();
+						csvActive += active.get(i).toSeconds().value();
+						csvProcessed += processing.get(i).toSeconds().value();
+						csvEnqueued += enqueued.get(i).toSeconds().value();
 
+						if (i < active.size() - 1) {
+							fileHeader += CSVHandler.CSV_DELIMITER;
+							csvActive += CSVHandler.CSV_DELIMITER;
+							csvProcessed += CSVHandler.CSV_DELIMITER;
+							csvEnqueued += CSVHandler.CSV_DELIMITER;
+						}
+					}
+				}
 			}
 
-			csvAway += CSVHandler.NEWLINE;
-			csvDrivingTimes += CSVHandler.NEWLINE;
-			csvWaitingAtStation += CSVHandler.NEWLINE;
-			csvFreeTimes += CSVHandler.NEWLINE;
-		}
-
-		String[] csvs = {csvAway, csvDrivingTimes, csvWaitingAtStation, csvFreeTimes};
-
-		for (int i = 0; i < csvs.length; i++) {
-			String s = "";
-
-			switch (i) {
-			case 0:
-				s = "AwayTimes";
-				break;
-			case 1:
-				s = "DrivingTimes";
-				break;
-			case 2:
-				s = "BusStationWaitingTimes";
-				break;
-			case 3:
-				s = "FreeTimes";
-				break;
-
-			default:
-				throw new IllegalStateException("More than expected files");
+			if (j < tokens.size() - 1) {
+				fileHeader += CSVHandler.CSV_DELIMITER;
+				csvActive += CSVHandler.CSV_DELIMITER;
+				csvProcessed += CSVHandler.CSV_DELIMITER;
+				csvEnqueued += CSVHandler.CSV_DELIMITER;
 			}
-
-			csvs[i] = csvs[i].replace('.', ',');
-
-			CSVHandler.writeCSVFile(s, file_header + csvs[i]);
 
 		}
 
-		CSVHandler.writeCSVFile("HumanBehaviour", behaviourMarker);
 
-		Double d = Math.round(finalTime * 100.00) / 100.00;
+		fileHeader += CSVHandler.NEWLINE;
+
+		CSVHandler.writeCSVFile("ResponseTimes", fileHeader + csvActive.replace('.', ','));
+		CSVHandler.writeCSVFile("ProcessingTimes", fileHeader + csvProcessed.replace('.', ','));
+		CSVHandler.writeCSVFile("WaitingTimes", fileHeader + csvEnqueued.replace('.', ','));
+
+		Double d = BigDecimal.valueOf(finalTime).round(new MathContext(2, RoundingMode.CEILING)).doubleValue();
 		String s = d.toString();
+		
+		
+		String countHeader = "TimeAdvances" + CSVHandler.CSV_DELIMITER +
+				"SentEvents" + CSVHandler.CSV_DELIMITER +
+				"ReceivedEvents" + CSVHandler.NEWLINE;
+		
+		String counts = component.getTimeAdvanceCounter() + CSVHandler.CSV_DELIMITER + 
+				sendEventCounter + CSVHandler.CSV_DELIMITER + 
+				receivedEventCounter + CSVHandler.NEWLINE;
+				
+		
 
 		s = s.replace('.', ',');
 
-		CSVHandler.readCSVAndAppend("ExecutionTimes", s + CSVHandler.CSV_DELIMITER);
-		component.destroyExecution();
+		CSVHandler.readCSVAndAppendHeaderDependent("ExecutionTimes", "ExecutionTime" + CSVHandler.NEWLINE, s);
+		CSVHandler.readCSVAndAppendHeaderDependent("CommunicationCounts", countHeader, counts);
 
+		component.destroyExecution();
 		System.out.println("Finalized");
 
 	}
@@ -184,11 +179,29 @@ public class WorkwayModel extends AbstractSimulationModel{
 	public void startSimulation() {
 
 		this.timelineSynchronizer = new RTITimelineSynchronizer(this);
-
-		for (Human human : humans) {
-			new TravelToNextEvent(this, human.getName() + "starts travelling").schedule(human,
-					component.getCurrentFedTime());
+		List<Logger> loggers = Collections.<Logger>list(LogManager.getCurrentLoggers());
+		loggers.add(LogManager.getRootLogger());
+		for (Logger logger : loggers) {
+			logger.setLevel(Level.OFF);
 		}
+		System.out.println("Start simulation at " + component.getCurrentFedTime());
+
+		if (HumanSimValues.WORKLOAD_OPEN) {
+
+			Utils.log("Starting to generate open workload for #tokens " + tokens.size());
+			Token dummy = new Token(null, null, this, "DummyToken");
+			new WorkloadGenerationEvent(this, "WorkloadGeneration").schedule(dummy,
+					component.getCurrentFedTime() + HumanSimValues.interarrivalTime.toSeconds().value());
+		} else {
+
+			Utils.log("Starting to generate closed workload for #tokens " + tokens.size());
+
+			for (Token human : tokens) {
+				new TravelToNextEvent(this, human.getName() + "travels to queue").schedule(human,
+						human.getEnqueuingDelayInSeconds() + component.getCurrentFedTime());
+			}
+		}
+
 	}
 
 	public WorkwayFederate getComponent() {
@@ -199,44 +212,47 @@ public class WorkwayModel extends AbstractSimulationModel{
 		this.component = component;
 	}
 
-	public LinkedList<BusStop> getStops() {
-		return stops;
+	public LinkedList<Queue> getQueues() {
+		return queues;
 	}
 
-	public void setStops(LinkedList<BusStop> stops) {
-		this.stops = stops;
+	public void setQueues(LinkedList<Queue> queues) {
+		this.queues = queues;
 	}
 
-	public LinkedList<Human> getHumans() {
-		return humans;
+	public LinkedList<Token> getTokens() {
+		return tokens;
 	}
 
-	public void addBusStop(BusStop stop) {
-		for (BusStop bs : stops) {
+	public void addBusStop(Queue stop) {
+		for (Queue bs : queues) {
 			if (stop.getOih().equals(bs.getOih())) {
 				System.out.println("Stop already there");
 				return;
 			}
 		}
-		stops.add(stop);
+		queues.add(stop);
 	}
 
 	public void scheduleHumanEntersEvent(String humanName, String busStopName, double passedTime) {
-		
-		for (Human human : humans) {
+		incrementReceivedEventCounter();
+		for (Token human : tokens) {
 			if (human.getName().equals(humanName)) {
-				for (BusStop busStop : stops) {
+				for (Queue busStop : queues) {
 					if (busStop.getName().equals(busStopName)) {
-						
+
 						BigDecimal st = BigDecimal.valueOf(getSimulationControl().getCurrentSimulationTime());
 						BigDecimal pt = BigDecimal.valueOf(passedTime);
 						BigDecimal timeDiff = pt.subtract(st);
-						
+
 //						Utils.log(human, "Received EntersEvent for " + passedTime);
-						
+
 						HumanEntersBusEvent e = new HumanEntersBusEvent(this, "HumanEntersBus");
 						TimeAdvanceToken ta = new TimeAdvanceToken(e, human, timeDiff.doubleValue());
-						((WorkwayModel)human.getModel()).getTimelineSynchronizer().putToken(ta, true);
+						((WorkwayModel) human.getModel()).getTimelineSynchronizer().putToken(ta, true);
+
+				
+
 						return;
 					}
 				}
@@ -245,70 +261,62 @@ public class WorkwayModel extends AbstractSimulationModel{
 	}
 
 	public void scheduleHumanExitsEvent(String humanName, String busStopName, double passedTime) {
-		
-		for (Human human : humans) {
+		incrementReceivedEventCounter();
+		for (Token human : tokens) {
 			if (human.getName().equals(humanName)) {
-				for (BusStop busStop : stops) {
+				for (Queue busStop : queues) {
 					if (busStop.getName().equals(busStopName)) {
-						
+
 						BigDecimal st = BigDecimal.valueOf(getSimulationControl().getCurrentSimulationTime());
 						BigDecimal pt = BigDecimal.valueOf(passedTime);
 						BigDecimal timeDiff = pt.subtract(st);
-						
+
 //						Utils.log(human, "Received ExitsEvent for " + passedTime);
-						
+
 						HumanExitsBusEvent e = new HumanExitsBusEvent(this, "HumanExitsBus");
 						TimeAdvanceToken ta = new TimeAdvanceToken(e, human, timeDiff.doubleValue());
-						((WorkwayModel)human.getModel()).getTimelineSynchronizer().putToken(ta, true);
+						((WorkwayModel) human.getModel()).getTimelineSynchronizer().putToken(ta, true);
+
+					
 						return;
 					}
 				}
 			}
 		}
-		
+
 	}
 
 	public void initialiseHumans() {
-		
-	
-		
-		Collections.sort(stops);
-		
+
+		Collections.sort(queues);
+
 		ArrayList<ArrayList<Position>> routes = getRoutes();
-		
-		int homeBS = 0;
-		int workBS = 0;
 
-		for (int i = 0; i < HumanSimValues.NUM_HUMANS; i++) {
-			ArrayList<Position> usedRoute = new ArrayList<Position>();
-			if (HumanSimValues.STOCHASTIC) {
-				
-				
-				homeBS = new Random().nextInt(HumanSimValues.NUM_BUSSTOPS);
-				if(homeBS % 2 == 0) {
+		if (!HumanSimValues.WORKLOAD_OPEN) {
+			// schedule a process for each human
+			for (int i = 0; i < HumanSimValues.NUM_HUMANS; i++) {
+				ArrayList<Position> usedRoute = new ArrayList<Position>();
+				int homeBS = 0;
+				int workBS = 0;
+
+				if (HumanSimValues.STOCHASTIC) {
+					homeBS = 0;
 					workBS = homeBS + 1;
-				} else {
-					workBS = homeBS - 1;
-				}
-				
-			} else {
-				
-				usedRoute = routes.get(i%3);
-				
-				
-				
-//				int route = i % 2;
-//				
-//				
-//				homeBS = route * 3;
-//				workBS = (route * 3) + 1;
-			}
 
-			humans.add(new Human(usedRoute, this, "Hugo" + i));
+					usedRoute.add(queues.get(homeBS));
+					usedRoute.add(queues.get(workBS));
+				} else {
+					usedRoute = routes.get(0);
+				}
+
+				Token hu = new Token(usedRoute, this, "Hugo" + i);
+				tokens.add(hu);
+
+			}
 		}
 	}
 
-	public void registerHumanAtBusStop(Human human, BusStop busStop, BusStop destination, double timestep) {
+	public void registerHumanAtBusStop(Token human, Queue busStop, Queue destination, double timestep) {
 		try {
 			this.component.sendRegisterInteraction(human, busStop.getName(), destination.getName(), timestep);
 		} catch (RTIexception e) {
@@ -319,38 +327,93 @@ public class WorkwayModel extends AbstractSimulationModel{
 	public RTITimelineSynchronizer getTimelineSynchronizer() {
 		return timelineSynchronizer;
 	}
-	
-	
-	public ArrayList<ArrayList<Position>> getRoutes(){
+
+	public ArrayList<ArrayList<Position>> getRoutes() {
 		ArrayList<ArrayList<Position>> routes = new ArrayList<ArrayList<Position>>();
-		Position home = new Position(this, "Home", PositionType.HOME);
-		Position work = new Position(this, "Work", PositionType.WORK);
-		
+
 		ArrayList<Position> routeOne = new ArrayList<Position>();
-		routeOne.add(home);
-		routeOne.add(stops.get(0));
-		routeOne.add(stops.get(1));
-		routeOne.add(work);
-		
-		ArrayList<Position> routeTwo = new ArrayList<Position>();
-		routeTwo.add(home);
-		routeTwo.add(stops.get(2));
-		routeTwo.add(stops.get(3));
-		routeTwo.add(work);
 
-		ArrayList<Position> routeThree = new ArrayList<Position>();
-		routeThree.add(home);
-		routeThree.add(stops.get(4));
-		routeThree.add(stops.get(5));
-		routeThree.add(work);
-	
+		routeOne.add(queues.get(0));
+		routeOne.add(queues.get(1));
 
+//		ArrayList<Position> routeTwo = new ArrayList<Position>();
+//
+//		routeTwo.add(queues.get(2));
+//		routeTwo.add(queues.get(3));
+//
+//		ArrayList<Position> routeThree = new ArrayList<Position>();
+//
+//		routeThree.add(queues.get(4));
+//		routeThree.add(queues.get(5));
+//
 		routes.add(routeOne);
-		routes.add(routeTwo);
-		routes.add(routeThree);
-		
+//		routes.add(routeTwo);
+//		routes.add(routeThree);
+
 		return routes;
-		
+	}
+
+	public void cutOff20PercentValues(LinkedList<Duration> list) {
+
+		BigDecimal cutOffPos = BigDecimal.valueOf(list.size()).multiply(BigDecimal.valueOf(0.20),
+				new MathContext(0, RoundingMode.CEILING));
+
+		for (int i = 0; i < cutOffPos.intValue(); i++) {
+			list.pop();
+		}
+
+	}
+
+	public Token generateToken() {
+
+		ArrayList<Position> usedRoute = new ArrayList<Position>();
+		int homeBS = 0;
+		int workBS = 0;
+
+		if (HumanSimValues.STOCHASTIC) {
+			homeBS = 0;
+			workBS = homeBS + 1;
+
+			usedRoute.add(queues.get(homeBS));
+			usedRoute.add(queues.get(workBS));
+		} else {
+			usedRoute = getRoutes().get(0);
+		}
+
+		Token hu = new Token(usedRoute, this, "Hugo" + tokens.size());
+		tokens.add(hu);
+
+		new TravelToNextEvent(this, hu.getName() + "travels to queue").schedule(hu, 0);
+
+		return hu;
+	}
+
+	public void tokenProcessed() {
+		processedTokens++;
+
+		if (processedTokens == HumanSimValues.NUM_HUMANS) {
+			getSimulationControl().stop();
+		}
+	}
+
+	public int getProcessedTokens() {
+		return this.processedTokens;
+	}
+
+	public int calculateRunningTokens() {
+		return tokens.size() - processedTokens;
+	}
+
+	public int getTokensCount() {
+		return tokens.size();
+	}
+
+	public void incrementSendEventCounter() {
+		sendEventCounter++;
+	}
+
+	public void incrementReceivedEventCounter() {
+		receivedEventCounter++;
 	}
 
 }

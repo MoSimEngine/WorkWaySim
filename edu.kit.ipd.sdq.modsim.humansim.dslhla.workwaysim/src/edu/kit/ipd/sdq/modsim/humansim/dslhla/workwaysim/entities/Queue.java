@@ -12,13 +12,13 @@ import edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.timelinesynchronization
 import hla.rti1516e.ObjectClassHandle;
 import hla.rti1516e.ObjectInstanceHandle;
 
-public class BusStop extends Position implements Comparable<BusStop>{
+public class Queue extends Position implements Comparable<Queue>{
 
 	private ObjectInstanceHandle oih;
-
 	private ObjectClassHandle och;
-    public BusStop(ISimulationModel model, String name) {
-        super(model, name, PositionType.BUSSTOP);
+	
+    public Queue(ISimulationModel model, String name) {
+        super(model, name, PositionType.QUEUE);
     }
 
 
@@ -48,7 +48,7 @@ public class BusStop extends Position implements Comparable<BusStop>{
 	}
 
 	@Override
-	public int compareTo(BusStop arg0) {
+	public int compareTo(Queue arg0) {
 		return this.getName().compareTo(arg0.getName());
 	}
 

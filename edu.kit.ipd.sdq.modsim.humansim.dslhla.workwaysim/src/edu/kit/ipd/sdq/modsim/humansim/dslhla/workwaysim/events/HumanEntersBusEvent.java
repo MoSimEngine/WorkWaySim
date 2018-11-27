@@ -4,11 +4,11 @@ import de.uka.ipd.sdq.simulation.abstractsimengine.AbstractSimEventDelegator;
 import de.uka.ipd.sdq.simulation.abstractsimengine.ISimulationModel;
 import edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.component.Duration;
 import edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.component.WorkwayModel;
-import edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.entities.Human;
+import edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.entities.Token;
 import edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.timelinesynchronization.TimeAdvanceToken;
 import edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.util.Utils;
 
-public class HumanEntersBusEvent extends AbstractSimEventDelegator<Human>{
+public class HumanEntersBusEvent extends AbstractSimEventDelegator<Token>{
 
 	public HumanEntersBusEvent(ISimulationModel model, String name) {
 		super(model, name);
@@ -16,12 +16,14 @@ public class HumanEntersBusEvent extends AbstractSimEventDelegator<Human>{
 	}
 
 	@Override
-	public void eventRoutine(Human human) {
+	public void eventRoutine(Token human) {
 		WorkwayModel m = (WorkwayModel)this.getModel();
+
 		human.setCollected(true);
-		human.calculateWaitedTime();
-		human.travellingToNext();
-		human.humanIsCollected();
+		human.calculateTimeEnqueued();
+		human.tokenprocessingStarted();
+		human.processing();
+//		Utils.log(human, human.getName() + " enters queue at " + human.getPosition().getName());
 //		Utils.log(human, human.getName() + " enters bus at " + human.getPosition().getName() );
 		
 		DrivingTimeoOutEvent e = new DrivingTimeoOutEvent(getModel(), "Driving Timeout Event");

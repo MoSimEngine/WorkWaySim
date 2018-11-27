@@ -5,91 +5,46 @@ import de.uka.ipd.sdq.simulation.abstractsimengine.ISimulationModel;
 import edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.component.Duration;
 import edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.component.HumanSimValues;
 import edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.component.WorkwayModel;
-import edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.entities.Human;
+import edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.entities.Token;
 import edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.entities.Position.PositionType;
 import edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.timelinesynchronization.TimeAdvanceToken;
 import edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.util.Utils;
 
-public class TravelToNextEvent extends AbstractSimEventDelegator<Human>{
+public class TravelToNextEvent extends AbstractSimEventDelegator<Token>{
 
 	public TravelToNextEvent(ISimulationModel model, String name) {
 		super(model, name);
 	}
 
 	@Override
-	public void eventRoutine(Human human) {
+	public void eventRoutine(Token token) {
 		WorkwayModel m = (WorkwayModel)this.getModel();
-		PositionType posType = human.getPosition().getPositionType();
-		PositionType destType = human.getDestination().getPositionType();
-		Duration travelTime;
+		PositionType posType = token.getPosition().getPositionType();
+		PositionType destType = token.getDestination().getPositionType();
+		
+		double travelTime;
 		String eventName = "";
 		
 		switch (posType) {
-		case BUSSTOP:
+		case QUEUE:
 			
 			switch (destType) {
-			case HOME:
-				travelTime = human.HOME_TO_STATION.toSeconds();
-				eventName = "Walk from station to home";
-				human.walkToNext();
-				break;
-			case WORK: 
-				travelTime = human.WORK_TO_STATION.toSeconds();
-				eventName = "Walk from station to work";
-				human.walkToNext();
+			case QUEUE:
+				travelTime = token.getEnqueuingDelayInSeconds();
+				eventName = "Enqueing Again";
+				token.enqueueAgain();
 				break;
 			default:
 				throw new IllegalStateException("No way from busStop to destination");
 			}
 			
-			break;
-			
-		case HOME:
-			
-			switch(destType) {
-			case BUSSTOP:
-				travelTime = human.HOME_TO_STATION.toSeconds();
-				eventName = "Walk from home to station";
-				human.walkToNext();
-				break;
-				
-			case WORK:
-				travelTime = human.WALK_DIRECTLY.toSeconds();
-				eventName = "Walk from home directly to work";
-				human.walkToNext();
-				break;
-			default:
-				throw new IllegalStateException("No way from home to destination");
-			}
-		
-			break;
-		
-		case WORK: 
-			
-			switch(destType) {
-			case BUSSTOP:
-				travelTime = human.HOME_TO_STATION.toSeconds();
-				eventName = "Walk from home to station";
-				human.walkToNext();
-				break;
-				
-			case HOME:
-				travelTime = human.WALK_DIRECTLY.toSeconds();
-				eventName = "Walk from work directly to home";
-				human.walkToNext();
-				break;
-			default:
-				throw new IllegalStateException("No way from work to destination");
-			}
-			
-			break;
-			
+			break;	
 		default:
 			throw new IllegalStateException("No valid position  to travel to");
 		}
 		
 		ArriveAtNextEvent e = new ArriveAtNextEvent(getModel(), eventName);
-		TimeAdvanceToken token = new TimeAdvanceToken(e, human, travelTime.toSeconds().value());
-		m.getTimelineSynchronizer().putToken(token, false);
+		TimeAdvanceToken advTimeToken = new TimeAdvanceToken(e, token, travelTime);
+		m.getTimelineSynchronizer().putToken(advTimeToken, false);
 	}
 }

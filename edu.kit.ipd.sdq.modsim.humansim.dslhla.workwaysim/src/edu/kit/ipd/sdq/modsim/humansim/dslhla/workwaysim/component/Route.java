@@ -3,18 +3,18 @@ package edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.component;
 import java.util.HashMap;
 import java.util.Map;
 
-import edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.entities.BusStop;
+import edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.entities.Queue;
 
 
 public class Route {
 
-    private Map<BusStop, RouteSegment> segmentMap;
+    private Map<Queue, RouteSegment> segmentMap;
 
     public Route() {
-        this.segmentMap = new HashMap<BusStop, RouteSegment>();
+        this.segmentMap = new HashMap<Queue, RouteSegment>();
     }
 
-    public void addSegment(BusStop from, BusStop to, int distance, int averageSpeed) {
+    public void addSegment(Queue from, Queue to, int distance, int averageSpeed) {
         if (this.segmentMap.containsKey(from)) {
             throw new IllegalStateException("There is already a segement originating from bus stop " + from);
         }
@@ -35,7 +35,7 @@ public class Route {
     // return getRouteSegment(from).getAverageSpeed();
     // }
 
-    public RouteSegment getRouteSegment(BusStop from) {
+    public RouteSegment getRouteSegment(Queue from) {
         if (!this.segmentMap.containsKey(from)) {
             throw new IllegalStateException("There is no segment originating from bus stop " + from);
         }
@@ -45,7 +45,7 @@ public class Route {
 
     public class RouteSegment {
 
-        private BusStop from, to;
+        private Queue from, to;
 
         // distance in kilometers
         private int distance;
@@ -53,18 +53,18 @@ public class Route {
         // average speed in kilometers per hour
         private int averageSpeed;
 
-        public RouteSegment(BusStop from, BusStop to, int distance, int averageSpeed) {
+        public RouteSegment(Queue from, Queue to, int distance, int averageSpeed) {
             this.from = from;
             this.to = to;
             this.distance = distance;
             this.averageSpeed = averageSpeed;
         }
 
-        public BusStop getFrom() {
+        public Queue getFrom() {
             return from;
         }
 
-        public BusStop getTo() {
+        public Queue getTo() {
             return to;
         }
 

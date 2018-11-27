@@ -4,8 +4,8 @@ package edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.timelinesynchronizatio
 import de.uka.ipd.sdq.simulation.abstractsimengine.AbstractSimEntityDelegator;
 import de.uka.ipd.sdq.simulation.abstractsimengine.AbstractSimEventDelegator;
 import edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.component.WorkwayModel;
-import edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.entities.BusStop;
-import edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.entities.Human;
+import edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.entities.Queue;
+import edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.entities.Token;
 import edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.entities.Position;
 import edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.util.Utils;
 
@@ -27,7 +27,7 @@ public class RegisterToken extends SynchroniseToken{
 
 	@Override
 	public void executeAction() {
-		((WorkwayModel)(getEntity().getModel())).registerHumanAtBusStop((Human)getEntity(), (BusStop) position, (BusStop) destination, this.getTimeStep());
+		((WorkwayModel)(getEntity().getModel())).registerHumanAtBusStop((Token)getEntity(), (Queue) position, (Queue) destination, this.getTimeStep());
 	}
 
 }

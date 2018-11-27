@@ -6,9 +6,7 @@ import de.uka.ipd.sdq.simulation.abstractsimengine.ISimulationModel;
 public class Position extends AbstractSimEntityDelegator{
 
 	public static enum PositionType{
-		BUSSTOP,
-		HOME,
-		WORK
+		QUEUE
 	}
 	
 	private PositionType positionType;

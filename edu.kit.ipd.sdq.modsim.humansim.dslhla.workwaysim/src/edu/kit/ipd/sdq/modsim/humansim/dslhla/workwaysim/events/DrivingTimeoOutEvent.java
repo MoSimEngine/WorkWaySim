@@ -7,18 +7,18 @@ import de.uka.ipd.sdq.simulation.abstractsimengine.ISimulationModel;
 import edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.component.Duration;
 import edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.component.HumanSimValues;
 import edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.component.WorkwayModel;
-import edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.entities.Human;
+import edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.entities.Token;
 import edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.timelinesynchronization.TimeAdvanceToken;
 import edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.util.Utils;
 
-public class DrivingTimeoOutEvent extends AbstractSimEventDelegator<Human> {
+public class DrivingTimeoOutEvent extends AbstractSimEventDelegator<Token> {
 
 	protected DrivingTimeoOutEvent(ISimulationModel model, String name) {
 		super(model, name);
 	}
 
 	@Override
-	public void eventRoutine(Human human) {
+	public void eventRoutine(Token human) {
 		
 		WorkwayModel m = (WorkwayModel)this.getModel();
 		boolean panik = false;

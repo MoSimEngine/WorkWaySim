@@ -52,7 +52,7 @@ public class CSVHandler {
 			
 			
 			while((line = fileReader.readLine()) != null){
-				csvString += line;
+				csvString += (line + NEWLINE);
 			}
 			
 		} catch (Exception e){
@@ -71,20 +71,37 @@ public class CSVHandler {
 		return csvString;
 	}
 	
+	
 	public static void readCSVAndAppend(String fileName, String appendString){
 		String s = "";
 		//Path workingDirectory=Paths.get(".").toAbsolutePath();
 		String workingDirectory = "HumanSimData";
 		System.out.println(workingDirectory);
 		File f = new File(workingDirectory + "\\" + fileName + ".csv");
-		if(f.exists() && !f.isDirectory()){
-		s = readCSV(fileName);
+		try {
+			f.createNewFile();
+			s = readCSV(fileName);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
 
-		s += appendString + NEWLINE;
+		s += appendString;
 	
 		writeCSVFile(fileName, s);
+	}
+	
+	public static void readCSVAndAppendHeaderDependent(String fileName, String headerString, String appendString) {
+		String workingDirectory = "HumanSimData";
+		File f = new File(workingDirectory + "\\" + fileName + ".csv");
 		
+		String finalString = appendString;
+		
+		if(!f.exists()) {
+			finalString = headerString + appendString;
+		} 
+		
+		readCSVAndAppend(fileName, finalString);
 	}
 	
 }

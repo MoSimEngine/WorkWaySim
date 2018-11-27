@@ -7,8 +7,14 @@ import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.Collections;
 import java.util.LinkedList;
+import java.util.List;
 import java.util.Random;
+
+import org.apache.log4j.Level;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 
 import de.uka.ipd.sdq.simulation.abstractsimengine.AbstractSimEntityDelegator;
 import de.uka.ipd.sdq.simulation.abstractsimengine.AbstractSimEventDelegator;
@@ -20,9 +26,9 @@ import edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.adaption.DataMarkerMapp
 import edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.adaption.HLAAdapter;
 import edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.adaption.HLAByteArrayAdaption;
 import edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.adaption.HLAByteArrayDerivedElement;
-import edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.entities.BusStop;
-import edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.entities.Human;
-import edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.entities.Human.HumanBehaviour;
+import edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.entities.Queue;
+import edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.entities.Token;
+
 import edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.util.Utils;
 import hla.rti1516e.AttributeHandle;
 import hla.rti1516e.AttributeHandleSet;
@@ -106,6 +112,9 @@ public class WorkwayFederate {
 	private boolean constrainTime = true;
 
 	public LinkedList<ObjectInstanceHandle> busStopHandles;
+	private InteractionClassHandle workloadGeneratorFinished;
+	
+	private int timeAdvanceRequestCounter = 0;
 
 	public WorkwayFederate(WorkwayModel simulation) {
 		this.simulation = simulation;
@@ -148,9 +157,13 @@ public class WorkwayFederate {
 		}
 
 		publishAndSubscribe();
-
+		List<Logger> loggers = Collections.<Logger>list(LogManager.getCurrentLoggers());
+		loggers.add(LogManager.getRootLogger());
+		for ( Logger logger : loggers ) {
+		    logger.setLevel(Level.OFF);
+		}
 		//Wait until all bus stops are received
-		while (simulation.getStops().size() != HumanSimValues.NUM_BUSSTOPS) {
+		while (simulation.getQueues().size() != HumanSimValues.NUM_BUSSTOPS) {
 			advanceTime(1.0);
 			rtiamb.evokeMultipleCallbacks(0.1, 0.2);
 		}
@@ -159,7 +172,7 @@ public class WorkwayFederate {
 
 		//TODO Hardcoded step to be on same time with BusSim due to exchange of busstops and humans
 		//Maybe find more elegant solution?
-		advanceTime(1.0);
+		
 		simulation.startSimulation();
 
 	}
@@ -274,6 +287,10 @@ public class WorkwayFederate {
 		busStopNameRegisterHandle = rtiamb.getParameterHandle(registerAtBusStopHandle, "BusStopName");
 		destinationNameRegisterHandle = rtiamb.getParameterHandle(registerAtBusStopHandle, "DestinationName");
 
+		
+		workloadGeneratorFinished = rtiamb.getInteractionClassHandle("HLAinteractionRoot.WorkloadGenerteFinished");
+		rtiamb.publishInteractionClass(workloadGeneratorFinished);
+		
 		unregisterAtBusStopHandle = rtiamb.getInteractionClassHandle("HLAinteractionRoot.HumanUnRegistersAtBusStop");
 		rtiamb.publishInteractionClass(unregisterAtBusStopHandle);
 		humanNameUnregisterHandle = rtiamb.getParameterHandle(unregisterAtBusStopHandle, "HumanName");
@@ -331,7 +348,7 @@ public class WorkwayFederate {
 
 		double advancingTo = fedamb.federateTime + timestep;
 		
-		if (!(advancingTo <= HumanSimValues.MAX_SIM_TIME.toSeconds().value())) {
+		if (!(advancingTo <= WorkwaySimulationExample.MAX_SIMULATION_TIME.toSeconds().value())) {
 			return false;
 		}
 
@@ -349,6 +366,8 @@ public class WorkwayFederate {
 		while (fedamb.isAdvancing) {
 			rtiamb.evokeMultipleCallbacks(0.1, 0.2);
 		}
+		
+		incrementTimeAdvanceCounter();
 		return true;
 	}
 
@@ -380,7 +399,7 @@ public class WorkwayFederate {
 		}
 	}
 
-	public void sendRegisterInteraction(Human human, String busStop, String destination, double timestep) throws RTIexception {
+	public void sendRegisterInteraction(Token human, String busStop, String destination, double timestep) throws RTIexception {
 
 		ParameterHandleValueMap parameters = rtiamb.getParameterHandleValueMapFactory().create(3);
 		parameters.put(humanNameRegisterHandle, adapterService.filter(human.getName()));
@@ -388,22 +407,30 @@ public class WorkwayFederate {
 		parameters.put(destinationNameRegisterHandle, adapterService.filter(destination));
 		HLAfloat64Time time = timeFactory.makeTime(simulation.getSimulationControl().getCurrentSimulationTime() + timestep);
 		rtiamb.sendInteraction(registerAtBusStopHandle, parameters, generateTag(), time);
+		
+		simulation.incrementSendEventCounter();
+		
+	}
+	
+	public void sendWorkloadGeneratorFinishedInteraction() throws RTIexception{
+		ParameterHandleValueMap parameters = rtiamb.getParameterHandleValueMapFactory().create(0);
+		HLAfloat64Time time = timeFactory.makeTime(simulation.getSimulationControl().getCurrentSimulationTime() + Duration.hours(2).toSeconds().value());
+		rtiamb.sendInteraction(registerAtBusStopHandle, parameters, generateTag(), time);
 	}
 
 	public void initialiseHuman() throws Exception {
 
 		simulation.initialiseHumans();
 		
-		for (Human human : simulation.getHumans()) {
+		for (Token human : simulation.getTokens()) {
 			
 		ObjectInstanceHandle oih = registerHumanObject();
 
 		human.setOih(oih);
 		human.setOch(humanObjectClassHandle);
-		AttributeHandleValueMap attributes = rtiamb.getAttributeHandleValueMapFactory().create(3);
+		AttributeHandleValueMap attributes = rtiamb.getAttributeHandleValueMapFactory().create(2);
 		attributes.put(humanNameAttributeHandle, adapterService.filter(human.getName()));
 		attributes.put(destinationHandle, adapterService.filter(human.getDestination().getName()));
-		attributes.put(movementTypeHandle, adapterService.filter(human.getBehaviour().toString()));
 		HLAfloat64Time time = timeFactory.makeTime(fedamb.federateTime + 1.0);
 		rtiamb.updateAttributeValues(human.getOih(), attributes, generateTag(), time);
 		}
@@ -414,7 +441,7 @@ public class WorkwayFederate {
 		return fedamb.federateTime;
 	}
 
-	public void handleBusStopAttributeUpdates(BusStop busStop, AttributeHandleValueMap attributes,
+	public void handleBusStopAttributeUpdates(Queue busStop, AttributeHandleValueMap attributes,
 			ObjectInstanceHandle oih) {
 		System.out.println("BusStopAttr");
 		String busStopName = "";
@@ -451,7 +478,7 @@ public class WorkwayFederate {
 
 	public void handleAttributeUpdate(ObjectInstanceHandle oih, AttributeHandleValueMap attributes) throws Exception {
 
-		for (BusStop busStop : simulation.getStops()) {
+		for (Queue busStop : simulation.getQueues()) {
 			if (busStop.getOih().equals(oih)) {
 				Utils.log("Handle busStop attribute" + oih.toString());
 				handleBusStopAttributeUpdates(busStop, attributes, oih);
@@ -480,7 +507,7 @@ public class WorkwayFederate {
 			}
 		}
 
-		BusStop bs = new BusStop(simulation, busStopName);
+		Queue bs = new Queue(simulation, busStopName);
 		bs.setOih(oih);
 		bs.setOch(busStopObjectClassHandle);
 		simulation.addBusStop(bs);
@@ -532,6 +559,14 @@ public class WorkwayFederate {
 	
 	public boolean isAdvancingTime() {
 		return fedamb.isAdvancing;
+	}
+	
+	public void incrementTimeAdvanceCounter() {
+		timeAdvanceRequestCounter++;
+	}
+	
+	public int getTimeAdvanceCounter() {
+		return timeAdvanceRequestCounter;
 	}
 
 }
