@@ -14,6 +14,7 @@ import org.eclipse.equinox.app.IApplicationContext;
 
 import de.uka.ipd.sdq.simulation.abstractsimengine.ISimulationControl;
 import edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.component.Duration.TimeUnit;
+import edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.util.Utils;
 
 
 
@@ -36,6 +37,8 @@ public class WorkwaySimulationExample implements IApplication {
 				MAX_SIMULATION_TIME = Duration.hours(Double.MAX_VALUE);
 			}
 			this.simControl.setMaxSimTime((long) MAX_SIMULATION_TIME.toSeconds().value());
+			Utils.log("Simulationtime:" + MAX_SIMULATION_TIME.toSeconds().value());
+		           
 			this.component = new WorkwayFederate(model);
 			this.model.setComponent(component);
 	}

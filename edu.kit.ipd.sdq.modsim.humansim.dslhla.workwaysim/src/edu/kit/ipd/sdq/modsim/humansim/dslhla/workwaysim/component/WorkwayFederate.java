@@ -107,6 +107,8 @@ public class WorkwayFederate {
 	public HLAAdapter adapterService;
 
 	protected int busStopInitialised = 0;
+	
+	private boolean stopping = false;
 
 	private boolean regulateTime = true;
 	private boolean constrainTime = true;
@@ -287,10 +289,6 @@ public class WorkwayFederate {
 		busStopNameRegisterHandle = rtiamb.getParameterHandle(registerAtBusStopHandle, "BusStopName");
 		destinationNameRegisterHandle = rtiamb.getParameterHandle(registerAtBusStopHandle, "DestinationName");
 
-		
-		workloadGeneratorFinished = rtiamb.getInteractionClassHandle("HLAinteractionRoot.WorkloadGenerteFinished");
-		rtiamb.publishInteractionClass(workloadGeneratorFinished);
-		
 		unregisterAtBusStopHandle = rtiamb.getInteractionClassHandle("HLAinteractionRoot.HumanUnRegistersAtBusStop");
 		rtiamb.publishInteractionClass(unregisterAtBusStopHandle);
 		humanNameUnregisterHandle = rtiamb.getParameterHandle(unregisterAtBusStopHandle, "HumanName");
@@ -557,6 +555,10 @@ public class WorkwayFederate {
 		return fedamb;
 	}
 	
+	public WorkwayModel getSimulation() {
+		return simulation;
+	}
+	
 	public boolean isAdvancingTime() {
 		return fedamb.isAdvancing;
 	}
@@ -567,6 +569,20 @@ public class WorkwayFederate {
 	
 	public int getTimeAdvanceCounter() {
 		return timeAdvanceRequestCounter;
+	}
+	
+	public void stopSim() {
+		if(!stopping) {
+		   stopping = true;
+		   
+		  
+		   simulation.setStopSimulation(true);
+		   simulation.getTimelineSynchronizer().printTokenOccupationNames();
+		   Utils.log("Stopping Sim");
+		   
+		   
+		   //simulation.getSimulationControl().stop();
+		}
 	}
 
 }

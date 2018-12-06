@@ -6,6 +6,7 @@ import java.util.LinkedList;
 
 import de.uka.ipd.sdq.simulation.abstractsimengine.AbstractSimEntityDelegator;
 import edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.component.WorkwayModel;
+import edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.component.WorkwaySimulationExample;
 import edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.timelinesynchronization.SynchroniseToken.SynchronisedActionTypen;
 import edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.util.Utils;
 import edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.entities.Token;
@@ -147,8 +148,12 @@ public class RTITimelineSynchronizer implements TimelineSynchronizer {
 			resultingTimeStep = BigDecimal.ZERO;
 		}
 		
+		if(returnEventTimepoint.doubleValue() > WorkwaySimulationExample.MAX_SIMULATION_TIME.toSeconds().value()) {
+			Utils.log(token.getEntity(), "Over SimTime Stopping??");
+		} 
+			
 		token.getReturnEvent().schedule(token.getEntity(), resultingTimeStep.doubleValue());
-
+		
 	}
 
 	public boolean checkForExecution() {
@@ -194,9 +199,9 @@ public class RTITimelineSynchronizer implements TimelineSynchronizer {
 	public void printTokenOccupationNames() {
 
 
-		System.out.println("------TokenList" + " FedTime:" + model.getComponent().getCurrentFedTime() + " SimTime:"
-				+ model.getSimulationControl().getCurrentSimulationTime() + "--------");
-		System.out.print("| TimeAdvances: ");
+		System.out.println("!!TokenList" + " FedTime:" + model.getComponent().getCurrentFedTime() + " SimTime:"
+				+ model.getSimulationControl().getCurrentSimulationTime()  + "!!");
+		System.out.print("| TimeAdvances " + advanceTimeTokens.size() + " :");
 
 		for (int m = 0; m < advanceTimeTokens.size(); m++) {
 			System.out.print(advanceTimeTokens.get(m).getEntity().getName() + ":"
@@ -206,7 +211,7 @@ public class RTITimelineSynchronizer implements TimelineSynchronizer {
 
 		System.out.println(" |");
 
-		System.out.print("| Actions: ");
+		System.out.print("| Actions " + rtiActivityTokens.size() + " :");
 
 		for (int n = 0; n < rtiActivityTokens.size(); n++) {
 			System.out.print(rtiActivityTokens.get(n).getEntity().getName() + ":" + "Register Activity" + " -> "
@@ -238,5 +243,15 @@ public class RTITimelineSynchronizer implements TimelineSynchronizer {
 		}
 
 		return false;
+	}
+	
+	public void finaliseTokensToTime() {
+		sortTokens();
+		
+		for (SynchroniseToken token : advanceTimeTokens) {
+			scheduleReturnEvent(token);
+		}
+		
+		
 	}
 }

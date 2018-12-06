@@ -1,5 +1,6 @@
 package edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.component;
 
+import edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.entities.Queue;
 import edu.kit.ipd.sdq.modsim.humansim.dslhla.workwaysim.util.Utils;
 import hla.rti1516e.AttributeHandleValueMap;
 import hla.rti1516e.FederateHandleSet;
@@ -172,5 +173,7 @@ public class WorkwayFederateAmbassador extends NullFederateAmbassador{
 	@Override
 	public void removeObjectInstance(ObjectInstanceHandle theObject, byte[] tag, OrderType sentOrdering,
 			SupplementalRemoveInfo removeInfo) throws FederateInternalError {
+		
+//		federate.stopSim();
 	}
 }

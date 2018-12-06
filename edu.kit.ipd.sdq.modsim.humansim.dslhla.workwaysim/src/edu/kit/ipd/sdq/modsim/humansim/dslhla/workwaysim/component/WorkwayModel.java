@@ -47,6 +47,9 @@ public class WorkwayModel extends AbstractSimulationModel {
 
 	private int receivedEventCounter = 0;
 	private int sendEventCounter = 0;
+	private boolean stopSimulation = false;
+
+
 
 	public WorkwayModel(ISimulationConfig config, ISimEngineFactory factory) {
 		super(config, factory);
@@ -67,7 +70,7 @@ public class WorkwayModel extends AbstractSimulationModel {
 	}
 
 	public void finalise() {
-
+		Utils.log("Finilising");
 		component.resignFromExecution();
 		Double finalTime = (System.nanoTime() - startTime) / Math.pow(10, 9);
 		String fileHeader = "";
@@ -130,9 +133,9 @@ public class WorkwayModel extends AbstractSimulationModel {
 
 		fileHeader += CSVHandler.NEWLINE;
 
-		CSVHandler.writeCSVFile("ResponseTimes", fileHeader + csvActive.replace('.', ','));
-		CSVHandler.writeCSVFile("ProcessingTimes", fileHeader + csvProcessed.replace('.', ','));
-		CSVHandler.writeCSVFile("WaitingTimes", fileHeader + csvEnqueued.replace('.', ','));
+		CSVHandler.writeCSVFile(HumanSimValues.NUM_HUMANS + "_ResponseTimes", fileHeader + csvActive.replace('.', ','));
+		CSVHandler.writeCSVFile(HumanSimValues.NUM_HUMANS + "_ProcessingTimes", fileHeader + csvProcessed.replace('.', ','));
+		CSVHandler.writeCSVFile(HumanSimValues.NUM_HUMANS + "_WaitingTimes", fileHeader + csvEnqueued.replace('.', ','));
 
 		Double d = BigDecimal.valueOf(finalTime).round(new MathContext(2, RoundingMode.CEILING)).doubleValue();
 		String s = d.toString();
@@ -150,7 +153,7 @@ public class WorkwayModel extends AbstractSimulationModel {
 
 		s = s.replace('.', ',');
 
-		CSVHandler.readCSVAndAppendHeaderDependent("ExecutionTimes", "ExecutionTime" + CSVHandler.NEWLINE, s);
+		CSVHandler.readCSVAndAppendHeaderDependent("ExecutionTimes_Modular", "ExecutionTime" + CSVHandler.NEWLINE, s);
 		CSVHandler.readCSVAndAppendHeaderDependent("CommunicationCounts", countHeader, counts);
 
 		component.destroyExecution();
@@ -414,6 +417,13 @@ public class WorkwayModel extends AbstractSimulationModel {
 
 	public void incrementReceivedEventCounter() {
 		receivedEventCounter++;
+	}
+	public boolean isStopSimulation() {
+		return stopSimulation;
+	}
+
+	public void setStopSimulation(boolean stopSimulation) {
+		this.stopSimulation = stopSimulation;
 	}
 
 }
